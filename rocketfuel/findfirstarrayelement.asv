@@ -1,0 +1,7 @@
+function [index] = findfirstarrayelement(Array,Key)
+%% finds the first matching Key element of the Array of strings.
+for j=1:size(Array)
+    if strcmp(B(i), routers(j))
+        found = 1;
+        end;
+    end;

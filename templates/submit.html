@@ -1,0 +1,29 @@
+{% block content %}
+
+<h2> Peering Querry </h2>
+<h3> Please follow instructions:</h3>
+<h4> We handle querries for only a few ISPs. You can find the list of ISPs from the link by clicking "ISP Name, ASN list"</h4>
+<h4> ASN1: Needs to be an integer, cannot be left empty.</h4>
+<h4> ASN2: Needs to be an integer, if left empty, will return a list of all ISPs peering is recommended with. If given a valid value, will show if peering is recommended.</h4>
+<h4> Threshold: Needs to be a decimal between 0.0 and 1.0, if left empty, will use the default value (0.5)</h4>
+<form action="" method="post">
+	<p>
+		{{form.asn1.label}} <br>
+		{{form.asn1(size=5)}}
+	</p>
+	<p>
+		{{form.asn2.label}} <br>
+		{{form.asn2(size=5)}}
+	</p>
+	<p>
+		{{form.threshold.label}} <br>
+		{{form.threshold(size=5)}}
+	</p>
+	<p>
+		{{form.submit()}}
+	</p>
+	<a href="/isps">ISP Name, ASN list</a>
+
+</form>
+
+{% endblock %}

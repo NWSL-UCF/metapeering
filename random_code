@@ -1,0 +1,19 @@
+sudo apt-get update -y
+sudo apt install -y python3-pip
+sudo pip3 install ryu greenlet repoze.lru stevedore
+
+
+ssh -i ~/.ssh/id_geni_ssh_rsa sh686934@pc2.instageni.illinois.edu -p 27811
+
+
+sudo ifconfig eth1 0
+sudo ifconfig eth2 0
+sudo ifconfig eth3 0
+
+sudo ovs-vsctl add-br vlan
+sudo ovs-vsctl add-port vlan eth1
+sudo ovs-vsctl add-port vlan eth2
+sudo ovs-vsctl add-port vlan eth3
+
+sudo ovs-vsctl set-controller vlan tcp:72.36.65.65:6633
+

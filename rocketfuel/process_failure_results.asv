@@ -1,0 +1,119 @@
+%% which topology to use
+TOPOLOGY = 5;
+
+if (TOPOLOGY == 1) %% TELSTRA
+    %% nodes 108, links 414, Telstra (Australia), BIDIRECTIONAL, DISCONNECTED
+    [A, B, latency] = textread('1221/latencies.intra', '%s %s %f');
+    [C, D, weight] = textread('1221/weights.intra', '%s %s %f');
+    %% thresholds for edge node selection:
+    DEGREETHRESH = 5;
+    DISTANCETHRESH = 4;
+    ispname = 'telstra';
+elseif (TOPOLOGY == 2) %% SPRINTLINK
+    %% nodes 315, links 2339, Sprintlink (US), BIDIRECTIONAL, DISCONNECTED
+    [A, B, latency] = textread('1239/latencies.intra', '%s %s %f');
+    [C, D, weight] = textread('1239/weights.intra', '%s %s %f');
+    %% thresholds for edge node selection:
+    DEGREETHRESH = 9;
+    DISTANCETHRESH = 5;
+    ispname = 'sprintlink';
+elseif (TOPOLOGY == 3) %% EBONE
+    %% nodes 87, links 407, Ebone (Europe), BIDIRECTIONAL, CONNECTED
+    [A, B, latency] = textread('1755/latencies.intra', '%s %s %f');
+    [C, D, weight] = textread('1755/weights.intra', '%s %s %f');
+    %% thresholds for edge node selection:
+    DEGREETHRESH = 6;
+    DISTANCETHRESH = 4;
+    ispname = 'ebone';
+elseif (TOPOLOGY == 4) %% TISCALI
+    %% nodes 161, links 900, Tiscali (Europe), BIDIRECTIONAL, CONNECTED
+    [A, B, latency] = textread('3257/latencies.intra', '%s %s %f');
+    [C, D, weight] = textread('3257/weights.intra', '%s %s %f');
+    %% thresholds for edge node selection:
+    DEGREETHRESH = 8;
+    DISTANCETHRESH = 4;
+    ispname = 'tiscali';
+elseif (TOPOLOGY == 5) %% EXODUS
+    %% nodes 79, links 353, Exodus (US), BIDIRECTIONAL, CONNECTED
+    [A, B, latency] = textread('3967/latencies.intra', '%s %s %f');
+    [C, D, weight] = textread('3967/weights.intra', '%s %s %f');
+    %% thresholds for edge node selection:
+    DEGREETHRESH = 6;
+    DISTANCETHRESH = 4;
+    ispname = 'exodus';
+elseif (TOPOLOGY == 6) %% ABOVENET
+    %% nodes 141, links 925, Abovenet (US), BIDIRECTIONAL, DISCONNECTED
+    [A, B, latency] = textread('6461/latencies.intra', '%s %s %f');
+    [C, D, weight] = textread('6461/weights.intra', '%s %s %f');
+    %% thresholds for edge node selection:
+    DEGREETHRESH = 9;
+    DISTANCETHRESH = 3;
+    ispname = 'abovenet';
+end;
+
+[numoflinks,n] = size(A);
+
+failurecount = ceil(numoflinks*0.5) - 1;
+
+fname = ['../../results/isp-failures/',ispname,'/rec-0.txt'];
+nofailurerec = dlmread(fname, ' ');
+for i=1:failurecount
+    fname = ['../../results/isp-failures/',ispname,'/additional-rec-',num2str(i),'.txt'];
+    failurerecs{i} = nofailurerec + dlmread(fname, ' ');
+end;
+
+maxfailurerec = nofailurerec;
+for i=1:failurecount
+    for col=1:10
+        maxfailurerec(:,c) = max(maxfailurerec(:,col), failurerecs{i}(:,col));
+        minlinkutilizations(i+1) = min(individuallinkutilizations{i+1});
+        avglinkutilizations(i+1) = mean(individuallinkutilizations{i+1});
+    end;
+end;
+
+
+% calculate and record the average additional RECs after each link failure
+for j=1:failurecount
+    totalextrarec = 0;
+    for i=1:j
+        totalextrarec = totalextrarec + max(0,failurerecs{i});
+    end;
+    avgextrarec = totalextrarec ./ j;
+
+    fname = ['../../results/isp-failures/',ispname,'/avg-additional-rec-',num2str(j),'.txt'];
+    dlmwrite(fname, avgextrarec, '-append', 'delimiter', ' ');
+end;
+
+% read the link utilizations after each failure
+fname = ['../../results/isp-failures/',ispname,'/rec-0.txt'];
+nofailurerec = dlmread(fname, ' ');
+for i=0:failurecount
+    fname = ['../../results/isp-failures/',ispname,'/link-utilizations-',num2str(i),'.txt'];
+    individuallinkutilizations{i+1} = dlmread(fname, ' ');
+end;
+
+% record the max, min, and average link utilizations after each failure
+for i=0:failurecount
+    maxlinkutilizations(i+1) = max(individuallinkutilizations{i+1});
+    minlinkutilizations(i+1) = min(individuallinkutilizations{i+1});
+    avglinkutilizations(i+1) = mean(individuallinkutilizations{i+1});
+end;
+fname = ['../../results/isp-failures/',ispname,'/max-link-utilizations-.txt'];
+dlmwrite(fname, maxlinkutilizations, '-append', 'delimiter', '\n');
+fname = ['../../results/isp-failures/',ispname,'/min-link-utilizations-.txt'];
+dlmwrite(fname, minlinkutilizations, '-append', 'delimiter', '\n');
+fname = ['../../results/isp-failures/',ispname,'/avg-link-utilizations-.txt'];
+dlmwrite(fname, avglinkutilizations, '-append', 'delimiter', '\n');
+
+
+% ispname = 'exodus';
+% fname = ['../../results/isp-failures/',ispname,'/rec-0.txt'];
+% x = dlmread(fname, ' ');
+% for i=1:35
+%     fname = ['../../results/isp-failures/',ispname,'/additional-rec-',num2str(i),'.txt'];
+%     y = dlmread(fname, ' ');
+%     fname = ['../../results/isp-failures/',ispname,'/xadditional-rec-',num2str(i),'.txt'];
+%     dlmwrite(fname, y-x, '-append', 'delimiter', ' ');
+% end;
+
+
