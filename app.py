@@ -4,13 +4,14 @@ import re
 import subprocess
 from subprocess import call
 import json
-from forms import submitQuerry
+from forms import PeeringQueryForm
 from os import listdir
 from os.path import isfile, join
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'metapeering'
+Bootstrap(app)
 
 isp_dict = {'cableone': 11492, 'centurylink': 209, 'charter':7843, 'comcast':7922, 'cox':22773, 'tds':4181, 'windstream':7029, 
 			'akamai':20940, 'amazon': 16509, 'ebay':62955, 'facebook': 32934, 'google': 15169, 'microsoft': 8075, 'netflix': 2906,
@@ -33,8 +34,8 @@ isp_dict = {'cableone': 11492, 'centurylink': 209, 'charter':7843, 'comcast':792
 
 @app.route('/', methods=['GET','POST'])
 def querry():
-	form = submitQuerry()
-	if form.is_submitted():
+	form = PeeringQueryForm()
+	if request.method == 'POST' and form.is_submitted():
 		return form_handler(request.form)
 		# return render_template(form_handler(request.form), form=form)
 	return render_template('submit.html', form=form)

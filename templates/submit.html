@@ -1,41 +1,41 @@
 {% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block content %}
   	<div class="py-5 text-center">
     		<h2>Peering Query form</h2>
     		<p class="lead">Please follow the instructions to identify the possible Peer ISPs.</p>
-		<p class="lead">We handle querries for only a few ISPs. You can find the list of ISPs and their associated ASNs by clicking <a href="/isps">this list</a>.</p>
+		<!--<p class="lead">We handle querries for only a few ISPs. You can find the list of ISPs and their associated ASNs by clicking <a href="/isps">this list</a>.</p> -->
+		<p class="lead">Currently, we handle only a few ISPs. Please select a pair from the dropdown lists..</p>
 	</div>
+	<!--
 	<ul class="list-group">
 		<li class="list-group-item"><b>ASN1</b> needs to be an integer, cannot be left empty.</li>
 		<li class="list-group-item"><b>ASN2</b> needs to be an integer, if left empty, will return a list of all ISPs peering is recommended with. If given a valid value, will show if peering is recommended.</li>
 		<li class="list-group-item"><b>Threshold</b> needs to be a decimal between 0.0 and 1.0, if left empty, will use the default value (0.5)</li>
 	</ul>
+	-->
 	</br>
 	<div class="card mb-3 shadow-sm">
 		<div class="card-header">
-			<h4 class="my-0 font-weight-normal">Submission form</h4>
+			<h4 class="my-0 font-weight-normal">Query Submission Form</h4>
 		</div>
 		<div class="card-body">
-		<form action="" method="post" class="form" role="form">
-			<div class="row">
-			<div class ="form-group col-md-6">
-				{{form.asn1.label}} </br>
-				{{form.asn1()}}
-			</div>
-			</div>
-			<div class="mb-3">
-				{{form.asn2.label}}
-				{{form.asn2(size=5)}}
-			</div>
-			<div class="mb-3">
-				{{form.threshold.label}}
-				{{form.threshold(size=5)}}
-			</div>
-			<div>
-				{{form.submit()}}
-			</div>
-		</form>
-		</div>
+			<form action="" method="post" class="form" role="form">
+   				{{ form.csrf_token() }}
+   				<div class="row">
+    				<div class="form-group col-md-6">
+     					{{ wtf.form_field(form.asn1, class='form-control') }}
+    				</div>
+    				<div class="form-group col-md-6">
+     					{{ wtf.form_field(form.asn2, class='form-control') }}
+    				</div>
+			    </div>
+				{{ wtf.form_field(form.threshold, class='form-control', 
+					placeholder='Peering threshold (0.1 to 1.0)') }}
+			    
+    			<button type="submit" class="btn btn-primary">Submit</button>
+  			</form>		
+  		</div>
 	</div>
 {% endblock content %}
