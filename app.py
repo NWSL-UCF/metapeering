@@ -65,9 +65,10 @@ def request_handler(data):
 	[retScores.pop(key) for key in rm_keys]
 
 	# files = listdir('output/')
-	
 	if(len(retScores.values()) == 0):
 		return 'Peering not Recommended at given threshold.'
+	
+	return "Peering Recommended!"
 
 	rc = call('mkdir result', shell=True)
 	rc = call('rm -r result/*', shell=True)
