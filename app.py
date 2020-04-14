@@ -4,7 +4,7 @@ import re
 import subprocess
 from subprocess import call
 import json
-from .forms import PeeringQueryForm
+from forms import PeeringQueryForm
 from os import listdir
 from os.path import isfile, join
 
