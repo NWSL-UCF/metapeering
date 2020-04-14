@@ -4,7 +4,7 @@ import re
 import subprocess
 from subprocess import call
 import json
-from forms import PeeringQueryForm
+from .forms import PeeringQueryForm
 from os import listdir
 from os.path import isfile, join
 
@@ -12,24 +12,6 @@ from os.path import isfile, join
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'metapeering'
 Bootstrap(app)
-
-isp_dict = {'cableone': 11492, 'centurylink': 209, 'charter':7843, 'comcast':7922, 'cox':22773, 'tds':4181, 'windstream':7029, 
-			'akamai':20940, 'amazon': 16509, 'ebay':62955, 'facebook': 32934, 'google': 15169, 'microsoft': 8075, 'netflix': 2906,
-			'columbus':23520, 'cogent': 174, 'he':6939, 'ntt': 2914, 'pccw':3491, 'sprint': 1239, 'verizon':701, 'zayo':6461 }
-
-# @app.route('/')
-# def default():
-# 	print "Disabled Route"
-# 	return "Disabled Route"
-	# with open('runServer.sh', 'rb') as file:
-	# 	script = file.read()
-	# 	rc = call(script, shell=True)
-
-	# with open('upload.json','r') as f:
-	# 	j = json.load(f)
-	# 	return j["link"]
-
-	# return "Welcome to Meta Peering!"
 
 
 @app.route('/', methods=['GET','POST'])
@@ -39,10 +21,6 @@ def querry():
 		return form_handler(request.form)
 		# return render_template(form_handler(request.form), form=form)
 	return render_template('submit.html', form=form)
-
-@app.route('/isps')
-def isps():
-	return isp_dict
 
 def form_handler(request):
 	data = {}
@@ -102,10 +80,3 @@ def request_handler(data):
 	retVal = {}
 	retVal['Download Link'] = output['link']
 	return retVal
-
-
-
-
-if __name__ == '__main__':
-	# app.run(debug=True)
-	app.run(debug=True,port=5001)
