@@ -29,6 +29,8 @@ def form_handler(request):
 	else:
 		return "ERROR: ASN1 value invalid. Value needs to be an integer."
 	if re.match(r"^[0-9]+$",request['asn2']):
+		if request['asn2'] == data['asn1']:
+			return "Error: Same ISP provided twice."
 		data['asn2'] = request['asn2']
 	elif request['asn2'] != '':
 		return "ERROR: ASN2 value invalid. Value needs to be an integer"
@@ -44,14 +46,14 @@ def form_handler(request):
 def request_handler(data):
 	if len(data.values()) == 2:
 		retScores = {}
-		with open('appdata/felicity.json') as f:
+		with open('app/appdata/felicity.json') as f:
 			scores = json.load(f)
 			for k,v in scores.items():
 				if data['asn1'] in k:
 					retScores[k] = v['own']
 	else:
 		retScores = {}
-		with open('appdata/felicity.json') as f:
+		with open('app/appdata/felicity.json') as f:
 			scores = json.load(f)
 			retScores[data['asn1']+'_'+data['asn2']] = scores[data['asn1']+'_'+data['asn2']]['own']
 			retScores[data['asn2']+'_'+data['asn1']] = scores[data['asn2']+'_'+data['asn1']]['own']
