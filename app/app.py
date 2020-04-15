@@ -4,7 +4,7 @@ import re
 import subprocess
 from subprocess import call
 import json
-from forms import PeeringQueryForm
+from app.forms import PeeringQueryForm
 from os import listdir
 from os.path import isfile, join
 
@@ -44,14 +44,14 @@ def form_handler(request):
 def request_handler(data):
 	if len(data.values()) == 2:
 		retScores = {}
-		with open('felicity.json') as f:
+		with open('appdata/felicity.json') as f:
 			scores = json.load(f)
 			for k,v in scores.items():
 				if data['asn1'] in k:
 					retScores[k] = v['own']
 	else:
 		retScores = {}
-		with open('felicity.json') as f:
+		with open('appdata/felicity.json') as f:
 			scores = json.load(f)
 			retScores[data['asn1']+'_'+data['asn2']] = scores[data['asn1']+'_'+data['asn2']]['own']
 			retScores[data['asn2']+'_'+data['asn1']] = scores[data['asn2']+'_'+data['asn1']]['own']

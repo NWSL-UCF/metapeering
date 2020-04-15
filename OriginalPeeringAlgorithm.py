@@ -1812,6 +1812,15 @@ if __name__ == '__main__':
         save_pop_locations()
         find_best_deals(scatter_plot_data)
 
+    with open('app/appdata/willingness.json','w') as json_file:
+        json.dump(willingness_score_for_all_isps, json_file)
+    
+    with open('app/appdata/affinity.json','w') as json_file:
+        json.dump(affinity_score_for_all_isps, json_file)
+    
+    with open('app/appdata/felicity.json','w') as json_file:
+        json.dump(felicity_score_for_all_isps, json_file)
+
     with open('willingness.json','w') as json_file:
         json.dump(willingness_score_for_all_isps, json_file)
     

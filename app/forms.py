@@ -1,6 +1,6 @@
 from flask_wtf import Form
 from wtforms import IntegerField, SelectField, SubmitField
-from customoptgroupselect import ExtendedSelectField
+from app.customoptgroupselect import ExtendedSelectField
 
 class PeeringQueryForm(Form):
 	options = [

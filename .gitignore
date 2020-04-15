@@ -1,3 +1,8 @@
 output/
 result/
 result.tar.gz
+test.py
+test.pyc
+test2.py
+Pipfile.lock
+PeeringAlgorithmForStokes.py
