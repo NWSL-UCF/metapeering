@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from flask import make_response
 from flask_bootstrap import Bootstrap
 import re
 import subprocess
@@ -7,19 +8,34 @@ import json
 from app.forms import PeeringQueryForm
 from os import listdir
 from os.path import isfile, join
+from flask_s3 import FlaskS3
+import boto3 
+from app.config import S3_BUCKET, S3_KEY, S3_SECRET
 
+s3 = boto3.client(
+	's3',
+	aws_access_key_id=S3_KEY,
+	aws_secret_access_key=S3_SECRET)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'metapeering'
+app.config['FLASKS3_BUCKET_NAME'] = 'metapeering'
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 Bootstrap(app)
+# s3 = FlaskS3(app)
 
+@app.route('/files')
+def files():
+	s3_resource = boto3.resource('s3')
+	my_bucket = s3_resource.Bucket(S3_BUCKET)
+	s3.download_file(S3_BUCKET, 'automatedpeering/test.py','app/appdata/aws_v1_test.py')
+	return "Kya baat hai"
 
 @app.route('/', methods=['GET','POST'])
 def querry():
 	form = PeeringQueryForm()
 	if request.method == 'POST' and form.is_submitted():
 		return form_handler(request.form)
-		# return render_template(form_handler(request.form), form=form)
 	return render_template('submit.html', form=form)
 
 def form_handler(request):
@@ -70,16 +86,24 @@ def request_handler(data):
 	if(len(retScores.values()) == 0):
 		return 'Peering not Recommended at given threshold.'
 	
-	return "Peering Recommended!"
 
-	rc = call('mkdir result', shell=True)
-	rc = call('rm -r result/*', shell=True)
+	# return "Peering Recommended!"
+
+	rc = call('mkdir app/static', shell=True)
+	rc = call('rm -r app/static/*', shell=True)
 
 	for k,v in retScores.items():
-		rc = call('cp -R output/'+k+'/graph/willingness_sorted result/'+k, shell=True)
-	rc = call('tar -cvzf result.tar.gz result', shell=True)
-	output = subprocess.check_output('curl -F "file=@result.tar.gz" https://file.io', shell=True)
-	output = json.loads(output)
-	retVal = {}
-	retVal['Download Link'] = output['link']
-	return retVal
+		if k.split('_')[0] == data['asn1']:
+			s3_resource = boto3.resource('s3')
+			my_bucket = s3_resource.Bucket(S3_BUCKET)
+			
+			file_to_download = 'automatedpeering/output/'+k+'/graph/willingness_sorted/own_'+k+'.pdf'
+			
+			my_bucket.download_file(file_to_download, 'app/static/result_graph.pdf')
+
+			r = make_response(render_template('result.html'))
+			r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+			r.headers["Pragma"] = "no-cache"
+			r.headers["Expires"] = "0"
+			r.headers['Cache-Control'] = 'public, max-age=0'
+			return r
