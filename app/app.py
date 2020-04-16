@@ -10,12 +10,12 @@ from os import listdir
 from os.path import isfile, join
 from flask_s3 import FlaskS3
 import boto3 
-from app.config import S3_BUCKET, S3_KEY, S3_SECRET
+from app.config import S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 
 s3 = boto3.client(
 	's3',
-	aws_access_key_id=S3_KEY,
-	aws_secret_access_key=S3_SECRET)
+	aws_access_key_id=AWS_ACCESS_KEY_ID,
+	aws_secret_access_key=AWS_SECRET_ACCESS_KEY)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'metapeering'

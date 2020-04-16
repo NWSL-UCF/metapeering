@@ -1746,7 +1746,7 @@ if __name__ == '__main__':
 
     
 
-        # save_pop_locations()
+        save_pop_locations()
     
     '''
     This following is just for time-saving. Main code is in the 'else' block.
