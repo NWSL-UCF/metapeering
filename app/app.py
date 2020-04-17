@@ -12,6 +12,7 @@ from flask_s3 import FlaskS3
 import boto3 
 from app.config import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 from zipfile import ZipFile
+
 s3 = boto3.client(
 	's3',
 	aws_access_key_id=AWS_ACCESS_KEY_ID,
