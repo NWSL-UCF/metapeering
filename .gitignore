@@ -9,4 +9,3 @@ test2.py
 Pipfile.lock
 PeeringAlgorithmForStokes.py
 app/credentials.csv
-.env
