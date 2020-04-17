@@ -1,5 +1,7 @@
 output/
 result/
+AWS_Data/
+Convex_png/
 result.tar.gz
 test.py
 test.pyc
@@ -7,3 +9,4 @@ test2.py
 Pipfile.lock
 PeeringAlgorithmForStokes.py
 app/credentials.csv
+.env

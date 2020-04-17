@@ -2,5 +2,5 @@
 import os
 
 S3_BUCKET = os.environ.get("S3_BUCKET")
-S3_KEY = os.environ.get("S3_KEY")
-S3_SECRET = os.environ.get("S3_SECRET")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")

@@ -11,7 +11,7 @@ from os.path import isfile, join
 from flask_s3 import FlaskS3
 import boto3 
 from app.config import S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
-
+from zipfile import ZipFile
 s3 = boto3.client(
 	's3',
 	aws_access_key_id=AWS_ACCESS_KEY_ID,
@@ -97,11 +97,37 @@ def request_handler(data):
 			s3_resource = boto3.resource('s3')
 			my_bucket = s3_resource.Bucket(S3_BUCKET)
 			
-			file_to_download = 'automatedpeering/output/'+k+'/graph/willingness_sorted/own_'+k+'.pdf'
+			file_to_download1 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/own_'+k+'.pdf'
+			file_to_download2 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/diff_'+k+'.pdf'
+			file_to_download3 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/ratio_'+k+'.pdf'
+			file_to_download4 = 'automatedpeering/AWS_Data/'+k+'/graph/overlap.png'
 			
-			my_bucket.download_file(file_to_download, 'app/static/result_graph.pdf')
+			my_bucket.download_file(file_to_download1, 'app/static/own_graph.pdf')
+			my_bucket.download_file(file_to_download2, 'app/static/diff_graph.pdf')
+			my_bucket.download_file(file_to_download3, 'app/static/ratio_graph.pdf')
+			my_bucket.download_file(file_to_download4, 'app/static/overlap.png')
 
-			r = make_response(render_template('result.html'))
+
+			with ZipFile('results.zip', 'w') as zipObj:
+ 
+				zipObj.write('app/static/own_graph.pdf')
+				zipObj.write('app/static/diff_graph.pdf')
+				zipObj.write('app/static/ratio_graph.pdf')
+				zipObj.write('app/static/overlap.png')
+			
+			ppc_data = {}
+			with open('app/appdata/ppc_data.json') as f:
+				ppc_data = json.load(f)
+
+			ppc_data = ppc_data[k]
+			# content = {}
+			# for pair in ppc_data['data']:
+			# 	if pair['ID']==k:
+			# 		content[k]=pair
+			# 		break
+
+			r = make_response(render_template('result.html', ppc=ppc_data))
+
 			r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
 			r.headers["Pragma"] = "no-cache"
 			r.headers["Expires"] = "0"

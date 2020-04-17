@@ -1,10 +1,53 @@
+{% extends "layout.html" %}
+{% block html_attribs %} lang="en"{% endblock %}
+{% block title %}Peering Query Results{% endblock %}
+
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12-xs">
+				<h3>THIS IS THE DICTIONARY THAT WILL BE USED FOR MAKING THE TABLE.:</h3>
+				<p>{{ ppc }}</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<h3>OWN:</h3>
+		<embed src="/static/own_graph.pdf" type="application/pdf" width="100%" height="600px" />
+	</div>
+	<div>
+		<h3>DIFF:</h3>
+		<embed src="/static/diff_graph.pdf" type="application/pdf" width="100%" height="600px" />
+	</div>
+	<div>
+		<h3>RATIO</h3>
+		<embed src="/static/ratio_graph.pdf" type="application/pdf" width="100%" height="600px" />
+	</div>
+	<div>
+		<h3>OVERLAP</h3>
+		<img src="/static/overlap.png" alt="Overlap Graph" style="width:100%;height:600px;">
+	</div>
+
+{% endblock content %}
+
+
+
+<!-- 
+
+
+
 <!DOCTYPE html>
 <html>
 <body>
 
 <h2>Here are your results!</h2>
+<a href="/static/results.zip" download>Download Detailed Results</a>
 <a>
-	<embed src="/static/result_graph.pdf" type="application/pdf" width="100%" height="600px" />
+	<embed src="/static/own_graph.pdf" type="application/pdf" width="100%" height="600px" /><br>
+	<embed src="/static/diff_graph.pdf" type="application/pdf" width="100%" height="600px" /><br>
+	<embed src="/static/ratio_graph.pdf" type="application/pdf" width="100%" height="600px" /><br>
+	<img src="/static/overlap.png" alt="Overlap Graph" style="width:100%;height:600px;">
 </a>
 </body>
-</html>
+</html> -->
