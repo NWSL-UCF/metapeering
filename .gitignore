@@ -1,5 +1,7 @@
 output/
 result/
+AWS_Data/
+Convex_png/
 result.tar.gz
 test.py
 test.pyc
