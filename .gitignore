@@ -10,4 +10,3 @@ Pipfile.lock
 PeeringAlgorithmForStokes.py
 app/credentials.csv
 .env
-app/static/
