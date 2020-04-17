@@ -108,7 +108,7 @@ def request_handler(data):
 			my_bucket.download_file(file_to_download4, 'app/static/overlap.png')
 
 
-			with ZipFile('results.zip', 'w') as zipObj:
+			with ZipFile('app/static/results.zip', 'w' ) as zipObj:
  
 				zipObj.write('app/static/own_graph.pdf')
 				zipObj.write('app/static/diff_graph.pdf')
