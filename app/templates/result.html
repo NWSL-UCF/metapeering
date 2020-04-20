@@ -5,33 +5,92 @@
 
 {% block content %}
 	<div>
-		<a href="/static/results.zip" download>Download Detailed Results</a>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-12-xs">
-				<h3>THIS IS THE DICTIONARY THAT WILL BE USED FOR MAKING THE TABLE.:</h3>
-				<p>{{ ppc }}</p>
+		<div class="col-12-xs">
+			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h4>Peering possibility report:</h4>
+				<div class="btn-toolbar mb-2 mb-md-0">
+		        	<a href="/static/results.zip" download class="btn btn-sm btn-outline-primary">Download detailed report</a>
+		        </div>
 			</div>
+
+			<h5>ISP Overlap:</h5> 
+    		<div class="text-center">
+	    		<figure class="figure">
+				  	<img src="/static/overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
+				  	<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
+				</figure>
+			</div>
+
+			</br>
+			<h5>Acceptable Peering Contracts:</h5> 
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+			    	<a class="nav-link active" data-toggle="tab" href="#diff" >Difference</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#own">Own</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#ratio">Ratio</a>
+			  	</li>
+			  	<!--
+			  	<li class="nav-item dropdown">
+			    	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+			    	<div class="dropdown-menu">
+			      		<a class="dropdown-item" data-toggle="tab" href="#one">One</a>
+			      		<a class="dropdown-item" data-toggle="tab" href="#two">Two</a>
+			      		<a class="dropdown-item" data-toggle="tab" href="#three">Three</a>
+			    	</div>
+			  	</li>
+			  	-->
+			</ul>
+			
+			<div class="container-fluid">
+			  	<div class="tab-content">
+			  		{% for key, value in ppc.items() %}
+			    	<div role="tabpanel" class="tab-pane fade in active" id="{{ key }}">
+				    	</br>
+			    		<p>Suggested peering locations for top 3 Acceptable Peering Contracts: </p>
+				    	{% for apc_id in range(3) %}
+				    	<p>Acceptable Peering Contract: {{ apc_id+1 }}</p>
+				    	<table class="table">
+						  	<thead class="thead-light">
+						    	<tr>
+						    		<th scope="col">Name</th>
+						      		<th scope="col">PoP location</th>
+						      		<th scope="col">PeeringDB link</th>
+						    	</tr>
+						  	</thead>
+						  	<tbody>
+						  		{% for _item in value[(apc_id+1)|string] %}
+						    	<tr>
+						      		<th scope="row">{{ _item['ID'] }}</th>
+						      		<td>{{ _item['city'], _item['state'] }}</td>
+						      		<td><a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['ID']) }}">{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['ID']) }}</td>
+						    	</tr>
+						    	{% endfor %}
+						  	</tbody>
+						</table>
+				    	{% endfor %}
+			    		<div class="text-center">
+				    		<figure class="figure">
+							  	<img src="/static/{{ key }}_graph.pdf" class="figure-img img-fluid rounded" alt="Image for all APCs based on {{ key }}.">
+							  	<figcaption class="figure-caption text-center">All Acceptable Peering Contracts (sorted by willingness score)</figcaption>
+							</figure>
+						</div>
+			    		<!--
+			    		<p>All Acceptable Peering Contracts (sorted by willingness score)</p>
+						<img src="/static/{{ key }}_graph.pdf" class="rounded mx-auto d-block"/>
+						-->
+					</div>
+					{% endfor %}
+					
+			  	</div>
+			</div>				
+							
 		</div>
 	</div>
-	<div>
-		<h3>OWN:</h3>
-		<embed src="/static/own_graph.pdf" type="application/pdf" width="100%" height="600px" />
-	</div>
-	<div>
-		<h3>DIFF:</h3>
-		<embed src="/static/diff_graph.pdf" type="application/pdf" width="100%" height="600px" />
-	</div>
-	<div>
-		<h3>RATIO</h3>
-		<embed src="/static/ratio_graph.pdf" type="application/pdf" width="100%" height="600px" />
-	</div>
-	<div>
-		<h3>OVERLAP</h3>
-		<img src="/static/overlap.png" alt="Overlap Graph" style="width:100%;height:600px;">
-	</div>
-
+	
 {% endblock content %}
 
 
