@@ -41,11 +41,11 @@ def showResult():
 
 @app.route('/glossary')
 def glossary():
-	return render_template('glossary.html')
+	return render_template('glossary.html', title='Glossary')
 
 @app.route('/feedback')
 def feedback():
-	return render_template('feedback.html')
+	return render_template('feedback.html', title="Feedback")
 
 def form_handler(request):
 	data = {}
@@ -135,7 +135,7 @@ def request_handler(data):
 			# 		content[k]=pair
 			# 		break
 
-			r = make_response(render_template('result.html', ppc=ppc_data))
+			r = make_response(render_template('result.html', ppc=ppc_data, title='Peering possibility'))
 
 			r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
 			r.headers["Pragma"] = "no-cache"

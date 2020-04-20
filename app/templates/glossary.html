@@ -1,9 +1,47 @@
 {% extends "layout.html" %}
 
 {% block content %}
-	<ul class="list-group">
-		<li class="list-group-item"><b>ASN1</b> needs to be an integer, cannot be left empty.</li>
-		<li class="list-group-item"><b>ASN2</b> needs to be an integer, if left empty, will return a list of all ISPs peering is recommended with. If given a valid value, will show if peering is recommended.</li>
-		<li class="list-group-item"><b>Threshold</b> needs to be a decimal between 0.0 and 1.0, if left empty, will use the default value (0.5)</li>
-	</ul>
+	<div class="py-5">
+		<!--
+		<h4 class="my-0 text-center border-bottom">Glossary and How to</h4>
+		</br>
+		-->
+		<div class="card mb-3 shadow-sm">
+			<div class="card-header">
+				<h5 class="my-0 font-weight-normal">Glossary:</h5>
+			</div>
+			<div class="card-body">
+				<ul class="list-group"> 
+					<li class="list-group-item"><b>Possible Peering Contracts (PPCs)</b> lists all possible peering points where two ISPs can peer regardless of the in/out-bound traffic ratio.</li>
+					<li class="list-group-item"><b>Acceptable Peering Contracts (APCs)</b> sorts all PPCs according to the requester sorting preference and suggests the top three.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="card mb-3 shadow-sm">
+			<div class="card-header">
+				<h5 class="my-0 font-weight-normal">Acceptable Peering Contracts sorting criteria:</h5>
+			</div>
+			<div class="card-body">
+				<ul class="list-group">
+					<li class="list-group-item"><b>Difference</b> Minimizes the absolute difference between in/out-bound traffic for requester.</li>
+					<li class="list-group-item"><b>Own</b> Maximizes the requester ISP’s own traffic amount that it can offload, regardless of how much traffic it receives from the candidate.</li>
+					<li class="list-group-item"><b>Ratio</b> Choose peers with lower in/out-bound traffic ratio.</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="card mb-3 shadow-sm">
+			<div class="card-header">
+				<h5 class="my-0 font-weight-normal">Peering query input format:</h5>
+			</div>
+			<div class="card-body">
+					<ul class="list-group">
+					<li class="list-group-item"><b>ASN1</b> needs to be an integer, cannot be left empty.</li>
+					<li class="list-group-item"><b>ASN2</b> needs to be an integer, if left empty, will return a list of all ISPs peering is recommended with. If given a valid value, will show if peering is recommended.</li>
+					<li class="list-group-item"><b>Threshold</b> needs to be a decimal between 0.0 and 1.0, if left empty, will use the default value (0.5).</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 {% endblock content %}
