@@ -11,3 +11,4 @@ PeeringAlgorithmForStokes.py
 app/credentials.csv
 app/appdata/ppc_data1.json
 app/static
+.DS_Store
