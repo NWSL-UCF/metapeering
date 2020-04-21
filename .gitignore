@@ -9,3 +9,5 @@ test2.py
 Pipfile.lock
 PeeringAlgorithmForStokes.py
 app/credentials.csv
+app/static
+app/appdata/ppc_data1.json
