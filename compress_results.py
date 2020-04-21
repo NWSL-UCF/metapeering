@@ -9,11 +9,11 @@ from subprocess import call
 pop_list = dict()
 top_3_pops_details = {}
 
-with open('output/pop_list.json') as f:
+with open('output/pop_list_with_name.json') as f:
 	pop_list = json.load(f)
 
 for root, dirs, files in os.walk('output/'):
-	if 'algorithm_report.csv' in files and 0:
+	if 'algorithm_report.csv' in files:
 
 		isp_pair = root.split('/')[1]
 		isp1 = root.split('/')[1].split('_')[0]
@@ -55,25 +55,25 @@ for root, dirs, files in os.walk('output/'):
 		rc = call('cp -r '+os.path.join(root,'graph')+' AWS_Data/'+root.split('/')[1], shell=True)
 
 
-# with open('cut_this_to_AWS_data.json','w') as f:
-# 	json.dump(top_3_pops_details, f)
+with open('cut_this_to_AWS_data.json','w') as f:
+	json.dump(top_3_pops_details, f)
 
-for root, dirs, files in os.walk('Convex_png/'):
-	for file in files:
-		file_to_copy = os.path.join(root,file)
-		folder1 = os.path.join('AWS_Data/',file.strip('.png'))+'/graph/overlap.png'
-		folder2 = os.path.join('AWS_Data/',file.strip('.png').split('_')[1]+'_'+file.strip('.png').split('_')[0])+'/graph/overlap.png'
-		# print(folder1,folder2)
-		# print('cp '+file_to_copy+' '+ folder1)
-		rc = call('cp '+file_to_copy+ ' ' +folder1, shell=True)
+# for root, dirs, files in os.walk('Convex_png/'):
+# 	for file in files:
+# 		file_to_copy = os.path.join(root,file)
+# 		folder1 = os.path.join('AWS_Data/',file.strip('.png'))+'/graph/overlap.png'
+# 		folder2 = os.path.join('AWS_Data/',file.strip('.png').split('_')[1]+'_'+file.strip('.png').split('_')[0])+'/graph/overlap.png'
+# 		# print(folder1,folder2)
+# 		# print('cp '+file_to_copy+' '+ folder1)
+# 		rc = call('cp '+file_to_copy+ ' ' +folder1, shell=True)
 		
 
-		rc = call('cp '+file_to_copy+ ' ' + folder2, shell=True)
-		# print('cp '+file_to_copy+' '+ folder2)
+# 		rc = call('cp '+file_to_copy+ ' ' + folder2, shell=True)
+# 		# print('cp '+file_to_copy+' '+ folder2)
 			
-		# print('cp '+file_to_copy+' '+ folder1)
-		# print('cp '+file_to_copy+' '+ folder2)
-		# rc = call('cp -r '+os.path.join(root,'graph')+' AWS_Data/'+root.split('/')[1], shell=True)
+# 		# print('cp '+file_to_copy+' '+ folder1)
+# 		# print('cp '+file_to_copy+' '+ folder2)
+# 		# rc = call('cp -r '+os.path.join(root,'graph')+' AWS_Data/'+root.split('/')[1], shell=True)
 
 
 

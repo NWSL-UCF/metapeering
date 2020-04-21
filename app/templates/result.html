@@ -7,16 +7,20 @@
 	<div>
 		<div class="col-12-xs">
 			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-				<h4>Peering possibility report:</h4>
+				<h4>Peering possibility report: 
+					<h5>
+						{{requester[1]}}({{requester[0]}}) and {{candidate[1]}}({{candidate[0]}})
+					</h5>
+				</h4>
 				<div class="btn-toolbar mb-2 mb-md-0">
-		        	<a href="/static/results.zip" download class="btn btn-sm btn-outline-primary">Download detailed report</a>
+		        	<a href="/static/{{ requester[0]+'_'+candidate[0] }}/results.zip" download class="btn btn-sm btn-outline-primary">Download detailed report</a>
 		        </div>
 			</div>
 
 			<h5>ISP Overlap:</h5> 
     		<div class="text-center">
 	    		<figure class="figure">
-				  	<img src="/static/overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
+				  	<img src="/static/{{ requester[0]+'_'+candidate[0] }}/overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
 				  	<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
 				</figure>
 			</div>
@@ -70,9 +74,9 @@
 						  	<tbody>
 						  		{% for _item in value[(apc_id+1)|string] %}
 						    	<tr>
-						      		<th scope="row">{{ _item['ID'] }}</th>
-						      		<td>{{ _item['city'], _item['state'] }}</td>
-						      		<td><a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['ID']) }}">{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['ID']) }}</td>
+						      		<th scope="row">{{ _item['name'] }}</th>
+						      		<td>{{ _item['city']+', '+ _item['state'] }}</td>
+						      		<td><a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}">{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}</td>
 						    	</tr>
 						    	{% endfor %}
 						  	</tbody>
@@ -80,7 +84,7 @@
 				    	{% endfor %}
 			    		<div class="text-center">
 				    		<figure class="figure">
-							  	<img src="/static/{{ key }}_graph.pdf" class="figure-img img-fluid rounded" alt="Image for all APCs based on {{ key }}.">
+							  	<img src="/static/{{ requester[0]+'_'+candidate[0]+'/' }}{{ key }}_graph.pdf" class="figure-img img-fluid rounded" alt="Image for all APCs based on {{ key }}.">
 							  	<figcaption class="figure-caption text-center">All Acceptable Peering Contracts (sorted by willingness score)</figcaption>
 							</figure>
 						</div>

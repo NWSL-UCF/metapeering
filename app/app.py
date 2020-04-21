@@ -13,6 +13,32 @@ import boto3
 from app.config import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 from zipfile import ZipFile
 
+asn_name = {
+	20940: 'Akamai',
+	16509: 'Amazon',
+	11492: 'Cableone',
+	209: 'Centurylink',
+	7843: 'Charter',
+	174: 'Cogent',
+	23520: 'Columbus',
+	7922: 'Comcast',
+	22773: 'Cox',
+	62955: 'Ebay',
+	32934: 'Facebook',
+	15169: 'Google',
+	6939: 'He',
+	8075: 'Microsoft',
+	2906: 'Netflix',
+	2914: 'Ntt',
+	3491: 'Pccw',
+	1239: 'Sprint',
+	4181: 'Tds',
+	701: 'Verizon',
+	7029: 'Windstream',
+	6461: 'Zayo'
+}
+
+
 s3 = boto3.client(
 	's3',
 	aws_access_key_id=AWS_ACCESS_KEY_ID,
@@ -98,7 +124,7 @@ def request_handler(data):
 
 	# return "Peering Recommended!"
 
-	# rc = call('mkdir app/static', shell=True)
+	rc = call('mkdir app/static/'+data['asn1']+'_'+data['asn2'], shell=True)
 	# rc = call('rm -r app/static/*', shell=True)
 
 	for k,v in retScores.items():
@@ -111,18 +137,19 @@ def request_handler(data):
 			file_to_download3 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/ratio_'+k+'.pdf'
 			file_to_download4 = 'automatedpeering/AWS_Data/'+k+'/graph/overlap.png'
 			
-			my_bucket.download_file(file_to_download1, 'app/static/own_graph.pdf')
-			my_bucket.download_file(file_to_download2, 'app/static/diff_graph.pdf')
-			my_bucket.download_file(file_to_download3, 'app/static/ratio_graph.pdf')
-			my_bucket.download_file(file_to_download4, 'app/static/overlap.png')
+			resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
+			my_bucket.download_file(file_to_download1, resultFolder+'own_graph.pdf')
+			my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.pdf')
+			my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.pdf')
+			my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
 
 
-			with ZipFile('app/static/results.zip', 'w' ) as zipObj:
+			with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
  
-				zipObj.write('app/static/own_graph.pdf')
-				zipObj.write('app/static/diff_graph.pdf')
-				zipObj.write('app/static/ratio_graph.pdf')
-				zipObj.write('app/static/overlap.png')
+				zipObj.write(resultFolder+'own_graph.pdf')
+				zipObj.write(resultFolder+'diff_graph.pdf')
+				zipObj.write(resultFolder+'ratio_graph.pdf')
+				zipObj.write(resultFolder+'overlap.png')
 			
 			ppc_data = {}
 			with open('app/appdata/ppc_data.json') as f:
@@ -134,8 +161,10 @@ def request_handler(data):
 			# 	if pair['ID']==k:
 			# 		content[k]=pair
 			# 		break
-
-			r = make_response(render_template('result.html', ppc=ppc_data, title='Peering possibility'))
+			requesterISP = (data['asn1'],asn_name[int(data['asn1'])])
+			candidateISP = (data['asn2'],asn_name[int(data['asn2'])])
+			
+			r = make_response(render_template('result.html', ppc=ppc_data, title='Peering possibility', requester=requesterISP,candidate=candidateISP))
 
 			r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
 			r.headers["Pragma"] = "no-cache"
