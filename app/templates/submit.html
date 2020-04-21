@@ -19,15 +19,39 @@
    				{{ form.csrf_token() }}
    				<div class="row">
     				<div class="form-group col-md-6">
-     					{{ wtf.form_field(form.asn1, class='form-control') }}
+     					<!--{{ wtf.form_field(form.asn1, class='form-control')|safe }}-->
+     					<label>ASN1</label>
+     					{{ form.asn1(class='form-control')|safe }}
+     					</br>
+				    	{% if form.asn1.errors %}
+				            {% for error in form.asn1.errors %}
+					            <div class="alert alert-danger">{{ error }}</div>
+				            {% endfor %}
+			            {% endif %}
     				</div>
     				<div class="form-group col-md-6">
-     					{{ wtf.form_field(form.asn2, class='form-control') }}
+     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
+     					<label>ASN2</label>
+     					{{ form.asn2(class='form-control')|safe }}
+     					</br>
+				    	{% if form.asn2.errors %}
+				            {% for error in form.asn2.errors %}
+					            <div class="alert alert-danger">{{ error }}</div>
+				            {% endfor %}
+			            {% endif %}
     				</div>
-			    </div>
-				{{ wtf.form_field(form.threshold, class='form-control', 
+   			    </div>
+				<!--{{ wtf.form_field(form.threshold, class='form-control', 
+					placeholder='Peering threshold (0.1 to 1.0)') }}-->
+				<label>Threshold</label>
+				{{ form.threshold(class='form-control', 
 					placeholder='Peering threshold (0.1 to 1.0)') }}
-			    
+	    		</br>
+		    	{% if form.threshold.errors %}
+		            {% for error in form.threshold.errors %}
+			            <div class="alert alert-danger">{{ error }}</div>
+		            {% endfor %}
+			    {% endif %}
     			<button type="submit" class="btn btn-primary">Submit</button>
   			</form>		
   		</div>
