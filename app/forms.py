@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import IntegerField, SelectField, SubmitField
+from wtforms import IntegerField, DecimalField, SelectField, SubmitField, validators
 from app.customoptgroupselect import ExtendedSelectField
 
 class PeeringQueryForm(Form):
@@ -65,7 +65,25 @@ class PeeringQueryForm(Form):
 # 	asn1 = SelectField('ASN 1 (Your own ISP)', choices=options)
 # 	asn2 = SelectField('ASN 2 (Potential peer ISP)', choices=options)
 # 	asn2 = IntegerField('ASN 2')
-	asn1 = ExtendedSelectField('ASN 1', choices= [('', 'Select your own ISP')] + options_grouped_asn)
-	asn2 = ExtendedSelectField('ASN 2', choices= [('', 'Select potential peer ISP')] + options_grouped_asn)
-	threshold = IntegerField('Threshold')
+	asn1 = ExtendedSelectField('ASN 1', 
+							choices= [('-1', 'Select your own ISP')] + options_grouped_asn, coerce=int)
+	asn2 = ExtendedSelectField('ASN 2', 
+							choices= [('-1', 'Select potential peer ISP')] + options_grouped_asn, coerce=int)
+	threshold = DecimalField('Threshold',
+							[validators.NumberRange(min=0.1, max=1.0, message="Value must be between 0.1 and 1.0")])
 	submit = SubmitField('Submit')
+	
+	def validate(self):
+		if not Form.validate(self):
+			return False
+		asn1_val = int(self.asn1.data) 
+		asn2_val = int(self.asn2.data)
+		if asn1_val == -1:
+			self.asn1.errors.append("Please select ASN1.")
+		if asn2_val == -1:
+			self.asn1.errors.append("Please select ASN2.")
+		if asn1_val == asn2_val:
+			self.asn1.errors.append("ASN1 and ANS2 can not be same. Please choose different ASN1.")
+			self.asn2.errors.append("ASN1 and ANS2 can not be same. Please choose different ASN2.")
+			return False
+		return True

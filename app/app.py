@@ -29,7 +29,8 @@ Bootstrap(app)
 @app.route('/', methods=['GET','POST'])
 def querry():
 	form = PeeringQueryForm()
-	if request.method == 'POST' and form.is_submitted():
+	if request.method == 'POST' and form.validate_on_submit():
+# 	if request.method == 'POST' and form.is_submitted():
 		return form_handler(request.form)
 	return render_template('submit.html', form=form)
 
@@ -49,22 +50,27 @@ def feedback():
 
 def form_handler(request):
 	data = {}
-	if re.match(r"^[0-9]+$",request['asn1']):
-		data['asn1'] = request['asn1']
-	else:
-		return "ERROR: ASN1 value invalid. Value needs to be an integer."
-	if re.match(r"^[0-9]+$",request['asn2']):
-		if request['asn2'] == data['asn1']:
-			return "Error: Same ISP provided twice."
-		data['asn2'] = request['asn2']
-	elif request['asn2'] != '':
-		return "ERROR: ASN2 value invalid. Value needs to be an integer"
-	if re.match(r"^\d+\.?\d+$",request['threshold']) and float(request['threshold']) <= 1.0 and float(request['threshold']) >= 0.0:
-		data['threshold'] = request['threshold']
-	elif request['threshold'] == '':
-		data['threshold'] = 0.5
-	else:
-		return "ERROR: Threshold value invalid. (Value needs to be decimal between 0.0 and 1.0)"
+	data['asn1'] = request['asn1']
+	data['asn2'] = request['asn2']
+	data['threshold'] = request['threshold']
+	
+# 	data = {}
+# 	if re.match(r"^[0-9]+$",request['asn1']):
+# 		data['asn1'] = request['asn1']
+# 	else:
+# 		return "ERROR: ASN1 value invalid. Value needs to be an integer."
+# 	if re.match(r"^[0-9]+$",request['asn2']):
+# 		if request['asn2'] == data['asn1']:
+# 			return "Error: Same ISP provided twice."
+# 		data['asn2'] = request['asn2']
+# 	elif request['asn2'] != '':
+# 		return "ERROR: ASN2 value invalid. Value needs to be an integer"
+# 	if re.match(r"^\d+\.?\d+$",request['threshold']) and float(request['threshold']) <= 1.0 and float(request['threshold']) >= 0.0:
+# 		data['threshold'] = request['threshold']
+# 	elif request['threshold'] == '':
+# 		data['threshold'] = 0.5
+# 	else:
+# 		return "ERROR: Threshold value invalid. (Value needs to be decimal between 0.0 and 1.0)"
 
 	return request_handler(data)
 
