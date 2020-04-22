@@ -62,9 +62,6 @@ class PeeringQueryForm(Form):
 				)
 			]
 	
-# 	asn1 = SelectField('ASN 1 (Your own ISP)', choices=options)
-# 	asn2 = SelectField('ASN 2 (Potential peer ISP)', choices=options)
-# 	asn2 = IntegerField('ASN 2')
 	asn1 = ExtendedSelectField('ASN 1', 
 							choices= [('-1', 'Select your own ISP')] + options_grouped_asn, coerce=int)
 	asn2 = ExtendedSelectField('ASN 2', 

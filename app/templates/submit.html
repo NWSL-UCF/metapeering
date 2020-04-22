@@ -21,6 +21,7 @@
     				<div class="form-group col-md-6">
      					<!--{{ wtf.form_field(form.asn1, class='form-control')|safe }}-->
      					<label>ASN1</label>
+						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ISP ASN will be automatically selected">?</span>
      					{{ form.asn1(class='form-control')|safe }}
      					</br>
 				    	{% if form.asn1.errors %}
@@ -32,6 +33,7 @@
     				<div class="form-group col-md-6">
      					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
      					<label>ASN2</label>
+						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ISP ASN will be automatically selected">?</span>
      					{{ form.asn2(class='form-control')|safe }}
      					</br>
 				    	{% if form.asn2.errors %}
@@ -43,7 +45,8 @@
    			    </div>
 				<!--{{ wtf.form_field(form.threshold, class='form-control', 
 					placeholder='Peering threshold (0.1 to 1.0)') }}-->
-				<label>Threshold</label>
+				<label>Threshold</label> 
+				<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Value to filter the best APCs">?</span>
 				{{ form.threshold(class='form-control', 
 					placeholder='Peering threshold (0.1 to 1.0)') }}
 	    		</br>
