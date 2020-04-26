@@ -82,6 +82,63 @@ def form_handler(request):
 	return request_handler(data)
 
 def request_handler(data):
+	return request_handler_v2(data)
+
+def request_handler_v2(data):
+	requesterISP = (data['asn1'],asn_name[int(data['asn1'])])
+	candidateISP = (data['asn2'],asn_name[int(data['asn2'])])
+	ppc_data = None
+	threshold_too_high = False
+	asn1_asn2 = data['asn1']+'_'+data['asn2']
+
+	with open('app/appdata/felicity.json') as f:
+		felicity_scores = json.load(f)
+		try:
+			asn1_felicity_score = float(felicity_scores[asn1_asn2]['own'])
+			if asn1_felicity_score >= 0.0 and asn1_felicity_score < float(data['threshold']):
+				threshold_too_high = True
+		except Exception as e:
+			pass
+
+	"""
+	Peering Recommended, but first, check if threshold not too high.
+	Otherwise, Not Recommended.
+	"""
+	if not threshold_too_high:
+		rc = call('mkdir app/static/'+asn1_asn2, shell=True)
+		s3_resource = boto3.resource('s3')
+		my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
+		
+		file_to_download1 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/willingness_sorted/own_'+asn1_asn2+'.pdf'
+		file_to_download2 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/willingness_sorted/diff_'+asn1_asn2+'.pdf'
+		file_to_download3 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/willingness_sorted/ratio_'+asn1_asn2+'.pdf'
+		file_to_download4 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/overlap.png'
+		
+		resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
+		my_bucket.download_file(file_to_download1, resultFolder+'own_graph.pdf')
+		my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.pdf')
+		my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.pdf')
+		my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
+
+		with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
+			zipObj.write(resultFolder+'own_graph.pdf')
+			zipObj.write(resultFolder+'diff_graph.pdf')
+			zipObj.write(resultFolder+'ratio_graph.pdf')
+			zipObj.write(resultFolder+'overlap.png')
+		
+		with open('app/appdata/ppc_data.json') as f:
+			ppc_data = json.load(f)[asn1_asn2]
+			
+	r = make_response(render_template('result.html', low_current_threshold=threshold_too_high, ppc=ppc_data, title='Peering possibility', requester=requesterISP,candidate=candidateISP))
+
+	r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+	r.headers["Pragma"] = "no-cache"
+	r.headers["Expires"] = "0"
+	r.headers['Cache-Control'] = 'public, max-age=0'
+	return r
+
+
+def request_handler_v1(data):
 	if len(data.values()) == 2:
 		retScores = {}
 		with open('app/appdata/felicity.json') as f:
