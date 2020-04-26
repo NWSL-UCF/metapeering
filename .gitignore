@@ -12,3 +12,10 @@ app/credentials.csv
 app/appdata/ppc_data1.json
 app/static
 .DS_Store
+.env
+AWS_Data_new/
+deactivate/
+metapeering/
+__pychache__/
+app/__pychache__
+*.pyc
