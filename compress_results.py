@@ -20,6 +20,7 @@ for root, dirs, files in os.walk('output/'):
 		sorting_strategy = root.split('/')[-1]
 
 		df1 = pd.read_csv(os.path.join(root,'algorithm_report.csv'), delimiter='\t')
+		total_APCs = len(df1)
 		# try:
 		top_3_pop_indexes= [int(df1.head(3)['Index in PPC list'][i]) for i in range(min(3,len(df1)))]
 		# except:
@@ -39,6 +40,7 @@ for root, dirs, files in os.walk('output/'):
 				if(pop['ID'] in lst):
 					temp_lst.append(pop)
 			temp_data[i+1] = copy.deepcopy(temp_lst)
+		temp_data['total_apc'] = total_APCs
 
 
 		try:

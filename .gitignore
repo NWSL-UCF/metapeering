@@ -19,3 +19,8 @@ metapeering/
 __pychache__/
 app/__pychache__
 *.pyc
+app/appdata/ppc_data_old.json
+cut_this_to_AWS_data.json
+willingness.json
+felicity.json
+affinity.json
