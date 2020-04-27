@@ -107,21 +107,22 @@ def request_handler_v2(data):
 				s3_resource = boto3.resource('s3')
 				my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
 				
-				file_to_download1 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/willingness_sorted/own_'+asn1_asn2+'.pdf'
-				file_to_download2 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/willingness_sorted/diff_'+asn1_asn2+'.pdf'
-				file_to_download3 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/willingness_sorted/ratio_'+asn1_asn2+'.pdf'
-				file_to_download4 = 'automatedpeering/AWS_Data/'+asn1_asn2+'/graph/overlap.png'
-				
+				aws_root = 'automatedpeering/AWS_Data_new/'
+				file_to_download1 = aws_root+asn1_asn2+'/own_'+asn1_asn2+'.png'
+				file_to_download2 = aws_root+asn1_asn2+'/diff_'+asn1_asn2+'.png'
+				file_to_download3 = aws_root+asn1_asn2+'/ratio_'+asn1_asn2+'.png'
+				file_to_download4 = aws_root+asn1_asn2+'/overlap.png'
+				print(file_to_download1)
 				resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
-				my_bucket.download_file(file_to_download1, resultFolder+'own_graph.pdf')
-				my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.pdf')
-				my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.pdf')
+				my_bucket.download_file(file_to_download1, resultFolder+'own_graph.png')
+				my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.png')
+				my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.png')
 				my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
 		
 				with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
-					zipObj.write(resultFolder+'own_graph.pdf')
-					zipObj.write(resultFolder+'diff_graph.pdf')
-					zipObj.write(resultFolder+'ratio_graph.pdf')
+					zipObj.write(resultFolder+'own_graph.png')
+					zipObj.write(resultFolder+'diff_graph.png')
+					zipObj.write(resultFolder+'ratio_graph.png')
 					zipObj.write(resultFolder+'overlap.png')
 				
 				with open('app/appdata/ppc_data.json') as f:
@@ -176,23 +177,23 @@ def request_handler_v1(data):
 			s3_resource = boto3.resource('s3')
 			my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
 			
-			file_to_download1 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/own_'+k+'.pdf'
-			file_to_download2 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/diff_'+k+'.pdf'
-			file_to_download3 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/ratio_'+k+'.pdf'
+			file_to_download1 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/own_'+k+'.png'
+			file_to_download2 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/diff_'+k+'.png'
+			file_to_download3 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/ratio_'+k+'.png'
 			file_to_download4 = 'automatedpeering/AWS_Data/'+k+'/graph/overlap.png'
 			
 			resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
-			my_bucket.download_file(file_to_download1, resultFolder+'own_graph.pdf')
-			my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.pdf')
-			my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.pdf')
+			my_bucket.download_file(file_to_download1, resultFolder+'own_graph.png')
+			my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.png')
+			my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.png')
 			my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
 
 
 			with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
  
-				zipObj.write(resultFolder+'own_graph.pdf')
-				zipObj.write(resultFolder+'diff_graph.pdf')
-				zipObj.write(resultFolder+'ratio_graph.pdf')
+				zipObj.write(resultFolder+'own_graph.png')
+				zipObj.write(resultFolder+'diff_graph.png')
+				zipObj.write(resultFolder+'ratio_graph.png')
 				zipObj.write(resultFolder+'overlap.png')
 			
 			ppc_data = {}

@@ -2,6 +2,7 @@ output/
 result/
 AWS_Data/
 Convex_png/
+Concave_png/
 result.tar.gz
 test.py
 test.pyc
@@ -24,3 +25,4 @@ cut_this_to_AWS_data.json
 willingness.json
 felicity.json
 affinity.json
+aws_modify_directories.py
