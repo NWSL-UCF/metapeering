@@ -107,9 +107,6 @@ def peering_query_form_handler(request):
 	return request_handler(data)
 
 def request_handler(data):
-	return request_handler_v2(data)
-
-def request_handler_v2(data):
 	requesterISP = (data['asn1'],asn_name[int(data['asn1'])])
 	candidateISP = (data['asn2'],asn_name[int(data['asn2'])])
 	ppc_data = None
@@ -132,7 +129,7 @@ def request_handler_v2(data):
 				s3_resource = boto3.resource('s3')
 				my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
 				
-				aws_root = 'automatedpeering/AWS_Data_new/'
+				aws_root = 'automatedpeering/AWS_Data/'
 				file_to_download1 = aws_root+asn1_asn2+'/own_'+asn1_asn2+'.png'
 				file_to_download2 = aws_root+asn1_asn2+'/diff_'+asn1_asn2+'.png'
 				file_to_download3 = aws_root+asn1_asn2+'/ratio_'+asn1_asn2+'.png'
@@ -162,82 +159,3 @@ def request_handler_v2(data):
 	r.headers["Expires"] = "0"
 	r.headers['Cache-Control'] = 'public, max-age=0'
 	return r
-
-
-def request_handler_v1(data):
-	if len(data.values()) == 2:
-		retScores = {}
-		with open('app/appdata/felicity.json') as f:
-			scores = json.load(f)
-			for k,v in scores.items():
-				if data['asn1'] in k:
-					retScores[k] = v['own']
-	else:
-		retScores = {}
-		with open('app/appdata/felicity.json') as f:
-			scores = json.load(f)
-			retScores[data['asn1']+'_'+data['asn2']] = scores[data['asn1']+'_'+data['asn2']]['own']
-			retScores[data['asn2']+'_'+data['asn1']] = scores[data['asn2']+'_'+data['asn1']]['own']
-
-	rm_keys = []
-	for k,v in retScores.items():
-		if float(v) < float(data['threshold']):
-			rm_keys.append(k)
-			rm_keys.append(k.split('_')[1]+'_'+k.split('_')[0])
-	rm_keys = list(set(rm_keys))
-	[retScores.pop(key) for key in rm_keys]
-
-	# files = listdir('output/')
-	if(len(retScores.values()) == 0):
-		return 'Peering not Recommended at given threshold.'
-	
-
-	# return "Peering Recommended!"
-
-	rc = call('mkdir app/static/'+data['asn1']+'_'+data['asn2'], shell=True)
-	# rc = call('rm -r app/static/*', shell=True)
-
-	for k,v in retScores.items():
-		if k.split('_')[0] == data['asn1']:
-			s3_resource = boto3.resource('s3')
-			my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
-			
-			file_to_download1 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/own_'+k+'.png'
-			file_to_download2 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/diff_'+k+'.png'
-			file_to_download3 = 'automatedpeering/AWS_Data/'+k+'/graph/willingness_sorted/ratio_'+k+'.png'
-			file_to_download4 = 'automatedpeering/AWS_Data/'+k+'/graph/overlap.png'
-			
-			resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
-			my_bucket.download_file(file_to_download1, resultFolder+'own_graph.png')
-			my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.png')
-			my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.png')
-			my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
-
-
-			with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
- 
-				zipObj.write(resultFolder+'own_graph.png')
-				zipObj.write(resultFolder+'diff_graph.png')
-				zipObj.write(resultFolder+'ratio_graph.png')
-				zipObj.write(resultFolder+'overlap.png')
-			
-			ppc_data = {}
-			with open('app/appdata/ppc_data.json') as f:
-				ppc_data = json.load(f)
-
-			ppc_data = ppc_data[k]
-			# content = {}
-			# for pair in ppc_data['data']:
-			# 	if pair['ID']==k:
-			# 		content[k]=pair
-			# 		break
-			requesterISP = (data['asn1'],asn_name[int(data['asn1'])])
-			candidateISP = (data['asn2'],asn_name[int(data['asn2'])])
-			
-			r = make_response(render_template('result.html', ppc=ppc_data, title='Peering possibility', requester=requesterISP,candidate=candidateISP))
-
-			r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-			r.headers["Pragma"] = "no-cache"
-			r.headers["Expires"] = "0"
-			r.headers['Cache-Control'] = 'public, max-age=0'
-			return r

@@ -20,6 +20,7 @@ for root, dirs, files in os.walk('output/'):
 		sorting_strategy = root.split('/')[-1]
 
 		df1 = pd.read_csv(os.path.join(root,'algorithm_report.csv'), delimiter='\t')
+		total_APC = len(df1)
 		# try:
 		top_3_pop_indexes= [int(df1.head(3)['Index in PPC list'][i]) for i in range(min(3,len(df1)))]
 		# except:
@@ -39,6 +40,7 @@ for root, dirs, files in os.walk('output/'):
 				if(pop['ID'] in lst):
 					temp_lst.append(pop)
 			temp_data[i+1] = copy.deepcopy(temp_lst)
+		temp_data['total_apc'] = total_APC
 
 
 		try:
@@ -46,26 +48,29 @@ for root, dirs, files in os.walk('output/'):
 		except:
 			top_3_pops_details[isp_pair] = {}
 			top_3_pops_details[isp_pair][sorting_strategy] = temp_data
-		print (top_3_pop_indexes)
-		break
+		# break
 
 
 	if 'willingness_sorted' in dirs:
+		isp_pair = root.split('/')[1]
+		# print('sudo mkdir /AWS_Data/'+isp_pair)
+		call('sudo mkdir AWS_Data/'+isp_pair, shell=True)
 		for root1, dirs1, files1, in os.walk(os.path.join(root,'willingness_sorted')):
 			for f in files1:
-				rc = call('cp -r '+os.path.join(root1,f)+' AWS_Data_new/'+root.split('/')[1], shell=True)
+				# print('cp '+os.path.join(root1,f)+' AWS_Data/'+root.split('/')[1]+'/'+f)
+				rc = call('sudo cp '+os.path.join(root1,f)+' AWS_Data/'+root.split('/')[1]+'/'+f, shell=True)
 
 
-with open('cut_this_to_AWS_data_new.json','w') as f:
+with open('cut_this_to_AWS_data.json','w') as f:
 	json.dump(top_3_pops_details, f)
 
 for root, dirs, files in os.walk('Concave_png/'):
 	for file in files:
 		file_to_copy = os.path.join(root,file)
-		folder1 = os.path.join('AWS_Data_new/',file.strip('.png'))+'/overlap.png'
-		folder2 = os.path.join('AWS_Data_new/',file.strip('.png').split('_')[1]+'_'+file.strip('.png').split('_')[0])+'/overlap.png'
-		rc = call('cp '+file_to_copy+ ' ' +folder1, shell=True)
-		rc = call('cp '+file_to_copy+ ' ' + folder2, shell=True)
+		folder1 = os.path.join('AWS_Data/',file.strip('.png'))+'/overlap.png'
+		folder2 = os.path.join('AWS_Data/',file.strip('.png').split('_')[1]+'_'+file.strip('.png').split('_')[0])+'/overlap.png'
+		rc = call('sudo cp '+file_to_copy+ ' ' +folder1, shell=True)
+		rc = call('sudo cp '+file_to_copy+ ' ' + folder2, shell=True)
 
 
 

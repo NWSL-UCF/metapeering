@@ -1,7 +1,5 @@
 output/
 result/
-AWS_Data/
-AWS_Data_new/
 Convex_png/
 Concave_png/
 result.tar.gz
@@ -19,3 +17,5 @@ __pycache__/
 compress_results.py
 .env
 cut_this_to_AWS_data_new.json
+AWS_Data/
+cut_this_to_AWS_data.json
