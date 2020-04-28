@@ -46,34 +46,26 @@ for root, dirs, files in os.walk('output/'):
 		except:
 			top_3_pops_details[isp_pair] = {}
 			top_3_pops_details[isp_pair][sorting_strategy] = temp_data
-		# print (top_3_pop_indexes)
-		# break
+		print (top_3_pop_indexes)
+		break
 
 
-	if 'graph' in dirs and 0:
-		rc = call('mkdir AWS_Data/'+root.split('/')[1], shell=True)
-		rc = call('cp -r '+os.path.join(root,'graph')+' AWS_Data/'+root.split('/')[1], shell=True)
+	if 'willingness_sorted' in dirs:
+		for root1, dirs1, files1, in os.walk(os.path.join(root,'willingness_sorted')):
+			for f in files1:
+				rc = call('cp -r '+os.path.join(root1,f)+' AWS_Data_new/'+root.split('/')[1], shell=True)
 
 
-with open('cut_this_to_AWS_data.json','w') as f:
+with open('cut_this_to_AWS_data_new.json','w') as f:
 	json.dump(top_3_pops_details, f)
 
-# for root, dirs, files in os.walk('Convex_png/'):
-# 	for file in files:
-# 		file_to_copy = os.path.join(root,file)
-# 		folder1 = os.path.join('AWS_Data/',file.strip('.png'))+'/graph/overlap.png'
-# 		folder2 = os.path.join('AWS_Data/',file.strip('.png').split('_')[1]+'_'+file.strip('.png').split('_')[0])+'/graph/overlap.png'
-# 		# print(folder1,folder2)
-# 		# print('cp '+file_to_copy+' '+ folder1)
-# 		rc = call('cp '+file_to_copy+ ' ' +folder1, shell=True)
-		
-
-# 		rc = call('cp '+file_to_copy+ ' ' + folder2, shell=True)
-# 		# print('cp '+file_to_copy+' '+ folder2)
-			
-# 		# print('cp '+file_to_copy+' '+ folder1)
-# 		# print('cp '+file_to_copy+' '+ folder2)
-# 		# rc = call('cp -r '+os.path.join(root,'graph')+' AWS_Data/'+root.split('/')[1], shell=True)
+for root, dirs, files in os.walk('Concave_png/'):
+	for file in files:
+		file_to_copy = os.path.join(root,file)
+		folder1 = os.path.join('AWS_Data_new/',file.strip('.png'))+'/overlap.png'
+		folder2 = os.path.join('AWS_Data_new/',file.strip('.png').split('_')[1]+'_'+file.strip('.png').split('_')[0])+'/overlap.png'
+		rc = call('cp '+file_to_copy+ ' ' +folder1, shell=True)
+		rc = call('cp '+file_to_copy+ ' ' + folder2, shell=True)
 
 
 
