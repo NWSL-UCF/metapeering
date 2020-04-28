@@ -1,134 +1,108 @@
 {% extends "layout.html" %}
 {% block html_attribs %} lang="en"{% endblock %}
-{% block title %}Peering Query Results{% endblock %}
-
 
 {% block content %}
-	<div>
-		<div class="col-12-xs">
-			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-				<h4>
-					Peering possibility report for:
-				</h4>
-				<h5>
-					{{requester[1]}}({{requester[0]}}) and {{candidate[1]}}({{candidate[0]}})
-				</h5>
-				{% if ppc is not none %}
-					<div class="btn-toolbar mb-2 mb-md-0">
-			        	<a href="/static/{{ requester[0]+'_'+candidate[0] }}/results.zip" download class="btn btn-sm btn-outline-primary">Download detailed report</a>
-			        </div>
-		        {% endif %}
+	<div class="col-12-xs">
+		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+			<h4>
+				Peering possibility report for:
+			</h4>
+			<h5>
+				{{requester[1]}}({{requester[0]}}) and {{candidate[1]}}({{candidate[0]}})
+			</h5>
+			{% if ppc is not none %}
+				<div class="btn-toolbar mb-2 mb-md-0">
+		        	<a href="/static/{{ requester[0]+'_'+candidate[0] }}/results.zip" download class="btn btn-sm btn-outline-primary">Download detailed report</a>
+		        </div>
+	        {% endif %}
+		</div>
+
+		{% if ppc is not none %}
+			<h5>ISP Overlap:</h5> 
+    		<div class="text-center">
+	    		<figure class="figure">
+				  	<img src="/static/{{ requester[0]+'_'+candidate[0] }}/overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
+				  	<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
+				</figure>
 			</div>
 
-			{% if ppc is not none %}
-				<h5>ISP Overlap:</h5> 
-	    		<div class="text-center">
-		    		<figure class="figure">
-					  	<img src="/static/{{ requester[0]+'_'+candidate[0] }}/overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
-					  	<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
-					</figure>
-				</div>
-	
-				</br>
-				<h5>Acceptable Peering Contracts:</h5> 
-				<ul class="nav nav-tabs">
-					<li class="nav-item">
-				    	<a class="nav-link active" data-toggle="tab" href="#diff">Difference</a>
-				  	</li>
-				  	<li class="nav-item">
-				    	<a class="nav-link" data-toggle="tab" href="#own">Own</a>
-				  	</li>
-				  	<li class="nav-item">
-				    	<a class="nav-link" data-toggle="tab" href="#ratio">Ratio</a>
-				  	</li>
-				</ul>
-				
-				<div class="container-fluid">
-				  	<div class="tab-content">
-				  		{% for key, value in ppc.items() %}
-						{% if key=='diff' %}
-						<div role="tabpanel" class="tab-pane active" id="{{ key }}">
-						{% else %}
-						<div role="tabpanel" class="tab-pane" id="{{ key }}">
-						{% endif %}
-				    	<!-- <div role="tabpanel" class="tab-pane fade in active" id="{{ key }}"> -->
-					    	</br>
-				    		<!-- <p>Suggested peering locations for top {{ value|length }} Acceptable Peering Contracts out of total {{ value|length }} Possible Peering Contracts: </p>-->
-				    		<p>Suggested peering locations for top {{ value|length }} Acceptable Peering Contracts: </p>
-					    	{% for apc_id in range(value|length) %}
-					    	<p>Acceptable Peering Contract: {{ apc_id+1 }}</p>
-					    	<table class="table">
-							  	<thead class="thead-light">
-							    	<tr>
-							    		<th scope="col">Name</th>
-							      		<th scope="col">PoP location</th>
-							      		<th scope="col">PeeringDB link</th>
-							    	</tr>
-							  	</thead>
-							  	<tbody>
-							  		{% for _item in value[(apc_id+1)|string] %}
-							    	<tr>
-							      		<th scope="row">{{ _item['name'] }}</th>
-							      		<td>{{ _item['city']+', '+ _item['state'] }}</td>
-							      		<td><a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}">{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}</td>
-							    	</tr>
-							    	{% endfor %}
-							  	</tbody>
-							</table>
-					    	{% endfor %}
-				    		<div class="text-center">
-					    		<figure class="figure">
-								  	<img src="/static/{{ requester[0]+'_'+candidate[0]+'/' }}{{ key }}_graph.pdf" class="figure-img img-fluid rounded" alt="Image for all APCs based on {{ key }}.">
-								  	<figcaption class="figure-caption text-center">All Acceptable Peering Contracts (sorted by willingness score)</figcaption>
-								</figure>
-							</div>
-				    		<!--
-				    		<p>All Acceptable Peering Contracts (sorted by willingness score)</p>
-							<img src="/static/{{ key }}_graph.pdf" class="rounded mx-auto d-block"/>
-							-->
+			</br>
+			<h5>Acceptable Peering Contracts:</h5> 
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+			    	<a class="nav-link active" data-toggle="tab" href="#diff">Difference</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#own">Own</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#ratio">Ratio</a>
+			  	</li>
+			</ul>
+			
+			<div class="container-fluid">
+			  	<div class="tab-content">
+			  		{% for key, value in ppc.items() %}
+					{% if key=='diff' %}
+					<div role="tabpanel" class="tab-pane active" id="{{ key }}">
+					{% else %}
+					<div role="tabpanel" class="tab-pane" id="{{ key }}">
+					{% endif %}
+			    	<!-- <div role="tabpanel" class="tab-pane fade in active" id="{{ key }}"> -->
+				    	</br>
+			    		<!-- <p>Suggested peering locations for top {{ value|length }} Acceptable Peering Contracts out of total {{ value|length }} Possible Peering Contracts: </p>-->
+			    		<p>Suggested peering locations for top {{ value|length }} Acceptable Peering Contracts: </p>
+				    	{% for apc_id in range(value|length) %}
+				    	<p>Acceptable Peering Contract: {{ apc_id+1 }}</p>
+				    	<table class="table">
+						  	<thead class="thead-light">
+						    	<tr>
+						    		<th scope="col">Name</th>
+						      		<th scope="col">PoP location</th>
+						      		<th scope="col">PeeringDB link</th>
+						    	</tr>
+						  	</thead>
+						  	<tbody>
+						  		{% for _item in value[(apc_id+1)|string] %}
+						    	<tr>
+						      		<th scope="row">{{ _item['name'] }}</th>
+						      		<td>{{ _item['city']+', '+ _item['state'] }}</td>
+						      		<td><a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}">{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}</td>
+						    	</tr>
+						    	{% endfor %}
+						  	</tbody>
+						</table>
+				    	{% endfor %}
+			    		<div class="text-center">
+				    		<figure class="figure">
+							  	<img src="/static/{{ requester[0]+'_'+candidate[0]+'/' }}{{ key }}_graph.pdf" class="figure-img img-fluid rounded" alt="Image for all APCs based on {{ key }}.">
+							  	<figcaption class="figure-caption text-center">All Acceptable Peering Contracts (sorted by willingness score)</figcaption>
+							</figure>
 						</div>
-						{% endfor %}	
-	
-				  	</div>
-				</div>	
-			{% elif low_current_threshold is sameas true %}
-				<div class="py-5 text-center">
-					<div class="alert alert-info">
-						<h5>Threshold too high!</h5>
-			  			Peering is not recommended at current threshold. Try lowering threshold value.			  			
+			    		<!--
+			    		<p>All Acceptable Peering Contracts (sorted by willingness score)</p>
+						<img src="/static/{{ key }}_graph.pdf" class="rounded mx-auto d-block"/>
+						-->
 					</div>
-				</div>			
-			{% else %}
-				<div class="py-5 text-center">
-					<div class="alert alert-danger">
-						<h5>Attention!</h5>
-			  			Peering is not recommended for this ISP pair.
-					</div>
+					{% endfor %}	
+
+			  	</div>
+			</div>	
+		{% elif low_current_threshold is sameas true %}
+			<div class="py-5 text-center">
+				<div class="alert alert-info">
+					<h5>Threshold too high!</h5>
+		  			Peering is not recommended at current threshold. Try lowering threshold value.			  			
 				</div>
-			{% endif %}
-										
-		</div>
+			</div>			
+		{% else %}
+			<div class="py-5 text-center">
+				<div class="alert alert-danger">
+					<h5>Attention!</h5>
+		  			Peering is not recommended for this ISP pair.
+				</div>
+			</div>
+		{% endif %}		
 	</div>
 	
 {% endblock content %}
-
-
-
-<!-- 
-
-
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>Here are your results!</h2>
-<a href="/static/results.zip" download>Download Detailed Results</a>
-<a>
-	<embed src="/static/own_graph.pdf" type="application/pdf" width="100%" height="600px" /><br>
-	<embed src="/static/diff_graph.pdf" type="application/pdf" width="100%" height="600px" /><br>
-	<embed src="/static/ratio_graph.pdf" type="application/pdf" width="100%" height="600px" /><br>
-	<img src="/static/overlap.png" alt="Overlap Graph" style="width:100%;height:600px;">
-</a>
-</body>
-</html> -->

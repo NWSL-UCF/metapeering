@@ -1,8 +1,8 @@
-from flask_wtf import Form
-from wtforms import IntegerField, DecimalField, SelectField, SubmitField, validators
+from flask_wtf import Form, FlaskForm
+from wtforms import IntegerField, DecimalField, SelectField, StringField, TextAreaField, SubmitField, validators
 from app.customoptgroupselect import ExtendedSelectField
 
-class PeeringQueryForm(Form):
+class PeeringQueryForm(FlaskForm):
 	options = [
 				(20940, 'akamai'), 
 				(16509, 'amazon'), 
@@ -84,3 +84,12 @@ class PeeringQueryForm(Form):
 			self.asn2.errors.append("ASN1 and ANS2 can not be same. Please choose different ASN2.")
 			return False
 		return True
+	
+
+class ContactUsForm(FlaskForm):
+	name = StringField('Name', [validators.DataRequired()])
+	email = StringField('Email', [validators.Email(message='Not a valid email address.'),
+        							validators.DataRequired()])
+	body = TextAreaField('Message', [validators.DataRequired(),
+									validators.Length(min=4, message='Your message is too short')])
+	submit = SubmitField('Submit')

@@ -5,13 +5,17 @@ import re
 import subprocess
 from subprocess import call
 import json
-from app.forms import PeeringQueryForm
+from app.forms import PeeringQueryForm, ContactUsForm
 from os import listdir
 from os.path import isfile, join
 from flask_s3 import FlaskS3
 import boto3 
-from app.config import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+from app.config import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, DATABASE_URI
 from zipfile import ZipFile
+
+from .commands import create_tables
+from .extension import db
+from .models import Feedback
 
 asn_name = {
 	20940: 'Akamai',
@@ -51,29 +55,50 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 Bootstrap(app)
 # s3 = FlaskS3(app)
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
+
+db.init_app(app)
+app.cli.add_command(create_tables)
+
 
 @app.route('/', methods=['GET','POST'])
 def querry():
 	form = PeeringQueryForm()
 	if request.method == 'POST' and form.validate_on_submit():
-		return form_handler(request.form)
+		return peering_query_form_handler(request.form)
 	return render_template('submit.html', form=form)
-
-@app.route('/results')
-def showResult():
-	return render_template('result.html', ppc={'diff':{'1': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 12, 'city': 'Chicago', 'internet_penetration_percentage': 0.865, 'isp_id_in_peering_db': 7, 'isp_type_in_peering_db': 'fac', 'latitude': 41.85365, 'longitude': -87.618342, 'population': 2716450, 'state': 'IL'}, {'ID': 16, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 19, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047942, 'longitude': -118.255564, 'population': 3999759, 'state': 'CA'}, {'ID': 26, 'city': 'Denver', 'internet_penetration_percentage': 0.795, 'isp_id_in_peering_db': 389, 'isp_type_in_peering_db': 'fac', 'latitude': 39.745636, 'longitude': -104.995636, 'population': 704621, 'state': 'CO'}], '2': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 9, 'city': 'Houston', 'internet_penetration_percentage': 0.8170000000000001, 'isp_id_in_peering_db': 1476, 'isp_type_in_peering_db': 'fac', 'latitude': 29.844182, 'longitude': -95.556656, 'population': 2312717, 'state': 'TX'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 13, 'city': 'Miami', 'internet_penetration_percentage': 0.8420000000000001, 'isp_id_in_peering_db': 15, 'isp_type_in_peering_db': 'fac', 'latitude': 25.782648, 'longitude': -80.193157, 'population': 463347, 'state': 'FL'}, {'ID': 20, 'city': 'New York', 'internet_penetration_percentage': 0.802, 'isp_id_in_peering_db': 16, 'isp_type_in_peering_db': 'fac', 'latitude': 40.741355, 'longitude': -74.003203, 'population': 8622698, 'state': 'NY'}], '3': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 12, 'city': 'Chicago', 'internet_penetration_percentage': 0.865, 'isp_id_in_peering_db': 7, 'isp_type_in_peering_db': 'fac', 'latitude': 41.85365, 'longitude': -87.618342, 'population': 2716450, 'state': 'IL'}, {'ID': 16, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 19, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047942, 'longitude': -118.255564, 'population': 3999759, 'state': 'CA'}, {'ID': 21, 'city': 'Dallas', 'internet_penetration_percentage': 0.8170000000000001, 'isp_id_in_peering_db': 4, 'isp_type_in_peering_db': 'fac', 'latitude': 32.800955, 'longitude': -96.81955, 'population': 1341075, 'state': 'TX'}]}, 
-											'own':{'1': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 12, 'city': 'Chicago', 'internet_penetration_percentage': 0.865, 'isp_id_in_peering_db': 7, 'isp_type_in_peering_db': 'fac', 'latitude': 41.85365, 'longitude': -87.618342, 'population': 2716450, 'state': 'IL'}, {'ID': 16, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 19, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047942, 'longitude': -118.255564, 'population': 3999759, 'state': 'CA'}, {'ID': 26, 'city': 'Denver', 'internet_penetration_percentage': 0.795, 'isp_id_in_peering_db': 389, 'isp_type_in_peering_db': 'fac', 'latitude': 39.745636, 'longitude': -104.995636, 'population': 704621, 'state': 'CO'}], '2': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 9, 'city': 'Houston', 'internet_penetration_percentage': 0.8170000000000001, 'isp_id_in_peering_db': 1476, 'isp_type_in_peering_db': 'fac', 'latitude': 29.844182, 'longitude': -95.556656, 'population': 2312717, 'state': 'TX'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 13, 'city': 'Miami', 'internet_penetration_percentage': 0.8420000000000001, 'isp_id_in_peering_db': 15, 'isp_type_in_peering_db': 'fac', 'latitude': 25.782648, 'longitude': -80.193157, 'population': 463347, 'state': 'FL'}, {'ID': 20, 'city': 'New York', 'internet_penetration_percentage': 0.802, 'isp_id_in_peering_db': 16, 'isp_type_in_peering_db': 'fac', 'latitude': 40.741355, 'longitude': -74.003203, 'population': 8622698, 'state': 'NY'}], '3': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 12, 'city': 'Chicago', 'internet_penetration_percentage': 0.865, 'isp_id_in_peering_db': 7, 'isp_type_in_peering_db': 'fac', 'latitude': 41.85365, 'longitude': -87.618342, 'population': 2716450, 'state': 'IL'}, {'ID': 16, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 19, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047942, 'longitude': -118.255564, 'population': 3999759, 'state': 'CA'}, {'ID': 21, 'city': 'Dallas', 'internet_penetration_percentage': 0.8170000000000001, 'isp_id_in_peering_db': 4, 'isp_type_in_peering_db': 'fac', 'latitude': 32.800955, 'longitude': -96.81955, 'population': 1341075, 'state': 'TX'}]}, 
-											'ratio': {'1': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 12, 'city': 'Chicago', 'internet_penetration_percentage': 0.865, 'isp_id_in_peering_db': 7, 'isp_type_in_peering_db': 'fac', 'latitude': 41.85365, 'longitude': -87.618342, 'population': 2716450, 'state': 'IL'}, {'ID': 16, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 19, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047942, 'longitude': -118.255564, 'population': 3999759, 'state': 'CA'}, {'ID': 26, 'city': 'Denver', 'internet_penetration_percentage': 0.795, 'isp_id_in_peering_db': 389, 'isp_type_in_peering_db': 'fac', 'latitude': 39.745636, 'longitude': -104.995636, 'population': 704621, 'state': 'CO'}], '2': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 9, 'city': 'Houston', 'internet_penetration_percentage': 0.8170000000000001, 'isp_id_in_peering_db': 1476, 'isp_type_in_peering_db': 'fac', 'latitude': 29.844182, 'longitude': -95.556656, 'population': 2312717, 'state': 'TX'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 13, 'city': 'Miami', 'internet_penetration_percentage': 0.8420000000000001, 'isp_id_in_peering_db': 15, 'isp_type_in_peering_db': 'fac', 'latitude': 25.782648, 'longitude': -80.193157, 'population': 463347, 'state': 'FL'}, {'ID': 20, 'city': 'New York', 'internet_penetration_percentage': 0.802, 'isp_id_in_peering_db': 16, 'isp_type_in_peering_db': 'fac', 'latitude': 40.741355, 'longitude': -74.003203, 'population': 8622698, 'state': 'NY'}], '3': [{'ID': 2, 'city': 'San Jose', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 6, 'isp_type_in_peering_db': 'fac', 'latitude': 37.241767, 'longitude': -121.782967, 'population': 1035317, 'state': 'CA'}, {'ID': 5, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 8, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047322, 'longitude': -118.25745, 'population': 3999759, 'state': 'CA'}, {'ID': 6, 'city': 'Atlanta', 'internet_penetration_percentage': 0.847, 'isp_id_in_peering_db': 1929, 'isp_type_in_peering_db': 'fac', 'latitude': 33.729369, 'longitude': -84.420099, 'population': 486290, 'state': 'GA'}, {'ID': 10, 'city': 'Seattle', 'internet_penetration_percentage': 0.885, 'isp_id_in_peering_db': 86, 'isp_type_in_peering_db': 'fac', 'latitude': 47.614358, 'longitude': -122.338864, 'population': 724745, 'state': 'WA'}, {'ID': 12, 'city': 'Chicago', 'internet_penetration_percentage': 0.865, 'isp_id_in_peering_db': 7, 'isp_type_in_peering_db': 'fac', 'latitude': 41.85365, 'longitude': -87.618342, 'population': 2716450, 'state': 'IL'}, {'ID': 16, 'city': 'Los Angeles', 'internet_penetration_percentage': 0.838, 'isp_id_in_peering_db': 19, 'isp_type_in_peering_db': 'fac', 'latitude': 34.047942, 'longitude': -118.255564, 'population': 3999759, 'state': 'CA'}, {'ID': 21, 'city': 'Dallas', 'internet_penetration_percentage': 0.8170000000000001, 'isp_id_in_peering_db': 4, 'isp_type_in_peering_db': 'fac', 'latitude': 32.800955, 'longitude': -96.81955, 'population': 1341075, 'state': 'TX'}]}})
 
 @app.route('/glossary')
 def glossary():
 	return render_template('glossary.html', title='Glossary')
 
-@app.route('/feedback')
+@app.route('/feedback', methods=['GET','POST'])
 def feedback():
-	return render_template('feedback.html', title="Feedback")
+	form = ContactUsForm()
+	if request.method == 'POST' and form.validate_on_submit():
+		feedback_form_handler(request.form)
+		return redirect(url_for('success'))
+	return render_template('feedback.html', title="Feedback", form=form)
 
-def form_handler(request):
+@app.route('/success', methods=('GET', 'POST'))
+def success():
+    return render_template('success.html')
+
+def feedback_form_handler(request):
+	fullname = request['name']
+	email = request['email']
+	message = request['body']
+	
+	feedback = Feedback(fullname=fullname, 
+				email=email,
+				message=message)
+	
+	db.session.add(feedback)
+	db.session.commit()
+	return
+
+def peering_query_form_handler(request):
 	data = {}
 	data['asn1'] = request['asn1']
 	data['asn2'] = request['asn2']
@@ -129,7 +154,7 @@ def request_handler_v2(data):
 		except Exception as e:
 			pass
 			
-	r = make_response(render_template('result.html', low_current_threshold=threshold_too_high, ppc=ppc_data, title='Peering possibility', requester=requesterISP,candidate=candidateISP))
+	r = make_response(render_template('result.html', title='Peering possibility', low_current_threshold=threshold_too_high, ppc=ppc_data, requester=requesterISP,candidate=candidateISP))
 
 	r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
 	r.headers["Pragma"] = "no-cache"
