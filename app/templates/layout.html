@@ -15,8 +15,14 @@
 			<a class="h4 my-0 mr-md-auto text-body text-decoration-none" href="/">Meta Peering</a>
 		  	<nav class="my-2 my-md-0 mr-md-3">
 		    	<a class="p-2 text-dark" href="/glossary">Glossary</a>
+			  	<a class="btn btn-sm btn-outline-secondary" href="/feedback">Leave Us Feedback!</a>
+			  	{% if current_user.is_authenticated %}
+		  	        <div class="btn-group mr-2">
+	            		<a class="btn btn-sm btn-outline-warning" href="/user/{{ current_user.id }}">{{ current_user.id|capitalize }}</a>
+	            		<a class="btn btn-sm btn-warning" href="/logout">Logout</a>
+			        </div>
+			  	{% endif %}
 		  	</nav>
-		  	<a class="btn btn-outline-secondary" href="/feedback">Leave Us Feedback!</a>
 		</div>				
 
 		<div class="container">

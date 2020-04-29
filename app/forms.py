@@ -1,5 +1,5 @@
 from flask_wtf import Form, FlaskForm
-from wtforms import IntegerField, DecimalField, SelectField, StringField, TextAreaField, SubmitField, validators
+from wtforms import IntegerField, DecimalField, SelectField, StringField, TextAreaField, SubmitField, PasswordField, validators
 from app.customoptgroupselect import ExtendedSelectField
 
 class PeeringQueryForm(FlaskForm):
@@ -93,3 +93,9 @@ class ContactUsForm(FlaskForm):
 	body = TextAreaField('Message', [validators.DataRequired(),
 									validators.Length(min=4, message='Your message is too short')])
 	submit = SubmitField('Submit')
+	
+	
+class LoginForm(FlaskForm):
+	username = StringField('Username', [validators.DataRequired()])
+	password = PasswordField('Password', [validators.DataRequired()])
+	submit = SubmitField('Login')

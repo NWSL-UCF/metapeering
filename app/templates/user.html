@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block content %}
+	<div class="col-12-xs">
+		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+			<h4>
+				Issue Tracker:
+			</h4>
+		</div>
+		
+		<div class="contrainer-fluid">
+	    	<table class="table">
+			  	</thead>
+			  	<thead class="thead-light">
+			    	<tr>
+			    		<th scope="col">Issue #</th>
+			      		<th scope="col">Submitted at</th>
+			      		<th scope="col">Description</th>
+			      		<th scope="col">Status</th>
+			    	</tr>
+			  	</thead>
+			  	<tbody>
+			    	{% for issue in issues %}
+			    	<tr>
+			      		<th scope="row">{{ issue['id'] }}</th>
+			      		<td>{{ issue['date_created'] }}</td>
+			      		<td>{{ issue['message'] }}</td>
+			      		<td>
+			      			<strong>
+			      			{% if issue['is_solved'] is sameas true %}
+			      				Solved
+			      			{% else %}
+			      				Not solved
+			      			{% endif %}
+			      			</strong>
+			      		</td>
+			    	</tr>
+			    	{% endfor %}
+			  	</tbody>
+			</table>
+		</div>
+	</div>
+	
+{% endblock content %}

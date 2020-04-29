@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col">
+			<!--Filler Left-->
+	    </div>
+
+		<div class="col-6 align-self-center">
+			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h4 class="title">
+					Please Log in:
+				</h4>
+			</div>
+			
+			<div class="card-body">
+				{% with messages = get_flashed_messages() %}
+				  	{% if messages %}
+			    		{% for message in messages %}
+					    	<div class="alert alert-danger">{{ message }}</div>
+					    {% endfor %}
+				  	{% endif %}
+				{% endwith %}
+				<form action="" method="post" class="form" role="form">
+	   				{{ form.csrf_token() }}
+					{{ form.username.label }}
+					{{ form.username(class='form-control')|safe }}
+		      		</br>
+		      		{% if form.username.errors %}
+	          			{% for error in form.username.errors %}
+	            			<div class="alert alert-danger">{{ error }}</div>
+	          			{% endfor %}
+		      		{% endif %}
+		      		{{ form.password.label }}
+				    {{ form.password(class='form-control')|safe }}
+		      		</br>
+		      		{% if form.password.errors %}
+	          			{% for error in form.password.errors %}
+	            			<div class="alert alert-danger">{{ error }}</div>
+	          			{% endfor %}
+		      		{% endif %}
+					</br>
+	      			<button type="submit" class="btn btn-primary">Submit</button>
+				</form>		
+	  		</div>	
+	 	</div>
+		
+		<div class="col-sm">
+			<!--Filler Right-->
+		</div>	
+	</div> 	
+{% endblock content %}

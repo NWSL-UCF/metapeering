@@ -1,21 +1,21 @@
-from flask import Flask, render_template, request, redirect, url_for
-from flask import make_response
+from flask import Flask, make_response, render_template, request, redirect, url_for, abort, flash
 from flask_bootstrap import Bootstrap
+from flask_login import current_user, login_user, login_required, logout_user
 import re
 import subprocess
 from subprocess import call
 import json
-from app.forms import PeeringQueryForm, ContactUsForm
 from os import listdir
 from os.path import isfile, join
+from zipfile import ZipFile
 from flask_s3 import FlaskS3
 import boto3 
-from app.config import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, DATABASE_URI
-from zipfile import ZipFile
 
+from .forms import PeeringQueryForm, ContactUsForm, LoginForm
+from .config import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, DATABASE_URI, USER1_PW, USER2_PW, USER3_PW
 from .commands import create_tables
-from .extension import db
-from .models import Feedback
+from .extension import db, login_manager
+from .models import Feedback, User
 
 asn_name = {
 	20940: 'Akamai',
@@ -42,6 +42,7 @@ asn_name = {
 	6461: 'Zayo'
 }
 
+uname_dict = {'my':'user3', 'sm':'user2', 'pkd':'user1', 'murat':'user3', 'shahzeb':'user2', 'prasun':'user1'}
 
 s3 = boto3.client(
 	's3',
@@ -60,6 +61,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
 
 db.init_app(app)
 app.cli.add_command(create_tables)
+
+app.config['USER1_PW'] = USER1_PW
+app.config['USER2_PW'] = USER2_PW
+app.config['USER3_PW'] = USER3_PW
+login_manager.init_app(app)
 
 
 @app.route('/', methods=['GET','POST'])
@@ -81,9 +87,74 @@ def feedback():
 		return redirect(url_for('success'))
 	return render_template('feedback.html', title="Feedback", form=form)
 
+@app.route('/user/<username>')
+@login_required
+def user(username):
+	issues = get_issues()
+	return render_template('user.html', title="Internal User", username=username, issues=issues)
+
+@app.route('/user/<username>/login', methods=['GET', 'POST'])
+def login(username):
+	if current_user.is_authenticated:
+		return redirect(url_for('user', username=username))
+	if username not in ['murat', 'shahzeb', 'prasun']:
+		return abort(404)
+	login_form = LoginForm()
+	if request.method == 'POST' and login_form.validate_on_submit():
+		if not login_success(request.form, username):
+			flash('Invalid username or password.')
+			return redirect(url_for('login', username=username))
+		user = User()
+		user.id = username
+		login_user(user)
+		return redirect(url_for('user', username=username))
+	return render_template('login.html', title='Login', form=login_form)
+	
+@app.route('/logout')
+def logout():
+	logout_user()
+	return redirect(url_for('querry'))
+
 @app.route('/success', methods=('GET', 'POST'))
 def success():
     return render_template('success.html')
+
+@app.errorhandler(401)
+@app.errorhandler(404)
+def page_not_found(e):
+	e = str(e).split(":")
+	error_code = e[0][:3]
+	error_name = e[0][3:]
+	error_message = e[1]
+	return render_template('errorpage.html', error_code=error_code, error_name=error_name, error_message=error_message, title='Error')
+
+@login_manager.user_loader
+def user_loader(username):
+	if username not in uname_dict:
+		return
+ 	
+	user = User()
+	user.id = username
+	return user
+
+@login_manager.unauthorized_handler
+def unauthorized_handler():
+	username = request.path.split("/")[-1]
+	if username in uname_dict:
+		return redirect(url_for('login', username=username))
+	else:
+		return abort(401)
+	
+def login_success(request, username):
+	form_username = request['username']
+	password = request['password']
+	if form_username not in uname_dict or form_username != username:
+		return False
+	return app.config[uname_dict[username].upper()+'_PW'] == password
+
+def get_issues():
+	issues = Feedback.query.all()
+	return issues
 
 def feedback_form_handler(request):
 	fullname = request['name']
