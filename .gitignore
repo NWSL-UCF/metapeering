@@ -1,7 +1,7 @@
 output/
 result/
-AWS_Data/
 Convex_png/
+Concave_png/
 result.tar.gz
 test.py
 test.pyc
@@ -12,3 +12,10 @@ app/credentials.csv
 app/appdata/ppc_data1.json
 app/static
 .DS_Store
+app/__pycache__/
+__pycache__/
+compress_results.py
+.env
+cut_this_to_AWS_data_new.json
+AWS_Data/
+cut_this_to_AWS_data.json

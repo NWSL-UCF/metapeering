@@ -737,6 +737,7 @@ def peering_algorithm_implementation(isp_a, isp_b):
 
             
 def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_for_isp):
+    print(isp_a_asn,isp_b_asn)
     '''
     @note: This plots the graphs. 
     Plots APC graph of ISP A, B individually and another graph which plots these two as well as the combined APC 
@@ -753,59 +754,88 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
     color = ['red', 'green', 'blue']
     line_style = [':', (0, (4, 6)), '--']
     
-    fig1, ax1 = plt.subplots()
-    fig2, ax2 = plt.subplots()
-    fig, ax = plt.subplots()
+    fig1, ax1 = plt.subplots(figsize=(10,6))
+    fig2, ax2 = plt.subplots(figsize=(10,6))
+    fig, ax = plt.subplots(figsize=(10,6))
     order = []     
     if sort_by_ppc_id:
         # "order" is required. This will preserve the order for Y-axis as well.
         order = np.argsort(apc_data[apc_data.columns[0]])
-        graph_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + "_" + str(isp_b_asn) + ".pdf")
+        graph_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + "_" + str(isp_b_asn) + ".png")
     else:
         order = np.argsort(apc_data[apc_data.columns[-1]])[::-1]
-        graph_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + "_" + str(isp_b_asn) + ".pdf")
+        graph_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + "_" + str(isp_b_asn) + ".png")
     xs = np.array(apc_data[apc_data.columns[0]], int)[order]
     xs_tick_interval = int(math.ceil(float(len(xs)) / 12))  
+    rDegree = 0
+    if (len(xs[::xs_tick_interval]) > 10):
+        rDegree = 45
     
     for i, j in zip(range(3), apc_data.columns.tolist()[-3:]):
-        ax.plot(np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=j.split("=")[0])
-    
+        combined_label = ''
+
+        if("=" in j):
+            combined_label = str(isp_a_asn)+','+ str(isp_b_asn)
+        elif("A" in j):
+            combined_label = str(isp_a_asn)
+        else:
+            combined_label = str(isp_b_asn)
+
+        ax.plot(np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=combined_label)
+        ax.set_xlabel('Acceptible Contract ID')
+        ax.set_ylabel('Willingness')
+        ax.tick_params(axis ='x', rotation = rDegree)
+
         # These two plots the individual ISPs graphs
         if i == 0:
             if sort_by_ppc_id:               
-                ax1.plot(xs, np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=j)
-                graph_individual_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + ".pdf")
+                ax1.plot(xs, np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=str(isp_a_asn))
+                graph_individual_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + ".png")
+                ax1.set_xlabel('Acceptible Contract ID')
+                ax1.set_ylabel('Willingness')
+                ax1.tick_params(axis ='x', rotation = rDegree) 
             else:
                 order_individual = np.argsort(apc_data[j])[::-1]  # This [::-1] reverses the order and gives the position of items in descending order.
                 xs_individual = np.array(apc_data[apc_data.columns[0]], int)[order_individual]
                 xs_tick_interval_individual = int(math.ceil(float(len(xs_individual)) / 12))  
-                ax1.plot(np.array(apc_data[j])[order_individual], linestyle=line_style[i], color=color[i], label=j)
+                ax1.plot(np.array(apc_data[j])[order_individual], linestyle=line_style[i], color=color[i], label=str(isp_a_asn))
                 ax1.set_xticks(range(len(xs_individual))[::xs_tick_interval_individual])
                 ax1.set_xticklabels(xs_individual[::xs_tick_interval_individual])
-                graph_individual_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + ".pdf")
+                graph_individual_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + ".png")
+                ax1.set_xlabel('Acceptible Contract ID')
+                ax1.set_ylabel('Willingness')
+                ax1.tick_params(axis ='x', rotation = rDegree) 
             ax1.legend()
-            fig1.savefig(graph_individual_filename)
+            fig1.savefig(graph_individual_filename, bbox_inches = "tight")
         if i == 1:
             if sort_by_ppc_id:
-                ax2.plot(xs, np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=j)
-                graph_individual_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_b_asn) + ".pdf")
+                ax2.plot(xs, np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=str(isp_b_asn))
+                graph_individual_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_b_asn) + ".png")
+                ax2.set_xlabel('Acceptible Contract ID')
+                ax2.set_ylabel('Willingness')
+                ax2.tick_params(axis ='x', rotation = rDegree) 
             else:
                 order_individual = np.argsort(apc_data[j])[::-1]
                 xs_individual = np.array(apc_data[apc_data.columns[0]], int)[order_individual]
                 xs_tick_interval_individual = int(math.ceil(float(len(xs_individual)) / 12))  
-                ax2.plot(np.array(apc_data[j])[order_individual], linestyle=line_style[i], color=color[i], label=j)
+                ax2.plot(np.array(apc_data[j])[order_individual], linestyle=line_style[i], color=color[i], label=str(isp_b_asn))
                 ax2.set_xticks(range(len(xs_individual))[::xs_tick_interval_individual])
                 ax2.set_xticklabels(xs_individual[::xs_tick_interval_individual])
-                graph_individual_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_b_asn) + ".pdf")
+                graph_individual_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_b_asn) + ".png")
+                ax2.set_xlabel('Acceptible Contract ID')
+                ax2.set_ylabel('Willingness')
+                ax2.tick_params(axis ='x', rotation = rDegree) 
             ax2.legend()
-            fig2.savefig(graph_individual_filename)
+            fig2.savefig(graph_individual_filename,bbox_inches = "tight")
               
     if not sort_by_ppc_id:
         ax.set_xticks(range(len(xs))[::xs_tick_interval])
         ax.set_xticklabels(xs[::xs_tick_interval])
 
     ax.legend()
-    fig.savefig(graph_filename)
+    fig.savefig(graph_filename, bbox_inches = "tight")
+    # import sys
+    # sys.exit()
     return
 
 
@@ -1129,7 +1159,7 @@ def draw_scatter_plot(scatter_plot_data=None):
     for_outside_x_y_label.xaxis.labelpad = 15
     for_outside_x_y_label.yaxis.labelpad = 35
     
-    fig.savefig(os.path.abspath(Output_Directory + "/" + "isp_pair_apc_" + str(Max_Common_Pop_Count) + ".pdf"))
+    fig.savefig(os.path.abspath(Output_Directory + "/" + "isp_pair_apc_" + str(Max_Common_Pop_Count) + ".png"))
     
 def helping_tool_get_max_r_squared_weights(scatter_plot_data=None):
     '''
@@ -1338,7 +1368,7 @@ def draw_brittleness(scatter_plot_data=None):
         axarr_for_content_pairs_check[1][i].set_xlabel(similar_type_name)
     axarr_for_content_pairs_check[0][2].legend(bbox_to_anchor=(2.6,1.05), loc='upper right')          
     axarr_for_content_pairs_check[1][2].legend(bbox_to_anchor=(2.53,1.045), loc='upper right')          
-    fig1.savefig(os.path.abspath(Output_Directory + "/" + "Content_vs_non_content_felicity_" + str(Max_Common_Pop_Count) + ".pdf"))
+    fig1.savefig(os.path.abspath(Output_Directory + "/" + "Content_vs_non_content_felicity_" + str(Max_Common_Pop_Count) + ".png"))
     print("=========================== END: Print peering pairs status =================")
               
     print("=================")
@@ -1411,7 +1441,7 @@ def draw_brittleness(scatter_plot_data=None):
     fig.text(0.03, 0.73, 'Felicity scores for ISP pairs', rotation='vertical', ha='center')
     fig.text(0.53, 0.02, 'Similarity score based on', ha='center')
       
-    fig.savefig(os.path.abspath(Output_Directory + "/" + "felicity_" + str(Max_Common_Pop_Count) + ".pdf"))
+    fig.savefig(os.path.abspath(Output_Directory + "/" + "felicity_" + str(Max_Common_Pop_Count) + ".png"))
     
     
 def find_best_deals(scatter_plot_data=None):
@@ -1570,7 +1600,7 @@ def caida_comparison(scatter_plot_data=None):
     plt.tick_params(labelcolor='none',top=False,left=False,right=False,bottom=False)
     plt.xlabel('Felicity scores')  
     plt.ylabel('Peering status (E: Already established, S: Suggested)')
-    fig.savefig(os.path.abspath(Output_Directory + "/" + "CAIDA_felicity_match_" + str(Max_Common_Pop_Count) + ".pdf"))
+    fig.savefig(os.path.abspath(Output_Directory + "/" + "CAIDA_felicity_match_" + str(Max_Common_Pop_Count) + ".png"))
     return
 
 def save_pop_locations():
@@ -1812,14 +1842,14 @@ if __name__ == '__main__':
         save_pop_locations()
         find_best_deals(scatter_plot_data)
 
-    with open('app/appdata/willingness.json','w') as json_file:
-        json.dump(willingness_score_for_all_isps, json_file)
+    # with open('app/appdata/willingness.json','w') as json_file:
+    #     json.dump(willingness_score_for_all_isps, json_file)
     
-    with open('app/appdata/affinity.json','w') as json_file:
-        json.dump(affinity_score_for_all_isps, json_file)
+    # with open('app/appdata/affinity.json','w') as json_file:
+    #     json.dump(affinity_score_for_all_isps, json_file)
     
-    with open('app/appdata/felicity.json','w') as json_file:
-        json.dump(felicity_score_for_all_isps, json_file)
+    # with open('app/appdata/felicity.json','w') as json_file:
+    #     json.dump(felicity_score_for_all_isps, json_file)
 
     with open('willingness.json','w') as json_file:
         json.dump(willingness_score_for_all_isps, json_file)
