@@ -73,13 +73,15 @@
 						    	{% endfor %}
 						  	</tbody>
 						</table>
-				    	{% endfor %}
+						{% endfor %}
+						{% if ppc[key]['total_apc'] > 1 %}
 			    		<div class="text-center">
 				    		<figure class="figure">
 							  	<img src="/static/{{ requester[0]+'_'+candidate[0]+'/' }}{{ key }}_graph.png" class="figure-img img-fluid rounded" alt="Image for all APCs based on {{ key }}.">
 							  	<figcaption class="figure-caption text-center">All Acceptable Peering Contracts (sorted by willingness score)</figcaption>
 							</figure>
 						</div>
+						{% endif %}
 					</div>
 					{% endfor %}	
 			  	</div>
