@@ -24,7 +24,7 @@
 			    	{% for issue in issues %}
 			    	<tr>
 			      		<th scope="row">{{ issue['id'] }}</th>
-			      		<td>{{ issue['date_created'] }}</td>
+			      		<td>{{ issue['date_created'].strftime('%m-%d-%Y') }}</td>
 			      		<td>{{ issue['message'] }}</td>
 			      		<td>
 			      			<strong>
