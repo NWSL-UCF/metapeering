@@ -737,7 +737,6 @@ def peering_algorithm_implementation(isp_a, isp_b):
 
             
 def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_for_isp):
-    print(isp_a_asn,isp_b_asn)
     '''
     @note: This plots the graphs. 
     Plots APC graph of ISP A, B individually and another graph which plots these two as well as the combined APC 
@@ -782,8 +781,8 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
             combined_label = str(isp_b_asn)
 
         ax.plot(np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=combined_label)
-        ax.set_xlabel('Acceptible Contract ID')
-        ax.set_ylabel('Willingness')
+        ax.set_xlabel('Acceptable Contract ID')
+        ax.set_ylabel('Willingness Score')
         ax.tick_params(axis ='x', rotation = rDegree)
 
         # These two plots the individual ISPs graphs
@@ -791,8 +790,8 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
             if sort_by_ppc_id:               
                 ax1.plot(xs, np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=str(isp_a_asn))
                 graph_individual_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + ".png")
-                ax1.set_xlabel('Acceptible Contract ID')
-                ax1.set_ylabel('Willingness')
+                ax1.set_xlabel('Acceptable Contract ID')
+                ax1.set_ylabel('Willingness Score')
                 ax1.tick_params(axis ='x', rotation = rDegree) 
             else:
                 order_individual = np.argsort(apc_data[j])[::-1]  # This [::-1] reverses the order and gives the position of items in descending order.
@@ -802,8 +801,8 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
                 ax1.set_xticks(range(len(xs_individual))[::xs_tick_interval_individual])
                 ax1.set_xticklabels(xs_individual[::xs_tick_interval_individual])
                 graph_individual_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_a_asn) + ".png")
-                ax1.set_xlabel('Acceptible Contract ID')
-                ax1.set_ylabel('Willingness')
+                ax1.set_xlabel('Acceptable Contract ID')
+                ax1.set_ylabel('Willingness Score')
                 ax1.tick_params(axis ='x', rotation = rDegree) 
             ax1.legend()
             fig1.savefig(graph_individual_filename, bbox_inches = "tight")
@@ -811,8 +810,8 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
             if sort_by_ppc_id:
                 ax2.plot(xs, np.array(apc_data[j])[order], linestyle=line_style[i], color=color[i], label=str(isp_b_asn))
                 graph_individual_filename = os.path.abspath(output_graph_ppc_id_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_b_asn) + ".png")
-                ax2.set_xlabel('Acceptible Contract ID')
-                ax2.set_ylabel('Willingness')
+                ax2.set_xlabel('Acceptable Contract ID')
+                ax2.set_ylabel('Willingness Score')
                 ax2.tick_params(axis ='x', rotation = rDegree) 
             else:
                 order_individual = np.argsort(apc_data[j])[::-1]
@@ -822,8 +821,8 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
                 ax2.set_xticks(range(len(xs_individual))[::xs_tick_interval_individual])
                 ax2.set_xticklabels(xs_individual[::xs_tick_interval_individual])
                 graph_individual_filename = os.path.abspath(output_graph_willingness_sorted_filepath + "/" + Sort_Strategy_Names[sort_strategy] + "_" + str(isp_b_asn) + ".png")
-                ax2.set_xlabel('Acceptible Contract ID')
-                ax2.set_ylabel('Willingness')
+                ax2.set_xlabel('Acceptable Contract ID')
+                ax2.set_ylabel('Willingness Score')
                 ax2.tick_params(axis ='x', rotation = rDegree) 
             ax2.legend()
             fig2.savefig(graph_individual_filename,bbox_inches = "tight")
@@ -834,8 +833,6 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
 
     ax.legend()
     fig.savefig(graph_filename, bbox_inches = "tight")
-    # import sys
-    # sys.exit()
     return
 
 
