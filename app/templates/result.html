@@ -10,7 +10,7 @@
 			<h5>
 				{{requester[1]}}({{requester[0]}}) and {{candidate[1]}}({{candidate[0]}})
 			</h5>
-			{% if ppc is not none %}
+			{% if peering_recommended is sameas true and threshold_too_high is sameas false %}
 				<div class="btn-toolbar mb-2 mb-md-0">
 		        	<a href="/static/{{ requester[0]+'_'+candidate[0] }}/results.zip" download class="btn btn-sm btn-outline-primary">Download detailed report</a>
 		        </div>
