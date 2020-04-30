@@ -16,7 +16,7 @@
 			<div class="card-body">
 				<form action="" method="post" class="form" role="form">
 	   				{{ form.csrf_token() }}
-					{{ form.name.label }}
+					<!--{{ form.name.label }}-->
 					{{ form.name(class='form-control')|safe }}
 		      		</br>
 		      		{% if form.name.errors %}
@@ -24,7 +24,7 @@
 	            			<div class="alert alert-danger">{{ error }}</div>
 	          			{% endfor %}
 		      		{% endif %}
-		      		{{ form.email.label }}
+		      		<!--{{ form.email.label }}-->
 				    {{ form.email(class='form-control')|safe }}
 		      		</br>
 		      		{% if form.email.errors %}
@@ -32,7 +32,7 @@
 	            			<div class="alert alert-danger">{{ error }}</div>
 	          			{% endfor %}
 		      		{% endif %}
-		    		{{ form.body.label }}
+		    		<!--{{ form.body.label }}-->
 		    		{{ form.body(class='form-control')|safe }}
 	      			</br>
 	      			{% if form.body.errors %}

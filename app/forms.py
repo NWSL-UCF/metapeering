@@ -87,15 +87,16 @@ class PeeringQueryForm(FlaskForm):
 	
 
 class ContactUsForm(FlaskForm):
-	name = StringField('Name', [validators.DataRequired()])
+	name = StringField('Name', [validators.DataRequired()], render_kw={'autofocus': True, 'placeholder':'Your name'})
 	email = StringField('Email', [validators.Email(message='Not a valid email address.'),
-        							validators.DataRequired()])
+        							validators.DataRequired()], render_kw={'placeholder':'Email address'})
 	body = TextAreaField('Message', [validators.DataRequired(),
-									validators.Length(min=4, message='Your message is too short')])
+									validators.Length(min=4, message='Your message is too short')],
+									render_kw={'placeholder':'Your feedback or feature request'})
 	submit = SubmitField('Submit')
 	
 	
 class LoginForm(FlaskForm):
-	username = StringField('Username', [validators.DataRequired()])
-	password = PasswordField('Password', [validators.DataRequired()])
+	username = StringField('Username', [validators.DataRequired()], render_kw={'autofocus': True, 'placeholder':'Username'})
+	password = PasswordField('Password', [validators.DataRequired()], render_kw={'placeholder':'Password'})
 	submit = SubmitField('Login')

@@ -111,9 +111,11 @@ def login(username):
 	return render_template('login.html', title='Login', form=login_form)
 	
 @app.route('/logout')
+@login_required
 def logout():
 	logout_user()
 	return redirect(url_for('querry'))
+
 
 @app.route('/success', methods=('GET', 'POST'))
 def success():
@@ -127,6 +129,15 @@ def page_not_found(e):
 	error_name = e[0][3:]
 	error_message = e[1]
 	return render_template('errorpage.html', error_code=error_code, error_name=error_name, error_message=error_message, title='Error')
+
+@app.after_request
+def after_request(response):
+	# Issue with Safari. Going back will still show the contents, but clears the session anyway.
+	response.cache_control.no_store = True
+	response.cache_control.no_cache = True
+	response.cache_control.must_revalidate = True
+	response.cache_control.max_age = 0
+	return response
 
 @login_manager.user_loader
 def user_loader(username):
@@ -182,14 +193,17 @@ def request_handler(data):
 	candidateISP = (data['asn2'],asn_name[int(data['asn2'])])
 	ppc_data = None
 	threshold_too_high = False
+	peering_recommended = False
 	asn1_asn2 = data['asn1']+'_'+data['asn2']
 
 	with open('app/appdata/felicity.json') as f:
 		felicity_scores = json.load(f)
 		try:
 			asn1_felicity_score = float(felicity_scores[asn1_asn2]['own'])
-			if asn1_felicity_score >= 0.0 and asn1_felicity_score < float(data['threshold']):
-				threshold_too_high = True
+			if asn1_felicity_score >= 0.0:
+				peering_recommended = True
+				if asn1_felicity_score < float(data['threshold']):
+					threshold_too_high = True
 				
 			"""
 			Peering Recommended, but first, check if threshold not too high.
@@ -205,13 +219,13 @@ def request_handler(data):
 				file_to_download2 = aws_root+asn1_asn2+'/diff_'+asn1_asn2+'.png'
 				file_to_download3 = aws_root+asn1_asn2+'/ratio_'+asn1_asn2+'.png'
 				file_to_download4 = aws_root+asn1_asn2+'/overlap.png'
-				print(file_to_download1)
+
 				resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
 				my_bucket.download_file(file_to_download1, resultFolder+'own_graph.png')
 				my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.png')
 				my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.png')
 				my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
-		
+				
 				with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
 					zipObj.write(resultFolder+'own_graph.png')
 					zipObj.write(resultFolder+'diff_graph.png')
@@ -221,12 +235,6 @@ def request_handler(data):
 				with open('app/appdata/ppc_data.json') as f:
 					ppc_data = json.load(f)[asn1_asn2]
 		except Exception as e:
-			pass
+			print(e)
 			
-	r = make_response(render_template('result.html', title='Peering possibility', low_current_threshold=threshold_too_high, ppc=ppc_data, requester=requesterISP,candidate=candidateISP))
-
-	r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-	r.headers["Pragma"] = "no-cache"
-	r.headers["Expires"] = "0"
-	r.headers['Cache-Control'] = 'public, max-age=0'
-	return r
+	return render_template('result.html', title='Peering possibility', peering_recommended=peering_recommended, threshold_too_high=threshold_too_high, ppc=ppc_data, requester=requesterISP,candidate=candidateISP)

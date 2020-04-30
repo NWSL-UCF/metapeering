@@ -23,7 +23,8 @@
 				{% endwith %}
 				<form action="" method="post" class="form" role="form">
 	   				{{ form.csrf_token() }}
-					{{ form.username.label }}
+	   				
+					<!--{{ form.username.label }}-->
 					{{ form.username(class='form-control')|safe }}
 		      		</br>
 		      		{% if form.username.errors %}
@@ -31,7 +32,8 @@
 	            			<div class="alert alert-danger">{{ error }}</div>
 	          			{% endfor %}
 		      		{% endif %}
-		      		{{ form.password.label }}
+		      		
+		      		<!--{{ form.password.label }}-->
 				    {{ form.password(class='form-control')|safe }}
 		      		</br>
 		      		{% if form.password.errors %}

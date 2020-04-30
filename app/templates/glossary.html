@@ -6,6 +6,29 @@
 		<h4 class="my-0 text-center border-bottom">Glossary and How to</h4>
 		</br>
 		-->
+		{% if current_user.is_authenticated %}
+		<div class="card mb-3">
+  			<div class="card-body">
+    			<h5 class="card-title">Meta Peering: How it works?</h5>
+    			<p class="card-text text-justify">
+    				Initially, we collect all the traffic exchange locations (IXP or facilities) where 2 ISPs are currently present. 
+    				Using these information, we generate all possible peering deals considering only the common locations where both ISPs are present and identify the best deals from the requester ISP's point of view.
+    				We give <span class="text-monospace">willingness score</span> to each of these deals and sort them according to different preferences: 
+					<span class="text-monospace">difference</span>, 
+					<span class="text-monospace">own</span>, and
+					<span class="text-monospace">ratio</span>,
+					More on these, later.          
+    			</p>
+    			<p class="card-text text-justify">
+    				Finally, we recommend the best 3 deals. For each deal, we also suggest the locations where traffic exchange should take place.
+				</p>
+    			<!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+  			</div>
+			<img src="/static/meta-peering-black-box.png" class="card-img-top" style="padding:1em" alt="Meta-peering basic diagram">
+		</div>
+		{% endif %}
+		
+		{% if not current_user.is_authenticated %}		
 		<div class="card mb-3 shadow-sm">
 			<div class="card-header">
 				<h5 class="my-0 font-weight-normal">Glossary:</h5>
@@ -18,29 +41,45 @@
 				</ul>
 			</div>
 		</div>
+		{% endif %}
 
 		<div class="card mb-3 shadow-sm">
 			<div class="card-header">
+				{% if current_user.is_authenticated %}
+				<h5 class="my-0 font-weight-normal">Peering recommendation sorting criteria:</h5>
+				{% else %}
 				<h5 class="my-0 font-weight-normal">Acceptable Peering Contracts sorting criteria:</h5>
+				{% endif %}
 			</div>
 			<div class="card-body">
 				<ul class="list-group">
-					<li class="list-group-item"><b>Difference</b> Minimizes the absolute difference between in/out-bound traffic for requester.</li>
-					<li class="list-group-item"><b>Own</b> Maximizes the requester ISP’s own traffic amount that it can offload, regardless of how much traffic it receives from the candidate.</li>
-					<li class="list-group-item"><b>Ratio</b> Choose peers with lower in/out-bound traffic ratio.</li>
+					<li class="list-group-item"><b>Difference</b> minimizes the absolute difference between in/out-bound traffic for requester ISP.</li>
+					<li class="list-group-item"><b>Own</b> maximizes the requester ISP’s own traffic amount that it can offload, regardless of how much traffic it receives from the candidate ISP.</li>
+					<li class="list-group-item"><b>Ratio</b> prefers lower in/out-bound traffic ratio instead of absolute values.</li>
 				</ul>
 			</div>
 		</div>
 		
 		<div class="card mb-3 shadow-sm">
 			<div class="card-header">
-				<h5 class="my-0 font-weight-normal">Peering query input format:</h5>
+				<h5 class="my-0 font-weight-normal">Peering query form input format:</h5>
 			</div>
 			<div class="card-body">
-					<ul class="list-group">
-					<li class="list-group-item"><b>ASN1</b> needs to be an integer, cannot be left empty.</li>
-					<li class="list-group-item"><b>ASN2</b> needs to be an integer, if left empty, will return a list of all ISPs peering is recommended with. If given a valid value, will show if peering is recommended.</li>
-					<li class="list-group-item"><b>Threshold</b> needs to be a decimal between 0.0 and 1.0, if left empty, will use the default value (0.5).</li>
+				<ul class="list-group">
+					<li class="list-group-item"><b>ASN1</b> is the Requester ISP's (ISP1) Autonomous System Number (ASN).</li>
+					<li class="list-group-item"><b>ASN2</b> is the Candidate ISP's (ISP2) ASN.</li>
+					<li class="list-group-item">
+						<b>Threshold</b> is the flexibility of the Requester ISP. Lower threshold indicates more <span class="font-weight-light">Openness</span> towards peering.
+						{% if current_user.is_authenticated %}
+						This value is used to filter out such candidate ISPs which may not be suitable for the requester ISP.
+						{% endif %}
+					</li>
+				</ul>
+				</br>
+				<p class="h6 text-info">Notes:</p>
+				<ul>
+					<li>Requester and Candidate ISPs can't be same.</li>
+					<li>We'll automatically select the ASN from the Requester and Candidate ISP name.</li>
 				</ul>
 			</div>
 		</div>
