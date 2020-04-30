@@ -204,36 +204,36 @@ def request_handler(data):
 				peering_recommended = True
 				if asn1_felicity_score < float(data['threshold']):
 					threshold_too_high = True
-				
-			"""
-			Peering Recommended, but first, check if threshold not too high.
-			Otherwise, Not Recommended.
-			"""
-			if not threshold_too_high:
-				rc = call('mkdir app/static/'+asn1_asn2, shell=True)
-				s3_resource = boto3.resource('s3')
-				my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
-				
-				aws_root = 'automatedpeering/AWS_Data/'
-				file_to_download1 = aws_root+asn1_asn2+'/own_'+asn1_asn2+'.png'
-				file_to_download2 = aws_root+asn1_asn2+'/diff_'+asn1_asn2+'.png'
-				file_to_download3 = aws_root+asn1_asn2+'/ratio_'+asn1_asn2+'.png'
-				file_to_download4 = aws_root+asn1_asn2+'/overlap.png'
-
-				resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
-				my_bucket.download_file(file_to_download1, resultFolder+'own_graph.png')
-				my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.png')
-				my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.png')
-				my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
-				
-				with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
-					zipObj.write(resultFolder+'own_graph.png')
-					zipObj.write(resultFolder+'diff_graph.png')
-					zipObj.write(resultFolder+'ratio_graph.png')
-					zipObj.write(resultFolder+'overlap.png')
-				
-				with open('app/appdata/ppc_data.json') as f:
-					ppc_data = json.load(f)[asn1_asn2]
+					
+				"""
+				Peering Recommended, but first, check if threshold not too high.
+				Otherwise, Not Recommended.
+				"""
+				if not threshold_too_high:
+					rc = call('mkdir app/static/'+asn1_asn2, shell=True)
+					s3_resource = boto3.resource('s3')
+					my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
+					
+					aws_root = 'automatedpeering/AWS_Data/'
+					file_to_download1 = aws_root+asn1_asn2+'/own_'+asn1_asn2+'.png'
+					file_to_download2 = aws_root+asn1_asn2+'/diff_'+asn1_asn2+'.png'
+					file_to_download3 = aws_root+asn1_asn2+'/ratio_'+asn1_asn2+'.png'
+					file_to_download4 = aws_root+asn1_asn2+'/overlap.png'
+	
+					resultFolder = 'app/static/'+data['asn1']+'_'+data['asn2']+'/'
+					my_bucket.download_file(file_to_download1, resultFolder+'own_graph.png')
+					my_bucket.download_file(file_to_download2, resultFolder+'diff_graph.png')
+					my_bucket.download_file(file_to_download3, resultFolder+'ratio_graph.png')
+					my_bucket.download_file(file_to_download4, resultFolder+'overlap.png')
+					
+					with ZipFile(resultFolder+'results.zip', 'w' ) as zipObj:
+						zipObj.write(resultFolder+'own_graph.png')
+						zipObj.write(resultFolder+'diff_graph.png')
+						zipObj.write(resultFolder+'ratio_graph.png')
+						zipObj.write(resultFolder+'overlap.png')
+					
+					with open('app/appdata/ppc_data.json') as f:
+						ppc_data = json.load(f)[asn1_asn2]
 		except Exception as e:
 			print(e)
 			
