@@ -1,3 +1,4 @@
+alembic==1.4.2
 awscli==1.18.39
 boto3==1.12.39
 botocore==1.15.39
@@ -9,6 +10,7 @@ dominate==2.5.1
 Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
 Flask-Login==0.5.0
+Flask-Migrate==2.5.3
 Flask-S3==0.3.3
 Flask-SQLAlchemy==2.4.1
 Flask-WTF==0.14.3
@@ -16,6 +18,7 @@ gunicorn==20.0.4
 itsdangerous==1.1.0
 Jinja2==2.11.2
 jmespath==0.9.5
+Mako==1.1.2
 MarkupSafe==1.1.1
 numpy==1.18.2
 pandas==1.0.3
@@ -25,6 +28,7 @@ psycopg2-pool==1.1
 pyasn1==0.4.8
 python-dateutil==2.8.1
 python-dotenv==0.12.0
+python-editor==1.0.4
 pytz==2019.3
 PyYAML==5.3.1
 rsa==3.4.2
