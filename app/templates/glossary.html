@@ -6,13 +6,12 @@
 		<h4 class="my-0 text-center border-bottom">Glossary and How to</h4>
 		</br>
 		-->
-		{% if current_user.is_authenticated %}
 		<div class="card mb-3">
   			<div class="card-body">
     			<h5 class="card-title">Meta Peering: How it works?</h5>
     			<p class="card-text text-justify">
-    				Initially, we collect all the traffic exchange locations (IXP or facilities) where 2 ISPs are currently present. 
-    				Using these information, we generate all possible peering deals considering only the common locations where both ISPs are present and identify the best deals from the requester ISP's point of view.
+    				Initially, we collect all the traffic exchange locations (IXP or facilities) where 2 ISPs currently have their presence. 
+    				Using these information, we generate all possible peering deals considering only the common locations where both the ISPs are present and identify the best deals from the requester ISP's point of view.
     				We give <span class="text-monospace">willingness score</span> to each of these deals and sort them according to different preferences: 
 					<span class="text-monospace">difference</span>, 
 					<span class="text-monospace">own</span>, and
@@ -20,15 +19,14 @@
 					More on these, later.          
     			</p>
     			<p class="card-text text-justify">
-    				Finally, we recommend the best 3 deals. For each deal, we also suggest the locations where traffic exchange should take place.
+    				Finally, we recommend the top 3 best deals. For each deal, we also suggest the locations where traffic exchange should take place.
 				</p>
     			<!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
   			</div>
 			<img src="/static/meta-peering-black-box.png" class="card-img-top" style="padding:1em" alt="Meta-peering basic diagram">
 		</div>
-		{% endif %}
 		
-		{% if not current_user.is_authenticated %}		
+		<!--
 		<div class="card mb-3 shadow-sm">
 			<div class="card-header">
 				<h5 class="my-0 font-weight-normal">Glossary:</h5>
@@ -41,15 +39,11 @@
 				</ul>
 			</div>
 		</div>
-		{% endif %}
+		-->
 
 		<div class="card mb-3 shadow-sm">
 			<div class="card-header">
-				{% if current_user.is_authenticated %}
 				<h5 class="my-0 font-weight-normal">Peering recommendation sorting criteria:</h5>
-				{% else %}
-				<h5 class="my-0 font-weight-normal">Acceptable Peering Contracts sorting criteria:</h5>
-				{% endif %}
 			</div>
 			<div class="card-body">
 				<ul class="list-group">
@@ -69,10 +63,8 @@
 					<li class="list-group-item"><b>ASN1</b> is the Requester ISP's (ISP1) Autonomous System Number (ASN).</li>
 					<li class="list-group-item"><b>ASN2</b> is the Candidate ISP's (ISP2) ASN.</li>
 					<li class="list-group-item">
-						<b>Threshold</b> is the flexibility of the Requester ISP. Lower threshold indicates more <span class="font-weight-light">Openness</span> towards peering.
-						{% if current_user.is_authenticated %}
+						<b>Threshold</b> is the flexibility of the Requester ISP. Lower threshold indicates more <span class="text-monospace">Openness</span> towards peering.
 						This value is used to filter out such candidate ISPs which may not be suitable for the requester ISP.
-						{% endif %}
 					</li>
 				</ul>
 				</br>
