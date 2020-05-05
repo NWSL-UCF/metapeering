@@ -164,8 +164,11 @@ def login_success(request, username):
 	return app.config[uname_dict[username].upper()+'_PW'] == password
 
 def get_issues():
-	issues = Feedback.query.all()
-	return issues
+	try:
+		issues = Feedback.query.all()
+		return issues
+	except:
+		return None 
 
 def feedback_form_handler(request):
 	fullname = request['name']

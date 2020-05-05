@@ -10,35 +10,56 @@
 		</div>
 		
 		<div class="contrainer-fluid">
-	    	<table class="table">
-			  	</thead>
-			  	<thead class="thead-light">
-			    	<tr>
-			    		<th scope="col">Issue #</th>
-			      		<th scope="col">Submitted at</th>
-			      		<th scope="col">Description</th>
-			      		<th scope="col">Status</th>
-			    	</tr>
-			  	</thead>
-			  	<tbody>
-			    	{% for issue in issues %}
-			    	<tr>
-			      		<th scope="row">{{ issue['id'] }}</th>
-			      		<td>{{ issue['date_created'].strftime('%m-%d-%Y') }}</td>
-			      		<td>{{ issue['message'] }}</td>
-			      		<td>
-			      			<strong>
-			      			{% if issue['is_solved'] is sameas true %}
-			      				Solved
-			      			{% else %}
-			      				Not solved
-			      			{% endif %}
-			      			</strong>
-			      		</td>
-			    	</tr>
-			    	{% endfor %}
-			  	</tbody>
-			</table>
+			{% if issues is none %}
+				<div class="alert alert-danger">
+		  			<h3 class="alert-heading text-center">Note: Database not created. Please check.</h3>				
+				</div>
+			{% elif issues|length == 0 %}
+				<div class="alert alert-info">
+		  			<h3 class="alert-heading text-center">Hooorraaaaaaah! No issues.</h3>				
+				</div>
+			{% else %}
+		    	<table class="table">
+				  	<thead class="thead-light">
+				    	<tr>
+				    		<th scope="col">Issue #</th>
+				      		<th scope="col">Submitted on</th>
+				      		<th scope="col">Description</th>
+				      		<th scope="col">Status</th>
+				    	</tr>
+				  	</thead>
+				  	<tbody>
+				    	{% for issue in issues %}
+					    	<tr>
+					      		<th scope="row">{{ issue['id'] }}</th>
+					      		<td>{{ issue['date_created'].strftime('%m-%d-%Y') }}</td>
+					      		<td>{{ issue['message'] }}</td>
+					      		<td>
+					      			{% if issue['is_solved'] is sameas true %}
+					      				<div id="div_solved_{{ issue['id'] }}">
+						      				<p class="mb-0 text-info">Solved <span class="text-muted text-capitalize"> (by {{ current_user.id }})</span></p>
+						      				<p class="mb-0 text-success">Confirmed <span class="text-muted text-capitalize"> (by {{ current_user.id }})</span></p>
+					      					<input type="checkbox" id="checkbox_confirmed_issue_{{ issue['id'] }}" name="issue_tracker" value="{{ issue['id'] }}" onclick="changeIssueStatusFunc('confirmed', {{issue['id'] }})">
+					      					<small class="text-muted"> Delete this issue?</small>
+					      				</div>
+					      			{% else %}
+					      				<div id="div_not_solved_{{ issue['id'] }}">
+						      				<p class="mb-0 text-danger">Not solved</p>
+					      					<input type="checkbox" id="checkbox_not_solved_issue_{{ issue['id'] }}" name="issue_tracker" value="{{ issue['id'] }}" onclick="changeIssueStatusFunc('not_solved', {{issue['id'] }})">
+					      					<small class="text-muted"> Mark as solved?</small>
+					      				</div>
+					      				<div id="div_solved_{{ issue['id'] }}" style="display:none">
+						      				<p class="mb-0 text-info">Solved <span class="text-muted text-capitalize"> (by {{ current_user.id }})</span></p>
+					      					<input type="checkbox" id="checkbox_solved_issue_{{ issue['id'] }}" name="issue_tracker" value="{{ issue['id'] }}" onclick="changeIssueStatusFunc('solved', {{issue['id'] }})">
+					      					<small class="text-muted"> Mark as confirmed?</small>
+					      				</div>
+					      			{% endif %}
+					      		</td>
+					    	</tr>
+				    	{% endfor %}
+				  	</tbody>
+				</table>
+			{% endif %}
 		</div>
 	</div>
 	
