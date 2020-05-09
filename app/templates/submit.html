@@ -2,62 +2,64 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block content %}
-  	<div class="py-3 text-center">
-		<h2 class="mb-4">Peering Query form</h2>
-		<p class="lead">
-		Please note that, currently we handle only a few ISPs. Please select a pair from the dropdown lists.
-		</br>
-		To learn more about possible peer ISPs, please check <a href="/glossary">Glossary</a> for detailed instructions.
-		</p>
-	</div>
-
-	<div class="card mb-3 shadow-sm">
-		<div class="card-header">
-			<h4 class="my-0 font-weight-normal">Query Submission Form</h4>
+	<div class="col-12-xs">
+	  	<div class="py-3 text-center">
+			<h2 class="mb-4">Peering Query form</h2>
+			<p class="lead">
+			Please note that, currently we handle only a few ISPs. Please select a pair from the dropdown lists.
+			</br>
+			To learn more about possible peer ISPs, please check <a href="/glossary">Glossary</a> for detailed instructions.
+			</p>
 		</div>
-		<div class="card-body">
-			<form action="" method="post" class="form" role="form">
-   				{{ form.csrf_token() }}
-   				<div class="row">
-    				<div class="form-group col-md-6">
-     					<!--{{ wtf.form_field(form.asn1, class='form-control')|safe }}-->
-     					<label>ASN1</label>
-						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ISP ASN will be automatically selected">?</span>
-     					{{ form.asn1(class='form-control')|safe }}
-     					</br>
-				    	{% if form.asn1.errors %}
-				            {% for error in form.asn1.errors %}
-					            <div class="alert alert-danger">{{ error }}</div>
-				            {% endfor %}
-			            {% endif %}
-    				</div>
-    				<div class="form-group col-md-6">
-     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
-     					<label>ASN2</label>
-						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ISP ASN will be automatically selected">?</span>
-     					{{ form.asn2(class='form-control')|safe }}
-     					</br>
-				    	{% if form.asn2.errors %}
-				            {% for error in form.asn2.errors %}
-					            <div class="alert alert-danger">{{ error }}</div>
-				            {% endfor %}
-			            {% endif %}
-    				</div>
-   			    </div>
-				<!--{{ wtf.form_field(form.threshold, class='form-control', 
-					placeholder='Peering threshold (0.1 to 1.0)') }}-->
-				<label>Threshold</label> 
-				<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Value to eliminate non-suitable candidate ISPs.">?</span>
-				{{ form.threshold(class='form-control', 
-					placeholder='Peering threshold (0.0 to 1.0)') }}
-	    		</br>
-		    	{% if form.threshold.errors %}
-		            {% for error in form.threshold.errors %}
-			            <div class="alert alert-danger">{{ error }}</div>
-		            {% endfor %}
-			    {% endif %}
-    			<button type="submit" class="btn btn-primary">Submit</button>
-  			</form>		
-  		</div>
+	
+		<div class="card mb-3 shadow-sm">
+			<div class="card-header">
+				<h4 class="my-0 font-weight-normal">Query Submission Form</h4>
+			</div>
+			<div class="card-body">
+				<form action="" method="post" class="form" role="form">
+	   				{{ form.csrf_token() }}
+	   				<div class="row">
+	    				<div class="form-group col-md-6">
+	     					<!--{{ wtf.form_field(form.asn1, class='form-control')|safe }}-->
+	     					<label>ASN1</label>
+							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ISP ASN will be automatically selected">?</span>
+	     					{{ form.asn1(class='form-control')|safe }}
+	     					</br>
+					    	{% if form.asn1.errors %}
+					            {% for error in form.asn1.errors %}
+						            <div class="alert alert-danger">{{ error }}</div>
+					            {% endfor %}
+				            {% endif %}
+	    				</div>
+	    				<div class="form-group col-md-6">
+	     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
+	     					<label>ASN2</label>
+							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ISP ASN will be automatically selected">?</span>
+	     					{{ form.asn2(class='form-control')|safe }}
+	     					</br>
+					    	{% if form.asn2.errors %}
+					            {% for error in form.asn2.errors %}
+						            <div class="alert alert-danger">{{ error }}</div>
+					            {% endfor %}
+				            {% endif %}
+	    				</div>
+	   			    </div>
+					<!--{{ wtf.form_field(form.threshold, class='form-control', 
+						placeholder='Peering threshold (0.1 to 1.0)') }}-->
+					<label>Threshold</label> 
+					<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Value to eliminate non-suitable candidate ISPs.">?</span>
+					{{ form.threshold(class='form-control', 
+						placeholder='Peering threshold (0.0 to 1.0)') }}
+		    		</br>
+			    	{% if form.threshold.errors %}
+			            {% for error in form.threshold.errors %}
+				            <div class="alert alert-danger">{{ error }}</div>
+			            {% endfor %}
+				    {% endif %}
+	    			<button type="submit" class="btn btn-primary">Submit</button>
+	  			</form>		
+	  		</div>
+		</div>
 	</div>
 {% endblock content %}
