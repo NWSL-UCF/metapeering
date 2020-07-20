@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+	<script>
+		$(document).ready(function() {
+			var searchButton = $('#searchButton');
+			var submitButton = $('#submitButton');
+			$('#asn-form').submit(function() { // catch the form's submit event
+				$.ajax({ // create an AJAX call...
+					data: $(this).serialize(), // get the form data
+					type: $(this).attr('method'), // GET or POST
+					url: $(this).attr('action'), // the file to call
+					success: function(response) { // on success..
+						window.location.href = response;
+						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
+					},
+					beforeSend: function(){
+						searchButton.val("Proccesing...");
+						searchButton.attr("disabled", "disabled");
+					},
+					complete: function(){
+						searchButton.val("Search"); // put your normal text
+						searchButton.removeAttr("disabled");
+					}
+				});
+				return false;
+			});
+			$('#common-pops-form').submit(function() { // catch the form's submit event
+				console.log($(this).serialize())
+				$.ajax({ // create an AJAX call...
+					data: $(this).serialize(), // get the form data
+					type: $(this).attr('method'), // GET or POST
+					url: $(this).attr('action'), // the file to call
+					success: function(response) { // on success..
+						window.location.href = response;
+						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
+					},
+					beforeSend: function(){
+						submitButton.val("Proccesing...");
+						submitButton.attr("disabled","disabled");
+					},
+					complete: function(){
+						submitButton.val("Submit"); // put your normal text
+						submitButton.removeAttr("disabled");
+					}
+				});
+				return false;
+			});
+		});
+	</script>
+	<iframe style="width:0px;height:0px;" frameborder="0"   src="SessionKeepAlive.aspx">
+   
+	</iframe>
+	
+
+	
+	<div id="custom-querry" class="col-12-xs">
+	  	<div class="py-3 text-center">
+			<h2 class="mb-4">Custom Peering Query form</h2>
+			<p class="lead">
+			This form allows you to choose specific PoP locations before we compute recommended Peering Contracts.
+			</p>
+		</div>
+
+		<div class="card mb-3 shadow-sm">
+			<div class="card-header">
+				<h4 class="my-0 font-weight-normal">Custom Query Submission Form</h4>
+			</div>
+			<div class="card-body">
+				{% with messages = get_flashed_messages() %}
+				  	{% if messages %}
+			    		{% for message in messages %}
+					    	<div class="alert alert-danger">{{ message }}</div>
+					    {% endfor %}
+				  	{% endif %}
+				{% endwith %}
+				<form action="" method="post" class="form" role="form" id="asn-form">
+	   				{{ form.csrf_token() }}
+	   				<div class="row">
+	    				<div class="form-group col-md-6">
+	     					<!--{{ wtf.form_field(form.asn1, class='form-control')|safe }}-->
+	     					<label>Requester AS</label>
+							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Requester Autonomous System. You will be able to choose the PoP locations later.">?</span>
+	     					{{ form.asn1(class='form-control')|safe }}
+	     					</br>
+					    	{% if form.asn1.errors %}
+					            {% for error in form.asn1.errors %}
+						            <div class="alert alert-danger">{{ error }}</div>
+					            {% endfor %}
+				            {% endif %}
+	    				</div>
+	    				<div class="form-group col-md-6">
+	     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
+	     					<label>Candidate AS</label>
+							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Autonomous System you want to peer with.">?</span>
+	     					{{ form.asn2(class='form-control')|safe }}
+	     					</br>
+					    	{% if form.asn2.errors %}
+					            {% for error in form.asn2.errors %}
+						            <div class="alert alert-danger">{{ error }}</div>
+					            {% endfor %}
+				            {% endif %}
+	    				</div>
+					   </div>
+					   <label>Threshold</label> 
+						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="How selective are you in peering? 0=Open, 1=Closed.">?</span>
+						{{ form.threshold(class='form-control', 
+							placeholder='Peering threshold (0.0 to 1.0)') }}
+						</br>
+						{% if form.threshold.errors %}
+							{% for error in form.threshold.errors %}
+								<div class="alert alert-danger">{{ error }}</div>
+							{% endfor %}
+						{% endif %}
+	    			<input type="submit" class="btn btn-primary" form="asn-form" id="searchButton" value="Search">
+	  			</form>		
+			</div>  
+		</div>
+	{% if session.get('commonPops', [])|length != 0 %}
+		{{ session.get('commonPops', [])|length }}
+		<h5>Here is a list of all the locations that where both the Autonomous Systems have a presence:</h5>
+		<h6>
+			If you want to exclude any of these locations from consideration for peering, please select them before submitting. <br>
+		</h6> 
+		<form method="post", action="result", class="form", role="form" id="common-pops-form">
+			<div class="container-fluid">
+				<div class="tab-content">
+					<table class="table align-middle">
+						<thead class="thead-light">
+							<tr>
+								<th scope="col"> </th>
+								<th scope="col">Name</th>
+								<th scope="col">Location</th>
+								<th scope="col">PeeringDB link</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for _item in session.pop('commonPops', [])  %}
+							<tr>
+								<td scope="row">
+									<!-- <div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="{{ _item['isp_id_in_peering_db'] }}" value="{{ _item['isp_id_in_peering_db'] }}" name="selectedPop">
+										<label class="custom-control-label" for="{{ _item['isp_id_in_peering_db'] }}"></label>
+									</div> -->
+									<div class="pretty p-svg p-curve">
+										<input type="checkbox" id="{{ _item['isp_id_in_peering_db'] }}" value="{{ _item['isp_id_in_peering_db'] }}" name="selectedPop"/>
+										<div class="state p-danger">
+											<!-- svg path -->
+											<svg class="svg svg-icon" viewBox="0 0 20 20">
+												<path d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z" style="stroke: white;fill:white;"></path>
+											</svg>
+											<label style="color:white" for="{{ _item['isp_id_in_peering_db'] }}">.</label>
+										</div>
+									</div>
+								</td>
+								<td>
+									{{ _item['org_name'] }}
+								</td>
+								<td scope="row" class="align-middle">
+									<a href="{{ 'https://www.google.com/maps/search/?api=1&query=%s,%s'%(_item['location'][0], _item['location'][1]) }}" target="_blank">
+									{{ _item['city'] }}, {{ _item['state'] }}
+								</td>
+								<td scope="row" class="align-middle">
+									<a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}" target="_blank">
+									{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}
+								</td>
+								<!-- <td scope = "row" class="text-center align-middle"><a href="{{ 'https://www.google.com/maps/search/?api=1&query=%s,%s'%(_item['location'][0], _item['location'][1]) }}" target="_blank">
+									<img src="/static/location.png" alt="Google Maps Location" width=20 height=27>
+								</td>	 -->
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				</div>
+				<input type="submit" class="btn btn-primary" form="common-pops-form" formnovalidate id="submitButton" value="Submit">
+				<!-- <button type="submit" class="btn btn-primary" formnovalidate id="submitButton" form="common-pops-form">Submit</button> -->
+			</div>
+		</form>
+		<div id="location-note">
+			<p class ="font-italic">* Location may not be accurate for all PoPs.</p>
+		</div>
+	{% elif session.pop('noCommonPops',False)%}
+	<div class="py-5 text-center">
+		<div class="alert alert-danger">
+  			<h3 class="alert-heading"> No Common PoPs found!</h3>
+  			<hr>
+  			<p>
+				Peering among the provided Autonomous Systems is not possible. 
+				This may be because you didn't choose any locations to peer at,
+				or there are no locations where both Autonomous Systems have a presensce.
+			</p>
+		</div>
+	</div>	
+	{% endif %}
+	</div>
+{% endblock content %}

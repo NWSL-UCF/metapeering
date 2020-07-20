@@ -16,4 +16,4 @@ function changeIssueStatusFunc(issue_current_status,issue_id){
     		checkBox.checked = false
     	}
     }
-} 
+}
