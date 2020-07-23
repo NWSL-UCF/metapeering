@@ -1,3 +1,8 @@
+'''
+@author: Shahzeb
+@created: Friday, July 17th 2020
+'''
+
 from .gVars import isp_pops, Output_Directory
 from shapely.geometry import Point, Polygon
 import numpy as np
@@ -8,9 +13,12 @@ import matplotlib.pyplot as plt
 
 def sort_by_angle(isp, isp_center):
     '''
-        @param isp: a list of (longitude, latitude) for PoP os the isp
+        Given an array of lat/long points, and a center point, this function returns the lat/long array\n 
+        sorted clockwise around the provided center point.\n
         
-        @param isp_center: the center point for all the PoP locations
+        isp: a list of (longitude, latitude) for PoP os the isp
+        
+        isp_center: the center point for all the PoP locations
 
         @return list of PoPs sorted clockwise with respect to the center
     '''
@@ -39,12 +47,22 @@ def sort_by_angle(isp, isp_center):
     return sorted_angle
 
 def generatePolygon(isp_pop_locations_list):
+    '''
+    Given a list of lat/long points sorted clockwise against the center, this function returns\n
+    a shapely Polygon object.
+    '''
     isp_location = {'longitude': [pair[0] for pair in isp_pop_locations_list], 'latitude': [pair[1] for pair in isp_pop_locations_list]}
 
     isp_center = (statistics.median(isp_location["longitude"]), statistics.median(isp_location["latitude"]))
     return Polygon(sort_by_angle(zip(isp_location["longitude"], isp_location["latitude"]),isp_center))
 
 def getPopulation(isp_a_poly, isp_b_poly):
+    '''
+    isp_a_poly: Polygon object that represents the area covered by isp_a\n
+    isp_b_poly: Polygon object that represents the area covered by isp_b\n
+    Given two polygons, this function uses the GPW gridded population of the world data to calculate\n
+    the population in polygon A, polygon B and the intersection of those polygons.
+    '''
     pop_data = np.loadtxt("compute/data/gpw_v4_population_count_2020.asc", skiprows=6)
     pop_data = np.where(pop_data==-9999, 0.0, pop_data)
     
@@ -81,6 +99,9 @@ def getPopulation(isp_a_poly, isp_b_poly):
 
 
 def drawOverlapGraph(isp_a, isp_b, isp_a_pops, isp_b_pops, isp_a_poly, isp_b_poly):
+    '''
+    This function draws a matplotlib graph to visualize the PoP locations and coverage areas for the two ISPs.
+    '''
     output_directory_for_graph = os.path.abspath(Output_Directory + "/" + str(isp_a[1]) + "_" + str(isp_b[1])+'/graph/')
 
     if not os.path.exists(output_directory_for_graph):
@@ -123,6 +144,12 @@ def drawOverlapGraph(isp_a, isp_b, isp_a_pops, isp_b_pops, isp_a_poly, isp_b_pol
 
 
 def affinityScore(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_list, common_pop_locations):
+
+    '''
+    Given two ISPs, this function uses the ISP PoP locations to calculate the affinity score.\n
+    '''
+
+
     # cacheFile1 = './compute/cache/'+str(isp_a_as)+'_'+str(isp_b_as)+'.json'
     # cacheFile2 = './compute/cache/'+str(isp_b_as)+'_'+str(isp_a_as)+'.json'
 
@@ -140,7 +167,8 @@ def affinityScore(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_li
     isp_b_poly = generatePolygon(isp_b_pop_locations_list)
 
     drawOverlapGraph(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_list, isp_a_poly, isp_b_poly)
-    ###
+    
+    ### To make the program faster only for testing purposes:
     return 0.5
     ###
     isp_a_population, isp_b_population, intersection_population = getPopulation(isp_a_poly, isp_b_poly)

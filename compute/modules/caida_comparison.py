@@ -45,7 +45,9 @@ def caida_comparison(scatter_plot_data=None):
     asn_keys = caida_data.keys()
     pair_match_dict = {}
     no_pair_match_dict = {}
+
     
+
     for k, v in data.items():
         pair_match_with_caida_in_isp_type = 0
         pair_match_asn_list = []
@@ -107,6 +109,17 @@ def caida_comparison(scatter_plot_data=None):
         axarr[i].set_yticks([0.25, 0.75])
         axarr[i].set_yticklabels(('S', 'E')) # Suggested or Established
         axarr[i].legend(loc=5,handlelength=0,markerscale=0)
+    
+    ##########################################################################################
+    '''
+    @author: Shahzeb
+    Saving pair_match_dict and no_pair_match_dict to a file
+    '''
+    with open('./compute/output/caida_comparison.json', 'w') as f:
+        data_to_write = {'pair_match':pair_match_dict, 'no_pair_match': no_pair_match_dict}
+        json.dump(data_to_write, f)
+
+    ##########################################################################################
     fig.add_subplot(111,frameon=False)
     plt.tick_params(labelcolor='none',top=False,left=False,right=False,bottom=False)
     plt.xlabel('Felicity scores')  

@@ -6,7 +6,7 @@ Error = Blueprint('errors', __name__, static_folder="static", template_folder="t
 @Error.app_errorhandler(ASNNotFoundError)
 def asn_not_found(e):
     flash(e.message)
-    return url_for("custom.custom", _method="GET")
+    return redirect(url_for("custom.custom", _method="GET"))
 
 @Error.app_errorhandler(Exception)
 def page_not_found(e):

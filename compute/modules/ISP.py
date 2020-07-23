@@ -69,6 +69,7 @@ class ISP(object):
                 else:
                     # We just split the population.
                     traffic_matrix[i][j] = List_Of_POP_Locations[my_p_l_list[i]].population / 2
+        
         return traffic_matrix
             
     def generate_local_traffic(self):
@@ -90,8 +91,8 @@ class ISP(object):
         @return: bit_mileage matrix and average bit mileage at each common PoP.
         '''
         bit_mileage_matrix = np.zeros(shape=(len(self.my_pop_locations_list), len(self.common_pop_locations)))
-        for i, my_pop_id in zip(range(len(self.my_pop_locations_list)), self.my_pop_locations_list):
-            for j, common_pop_id in zip(range(len(self.common_pop_locations)), self.common_pop_locations):
+        for i, my_pop_id in enumerate(self.my_pop_locations_list):
+            for j, common_pop_id in enumerate(self.common_pop_locations):
                 bit_mileage_matrix[i][j] = self.my_offloaded_traffic_matrix_from_pops_to_opponent_at_common_pops[i][j] * get_distance_between_two_pop_location(List_Of_POP_Locations[my_pop_id], List_Of_POP_Locations[common_pop_id])
         
         average_bit_mileage_at_pops = np.sum(bit_mileage_matrix, axis=0)

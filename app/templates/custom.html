@@ -12,7 +12,11 @@
 					type: $(this).attr('method'), // GET or POST
 					url: $(this).attr('action'), // the file to call
 					success: function(response) { // on success..
-						window.location.href = response;
+						// console.log(response)
+						document.body.innerHTML = response;
+						// $().html(response)
+						// location.reload()
+						// window.location.href = response;
 						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
 					},
 					beforeSend: function(){
@@ -33,7 +37,8 @@
 					type: $(this).attr('method'), // GET or POST
 					url: $(this).attr('action'), // the file to call
 					success: function(response) { // on success..
-						window.location.href = response;
+						document.body.innerHTML = response;
+						// window.location.href = response;
 						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
 					},
 					beforeSend: function(){
@@ -49,9 +54,6 @@
 			});
 		});
 	</script>
-	<iframe style="width:0px;height:0px;" frameborder="0"   src="SessionKeepAlive.aspx">
-   
-	</iframe>
 	
 
 	

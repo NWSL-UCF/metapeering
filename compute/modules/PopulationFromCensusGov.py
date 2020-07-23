@@ -135,7 +135,7 @@ class PopulationInfo(object):
             
         for k, v in PopulationInfo.location_not_in_census_gov_population.items():
             if k == state_abbreviation:
-                return v.get(city_name,1)
+                return v.get(city_name,100000)
                 # return int(v[city_name])
         
         return None

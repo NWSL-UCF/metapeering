@@ -11,9 +11,12 @@ Custom = Blueprint("custom", __name__, static_folder="static", template_folder="
 @Custom.route("/", methods=["GET", "POST"])
 def custom():
     form = CustomPeeringQuerryForm()
-    if request.method == "POST" and form.validate_on_submit():
-        return custom_peering_query_form_handler(request.form)
-        # return "notthing"
+    if request.method == "POST":
+        if form.validate_on_submit():
+            return custom_peering_query_form_handler(request.form)
+        else:
+            return render_template("custom.html", form=form)
+
     return render_template("custom.html", form=form)
 
 @Custom.route("/result", methods=["GET","POST"])
@@ -49,7 +52,7 @@ def custom_peering_query_form_handler(request):
     session['threshold'] = data["threshold"]
     session["authorized"] = True
     # print(session)
-    return url_for("custom.custom")
+    return redirect(url_for("custom.custom"))
     # return custom_request_handler(data)
 
 
@@ -118,7 +121,7 @@ def custom_request_handler(data):
     session['candidate']=isp2
     session['custom']=True
 
-    return url_for("custom.customResult")
+    return redirect(url_for("custom.customResult"))
 
 
 def generateContracts(isp1_asn, isp2_asn):
