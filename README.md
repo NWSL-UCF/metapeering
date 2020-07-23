@@ -32,6 +32,7 @@ Pre-requisites: [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-
 `heroku git:remote -a agile-shore-98268`
 
 4. Run heroku app locally:<br>
+*** Note: Because of the current timeout issue, run `python3 wsgi.py` from project root irectory instead of the next line.***
 `heroku local`
 
 5. (Optional) Deploy any changes to the website: <br>
