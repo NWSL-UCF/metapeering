@@ -59,7 +59,7 @@ def customPeeringAlgo(isp_a, isp_b, pop_list):
     scatter_plot_data = {"data": {}}
     scatter_plot_data["data"]['access'] = [do_work((isp_a, isp_b), customPoPList=pop_list)]
     
-    
+
     draw_scatter_plot(scatter_plot_data)
     # draw_brittleness(scatter_plot_data)
     # caida_comparison(scatter_plot_data)

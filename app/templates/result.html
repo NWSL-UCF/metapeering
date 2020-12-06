@@ -2,15 +2,16 @@
 {% block html_attribs %} lang="en"{% endblock %}
 
 {% block content %}
-	{% set requester = session.pop('requester') %}
-	{% set candidate = session.pop('candidate') %}
-	{% set custom = session.pop('custom', False) %}
-	{% set peering_recommended = session.pop('peering_recommended') %}
-	{% set threshold_too_high = session.pop('threshold_too_high') %}
-	{% set ppc = session.pop('ppc') %}
-	{% set title = session.pop('title') %}
-	
+{% set requester = session.pop('requester') %}
+{% set candidate = session.pop('candidate') %}
+{% set custom = session.pop('custom', False) %}
+{% set peering_recommended = session.pop('peering_recommended') %}
+{% set threshold_too_high = session.pop('threshold_too_high') %}
+{% set ppc = session.pop('ppc') %}
+{% set title = session.pop('title') %}
 
+
+	<script src='/static/overlapGraph.js'></script>
 	<div class="col-12-xs">
 		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 			<h4>
@@ -40,7 +41,7 @@
 				</div>			
 			{% elif ppc is not none %}
 				<h5>ISP coverage area overlap:</h5> 
-				<div class="text-center">
+				<!-- <div class="text-center">
 					{% if custom is sameas true %}
 					<figure class="figure">
 						<img src="/static/{{ requester[1]+'_'+candidate[1] }}/{{ requester[1]+'_'+candidate[1] }}_overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
@@ -52,7 +53,8 @@
 					  	<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
 					</figure>
 					{% endif %}
-				</div>
+				</div> -->
+				<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
 	
 				</br>
 				<h5>Recommended Peering Deals based on {{ requester[0] }}'s preference:</h5> 
