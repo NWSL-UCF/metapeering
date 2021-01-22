@@ -38,9 +38,9 @@ def do_work(isp_pair, customPoPList=None):
     global_ip_address_count = global_prefix_count = 0
     # Look for cached file.
     isp_a_json_file_name = os.path.abspath(os.path.dirname(
-        './compute/')) + "/data" + "/" + str(isp_a_asn) + "_peering_db_data_file.json"
+        './compute/')) + "/data/cache/" + str(isp_a_asn) + "_peering_db_data_file.json"
     isp_b_json_file_name = os.path.abspath(os.path.dirname(
-        './compute/')) + "/data" + "/" + str(isp_b_asn) + "_peering_db_data_file.json"
+        './compute/')) + "/data/cache/" + str(isp_b_asn) + "_peering_db_data_file.json"
 
     if os.path.exists(isp_a_json_file_name) and os.path.exists(isp_b_json_file_name):
         fin = open(isp_a_json_file_name)

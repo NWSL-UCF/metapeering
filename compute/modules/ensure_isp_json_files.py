@@ -93,8 +93,8 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
     isp_a_asn = isp_a[1]
     isp_b_asn = isp_b[1]
 
-    isp_a_json_file_name = Data_Directory + "/" + str(isp_a_asn) + "_peering_db_data_file.json"
-    isp_b_json_file_name = Data_Directory + "/" + str(isp_b_asn) + "_peering_db_data_file.json"
+    isp_a_json_file_name = Data_Directory + "/cache/" + str(isp_a_asn) + "_peering_db_data_file.json"
+    isp_b_json_file_name = Data_Directory + "/cache/" + str(isp_b_asn) + "_peering_db_data_file.json"
 
     if (not os.path.exists(isp_a_json_file_name)) or (not os.path.exists(isp_b_json_file_name)) or force:
         peeringInfo = PeeringInfo()

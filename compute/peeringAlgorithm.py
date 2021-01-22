@@ -33,10 +33,10 @@ def getCommmonPops(isp_a_asn, isp_b_asn):
     ensure_isp_json_files(('',isp_a_asn), ('',isp_b_asn))
     
     isp_a_pops = []
-    with open('./compute/data/'+str(isp_a_asn)+'_peering_db_data_file.json', 'r') as f:
+    with open('./compute/data/cache/'+str(isp_a_asn)+'_peering_db_data_file.json', 'r') as f:
         isp_a_pops = json.load(f)['data']['pop_list']
     isp_b_pops = []
-    with open('./compute/data/'+str(isp_b_asn)+'_peering_db_data_file.json', 'r') as f:
+    with open('./compute/data/cache/'+str(isp_b_asn)+'_peering_db_data_file.json', 'r') as f:
         isp_b_pops = json.load(f)['data']['pop_list']
     
     common_pops = []

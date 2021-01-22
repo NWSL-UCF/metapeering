@@ -11,6 +11,7 @@ metapeering/
 deactivate/
 archive/
 compute/output
+compute/data/cache
 compute/custom_output
 compute/modules/output
 _.git/
