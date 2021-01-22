@@ -169,7 +169,7 @@ def affinityScore(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_li
     drawOverlapGraph(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_list, isp_a_poly, isp_b_poly)
     
     ### To make the program faster only for testing purposes:
-    return 0.5
+    # return 0.5
     ###
     isp_a_population, isp_b_population, intersection_population = getPopulation(isp_a_poly, isp_b_poly)
 
