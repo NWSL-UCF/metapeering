@@ -63,11 +63,11 @@ def custom_request_handler(data):
     isp2 = ['',session.pop('asn2')]
     threshold = session.pop('threshold',0.5)
     
-    with open("./compute/data/"+str(isp1[1])+"_peering_db_data_file.json") as f:
+    with open("./compute/data/cache/"+str(isp1[1])+"_peering_db_data_file.json") as f:
         jsonData = json.load(f)
         isp1[0] = jsonData["data"]["name"]
     
-    with open("./compute/data/"+str(isp2[1])+"_peering_db_data_file.json") as f:
+    with open("./compute/data/cache/"+str(isp2[1])+"_peering_db_data_file.json") as f:
         jsonData = json.load(f)
         isp2[0] = jsonData["data"]["name"]
 
