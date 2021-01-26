@@ -46,7 +46,7 @@ class PopulationInfo(object):
 
     
     location_not_in_census_gov_population = {"CA": {"San Antonio": 1512000}, "HI": {"Honolulu": 350395},"VA":{"Ashburn": 43511, "Northern Virginia": 2775354, "Reston": 60070, "Sandston": 7571, "Sterling": 29597}, 
-                                             "MA": {"Billerica": 43962}, "NJ": {"Edison": 102450, "North Bergen": 63659, "Weehawken": 15342, "Piscataway": 57887}, "NY": {"Brooklyn": 2648771, "Staten Island": 479458}}
+                                             "MA": {"Billerica": 43962}, "NJ": {"Edison": 102450, "North Bergen": 63659, "Weehawken": 15342, "Piscataway": 57887}, "NY": {"Brooklyn": 2648771, "Staten Island": 479458}, "UT":{"Saint George":76915}}
         
     # This is to reduce the API call to Census Gov.
     use_census_gov_api = False
