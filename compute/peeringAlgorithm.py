@@ -40,14 +40,13 @@ def getCommmonPops(isp_a_asn, isp_b_asn):
         isp_b_pops = json.load(f)['data']['pop_list']
     
     common_pops = []
-    print("LENGTHS:::: ",len(isp_a_pops), len(isp_b_pops))
     count = 0
     for a_pop in isp_a_pops:
         for b_pop in isp_b_pops:
             if (a_pop['isp_id_in_peering_db'] == b_pop['isp_id_in_peering_db']) and (a_pop['isp_type_in_peering_db'] == b_pop['isp_type_in_peering_db']):
                 count += 1
                 common_pops.append(a_pop)
-    print(count)
+
     return common_pops
 
 
