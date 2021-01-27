@@ -71,11 +71,6 @@ app.register_blueprint(Error)
 def json():
     return render_template('json.html')
 
-#background process happening without any refreshing
-@app.route('/background_process_test')
-def background_process_test():
-    print ("Hello")
-    return
 
 @app.after_request
 def after_request(response):

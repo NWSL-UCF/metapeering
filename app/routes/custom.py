@@ -57,8 +57,6 @@ def custom_peering_query_form_handler(request):
 
 
 def custom_request_handler(data):
-    # print(session['asn1'])
-    print("In this function")
     isp1 = ['',session.pop('asn1')]
     isp2 = ['',session.pop('asn2')]
     threshold = session.pop('threshold',0.5)
@@ -72,7 +70,8 @@ def custom_request_handler(data):
         isp2[0] = jsonData["data"]["name"]
 
     asn1_asn2 = str(isp1[1]) + "_" + str(isp2[1])
-    call("mkdir ./app/static/" + asn1_asn2, shell=True)
+    if not os.path.exists("./app/static/" + asn1_asn2):
+        call("mkdir ./app/static/" + asn1_asn2, shell=True)
 
     if customPeeringAlgo(tuple(isp1),tuple(isp2), [int(num) for num in data]):
         
