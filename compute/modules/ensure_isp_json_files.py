@@ -76,12 +76,23 @@ us_state_abbrev = {
     'wyoming': 'WY'
 }
 
+excludedStates = {
+    "HI":"exclude",
+    "AK":"exclude",
+    "PR":"exclude",
+    "MP":"exclude",
+    "RI":"exclude",
+    "VI":"exclude",
+    "GU":"exclude",
+    "AS":"exclude"
+}
+
 def clean(state):
     state = state.strip("B").strip("'")
     if(len(state) > 2):
         state = us_state_abbrev[state.lower()]
+    return excludedStates.get(state,state)
 
-    return state
 def ensure_isp_json_files(isp_a, isp_b, force=False):
     # print("Entering ensure_isp_json_files")
     '''
@@ -115,7 +126,8 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
                 p["state"] = clean(p["state"])
                 if (p['state'] == 'exclude'):
                     remPop.append(i)
-                p.update({'internet_penetration_percentage': (PopulationInfo.internet_users_percentage[p['state']] / 100.0)})
+                else:
+                    p.update({'internet_penetration_percentage': (PopulationInfo.internet_users_percentage[p['state']] / 100.0)})
             temp_a_city_state_list = [i for j, i in enumerate(temp_a_city_state_list) if j not in remPop]
 
             with open(isp_a_json_file_name, "w") as fout:
@@ -133,11 +145,12 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
             temp_b_city_state_list = peeringInfo.get_all_possible_peering_city(isp_b_pdb_net_id)
             # print('temp_b_city_state_list: ',temp_b_city_state_list)
             # print("HERE 2: -----> temp_b_city_state_list: ",temp_b_city_state_list)
-            for p in temp_b_city_state_list:
+            for i, p in enumerate(temp_b_city_state_list):
                 p["state"] = clean(p["state"])
                 if (p['state'] == 'exclude'):
                     remPop.append(i)
-                p.update({'internet_penetration_percentage': (PopulationInfo.internet_users_percentage[p['state']] / 100.0)})
+                else:
+                    p.update({'internet_penetration_percentage': (PopulationInfo.internet_users_percentage[p['state']] / 100.0)})
 
             temp_b_city_state_list = [i for j, i in enumerate(temp_b_city_state_list) if j not in remPop]
 
