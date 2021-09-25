@@ -52,7 +52,7 @@ us_state_abbrev = {
     'new hampshire': 'NH',
     'new jersey': 'NJ',
     'new mexico': 'NM',
-    'new nork': 'NY',
+    'new york': 'NY',
     'north carolina': 'NC',
     'north dakota': 'ND',
     'northern mariana islands':'exclude', #
@@ -96,9 +96,9 @@ def clean(state):
 def ensure_isp_json_files(isp_a, isp_b, force=False):
     # print("Entering ensure_isp_json_files")
     '''
-    @param isp_pair_list: Takes isp_pair list \n 
+    @param isp_pair_list: Takes isp_pair list \n
     @note: checks if json file for each ISP exists. If not, calls PeeringInfo to access PeeringDB,
-    and generate the json file before those are used in do_work(). 
+    and generate the json file before those are used in do_work().
     '''
 
     isp_a_asn = isp_a[1]
@@ -109,7 +109,7 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
 
     if (not os.path.exists(isp_a_json_file_name)) or (not os.path.exists(isp_b_json_file_name)) or force:
         peeringInfo = PeeringInfo()
-        
+
         total_prefixes_in_globe, total_addresses_in_globe = get_total_prefixes_addresses_count_from_caida()
 
         isp_a_pdb_net_id, info_type_a = peeringInfo.get_net_id_from_asn(isp_a_asn, get='info_type')
@@ -161,6 +161,6 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
                                     "prefixes": prefixes, "total_prefixes_in_globe": total_prefixes_in_globe,
                                     "address_space": address_space, "total_addresses_in_globe": total_addresses_in_globe,
                                     "neighbor": neighbor,"info_type":info_type_b}}
-                # print('Data to be written in file (2): ',data)    
+                # print('Data to be written in file (2): ',data)
                 json.dump(data, fout)
     # print("Leaving ensure_isp_json_files")
