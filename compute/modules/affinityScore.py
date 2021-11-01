@@ -13,11 +13,11 @@ import matplotlib.pyplot as plt
 
 def sort_by_angle(isp, isp_center):
     '''
-        Given an array of lat/long points, and a center point, this function returns the lat/long array\n 
+        Given an array of lat/long points, and a center point, this function returns the lat/long array\n
         sorted clockwise around the provided center point.\n
-        
+
         isp: a list of (longitude, latitude) for PoP os the isp
-        
+
         isp_center: the center point for all the PoP locations
 
         @return list of PoPs sorted clockwise with respect to the center
@@ -32,13 +32,13 @@ def sort_by_angle(isp, isp_center):
             m = 0
         if (m==0):
             angle[(x,y)] = 0 if y>isp_center[1] else 180
-            
+
         elif (x >= isp_center[0]):
             angle[(x,y)] = 90 - math.degrees(math.atan(m))
         elif (x < isp_center[0]):
             angle[(x,y)] = 270 - math.degrees(math.atan(m))
-    
-    
+
+
     sorted_d = sorted(angle.items(), key=operator.itemgetter(1))
     sorted_angle = []
     for pair in sorted_d:
@@ -65,7 +65,7 @@ def getPopulation(isp_a_poly, isp_b_poly):
     '''
     pop_data = np.loadtxt("compute/data/gpw_v4_population_count_2020.asc", skiprows=6)
     pop_data = np.where(pop_data==-9999, 0.0, pop_data)
-    
+
     isp_a_pop=0.0
     isp_b_pop=0.0
     int_pop=0.0
@@ -74,16 +74,16 @@ def getPopulation(isp_a_poly, isp_b_poly):
 
     min_x = int((min_x+180.0)/0.041666666666667)
     min_y = int((min_y+90.0)/0.041666666666667)
-    
+
     max_x = int(math.ceil((max_x+180.0)/0.041666666666667))+2
     max_y = int(math.ceil((max_y+90.0)/0.041666666666667))+2
-    
+
     for i in range(min_x,max_x):
         for j in range(min_y,max_y):
 
             point_to_check = Point((0.041666666666667*i)-180.0, (0.041666666666667*j)-90.0)
-            pop_at_point = pop_data[i][j] 
-            
+            pop_at_point = pop_data[i][j]
+
             if point_to_check.within(isp_a_poly):
 
                 isp_a_pop += pop_at_point
@@ -94,7 +94,7 @@ def getPopulation(isp_a_poly, isp_b_poly):
 
             elif point_to_check.within(isp_b_poly):
                 isp_b_pop += pop_at_point
-    
+
     return int(isp_a_pop), int(isp_b_pop), int(int_pop)
 
 
@@ -113,12 +113,12 @@ def drawOverlapGraph(isp_a, isp_b, isp_a_pops, isp_b_pops, isp_a_poly, isp_b_pol
     isp_a_plottable_points = [Point(xy) for xy in isp_a_pops] # run this line first for points
     isp_b_plottable_points = [Point(xy) for xy in isp_b_pops]
 
-    isp_a_point_geo = gpd.GeoDataFrame(crs=crs, geometry=isp_a_plottable_points) 
+    isp_a_point_geo = gpd.GeoDataFrame(crs=crs, geometry=isp_a_plottable_points)
     isp_b_point_geo = gpd.GeoDataFrame(crs=crs, geometry=isp_b_plottable_points)
 
     isp_a_geo = gpd.GeoDataFrame(index=[0], crs=crs, geometry=[isp_a_poly]) # run this line with poly
     isp_b_geo = gpd.GeoDataFrame(index=[0], crs=crs, geometry=[isp_b_poly])
-    
+
     fig, ax = plt.subplots(figsize = (15, 15))
     plt.xlim(-125, -66.5)
     plt.ylim(24, 50)
@@ -127,7 +127,7 @@ def drawOverlapGraph(isp_a, isp_b, isp_a_pops, isp_b_pops, isp_a_poly, isp_b_pol
 
     isp_a_geo.plot(ax=ax,color='red', alpha=0.3)
     isp_b_geo.plot(ax=ax,color='blue', alpha=0.3)
-    
+
     isp_a_point_geo.plot(ax=ax, color='red', alpha=0.7)
     isp_b_point_geo.plot(ax=ax, color='blue', alpha=0.7)
 
@@ -135,12 +135,10 @@ def drawOverlapGraph(isp_a, isp_b, isp_a_pops, isp_b_pops, isp_a_poly, isp_b_pol
     red_patch = mpatches.Patch(color='red',alpha=0.4, label= str(isp_a[0]).upper())
     blue_patch = mpatches.Patch(color='blue',alpha=0.4, label=str(isp_b[0]).upper())
     purple_patch = mpatches.Patch(color='#801B88',alpha=0.5, label='Overlap')
-    
+
 
     ax.legend(loc='lower right', prop={"size":18}, handles=[red_patch, blue_patch, purple_patch])
     plt.savefig('./compute/output/' + str(isp_a[1]) +'_'+ str(isp_b[1]) + '/graph/'+str(isp_a[1]) +'_'+ str(isp_b[1])+'_overlap.png', bbox_inches='tight')
-    
-
 
 
 def affinityScore(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_list, common_pop_locations):
@@ -167,7 +165,7 @@ def affinityScore(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_li
     isp_b_poly = generatePolygon(isp_b_pop_locations_list)
 
     drawOverlapGraph(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_list, isp_a_poly, isp_b_poly)
-    
+
     ### To make the program faster only for testing purposes:
     # return 0.5
     ###
@@ -181,7 +179,7 @@ def affinityScore(isp_a, isp_b, isp_a_pop_locations_list, isp_b_pop_locations_li
         affinity_score_isp_a = 0.0
 
     affinity_score_isp_b = 1 - (isp_b_population / total_coverage_population)
-    
+
 
     if affinity_score_isp_b < 0:
         affinity_score_isp_b = 0.0
