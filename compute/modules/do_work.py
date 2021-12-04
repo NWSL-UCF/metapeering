@@ -22,12 +22,13 @@ def customizePoPs(popList, customPoPList):
         # print("Outgoing poplist: ",popList)
         return popList
 
+
 def do_work(isp_pair, customPoPList=None):
     '''
-    @return: If there is no PPC at all, there is no APC! 
-    Previously, we returned None, in such case. We return exact same object as like any pair with PPC, APC except, 
-    in such case, the value will be set to 0. 
-    And, in such cases, rather comparing the object with None, check PPC count, if that's 0. 
+    @return: If there is no PPC at all, there is no APC!
+    Previously, we returned None, in such case. We return exact same object as like any pair with PPC, APC except,
+    in such case, the value will be set to 0.
+    And, in such cases, rather comparing the object with None, check PPC count, if that's 0.
     '''
     isp_a_name, isp_a_asn = isp_pair[0]
     isp_b_name, isp_b_asn = isp_pair[1]
@@ -51,7 +52,7 @@ def do_work(isp_pair, customPoPList=None):
             isp_a_traffic_ratio_type = 'BALANCED'
         else:
             isp_a_traffic_ratio_type = data['traffic_ratio']
-            
+
         isp_a_ip_address_count = data['address_space']
         isp_a_prefix_count = data['prefixes']
         global_ip_address_count = data['total_addresses_in_globe']
@@ -61,7 +62,7 @@ def do_work(isp_pair, customPoPList=None):
         fin = open(isp_b_json_file_name)
         data = json.load(fin)['data']
         # data = isp_data[str(isp_b_asn)]['data']
-        
+
         temp_b_city_state_list = customizePoPs(data['pop_list'], customPoPList)
         if isp_b_asn == 174:
             isp_b_traffic_ratio_type = 'BALANCED'
@@ -82,6 +83,7 @@ def do_work(isp_pair, customPoPList=None):
         temp_b_city_state_list)
     # print('AAying: ', isp_a_pop_location_id_list)
     # print('AAying: ', isp_b_pop_location_id_list)
+
     common_pop_location_id_list = [
         a for a in isp_a_pop_location_id_list if a in isp_b_pop_location_id_list]
 

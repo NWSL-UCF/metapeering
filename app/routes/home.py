@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, session
 from app.forms import PeeringQueryForm
+#from compute.modules.get_isp_list import get_isp_lat_long
 import boto3, json
 from subprocess import call
 from zipfile import ZipFile
@@ -63,6 +64,8 @@ def request_handler(data):
     peering_recommended = False
     asn1_asn2 = data["asn1"] + "_" + data["asn2"]
 
+    #isp_a_pop_list, isp_b_pop_list = get_isp_lat_long(requesterISP[0],requesterISP[1], candidateISP[0], candidateISP[1])
+
     with open("app/appdata/felicity.json") as f:
         felicity_scores = json.load(f)
         try:
@@ -116,9 +119,11 @@ def request_handler(data):
 
                     with open("app/appdata/ppc_data.json") as f:
                         ppc_data = json.load(f)[asn1_asn2]
+                        #print(ppc_data)
+
         except Exception as e:
             print(e)
-    
+
     session['title'] = "Peering possibility"
     session['peering_recommended']=peering_recommended
     session['threshold_too_high']=threshold_too_high
