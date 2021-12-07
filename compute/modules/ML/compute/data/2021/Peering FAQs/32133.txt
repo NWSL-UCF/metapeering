@@ -1,0 +1,1 @@
+This AS serves as the backbone provider to Ting Fiber FTTH markets (394497) and Tucows (15348).

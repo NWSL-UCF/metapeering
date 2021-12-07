@@ -1,0 +1,2 @@
+Netskope is happy to peer, and we peer with the route servers wherever available.
+When it comes to bilateral sessions vs route server we do prefer route server peering until traffic hits a certain threshold, preferably 100Mbit/s at the minimum.

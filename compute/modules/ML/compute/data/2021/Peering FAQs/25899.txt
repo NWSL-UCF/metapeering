@@ -1,0 +1,7 @@
+20G Backbone within Oregon and Washington, USA
+
+Prefer direct BGP sessions.
+
+
+IPv4 Prefix Limit: 2000
+IPv6 Prefix Limit: 200

@@ -1,0 +1,92 @@
+This is the peering information for CIRA-DNS.  This network hosts "any.ca-servers.ca", one of the .CA DNS anycast instances.
+
+It also hosts DNS servers for:
+CCTLDS (15):
+
+        .AO - Angola
+
+        .AW - Aruba
+
+        .CA - Canada
+
+        .CR - Costa Rica
+
+        .DK - Denmark
+
+        .GW - Guinea-Bissau
+
+        .KY - Cayman Islands
+
+        .NL - Netherlands
+
+        .NZ - New Zealand
+
+        .PK - Pakistan
+
+        .PT - Portugal
+
+        .SE - Sweden
+
+        .SG - Singapore
+
+        .SX - Saint Martin
+
+        .NU - Niue
+
+GTLDS (28):
+
+        .AMSTERDAM
+
+        .AUDIO
+
+        .AUTO
+
+        .BLACKFRIDAY
+
+        .CAR
+
+        .CARS
+
+        .CHRISTMAS
+
+        .CLICK
+
+        .COUNTRY
+
+        .DIET
+
+        .FLOWERS
+
+        .GAME
+
+        .GIFT
+
+        .GUITARS
+
+        .HELP
+
+        .HIPHOP
+
+        .HIV
+
+        .HOSTING
+
+        .JUEGOS
+
+        .LINK
+
+        .LOL
+
+        .MOM
+
+        .PHOTO
+
+        .POLITIE
+
+        .PICS
+
+        .PROPERTY
+
+        .SEXY
+
+        .TATTOO

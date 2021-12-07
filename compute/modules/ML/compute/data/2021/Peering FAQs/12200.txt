@@ -1,0 +1,2 @@
+Rackspace US and Europe has consolidated to our new backbone AS12200. 
+Please note in Europe we have traffic requirements of 5 Mbps (95th percentile).

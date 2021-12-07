@@ -1,0 +1,215 @@
+Peering policy | Opera
+Browsers
+Products
+Gaming
+Downloads
+About
+Help
+Download now
+Browsers
+For computers
+Opera
+Opera GX
+Desktop blog
+For mobile
+Opera
+Opera GX
+Opera Touch
+Opera Mini
+Mobile blog
+Features
+Integrated messengers
+Ad blocker
+Free VPN
+Player
+Snapshot tool
+Workspaces
+Show all…
+Products
+Fintech
+Dify
+Entertainment
+Hype
+Opera News
+Opera News Lite
+Gaming
+Opera GX
+GameMaker Studio
+Downloads
+Mobile browsers
+Opera for Android
+Opera for iOS
+Opera Touch
+Opera Mini
+Show all…
+About
+Why Opera?
+Secure browsing
+News
+Jobs
+Help
+Opera for computers
+Opera for mobile
+How to switch
+Case studies
+Create account
+Security
+Forums
+All browsers
+For computers
+For mobile
+Features
+Opera
+Your personal browser
+Opera
+Your personal mobile browser
+Opera GX
+The browser for gamers
+Opera GX
+The browser for gamers
+Opera Mini
+A light data-saving browser
+See all browsers
+See all browsers
+Integrated messengers
+Chat with friends right in your browser without switching apps.
+Ad blocker
+Browse with less distractions and load websites faster.
+Free VPN
+Browse comfortably with enhanced privacy and security, for free.
+Player in sidebar
+A world of music and podcasts at your fingertips
+Snapshot tool
+Easily capture, edit and share your snapshots from webpages.
+Workspaces
+Organize tab groups in separate customizable workspaces
+Battery saver
+Video pop-out
+Flow
+See more features
+All
+Dify
+Free virtual debit card
+Hype
+Chat for free in Opera Mini
+Opera News
+Personalized news app
+Opera News Lite
+News that’s easy on your data
+All
+Opera GX
+The browser for gamers
+GameMaker Studio
+Complete game creation software
+Opera GX
+The browser for gamers
+All
+For computers
+For mobile
+Opera
+Your personal browser
+Opera GX
+The browser for gamers
+Opera
+Your personal mobile browser
+Opera Mini
+A light data-saving browser
+See all
+All
+Why Opera?
+Who and what we are
+Secure browsing
+How Opera protects you
+Blog
+Latest news from Opera
+Jobs
+Opportunities at Opera
+Get to know us
+All
+For computers
+For mobile
+Case studies
+Read about Opera in use
+Opera account
+Create a free account
+Forums
+Join the discussions
+Security
+Safety and security information
+Opera
+Get help with Opera for computers
+How to switch
+See the easy step-by-step
+Opera Browser for Android
+Get help with Opera Browser for Android
+Opera Browser for iOS
+Opera Mini
+Opera Touch
+See all
+Peering policy
+The peering policy for the Opera AS 39832 and AS 21837 network is as follows:
+ASN: 39832, 21837 (US)
+The maximum prefix is 20.
+The minimal announcement for IPv4 is /24.
+The minimal traffic volume for direct peering is 1 Gbps (however, in justified cases, we can peer with less traffic).
+The minimal traffic volume for direct line is 3 Gbps (however, in justified cases, we can peer with less traffic) - 10 Gbps LR optic path only.
+You must designate a 24/7 contact, NOC or equivalent.
+You must have prefixes set in the Internet Routing Registry (RADB preferred).
+An MD5 password is optional.
+Setting the default route to Opera is forbidden.
+Opera reserves the right to suspend peering temporarily if any form of network abuse occurs, to identify and fix the issues.
+Opera reserves the right to decline peering.
+Contact
+peering@opera.com
+Peering
+Services
+Addons
+Opera account
+Wallpapers
+Opera Ads
+Help
+Help & support
+Opera blogs
+Opera forums
+Dev.Opera
+FAQ
+Legal
+Security
+Privacy
+Cookies policy
+EULA
+Terms of Service
+Company
+About Opera
+Press info
+Jobs
+Investors
+Become a partner
+Contact us
+Innovate and inspire, uncover the unexpected, support open standards.
+Follow Opera
+© 1995-2021 Opera Norway
+All rights reserved
+Language:
+English
+العربيّة
+Deutsch
+Español
+Español Latinoamérica
+Français
+Bahasa Indonesia
+Italiano
+日本語
+한국어
+Norsk
+Polski
+Português
+Português Brasileiro
+Русский
+Türkçe
+Українська
+Tiếng Việt
+简体中文
+Free cookies 🍪
+We are always working to improve your experience on our website. Part of this involves using cookies to collect anonymous data for statistics and personalization. Further information can be found in our Privacy Statement and Cookies Policy.
+OK, I accept

@@ -1,0 +1,7 @@
+Manchester, UK: We are located at iomart Turing House. We have direct fiber access to LDeX2 / Equinix MA1.
+
+Charlotte, NC: We are located at 125 N Myers.  We have direct fiber access to 113 N Myers.
+
+Los Angeles, CA: We are located at 530 W 6th St.  We have direct fiber access to One Wilshire.
+
+Chicago, IL: We are located at 603 Discovery.  We are connected to UnitedIX and have direct fiber access to 350 E Cermak.

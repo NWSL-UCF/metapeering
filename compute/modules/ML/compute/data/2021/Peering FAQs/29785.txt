@@ -1,0 +1,63 @@
+Internet Exchange/Peering | DACS-IX | United States
+HomePublic PeeringPrivate PeeringInterexchange PeeringP.a.a.S.Direct InternetLocations and ParticipationPeering?ContactMoreNext gen peering solutions for your businessDynamic Access and Cross-Connect System - Internet Exchange (DACS-IX) is an IX that does more for your business.
+​
+Use Public, Private, Interexchange, and Direct Internet peering to:
+​
+reduce OPEX | reduce transit costs | connect to a desired networking endpoint | securely connect multiple sites | provide direct internet | and much more...
+​
+Don't know how to get started?  We offer P.a.a.S. (peering as a service).  No prior knowledge required, we supply everything - even an AS#!
+​
+Connect with us today!
+​Public PeeringA shared fabric connection
+DACS-IX supplied port and IP
+1gig | 10gig | 40gig
+Advertise and participate in peering via PeeringDB.com
+​
+Can Help You:
+​
+​
+Reduce LatencyControl CostsSecurely Expand Network  Private PeeringVLAN connection between two members of DACS-IX
+Facilitates elite multi-site connectivity
+Intra/Inter-LATA
+​
+Can Help You:
+​
+​
+​
+​
+Save MoneyIncrease SecurityStreamline Network Interexchange PeeringAccess to "closed" IX's
+DACS-IX facilitates connection to a desired subscriber in a different IX
+​
+Can Help You:
+​
+​
+​
+Control OPEXGrow Your NetworkGain Access Direct InternetProvide access to internet
+Can Help You:
+​
+​
+Augment or Replace existing ISP
+Primary or Redundant  ContactInquiries
+For any inquiries, questions or recommendations, please call: (410) 760-3447 or fill out the following formSubmitThanks for submitting!Office16 Greenmeadow Dr. Suite G106
+Timonium, MD 21093
+​
+bizdev@thestpaulgroup.com
+Tel: (410) 760-3447Payments and Invoices should be sent to:  PO Box 362 | Cockeysville, MD 21030-0362Peering?Peering is an established technology that connects internet-based networks to exchange traffic.
+​
+Read about peering from the creator of DACS-IX
+​
+Although this technology can solve other business-related needs - many members participate in peering to:
+​​
+Increase network performance
+Reduce network performance latency
+Increase control over network traffic routing
+Reduce dependency on transit providers
+Increase network resiliency
+Reduce Internet Protocol (IP) transport costs
+​
+Our "Dynamic Access and Cross-Connect System - Internet Exchange” (DACS-IX), brings established peering technology to Baltimore, Orlando, and New York City's technology landscape.
+​
+DACS-IX utilizes peering technology in its four distinct offerings: public peering; private peering; inter-exchange peering; and direct internet.
+​
+​More Info.
+Privacy Policy available upon request.

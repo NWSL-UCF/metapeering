@@ -1,0 +1,127 @@
+Peering Connections
+ESnet
+Menu
+Fasterdata
+MyESnet
+ESnet
+Home
+Home
+About
+Our Mission
+ESnet History
+Governance & Policies
+Org Chart
+ESnet Staff
+Career Opportunities
+Contact Us
+ESnet6
+Engineering Services
+The Network
+Network Maps
+Network Facts & Stats
+Connected Sites
+Peering Connections
+ESnet Site Availability
+OSCARS
+Fasterdata
+IPv6 Network
+Network Performance Tools
+ESCC
+R&D
+FABRIC
+SENSE
+EPOC
+DAPHNE
+NetSage
+GRETA
+PANORAMA 360
+X-SWAP
+Optimizing Zeek for Maximum Performance
+perfSONAR
+Experimental Network Testbeds
+Software-Defined Networking (SDN)
+Software & Tool Development
+ESnet Software on GitHub
+Science Engagement
+Overview
+Network Requirements Gathering
+Technical and Consulting Services
+Training: Programs & Workshops
+Collaborations
+Knowledge Base
+Contacts and mailing list
+CI Engineering Lunch & Learn Series
+News
+ESnet News
+ESnet Awards and Honors
+ESnet on Twitter
+Publications and Presentations
+Light Bytes
+ESnet Live
+Home » Engineering Services » The Network » Peering Connections
+Engineering Services
+The Network
+Network Maps
+Network Facts & Stats
+Connected Sites
+Peering Connections
+ESnet Site Availability
+OSCARS
+Fasterdata
+IPv6 Network
+Network Performance Tools
+ESCC
+Contact UsTechnical Assistance:1 800-33-ESnet (Inside US)1 800-333-7638 (Inside US) 1 510-486-7600 (Globally) 1 510-486-7607 (Globally)Report Network Problems:[email protected]Provide Web Site Feedback:[email protected]Privacy & Security NoticeÂ
+Peering Connections
+Overview
+In accordance with BCP38, ESnet filters traffic from downstream networks through the use of packet filters.Â
+To ensure BCP38 filters are kept up to date, downstream networks connecting to ESnet are required to publish and maintain accurate records of routing prefixes in use with ESnet.Â
+To facilitate the ability of ESnet's peer networks to prevent the propagation of invalid routing prefixes, ESnet maintains objects in the Internet Routing Registry system as described below.
+ESnet also filters routing prefixes from peers.Â  Peer networks connecting to ESnet are strongly encouraged to publish and maintain accurate records of routing prefixes in the IRR system, and ESnet may reject peering requests or de-peer networks if these records are not maintained.
+Â
+General Peering Information
+Autonomous System Number
+AS293
+IRR Registry
+RADB
+AS-SET OBJECT
+AS-ESnet
+PeeringDB Record
+https://www.peeringdb.com/net/940
+Exchange Points
+In addition to the public and private exchanges listed in PeeringDB, ESnet is able to peer at the following locations.
+MANHATTAN LANDING
+Â
+MID-ATLANTIC CROSSROADS
+Â
+NGIX-AMES
+Â
+PACIFIC WAVE SEA 9K
+207.231.240.13Â Â Â Â Â Â 2001:504:B:10::13
+PACIFIC WAVE SEA
+207.231.242.13Â Â Â Â Â Â 2001:504:B:11::13
+PACIFIC WAVE SEA-LAX 9K
+207.231.241.13Â Â Â Â Â Â 2001:504:B:80::13
+PACIFIC WAVE SEA-LAX
+207.231.243.13Â Â Â Â Â Â 2001:504:B:81::13
+PACIFIC WAVE SEA-SNV 9K
+207.231.245.13Â Â Â Â Â Â 2001:504:B:88::13
+PACIFIC WAVE SEA-SNV
+207.231.248.13Â Â Â Â Â Â 2001:504:B:89::13
+PACIFIC WAVE SNV 9k
+207.231.244.2Â Â Â Â Â Â  Â 2001:504:B:30::2
+PACIFIC WAVE SNV
+207.231.247.2Â Â Â Â Â Â  Â 2001:504:B:31::2
+PACIFIC WAVE SNV-SEA 9K
+207.231.245.130Â Â Â  2001:504:B:88::130
+PACIFIC WAVE SNV-SEA
+207.231.248.130Â Â Â  2001:504:B:89::130
+PACIFIC WAVE SNV-LAX 9K
+207.231.246.2 Â Â Â Â Â Â Â 2001:504:B:90::2
+PACIFIC WAVE SNV-LAX
+207.231.249.2 Â Â Â Â Â Â Â 2001:504:B:91::2
+ESnet Peering Contact Information
+To Request Peering with ESnet
+[email protected]
+24x7 Network Operations
+[email protected]

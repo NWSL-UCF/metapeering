@@ -1,0 +1,1 @@
+Prefers peering that can support ipv4+IPv6, unicast+multicast, and jumbo (9K MTU).

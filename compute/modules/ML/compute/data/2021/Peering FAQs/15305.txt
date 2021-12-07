@@ -1,0 +1,5 @@
+Syringa Networks was created in 2002 by 12 rural Idaho telephone companies with a determination to improve telecommunication and rural broadband services in Idaho.
+
+We do not peer with route servers.
+
+We require no more than 8 ms round trip latency between the direct BGP peers. This will be verified by using ICMP Echo-request (i.e., ping).

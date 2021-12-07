@@ -1,0 +1,22 @@
+CFH CABLE INC'S general peering policy is simple.
+
+We believe in an open Internet, if you can reach our ports or are present in or share a common Internet exchange point with us we will peer with you at no cost (settlement free peering). We peer openly on Internet Exchanges, and always participates in Route Servers on all Internet Exchanges that we join. We also offer direct ports at our various facilities.
+
+The easiest way to peer with us is to join the Route Servers on an exchange that we are connected to.
+
+Peer must maintain sufficient capacity to exchange traffic without congestion.
+
+Peer must maintain a publicly routable ASN.
+
+Peer should maintain an accurate peeringdb.com entry.
+
+Peer must NOT point a default or any static route to AS394109 for traffic that does not match an advertise prefix in BGP.
+
+Peer must NOT reset next hop information for AS394109.
+
+Peer is expected to maintain consistent routes in all locations unless otherwise agreed prior to interconnection.
+
+Suggested IPv4 max prefix setting: 50
+Suggested IPv6 max prefix setting: 2
+
+** We welcome and encourage dual-stack peering at all peering locations.

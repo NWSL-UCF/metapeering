@@ -1,0 +1,10 @@
+APAC Max prefix-limit:
+ IPv4: 100
+ IPv6: 50
+
+**Notes**  
+BNIX is backhauled to Paris, France  
+Espanix is temporary backhauled to Marseille, France  
+NIX.CZ is backhauled to Frankfurt, Germany  
+LyonIX is backhauled to Marseille, France  
+SwissIX is backhauled to Frankfurt, Germany

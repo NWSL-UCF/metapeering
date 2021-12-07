@@ -1,0 +1,3 @@
+***AS21548 has been acquired by Beanfield (AS21949)*** and will cease direct peering by October 2020. All prefixes announced by AS21548 will be reachable via Beanfield AS21949.
+
+Please see the Beanfield AS21949 PeeringDB entry for additional information, or contact us at peering at beanfield dot com.

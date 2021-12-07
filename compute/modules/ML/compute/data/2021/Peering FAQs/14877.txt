@@ -1,0 +1,9 @@
+Peering Policy: 
+We have a generally open policy with a few exceptions. For more information about peering, please email ipadmin@kinber.org.
+
+About:
+The Pennsylvania Research and Education Network (PennREN) is Pennsylvania's statewide research, education, and community network. Owned and operated by KINBER, PennREN serves members from Higher Education, K-12, Healthcare, Libraries, Government and Public Safety, and more. Additionally, KINBER utilizes its 1,800 mile fiber optic footprint to expand broadband access to underserved and unserved regions of Pennsylvania.
+
+For more information about KINBER and its services, please visit KINBER.org.
+
+For more information about the PennREN network, please visit NOC.PennREN.net

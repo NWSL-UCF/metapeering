@@ -1,0 +1,3 @@
+AS6459 has been acquired by GTT Communications (AS3257), and is no longer directly peering.
+
+Please send all peering related inquires to peering [at] gtt.net.

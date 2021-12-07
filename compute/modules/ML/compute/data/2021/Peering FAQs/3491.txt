@@ -1,0 +1,6 @@
+# Global Helpdesk for Customers:
+Customers only, __not for peers__ [hksmc@pccwglobal.com](mailto:hksmc@pccwglobal.com)
+Note: writing to the peering address below will only result in wasted time. 
+
+# List of BGP Communities:
+$ whois -h whois.ripe.net [AS3491](https://apps.db.ripe.net/db-web-ui/#/lookup?source=ripe-nonauth&key=AS3491&type=aut-num)

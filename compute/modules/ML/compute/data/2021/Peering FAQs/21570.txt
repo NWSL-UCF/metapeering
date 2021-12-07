@@ -1,0 +1,3 @@
+AS21570 has been acquired by GTT Communications and is no longer directly peering.
+
+Please visit the GTT / AS3257 PeeringDB entry for additional information, or contact peering [at] gtt [dot] net with any inquiries.

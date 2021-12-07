@@ -1,0 +1,3 @@
+Recommended :
+Max prefix IPv4 : 200
+Max prefix IPv6 : 50

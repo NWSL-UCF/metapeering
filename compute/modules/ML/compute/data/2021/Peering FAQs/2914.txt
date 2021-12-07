@@ -1,0 +1,3 @@
+NTT has deployed RPKI based BGP Origin Validation.
+
+Contact a NTT representative for the full POP list.

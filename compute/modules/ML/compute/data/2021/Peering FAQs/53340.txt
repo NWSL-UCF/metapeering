@@ -1,0 +1,4 @@
+Suggested IPv4 Maximum Prefixes = 200
+Suggested IPv6 Maximum Prefixes = 50
+
+MD5 is supported, but not preferred

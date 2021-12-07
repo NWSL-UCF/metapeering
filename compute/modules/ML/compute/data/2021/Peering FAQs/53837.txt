@@ -1,0 +1,73 @@
+ServedBy | BGP Peering Policies
+Live Chat
+Call Today: +1 (855)-SERVEDB (737-8332)
+Home
+Cloud
+Cloud Servers
+Private Cloud
+Available Instances >
+Enterprise Linux
+Linux
+Windows Server
+HPC Servers
+Custom Servers
+Solutions
+Data Center Infrastructure
+Network & Interconnection
+Professional Services >
+Data Migration & Consulting
+Web-Site Hosting
+About
+About ServedBy
+Technology Alliances
+News & Announcements
+Support
+Knowledge Base
+Contact
+Blog
+BGP Peering Policy
+Home / Legal / BGP Peering Policy
+ServedBy the Net, LLC, maintains an open peering policy towards requests at Public Internet Exchanges where our network is already established.
+We have the following requirements for networks peering directly with ServedBy the Net:
+Peering party must provide a reliable technical contact and/or supply information for a 24x7 Network Operations Center
+Peering party must provide a cooperative effort to negotiate any peering or abuse related issues
+Peering party will not abuse the peering relationship by pointing a default route or attempting to modify any next-hop
+Peering party must peer at all exchange in which both parties mutually have a presence We reserve our full rights to not to peer with any entity for any reason
+We reserve our full right to idle the session for any reason and for any time period, we will notify the peering party within 30 days should this occur
+We reserve the right to terminate peering at any time, for any reason, with 30 days notice
+We reserve the right to make any changes to this policy as necessary from time to time as we see fit
+We maintain a peering record, with technical peering details, on PeeringDB: as53837.peeringdb.com
+To initiate a peering request, send an e-mail including your organization's ASN, network information, and details of your request to: peering_at_servedby.net
+ServedBy the Net, LLC, currently participates with the following IXPapos;s:
+SIX, Seattle Internet Exchange
+This document was last modified on 05-01-2014
+Please contact us directly if you wish to request the latest version of ServedBy the Net's BGP Peering Policies.
+Serving Clouds from Seattle ®   Cloud is all we do.
+ServedBy
+About Us
+Our Cloud
+PR & News
+Events
+Legal
+ServedBy Blog
+Cloud
+Public Cloud
+Hybrid Cloud
+Cloud Servers
+Enterprise Linux
+Linux
+Windows Servers
+Resources
+Support
+Contact Us
+Knowledge Base
+Solutions
+Solution Overview
+VMware vCloud Hybrid
+Contact Us
+Questions? Give us a call.
+Toll-free: 1-855-SERVEDB (+1-855-737-8332)
+Payments Accepted
+Copyright ServedBy the Net, LLC. © 2010 - 2021. All rights reserved.
+Terms of Use | Privacy Policy
+Scroll

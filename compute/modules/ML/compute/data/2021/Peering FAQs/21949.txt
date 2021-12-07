@@ -1,0 +1,16 @@
+***About us***
+
+- We build, own, and operate the largest independent fibre-optic network in Toronto & Montreal and are also present in Vancouver.
+
+- The **IPv4 Prefixes** and **IPv6 Prefixes** values listed in our PeeringDB entry are our recommended values for peers to set their maximum prefix limits against.
+
+- We prefer **Direct  Peering Sessions** at all exchanges
+
+***About you***
+- **Contact Information** must be up to date with at minimum NOC and Peering email and telephone contacts.
+
+- **IRR Record** must resolve to a valid and maintained IRR entry for your organization.
+
+- **IPv4 Prefixes** and **IPv6 Prefixes** values expressed must be non-zero, and routinely maintained to include at least a 15% buffer above your actual advertised prefix count.
+
+- **MD5** is discouraged, but may be supported on a case by case basis.

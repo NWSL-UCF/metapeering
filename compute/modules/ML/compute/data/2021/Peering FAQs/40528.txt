@@ -1,0 +1,2 @@
+Suggested max prefixes for IPv4 : 50
+Suggested max prefixes for IPv6 : 50

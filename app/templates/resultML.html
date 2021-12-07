@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block content %}
+	{% set requester = session.pop('requester') %}
+	{% set candidate = session.pop('candidate') %}
+	{% set peering_recommended = session.pop('peering_recommended') %}
+  {% set valid_input = session.pop('valid') %}
+	
+	<style>
+		footer {
+	 position: absolute;
+	 bottom: 0;
+	 width: 100%;
+	}
+	</style>
+
+  <div class="col-12-xs">
+  		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  			<h4>
+  				Peering possibility report for:
+  			</h4>
+  			<h5>
+  				{{requester}} and {{candidate}}
+  			</h5>
+      </div>
+    <div class="container-fluid">
+  	{% if valid_input is sameas true %}
+  			{% if peering_recommended is sameas true %}
+        <div class="py-5 text-center">
+          <div class="alert alert-info">
+            <h5>Peering is recommended!</h5>
+          </div>
+        </div>
+        {% endif %}
+
+  		  {% if peering_recommended is sameas false %}
+  				<div class="py-5 text-center">
+  					<div class="alert alert-info">
+  						<h5>Peering is not recommended!</h5>
+  					</div>
+  				</div>
+        {% endif %}
+
+    {% else %}
+    <div class="py-5 text-center">
+      <div class="alert alert-info">
+        <h5>Error: AS pair not found.</h5>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+	</div>
+
+{% endblock content %}
