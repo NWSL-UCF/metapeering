@@ -1,0 +1,286 @@
+PeeringDB
+Advanced Search
+Register or Login
+Exchanges ()
+Networks ()
+Facilities ()
+Organizations ()
+Chevron
+Organization
+Chevron
+Also Known As
+Texaco, Caltex, Noble Energy
+Long Name
+Company Website
+http://www.chevron.com
+ASN
+7862
+IRR as-set/route-set
+AS-CHEVRON
+Route Server URL
+Looking Glass URL
+Network Type
+Enterprise
+IPv4 Prefixes
+50
+IPv6 Prefixes
+16
+Traffic Levels
+100-1000Mbps
+Traffic Ratios
+Mostly Inbound
+Geographic Scope
+Global
+Protocols Supported
+Unicast IPv4
+Multicast
+IPv6
+Never via route servers
+Last Updated
+2021-04-27T16:12:59Z
+Public Peering Info Updated
+2021-06-20T00:12:47
+Peering Facility Info Updated
+2021-04-27T16:11:27
+Contact Info Updated
+2017-02-02T11:23:49Z
+Notes
+Operational Issues: globalnetops1@chevron.com 24x7
+Peering Requests: peering@chevron.com
+Chevron also manages AS62926
+----------
+Chevron looks to establish peering connections with networks we have an existing business relationship or exchange significant amounts of traffic with. You must have a peeringdb entry to be added to our systems as a peer.
+Chevron peers per region (US/EU/AP) so build as many sessions as possible please and we do not peer with route servers.
+Please drop peering@chevron.com a note to add new locations.
+Peering Policy Information
+Peering Policy
+https://as7862.peeringdb.com
+General Policy
+Selective
+Multiple Locations
+Preferred
+Ratio Requirement
+No
+Contract Requirement
+Not Required
+Contact Information
+Role
+Name
+Visiblity
+Phone
+E-Mail
+12502
+Policy
+Policy
+Peering requests
+peering@chevron.com
+12502
+NOC
+NOC
+Network Operations
++1 713-754-4662 or +63 2 793-4662
+globalnetops1@chevron.com
+Public Peering Exchange Points
+Exchange
+ASN
+IPv4
+IPv6
+Speed
+RS Peer
+No filter matches.
+You may filter by Exchange, ASN or Speed.
+12502
+26
+AMS-IX
+7862
+Operational
+80.249.213.42
+2001:7f8:1::a500:7862:1
+10G
+12502
+1
+Equinix Ashburn
+7862
+Operational
+206.126.237.44
+2001:504:0:2::7862:1
+10G
+12502
+3
+Equinix Dallas
+7862
+Operational
+206.223.118.33
+2001:504:0:5::7862:1
+10G
+12502
+4
+Equinix Los Angeles
+7862
+Operational
+206.223.123.56
+2001:504:0:3::7862:1
+10G
+12502
+5
+Equinix San Jose
+7862
+Operational
+206.223.116.63
+2001:504:0:1::7862:1
+10G
+12502
+119
+Equinix São Paulo
+7862
+Operational
+64.191.233.85
+2001:504:0:7::7862:1
+10G
+12502
+158
+Equinix Singapore
+7862
+Operational
+27.111.229.84
+2001:de8:4::7862:1
+10G
+12502
+94
+Equinix Sydney
+7862
+Operational
+45.127.172.41
+2001:de8:6::7862:1
+10G
+12502
+167
+Equinix Tokyo
+7862
+Operational
+203.190.230.142
+2001:de8:5::7862:1
+10G
+12502
+18
+LINX LON1
+7862
+Operational
+195.66.227.109
+2001:7f8:4::1eb6:1
+10G
+12502
+1235
+MegaIX Perth
+7862
+Operational
+202.12.243.48
+2001:dea:0:50::30
+5G
+12502
+1235
+MegaIX Perth
+7862
+Operational
+202.12.243.70
+2001:dea:0:50::46
+5G
+Private Peering Facilities
+Facility
+ASN
+Country
+City
+No filter matches.
+You may filter by Facility, ASN, Country or City.
+1476
+12502
+CyrusOne Houston West
+7862
+United States of America
+Houston
+1320
+12502
+Equinix AM3 - Amsterdam, Science Park
+7862
+Netherlands
+Amsterdam
+69
+12502
+Equinix DA3 - Dallas
+7862
+United States of America
+Dallas
+1
+12502
+Equinix DC1-DC15 - Ashburn
+7862
+United States of America
+Ashburn
+8
+12502
+Equinix LA1 - Los Angeles
+7862
+United States of America
+Los Angeles
+534
+12502
+Equinix LD9 - London, Powergate
+7862
+United Kingdom
+London
+282
+12502
+Equinix SG1 - Singapore
+7862
+Singapore
+Singapore
+165
+12502
+Equinix SP4 - São Paulo
+7862
+Brazil
+Barueri
+6
+12502
+Equinix SV1/SV5/SV10 - Silicon Valley, San Jose
+7862
+United States of America
+San Jose
+131
+12502
+Equinix SY1/SY2 - Sydney
+7862
+Australia
+Sydney
+1893
+12502
+Equinix TY4 - Tokyo
+7862
+Japan
+Tokyo
+Cancel
+Save
+Operational
+© 2004-2021 PeeringDB
+All Rights Reserved. By using this service, you agree to adhere to our
+AUP.
+2.27.1 - Privacy Policy
+About
+Register
+Search
+Sponsors
+Resources
+API
+Documentation
+FAQ
+Governance
+Status
+Contact Us
+support@peeringdb.com
+Global System Statistics
+891 Exchanges
+22480 Networks
+4165 Facilities
+39930 Connections to Exchanges
+35857 Connections to Facilities
+4253 Automated Networks

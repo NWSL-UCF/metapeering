@@ -1,0 +1,154 @@
+Peering Policy | AS16276 | Peering with OVHcloud.com
+Peering Policy
+How to peer with OVHcloud / AS16276
+Peering Policy
+Internet Exchanges
+Asia Pacific
+Europe
+North America
+Facilities for PNI
+BGP Communities
+OVHcloud is a global cloud provider that specialises in delivering industry-leading performance and cost-effective solutions to better manage, secure, and scale data. OVHcloud provides a smarter alternative for web hosting, emails, bare metal servers, hosted private cloud, hybrid and public cloud solutions. The group manages 30 data centres across 12 sites in 4 continents, manufacturing its own servers, building its own data centres and deploying its own fibre-optic global network to achieve maximum efficiency. Through the OVHcloud spirit of challenging the status quo, the company brings freedom, security and innovation to solve data challenges â today and tomorrow. With a 20-year heritage and a solid European foundation, OVHcloud is committed to developing responsible technologies, as the group strives to be the driving force behind the next cloud evolution.
+Peering Policy
+OVHcloud.com operates using the autonomous system AS16276.
+We own datacenters in Europe (RBX, GRA, SBG, FRA, LON, WAW), North America (BHS, WAS, PDX) and APAC (SYD, SIN) and run a worldwide network.
+OVHcloud manages the following ASNs: AS16276 and AS35540
+Our traffic ratio is heavy outbound and our policy is
+open.
+Contact AS16276
+We use a ticketing system to contact us for peering purposes.
+Please send an email to peering-16276@ovh.net with detailed information.
+We may not reply immediately, so please be patient !
+If you want a faster response, please configure your side first.
+News about AS16276 Backbone Network can be found on Twitter, @as16276
+Peering with AS16276 on Internet Exchanges
+For low traffic levels, under 10Gbps peak, we recommend using direct sessions on Internet Exchanges.
+BGP sessions should be established in IPv4 and IPv6 if available
+Technical information (IPv4/IPv6) about peer should be visible publicly on peeringdb.com
+Peering with AS16276 on Private Peering
+Our BGP peering policy is open, but for PNI, we start with 10GB-LR or 100GB-LR4 interfaces.
+Discussion about a PNI starts when we share at least approximately 10-15Gbps. (peering-16276@ovh.net)
+We no longer do PNI under 4x10G or nx100G rate.
+BGP sessions should be established in IPv4 and IPv6 if available
+OVHcloud provides IPv4 /31 and IPv6 /127 subnets for the PNI
+Peering Information
+We announce around 121 IPv4 prefixes and 7 IPv6 prefixes.
+As we are growing fast, we suggest to set the following maximum-prefixes:
+IPv4 : 1000 prefixes
+IPv6 :
+200 prefixes
+Important Notices
+To ensure quality of operations, we reserve the following rights under our Peering Policy:
+To accept or decline a peering request at any time for any reason.
+To suspend, without notice, peering connectivity in the event of a severe quality of service issue such as high latency, packet loss, or jitter pattern is detected and to take appropriate traffic engineering steps to maintain service quality.
+To alter our peering policy and peering requirements at any time.
+To terminate any peering connection at any time without notice.
+Network tools
+We have a Looking Glass available, lg.ovh.net
+To track the latency from different locations, smokeping.ovh.net
+We have speedtest servers around our different datacenters, ovh.net
+AS16276 - BGP Communities
+Communities available (if send-community eBGP is enabled) are the following:
+CommunityDescription
+16276:40000Routes to North American Networks
+16276:40001Routes to European Networks
+16276:40019Routes to Asian Networks
+16276:40020Routes to Australian Networks
+IXIPv4IPv6CapacityParticipantsStats
+Equinix SydneyAU, Sydney45.127.172.2172001:de8:6::1:6276:110242
+BBIX TokyoJP, Tokyo218.100.6.2102001:de8:c::1:6276:110295
+Equinix SingaporeSG, Singapore27.111.228.1062001:de8:4::1:6276:1200428
+BBIX Hong KongHK, Hong Kong103.203.158.1192403:c780:b800:bb00:0:1:6276:11055
+EdgeIX - Sydney: MainAU, Sydney202.77.88.282001:df0:680:5::1c1071
+IX Australia (Sydney NSW): NSW-IXAU, Sydney218.100.52.2132001:7fa:11:4:0:3f9f:0:110248
+SGIX: Peering LANSG, Singapore103.16.102.1202001:de8:12:100::120100171
+BBIX SingaporeSG, Singapore103.231.152.1192001:df5:b800:bb00:0:1:6276:11073
+IXIPv4IPv6CapacityParticipantsStats
+DE-CIX New York: DE-CIX New York Peering LANUS, New York206.82.104.1212001:504:36::3f94:0:1100259
+Equinix ChicagoUS, Chicago208.115.136.1522001:504:0:4:0:1:6276:1100282
+Equinix Palo AltoUS, Palo Alto198.32.176.1062001:504:d::1:6276:1100117
+Equinix AshburnUS, Ashburn206.126.236.1842001:504:0:2:0:1:6276:1100389
+Equinix New YorkUS, New York198.32.118.1062001:504:f::1:6276:1100155
+NYIIXUS, New York198.32.160.772001:504:1::a501:6276:1100239
+NWAX: Primary Peering VLANUS, Portland198.32.195.1332620:124:2000::133100104
+Equinix San JoseUS, San Jose206.223.116.1932001:504:0:1:0:1:6276:1100251
+Any2WestUS, Los Angeles and Silicon Valley206.72.210.2142001:504:13::210:214200320
+Equinix DallasUS, Dallas206.223.118.1192001:504:0:5:0:1:6276:1100212
+SIX Seattle: MTU 1500US, Seattle206.81.80.2142001:504:16::3f94100398
+Equinix MiamiUS, Miami198.32.243.642001:504:0:6:0:1:6276:1100187
+TorIXCA, Toronto206.108.34.1892001:504:1a::34:189100270
+QIXCA, Montreal198.179.18.332001:504:2d::18:3310072
+FL-IXUS, Miami206.41.108.302001:504:40:108::1:30100150
+IXIPv4IPv6CapacityParticipantsStats
+TPIX WarsawPL, Warsaw195.149.232.2342001:7f8:27::1:6276:2100124
+THINX WarsawPL, Warsaw212.91.0.2422001:7f8:60::1:6276:110095
+DTEL-IX: PUBLICUA, Kiev193.25.180.2502001:7f8:63::fa200168
+LINX LON1: MainGB, London195.66.225.62001:7f8:4::3f94:2200902
+MSK-IX Moscow: MSK-IX peering networkRU, Moscow195.208.209.1492001:7f8:20:101::209:149100372
+Speed-IX: SPEED-IXNL, Dronten185.1.95.1522001:7f8:b7::a501:6276:1100179
+DE-CIX Madrid: DE-CIX Madrid Peering LANES, Madrid185.1.192.652001:7f8:a0::3f94:0:1100173
+Equinix WarsawPL, Warsaw195.182.218.202001:7f8:42::a501:6276:2100196
+LillixFR, Lille/North of France193.34.197.1422001:7f8:6d::1:6276:110025
+ESPANIX Madrid Upper LANES, Madrid185.79.175.2082001:7f8:f:1::2010044
+TPIX WarsawPL, Warsaw195.149.232.992001:7f8:27::1:6276:1100124
+LINX LON1: MainGB, London195.66.224.2202001:7f8:4::3f94:1300902
+BNIXBE, Brussels194.53.172.702001:7f8:26::a501:6276:110072
+ESPANIX Madrid Lower LANES, Madrid193.149.1.812001:7f8:f::20100142
+VIXAT, Vienna193.203.0.1512001:7f8:30:0:2:1:1:6276100161
+France-IX MarseilleFR, Marseille37.49.232.272001:7f8:54:5::2710093
+DATAIXRU, Frankfurt, Stockholm, Helsinki, Amsterda...178.18.230.652a03:5f80:7::230:65100366
+AMS-IXNL, Amsterdam80.249.209.2452001:7f8:1::a501:6276:2400934
+NetIX: NetIXBG, Sofia193.218.0.1632001:67c:29f0::1:6276:1100107
+MIX-ITIT, Milan217.29.66.672001:7f8:b:100:1d1:a5d1:6276:67200350
+Peering.czCZ, Prague, Bratislava, Vienna, Frankfurt91.213.211.1192001:7f8:7f::119100176
+DATAIXRU, Frankfurt, Stockholm, Helsinki, Amsterda...178.18.224.2522a03:5f80:4::224:252100366
+Equinix Zurich: Equinix IX - ZH MetroCH, Zurich194.42.48.302001:7f8:c:8235:194:42:48:304054
+France-IX ParisFR, Paris37.49.236.1002001:7f8:54::100100427
+France-IX ParisFR, Paris37.49.236.1442001:7f8:54::144100427
+NIX.CZ: Public peering VLANCZ, Prague91.210.16.1292001:7f8:14::25:120205
+Equinix Paris: Equinix IX - PA MetroFR, Paris195.42.144.1862001:7f8:43::1:6276:1100289
+BelgiumIX: PeeringlanBE, Brussels, Ghent, Leuven185.1.127.252001:7f8:d2::2510019
+DE-CIX Frankfurt: DE-CIX Frankfurt Peering LANDE, Frankfurt80.81.192.2092001:7f8::3f94:0:16001119
+LINX LON2GB, London195.66.236.2202001:7f8:4:1::3f94:1100365
+DE-CIX Frankfurt: DE-CIX Frankfurt Peering LANDE, Frankfurt80.81.193.2092001:7f8::3f94:0:26001119
+AMS-IXNL, Amsterdam80.249.209.2312001:7f8:1::a501:6276:1400934
+Equinix WarsawPL, Warsaw195.182.218.1472001:7f8:42::a501:6276:1100196
+DatacenterAddressCityCountryWebsite
+Digital Realty PDX (3825 NE Aloclek Dr)Digital Realty3825 NE Aloclek DrHillsboroUS
+Equinix SV1/SV5/SV10 - Silicon Valley, San JoseEquinix, Inc.11 Great Oaks BlvdSan JoseUS
+GPX Mumbai 2GPX Global Systems, IncPlot 37, Chandivali Farm Road, Andheri EastMumbaiIN
+Equinix SV8 - Silicon Valley, Palo AltoEquinix, Inc.529 Bryant StPalo AltoUS
+Espanix DatacenterAsociaciÃ³n ESpanixGran Via de Hortaleza 3 - Mesena 80MadridES
+Interxion Marseille (MRS1, MRS2, MRS3)Interxion Holding NVMRS1: 40 Avenue Roger Salengro - MRS2/3: Port of Marseille, Gate 4; Chemin du LittoralMarseilleFR
+IRIDEOS Avalon Campus 3IRIDEOS S.p.A.Via Caldera 21MilanoIT
+Global Switch ParisGlobal Switch7-9 rue petitParisFR
+Equinix NY1 - New York, NewarkEquinix, Inc.165 Halsey St - 8th FloorNewarkUS
+Global Switch SingaporeGlobal Switch 2 TAI SENG AVENUESingaporeSG
+Interxion Vienna (VIE1, VIE2)Interxion Holding NVLouis-Haefliger-Gasse 10ViennaAT
+Equinix WA2 - WarsawEquinix, Inc.23 PoleczkiWarsawPL
+CoreSite - Los Angeles (LA1) One WilshireCoreSite LLC624 S. Grand Ave. - Suite 110Los AngelesUS
+Interxion Madrid (MAD1, MAD2)Interxion Holding NVC/ Albasanz 71MadridES
+Westin Building SeattleThe Westin Building2001 Sixth Avenue - Suite 300SeattleUS
+Interxion Amsterdam Science Park AMS9 (formerly Vancis / SARA)Interxion Holding NVScience Park 121AmsterdamNL
+Equinix SG1 - SingaporeEquinix, Inc.20 Ayer Rajah Crescent - #05-05/08SingaporeSG
+Equinix WA1 - Warsaw, Centrum LIMEquinix, Inc.65/79 al. JerozolimskieWarsawPL
+Flexential - Portland/Hillsboro 2 (PDX02)Flexential Corp.5737 NE Huffman StHillsboroUS
+Equinix PA3 - Paris, Saint-DenisEquinix, Inc.Rue Ambroise Croizat, 114 - Saint-DenisParisFR
+Equinix TR1 - TorontoEquinix, Inc.151 Front StTorontoCA
+ATMAN Data Center Warsaw-2 (WAW-2, Konstruktorska 5)ATM S.A.ul. Konstruktorska 5WarsawPL
+CE Colo PragueCE Colo Czech s.r.o.Nad Elektrarnou 1428/47PragueCZ
+Digital Realty LON (Cloud House)Digital RealtyCloud House - Millharbour 47LondonGB
+Equinix DC1-DC15 - AshburnEquinix, Inc.21715 Filigree Ct - Building FAshburnUS
+Equinix ZH2 - ZurichEquinix, Inc.Josefstrasse 225ZurichCH
+Cologix MTL3Cologix, Inc.1250 Rene Levesque WestMontrealCA
+Equinix FR5 - Frankfurt, KleyerStrasseEquinix, Inc.Kleyerstrasse 90FrankfurtDE
+Interxion BrusselsInterxion Holding NVWezenbeekstraat 2 - ZaventemBrusselsBE
+Equinix MI1 - Miami, NOTAEquinix, Inc.50 NE 9th StMiamiUS
+Equinix SY1/SY2 - SydneyEquinix, Inc.639 Gardeners Road - MascotSydneyAU
+LCL Brussels (Diegem)LCL BelgiumKouterveldstraat 13 - DiegemBrusselsBE
+Telehouse - London (Docklands West)Telehouse - Global Data Centers14 Coriander AvenueLondonGB
+Equinix CH1/CH2/CH4 - ChicagoEquinix, Inc.350 E Cermak Rd - 5th Floor / 6th Floor / 8th FloorChicagoUS
+Global Switch AmsterdamGlobal SwitchJohan Huizingalaan 759AmsterdamNL
+Equinix DA2 - DallasEquinix, Inc.1950 N Stemmons Fwy - Suite 2027DallasUS
+Telehouse - Paris 2 (Voltaire - LÃ©on Frot)Telehouse - Global Data Centers137 Boulevard Voltaire - 65 Rue LÃ©on FrotParisFR
+www.OVHcloud.com - Last update from peeringdb.com on 2021-06-23 at 01:12:55 (UTC : 2H)

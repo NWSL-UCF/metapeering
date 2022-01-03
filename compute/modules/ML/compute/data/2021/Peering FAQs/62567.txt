@@ -1,0 +1,3 @@
+This ASN is for Private Network Interconnect purposes only.
+
+See https://as14061.peeringdb.com for our public routing domain information.

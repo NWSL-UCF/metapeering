@@ -1,0 +1,3 @@
+Exchanges/facilities with a peering AS of 7342 denote a point of interconnection with Verisign's global network
+
+To obtain information on adding a Verisign root,  .COM or .NET authoritative DNS server to your network, please visit http://www.verisign.com/rirs

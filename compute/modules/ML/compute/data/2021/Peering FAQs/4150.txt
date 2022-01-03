@@ -1,0 +1,72 @@
+AS4150 - SupraWiki
+AS4150
+From SupraWiki
+Jump to:					navigation, 					search
+SupraNet Communications, Inc peering, routing, BGP information. SupraNet currently operates AS4150 and AS5683.
+http://lg.supranet.net/ - SupraNet looking glass server
+Peering
+ASN: 4150
+IRR (ARIN): AS-SUPRANET
+Peering Policy: Open
+Prefixes (ipv4): ~20, Suggested Max 50
+Prefixes (ipv6): ~5, Suggested Max 10
+Peering locations: See http://as4150.peeringdb.com/
+Contact: peering@supranet.net
+BGP Communities
+Informational
+Informational Communities are BGP communities are added by SupraNet, to convey information about how and where the route was initially learned in our network. These communities will always have 5 digits in the second half, and are constructed in the following format:
+5LLLT
+5 Informational
+LLL Location code
+001 Madison - Excelsior Drive
+002 Madison - Network 222
+012 Chicago - 350 E Cermak
+031 Minneapolis - 511 11th Ave S
+T Type of relationship the route was learned
+1 Transit
+2 Peer - private
+3 Peer - public
+4 Customer
+5 Internal
+Action/Route Manipulation
+#####:6000 Do Not export to AS #####
+4150:6000 - Do not export to any peers
+2914:6000 - Do not export to NTT
+3356:6000 - Do not export to Level3
+6939:6000 - Do not export to Hurricane Electric
+Network Information
+3rd party websites that display useful information about our (and other) networks:
+http://bgp.he.net/AS4150 - Hurricane Electric BGP Toolkit
+http://as.robtex.com/as4150.html - Robtex Swiss Army Knife Tool
+https://stat.ripe.net/AS4150 - RIPEstat
+Retrieved from "http://wiki.supranet.net/wiki/index.php?title=AS4150&oldid=2127"
+Navigation menu
+Personal tools
+Log in
+Namespaces
+Page
+Discussion
+Variants
+Views
+Read
+View source
+View history
+Actions
+Search
+Navigation
+Main Page
+Email Client Setup
+Email Administration
+SupraNet Home
+Tools
+What links here
+Related changes
+Special pages
+Printable version
+Permanent link
+Page information
+This page was last modified on 16 September 2020, at 08:36.
+This page has been accessed 94,478 times.
+Privacy policy
+About SupraWiki
+Disclaimers

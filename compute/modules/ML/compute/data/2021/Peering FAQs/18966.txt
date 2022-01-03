@@ -1,0 +1,26 @@
+Peering | Aurora Trusted Leader in Payments
+Primary Menu PARTNERS
+MERCHANTS
+MERGERS & ACQUISITIONS
+COMPANY
+ABOUT US
+NEWS & EVENTS
+ASSOCIATIONS
+CAREERS
+BLOG
+CONTACT US | 833-AURORA2
+CONTACT US
+Aurora Peering Policy
+Aurora is willing to peer (IPv4 and IPv6) with networks that are connected to one or more exchange points that we have in common. If you require a more formal agreement, contact us and we will make arrangements. We will announce to you via BGP4 any routes which we carry and will listen to any routes that you carry. Our peering policy is simple, if you peer with Aurora, we expect the following:
+Only send us traffic that is destined for the prefixes we announce to you. Do not point default at us or use static routes to send us traffic that does not match the routes we announce to you.
+Aurora will generally announce consistent routes at each exchange point and expects peers to generally do the same. We understand that due to submarine cable faults or other reasons you may need to temporarily vary your announcements.
+Aurora expects you to peer at all exchange fabrics we have in common if we peer with you via public exchanges or all facilities we have in common if we peer via private interconnect with you. In other words, if you are peering in the US, Asia, and Europe at the same locations as Aurora you must peer with Aurora at all those locations. This is to prevent problems for your and our US and European customers so that customer traffic does not cross the Pacific or Atlantic twice to return back to the same continent.
+Aurora sets up IPv6 peering (along with IPv4 peering) with all networks that run both protocols.
+Network Information (Registered at PeeringDB and Merit Network RADB IRR)
+Any network is welcome to contact Aurora via email at peering@risewithaurora.com to discuss peering. Please include your ASN and peering point locations. An up-to-date peeringDB entry is requested and encouraged.
+For urgent peering concerns, please send an email to helpdesk@risewithaurora.com AND call the NOC at +1 805-298-1199
+Privacy Policy
+Linkedin Pixel
+Aurora Payments is a registered ISO and FSP of Wells Fargo Bank, N.A., Concord, CA and BBVA USA, Birmingham, AL., and Elavon, Inc., N.A., Atlanta, Georgia, and Evolve Bank & Trust; Memphis, TN., and Merrick Bank, N.A., South Jordan, UT. Aurora is a registered ISO of Deutsche Bank Trust Company Americas, New York, NY.
+Â© Aurora Payments 2021. All Rights Reserved.
+Top

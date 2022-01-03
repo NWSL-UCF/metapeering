@@ -1,0 +1,7 @@
+Backbone for eBay, Inc.  Provides Internet connectivity for eBay companies like ebay.com, StubHub, eBay Advertising, and eBay corporate Internet
+
+
+NL-ix router locations:
+193.239.118.61 - Amsterdam
+193.239.118.132 - Frankfurt
+193.239.118.133 - Dusseldorf

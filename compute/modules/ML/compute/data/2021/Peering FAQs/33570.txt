@@ -1,0 +1,42 @@
+Peering
+Search this site on Google
+Home
+Services
+Managed IT
+Cyber Security
+Business Phone
+Data Center Colocation
+Audio Visual
+About
+Contact
+PEERING POLICY
+amnet Systems LLC (amnet) Peering Requirements
+amnet is willing to peer (IPv4 and IPv6) with networks which are connected to one or more exchange points which we have in common.  We will announce to you via BGP4 any routes which we carry and will listen to any routes that you carry.  If you peer with amnet, we expect the following:
+Only send us traffic that is destined for the prefixes we announce to you.  Do not point default at us or use static routes to send us traffic that does not match the routes we announce to you.
+amnet will generally announce consistent routes at each exchange point and expects peers to do the same. We understand that you may need to temporarily vary your announcements.
+amnet expects you to peer at all exchange fabrics we have in common assuming we are peering with you via public exchanges.
+amnet sets up IPv6 peering (along with IPv4 peering) with all networks that run both protocols.
+amnet peers with route servers at exchange points.
+Network Information (Registered at PeeringDB)
+Any network is welcome to contact amnet via email at peering@amnetsystems.com to discuss peering.
+Please include your ASN and peering point location and an up-to-date peeringDB entry https://www.peeringdb.com/net/18507
+Contact Information
+Peering Contact
+See PeeringDB
+NOC Contact
+See PeeringDB
+PeeringDB
+http://as33570.peeringdb.com
+Postal Address
+amnet Systems LLC
+26 Fahey St
+Stamford CT 06907, USA
+CT OFFICE26 Fahey St.Stamford, CT 06907
+NYC OFFICE60 Riverside Blvd.New York, NY 10069
+Call us
+amnet Technology Solutions(203) 355-2400 - CT(646) 518-8051 - NYC(203) 355-2444 - SALES DIRECT LINE1-888-OK-AMNET (1-888-652-6638)
+Service Areas:
+Fairfield County, CT - Stamford, Norwalk, Greenwich, Westport, Darien, Fairfield, Milford, Stratford, Bridgeport.
+NYC, Westchester County, NY - White Plains, Purchase, Harrison, Elmsford, Rye, Manhattan, Bronx.
+Â© 2020 amnet Systems LLC
+Privacy Policy      Peering Policy

@@ -1,0 +1,9 @@
+* We recommend the following max-prefix settings
+  IPv4 sessions to max-prefix 300
+  IPv6 sessions to max-prefix 50
+
+* We prefer all peering be dual stack v4/v6
+
+* Max Prefix Lengths (unless technical necessity requires otherwise)
+  IPv4 /24 (ingress/egress)
+  IPv6 /48 (ingress/egress)

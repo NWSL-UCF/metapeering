@@ -1,0 +1,62 @@
+Brief description of MTS
+MTS PJSC (owner of COMSTAR-Direct CJSC), AS8359, founded 1993, is the
+largest and leading Russian broadband and mobile broadband/3G/LTE ISP with
+over 100 millions customers in Russia, Ukraine, Belarus, Armenia,
+Turkmenistan. We are also the first Russian IPTV provider, with the
+number of active customers around 150,000 (and growing). Our 100G/Nx10G
+Ethernet-based backbone network includes nodes located in Russia, Europe
+and United States. You may check MTS (NYSE:MBT) web-site to find out more information about us.
+Service portfolio of MTS includes:
+Internet services (both residential and corporate customers)
+IP transit
+IPTV (broadcast IPTV, Video on Demand and more)
+Hosting services (web and mail)
+VoIP services (corporate and pre-paid)
+Peering policy of MTS
+The information below applies to MTS IP backbone network
+(AS8359) which currently spans
+Moscow, Russia
+Saint-Petersburg, Russia
+Murmansk, Russia
+Rostov on Don, Russia
+Volgograd, Russia
+Krasnodar, Russia
+Sochi, Russia
+Voronezh, Russia
+Belgorod, Russia
+N.Novgorod, Russia
+Kazan, Russia
+Ufa, Russia
+Ekaterinburg, Russia
+Novosibirsk, Russia
+Vladivostok, Russia
+Kiev, Ukraine
+Stockholm, Sweden
+Helsinki, Finland
+Frankfurt, Germany
+Amsterdam, Netherlands
+London, UK
+Paris, France
+NYC, US
+Los Angeles, US
+With regard to possible peering relationship we are interested in both public and private peering. We consider the following locations for that:
+DE-CIX (Ancotel, Frankfurt)
+AMS-IX (Telecity)
+LINX (Telecity, Bonnington House)
+Netnod (Telecity, Stockholm)
+FICIX (Nebula, Helsinki)
+Panap, Telehouse 2, Paris
+NYIIX, Equinix NY (former PAIX) (Equinix, 111 8th, New York)
+Any2, One Wilshire, 624 South Grand Avenue, LA
+Equinix (Ashburn) [public only]
+Although this is not a formal peering agreement, the document provides basic guidelines to a party willing to peer
+Overview of the peering requirements
+No formal peering agreement is required, though we're willing to sign an appropriate contract if applicable
+Peer must operate it's own backbone in Europe and/or United States
+Aggregated exchanged traffic must be 50 Mbps or more (preferrably)
+Peering must be set up in all locations where both MTS and potential peer have their presence
+IPv4 and IPv6 possible at all locations
+MTS reserves the right to terminate peering upon a mutually negotiated terms
+You may find our looking glass here
+To request peering, please send a notification to peering@mtu.ru
+Last modified: 2017-12-07

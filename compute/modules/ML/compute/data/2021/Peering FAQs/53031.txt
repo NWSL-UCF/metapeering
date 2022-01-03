@@ -1,0 +1,2 @@
+Hi, Criteo is currently not open to peering on ASN 53031.
+Criteo also manages the following ASNs: 19750, 44788, 55569.

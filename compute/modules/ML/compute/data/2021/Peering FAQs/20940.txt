@@ -1,0 +1,3 @@
+AS20940 - the Akamai CDN - maintains an open peering policy.  Unless otherwise specified we will only announce the < 100 prefixes present in the cluster connected directly to you.
+
+Please get in touch if you are interested in hosting an Akamai cluster inside your network!

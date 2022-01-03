@@ -1,0 +1,5 @@
++Peering Policy:     
+     -Restrictive: Japan                                             
+     -Selective: North America, Europe, Asia(Outside Japan)
+                            
+For detailed information about peering policy, please contact our peering coordinator(Peering Team).

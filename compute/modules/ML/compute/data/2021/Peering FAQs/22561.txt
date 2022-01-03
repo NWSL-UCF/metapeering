@@ -1,0 +1,1 @@
+LightCore common backbone for CenturyTel AS5668 and legacy Embarq ASN's.  Peering requests for AS5668 and legacy Embarq are managed by AS22561.

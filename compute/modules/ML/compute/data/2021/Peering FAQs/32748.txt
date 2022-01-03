@@ -1,0 +1,181 @@
+Peering Policy | Steadfast
+Skip to main content
+Solutions by Industry
+Managed Service Providers
+Enterprise Solutions
+Developers & Startups
+Healthcare
+Trading and Financial
+Chicago Managed Trading Servers
+Trading and Financial Colocation: Chicago & New Jersey
+Support
+Register
+View Tickets
+Submit a Ticket
+Knowledgebase
+News
+Steadfast Blog
+Steadfast Podcasts
+Partner Information
+Partner Main
+Common Concerns
+Business Benefits
+Program Options
+Platinum Reseller
+Gold Reseller
+Silver Reseller
+Wholesale Program
+Agent and Resellers
+Ecosystem Partners
+Associations
+Technology Partners
+Contact Us
+Call Us
+Call | 888.281.9449
+Login
+Search
+This form logs you into your management portal account. To access your help desk account, click here and use the form to the right of the news.
+Login
+Fulltext search
+Search
+Toggle Navigation
+Menu
+Fulltext search
+Search
+Cloud Hosting
+Cloud Hosting
+Private Cloud
+Hybrid Cloud
+Public Cloud
+Cloud Storage
+Secure File Share
+Virtual Data Center Platform
+Managed Hosting
+Bare Metal Dedicated Servers
+Deep Learning GPU Dedicated Servers
+Linux Dedicated Servers
+Windows Dedicated Servers
+Virtual Private Servers
+Data Center Colocation
+Managed Colocation
+Chicago: 350 E Cermak
+Chicago: 725 S Wells
+Edison, New Jersey
+Security & Compliance
+Managed Firewall
+SSL VPN
+DDoS Protection
+Email Security
+Backup & Disaster Recovery
+Backup
+Disaster Recovery
+Veeam Backup & Replication
+Veeam Cloud Connect
+Why Steadfast
+Why Steadfast?
+About Steadfast
+Our History
+Our Team
+KarlCare
+Job Openings
+News and Press
+Data Centers & Network
+Our Data Centers
+Our Network
+Network Test
+Peering Policy
+Customer Stories
+Service Level Agreement
+Solutions by Industry
+Managed Service Providers
+Enterprise Solutions
+Developers & Startups
+Healthcare
+Trading and Financial
+Chicago Managed Trading Servers
+Trading and Financial Colocation: Chicago & New Jersey
+Support
+Register
+View Tickets
+Submit a Ticket
+Knowledgebase
+News
+Steadfast Blog
+Steadfast Podcasts
+Partner Information
+Partner Main
+Common Concerns
+Business Benefits
+Program Options
+Platinum Reseller
+Gold Reseller
+Silver Reseller
+Wholesale Program
+Agent and Resellers
+Ecosystem Partners
+Associations
+Technology Partners
+Contact Us
+Close
+Why Steadfast?
+About Steadfast
+Data Centers & Network
+Our Data Centers
+Our Network
+Network Test
+Peering Policy
+Customer Stories
+Service Level Agreement
+Peering Policy
+BGP Peering Information
+Steadfast Networks has an open peering policy, however we do have several basic requirements:
+Peering partners must not be a Steadfast Networks transit customer
+Peering partners must maintain a 24x7 Network Operations Center.
+Peering partners must cooperate in the troubleshooting of any peering related issues, denial of service attacks, UCE, hacking or virus penetration.
+Peering partners are prohibited from abusing our peering relationship by pointing default or resetting any next-hop.
+Peering partners are requested to peer at all common peering points.
+We reserve the right to not peer with anyone as we see fit and to terminate any peering at any time with 30 days notice.
+We reserve the right to change this policy with 30 days notice.
+Steadfast Networks operates under the global autonomous system number of 32748 and operates both IPv4 and IPv6 networks available for peering.
+All routes originating from Steadfast Networks will be registered in the IRR under the AS Macro of AS-STEADFAST.
+We maintain a PeeringDB record located at http://as32748.peeringdb.com.
+To establish peering, please contact us via email at peering@steadfast.net.Â
+Public Peering Locations
+Equinix Exchange, Chicago, IL - 206.223.119.34, 2001:504:0:4::3:2748:1
+AMS-IX, Chicago, IL - 206.108.115.35, 2001:504:38:1:0:a503:2748:1
+Equinix Exchange, New York, NY - 198.32.118.89, 2001:504:f::5a
+AMS-IX, New York, NY - 206.126.240.17, 2001:504:34:1:0:a503:2748:1
+NYIIX, New York, NY - 198.32.160.217, 2001:504:1::A503:2748:1
+If you pass us more than 100 Mbit/sec we would also be willing to consider a private peering relationship at 350 E Cermak Rd. in Chicago or any New York area Equinix facilities.
+For any emergencies/issues regarding an existing peering relationship, please contact our 24/7 network operations department at noc@steadfast.net or call 312-602-2689 option 1.
+Questions? Let Us Contact You.
+We would be happy to reach out to you to discuss your needs or answer any questions you may have about our services. Fill out form below, and we will get back to you.
+First Name *
+Email *
+Phone
+GO
+GO
+312.602.2689
+sales@steadfast.net
+Facebook
+Twitter
+YouTube
+LinkedIn
+Services
+Cloud Hosting
+Managed Hosting
+Backup & Disaster Recovery
+Solutions By Industry
+Enterprise Solutions
+Trading & Financial
+Healthcare
+Developers & Startups
+Keep Up With Steadfast. Request Info.
+Join our mailing list below to receive important blog updates, news, or promotional announcements via email.
+Email *
+Signup
+Signup
+© 2021 Steadfast
+Log In
+Site Map
+Legal Info & Privacy Policy

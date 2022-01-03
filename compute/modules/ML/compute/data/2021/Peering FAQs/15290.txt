@@ -1,0 +1,6 @@
+Other route servers available:
+telnet://route-server.west.allstream.com
+telnet://route-server.east.allstream.com
+IPv6 Max prefix = 500.
+
+As part of ongoing integration between AS15290 with AS6461(Zayo), we are no longer accepting any new peering requests. Please send email to peering@zayo.com if you wish to peer with AS6461.

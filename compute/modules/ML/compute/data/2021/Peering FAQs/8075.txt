@@ -1,0 +1,37 @@
+Microsoft Peering
+This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use. Learn more
+PeeringMenuSearch
+Peering
+Learn about peering with Microsoftâs network (AS8075) in Internet peering documentation.
+Quick Links:
+To review Microsoft peering policy, visit Peering Policy.
+To get started with a peering, visit Prerequisites to set up peering with Microsoft.
+To request a Public peering (i.e., Exchange peering), follow the instructions in Create or modify an Exchange peering using the portal.
+To request a PNI peering (i.e., Direct peering), follow the instructions in Create or modify a Direct peering using the portal.
+Microsoft Edge Caching Program
+Microsoft has a portfolio of first party online and cloud services that deliver content to customers on the Internet.  To make the delivery of this content more efficient and cost effective, the Microsoft Edge Caching Node Program has been created.
+If you are an Internet Service Provider and would like to find out more information about the program or express interest in it, please email to
+ispnode@microsoft.com.
+Please include the following information in your email:
+Entity or Network Name
+Autonomous System Number (ASN)
+IPv6 Support (Yes or No)
+Primary Operating Country
+IP POP Locations
+Traffic from Microsoft (ASN 8075) (peak and daily average)
+Estimated Win10 usage (example, daily average of 5 GB downloads from Win10 devices) (optional)
+Any caching program that you are currently enrolled in? (optional)
+Contact First Name
+Contact Last Name
+Contact Email Address
+Contact Phone Number
+Contact Title
+Other Relevant Information
+Your experience is important to us. Please share your feedback or questions to improve our services and better meet your needs.
+Contact us
+Privacy & cookies
+Terms of use
+Trademarks
+About our ads
+Â© 2021 Microsoft
+Created by Edge SRE (edgere@microsoft.com)

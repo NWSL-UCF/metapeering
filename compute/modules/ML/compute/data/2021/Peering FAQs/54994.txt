@@ -1,0 +1,5 @@
+Founded in January 2000, Wangsu Science and Technology Co., Ltd (Stock code: 300017) is dedicated in research of key technologies regarding big data and cloud computing infrastructures. The company has built an extensive and efficient global Content Delivery Network (CDN), edge computing network and data center (IDC), to meet users’ data computing and interaction needs anytime, anywhere.
+
+Powered by its strong data delivery and processing capabilities, Wangsu provides a wealth of products and services including CDN, customized IDC, cloud security, cloud computing and edge computing. Wangsu’s intelligent platform handles trillions of service requests on a daily basis, serving billions of Internet users around the world.
+
+Our vision: Intelligent Network Connects Tomorrow

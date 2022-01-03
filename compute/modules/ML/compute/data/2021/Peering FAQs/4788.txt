@@ -1,0 +1,2 @@
+TM Network is MPLS enabled and IPV6 ready
+For peering, kindly contact peering@tm.com.my

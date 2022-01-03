@@ -1,0 +1,7 @@
+Instart Logic is the world's first endpoint-aware application delivery solution that makes applications fast, secure, and easy to operate. 
+
+Instart Logic's platform combines machine learning, virtualization, and open APIs with a content delivery network (CDN) for global delivery. 
+
+Using Instart Logic, organizations can provide ultra-fast, visually immersive and secure experiences on any device to maximize revenue, deliver superior customer experiences and gain competitive advantage.
+
+Instart Logic is funded by Andreessen Horowitz, Four Rivers Group, Geodesic Capital, Greylock Partners, Hermes Growth Partners, Kleiner Perkins Caufield & Byers, Sutter Hill Ventures, Telstra Ventures, Tenaya Capital, Wing Venture Capital and several notable Silicon Valley angel investors.

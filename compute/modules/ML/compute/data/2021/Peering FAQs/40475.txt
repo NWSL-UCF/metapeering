@@ -1,0 +1,81 @@
+Applied Operations | Peering
+Go to . . .
+Home
+Company
+Products
+Clients
+Contact
+Pricing
+Auditing
+Hosting
+Network
+Servers
+Monitoring
+Facilities
+SLA
+AUP
+Corporate Policy
+Peering
+This document serves as a guideline for Internet Service Providers seeking Settlement-Free Interconnection, also known as Peering, with Applied Operations. All questions regarding this document, or requests for Peering, should be directed to peering@appliedops.net.
+1. Operations Requirements
+1.1
+Both parties shall maintain a fully staffed Network Operations Center that operates 24 hours a day, 7 days a week.
+1.2
+Both parties shall provide an escalation path for resolving network issues in a timely fashion. Issues of a non-emergency technical nature should be responded to within 48 hours.
+1.3
+Both parties shall be responsive to unsolicited bulk email, hacking, Denial of Service, and other network security and abuse issues. A good faith effort should be made to provide a qualified network engineer to trace ongoing network attacks within a reasonable amount of time.
+1.4
+Both parties shall provide access to a route server, looking glass, or similar service for the purposes of routing audits, diagnostics, and troubleshooting.
+1.5
+Both parties shall work quickly and diligently to establish additional capacity to accommodate traffic growth.
+1.6
+The interconnection partner must not currently be or have been an IP transit customer of AppliedOps within the past twelve (12) months.
+2. Technical Requirements
+2.1
+Both parties shall maintain a fully redundant backbone network, in which the majority of the inter-hub circuits shall have a dedicated capacity of at least 1Gbps (Gigabit Ethernet). "Virtual" backbone circuits delivered over MPLS or similar technology, must have a dedicated (not burstable) point-to-point capacity of at least 1Gbps on each circuit.
+2.2
+Both parties shall announce consistent routes across all interconnection points.
+2.3
+Both parties are expected to register their routes in a public Internet Routing Registry (IRR) database, for the purposes of filtering. Both parties shall make good faith efforts to keep this information up to date.
+2.4
+Both parties shall make every reasonable effort to restrict the transmission of Denial of Service attacks and packets with forged source addresses from their network.
+2.5
+Both parties shall announce only their own routes and the routes of their transit customers to the other party. No other routes are permitted, and may be filtered if detected.
+2.6
+Neither party shall establish a static route, a route of last resort, or otherwise send traffic to the other party for a route not announced via BGP. Neither party shall alter, sell, or give next-hops to a third party. These activities are considered theft of service, and will be prosecuted to the fullest extent of the law.
+2.7
+Neither party shall announce to the other the more specific routes of prefixes learned via a third party transit customer.
+3. General Policy
+3.1
+This policy may be updated from time to time, as market and traffic conditions affecting network interconnections change. AppliedOps reserves the right to modify this policy at any time.
+3.2
+In the event of a severe or quality-of-service impacting violation of these policies, the interconnection may be temporarily suspended without notice.
+3.3
+Any interconnection may be terminated for any reason, with 30 days notice.
+3.4
+All requirements must be met at the time the request for Peering is made, and must continue to be met for the duration of the interconnection.
+3.5
+AppliedOps reserves the right to accept or decline any interconnection request for any reason.
+Peering Information
+ASN
+40475
+IRR AS-SET
+AS-APPLIEDOPS
+Peering Information
+http://www.appliedops.net/peering/
+Approx Prefix Count
+10
+ANY2 IP
+206.223.143.126
+SIX/PAIX Seattle IP
+198.32.180.137
+NEW SIX/PAIX Seattle IP
+206.81.80.137
+Contact Information
+Operations (E-Mail)
+noc@appliedops.net
+Operations Direct (Phone)
++1-415-323-5969
+Peering Administration (E-Mail)
+peering@appliedops.net
+© 2019 Applied Operations, Inc.

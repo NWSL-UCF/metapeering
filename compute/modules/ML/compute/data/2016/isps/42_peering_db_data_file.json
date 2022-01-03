@@ -1,0 +1,248 @@
+{
+    "aka": "Woodynet, PCH",
+    "asn": 42,
+    "created": "2016-05-26 12:03:34.178496",
+    "id": "3924",
+    "info_ipv6": 1,
+    "info_multicast": 0,
+    "info_prefixes4": 300,
+    "info_prefixes6": 300,
+    "info_ratio": "Balanced",
+    "info_scope": "Global",
+    "info_traffic": "1-5Gbps",
+    "info_type": "education",
+    "info_unicast": 1,
+    "irr_as_set": "AS-PCH",
+    "looking_glass": "http://lg.pch.net",
+    "name": "Packet Clearing House AS42",
+    "notes": "Please see AS3856 - http://as3856.peeringdb.com - for details. All peering information is under AS 3856.\n\nWith AS 3856 we collect, archive, and display peering routes from exchanges around the world. With AS 42, we do Anycast hosting for Root-Servers and about 250 gTLDs/ccTLDs.\n\nFor maximum performance and reliability for the TLD servers we host, we attempt to peer with all participants at each exchange. The volume of traffic associated with these services is very small, but we believe it to be particularly valuable.",
+    "notes_private": "",
+    "org_id": 393,
+    "policy_contracts": "Not Required",
+    "policy_general": "Open",
+    "policy_locations": "Preferred",
+    "policy_ratio": 0,
+    "policy_url": "http://www.pch.net/peering/",
+    "route_server": "",
+    "status": "ok",
+    "updated": "2016-05-26 12:03:34.178517",
+    "version": 0,
+    "website": "http://www.pch.net/",
+    "pop_list": [
+        {
+            "city": "Palo Alto",
+            "country": "US",
+            "state": "CA",
+            "org_name": "Equinix",
+            "isp_id_in_peering_db": 7,
+            "location": [
+                37.45,
+                -122.16
+            ],
+            "port_capacity": 11000,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.838
+        },
+        {
+            "city": "Chicago",
+            "country": "US",
+            "state": "IL",
+            "org_name": "Amsterdam Internet Exchange BV",
+            "isp_id_in_peering_db": 944,
+            "location": [
+                41.85,
+                -87.62
+            ],
+            "port_capacity": 12100,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.865
+        },
+        {
+            "city": "New York",
+            "country": "US",
+            "state": "NY",
+            "org_name": "Equinix",
+            "isp_id_in_peering_db": 12,
+            "location": [
+                40.74,
+                -74.0
+            ],
+            "port_capacity": 2000,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.802
+        },
+        {
+            "city": "Seattle",
+            "country": "US",
+            "state": "WA",
+            "org_name": "Seattle Internet Exchange",
+            "isp_id_in_peering_db": 13,
+            "location": [
+                47.61,
+                -122.34
+            ],
+            "port_capacity": 2200,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.885
+        },
+        {
+            "city": "Miami",
+            "country": "US",
+            "state": "FL",
+            "org_name": "NOTA",
+            "isp_id_in_peering_db": 17,
+            "location": [
+                25.78,
+                -80.19
+            ],
+            "port_capacity": 200,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.8420000000000001
+        },
+        {
+            "city": "Atlanta",
+            "country": "US",
+            "state": "GA",
+            "org_name": "Telx Atlanta",
+            "isp_id_in_peering_db": 22,
+            "location": [
+                33.76,
+                -84.39
+            ],
+            "port_capacity": 200,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.847
+        },
+        {
+            "city": "Ashland",
+            "country": "US",
+            "state": "VA",
+            "org_name": "RVA-IX",
+            "isp_id_in_peering_db": 1002,
+            "location": [
+                37.7,
+                -77.44
+            ],
+            "port_capacity": 2000,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.852
+        },
+        {
+            "city": "Indianapolis",
+            "country": "US",
+            "state": "IN",
+            "org_name": "MidWest Internet Exchange",
+            "isp_id_in_peering_db": 986,
+            "location": [
+                39.76,
+                -86.17
+            ],
+            "port_capacity": 2000,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.815
+        },
+        {
+            "city": "Boston",
+            "country": "US",
+            "state": "MA",
+            "org_name": "Boston Internet Exchange",
+            "isp_id_in_peering_db": 565,
+            "location": [
+                42.35,
+                -71.06
+            ],
+            "port_capacity": 200,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.784
+        },
+        {
+            "city": "Los Angeles",
+            "country": "US",
+            "state": "CA",
+            "org_name": "CoreSite",
+            "isp_id_in_peering_db": 142,
+            "location": [
+                34.05,
+                -118.26
+            ],
+            "port_capacity": 12120,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.838
+        },
+        {
+            "city": "Portland",
+            "country": "US",
+            "state": "OR",
+            "org_name": "NWAX",
+            "isp_id_in_peering_db": 165,
+            "location": [
+                45.52,
+                -122.68
+            ],
+            "port_capacity": 1100,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.8740000000000001
+        },
+        {
+            "city": "San Francisco",
+            "country": "US",
+            "state": "CA",
+            "org_name": "SFMIX",
+            "isp_id_in_peering_db": 155,
+            "location": [
+                37.79,
+                -122.39
+            ],
+            "port_capacity": 1100,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.838
+        },
+        {
+            "city": "Ashburn",
+            "country": "US",
+            "state": "VA",
+            "org_name": "Equinix",
+            "isp_id_in_peering_db": 1,
+            "location": [
+                39.02,
+                -77.46
+            ],
+            "port_capacity": 10100,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.852
+        },
+        {
+            "city": "New York",
+            "country": "US",
+            "state": "NY",
+            "org_name": "Telx New York",
+            "isp_id_in_peering_db": 325,
+            "location": [
+                40.72,
+                -74.01
+            ],
+            "port_capacity": 11400,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.802
+        },
+        {
+            "city": "Jacksonville",
+            "country": "US",
+            "state": "FL",
+            "org_name": "JXIX",
+            "isp_id_in_peering_db": 563,
+            "location": [
+                34.78,
+                -84.96
+            ],
+            "port_capacity": 2000,
+            "isp_type_in_peering_db": "ix",
+            "internet_penetration_percentage": 0.8420000000000001
+        }
+    ],
+    "prefixes": 203,
+    "total_prefixes_in_globe": 8388478,
+    "address_space": 123392,
+    "total_addresses_in_globe": 22264797636,
+    "neighbor": 336
+}

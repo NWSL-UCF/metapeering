@@ -1,0 +1,5 @@
+We recommend that you set your max-prefix to 1,000.
+
+If we have traffic to you, we will peer with you. Additionally we peer with Route Servers at any IX we connect to.
+
+For traffic engineering purposes not all routes are advertised in all locations. Additionally some sessions within a region may only advertise a subset of routes.

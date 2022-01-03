@@ -1,0 +1,88 @@
+Peering - Digital West
+MenuSolutionsDataVoiceCloudColocationBack UpInfrastructure Services CloseBy IndustryCommunitiesFinanceHealth CareLegal ServicesWellnessUtilitiesWhy Choose Digital West? CloseAboutCommunityPressLeadershipTeam MembersWhy Digital West?Careers CloseContact UsSupportSmart PapersSelf-Assessment ToolsE-Books & Webinars Close
+Peering
+Digital West isn’t “reselling” the Internet, we are the Internet, and because of this we’re able to peer directly with large content providers. Peering is simply the exchange of traffic between two Internet networks. It allows us to directly hand off traffic between our customers and another network’s customers without having to involve a third party, such as AT&T, to carry that traffic across the Internet for us.
+In addition to managing our own pure fiber network, Digital West has direct fiber connections to both Equinix SV1 in San Jose and CoreSite at One Wilshire in Los Angeles. When you colocate with Digital West or use our cloud services, you gain direct point-to-point access to dozens of the world’s largest content providers, including Netflix, Google, Microsoft and Akamai. These peering relationships translate into faster speeds and easier troubleshooting.
+See Peering Guidelines
+We peer with these content providers and many more:
+Advantages of Peering
+It’s generally less expensive to directly connect to another network rather than paying a third party (provided the infrastructure is in place)
+Because we own the network, we have greater control over traffic flow. We can easily adjust routing to avoid problems along network segments.
+It keeps traffic local, improving performance. There are less potential points of “breakage” than traffic that flows over multiple networks.
+Faster connections. Just for fun, you can run a trace route to identify how few hops it takes for Digital West to connect you to a resource. The average service provider will require 12-19 hops; because of our peering connections, we average about 8 hops.
+Faster problem resolution. Again, because we own the network, we can troubleshoot and resolve problems quickly, rather than having to wait for other carriers to identify and fix the problem.
+Peering Guidelines
+Digital West maintains an open peering policy. We request that peers follow these guidelines:
+Both parties operate a 24X7 Network Operations Center that has an escalation path to a senior network engineer in a reasonable amount of time.
+Both parties should be responsive towards network security issues including unsolicited bulk email, Denial of Service attacks and other complaints.
+Neither party shall point default, add a static route or otherwise send traffic to the other party for a route not advertised via BGP.
+Neither party shall modify, sell or provide the next-hop to a third party.
+Under no circumstances shall the interconnection partner be a simultaneous peer and transit customer.
+Additionally:
+Digital West reserves the right to change, modify or nullify this policy at any time without notice.
+Digital West reserves the right to approve or decline peering with anyone for any reason.
+Both parties shall maintain accurate information in www.peeringdb.com
+Digital West sends and honors MED attributes; we suggest that peer networks honor and send MEDs when possible for best performance.
+Peering Information:
+ASN:
+14589
+IRR AS-SET:
+AS-DWNI (ALTDB)
+Prefix Count:
+100 (IPv4) and 20 (IPv6)
+Network Operations email:
+noc@digitalwest.com
+Network Operations phone:
++1 805 781 9378 (24×7)
+Peering policy/admin email:
+peering@digitalwest.com
+Peering policy/admin phone:
++1 805 781 9378 x1006
+PeeringDB:
+http://as14589.peeringdb.com/
+Peering Locations:
+Exchange Point
+Speed (Mbpit/s)
+Status
+Coresite Any2 Los Angeles
+1000
+Active, IPv4 + IPv6
+Equinix Silicon Valley (SV1, SV2; others via metro ethernet)
+10G
+Active, IPv4 + IPv6
+Equinix New York (NY2)
+1000
+Active, IPv4 + IPv6
+Equinix Sydney, Australia (SY3)
+1000
+Private Only
+SolutionsData
+Voice
+Cloud
+ColocationSan Luis Obispo, CA
+Los Angeles, CA
+San Jose, CA
+Peering
+Backbone Architecture
+Back Up
+Infrastructure Services
+Contact
+Digital West
+1998 Santa Barbara Avenue, #200
+San Luis Obispo, CA 93401
+Phone (805)-548-8000
+Fax (805) 781-9379
+Locations
+San Luis Obispo
+Los Angeles
+San Jose
+Support
+805.548.8000
+support@digitalwest.com
+Social
+facebook
+Twitter
+LinkedIn
+RSS
+Copyright © 2021 Digital West, Inc. All rights reserved.
+| Privacy Policy

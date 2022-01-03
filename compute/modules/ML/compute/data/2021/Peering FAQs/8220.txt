@@ -1,0 +1,81 @@
+AS8220.NET |
+Peering Policy
+Home
+AS Details
+AS Sets
+Communities
+Peering Policy
+Contacts
+PeeringDB
+Looking Glass
+Peering Policy
+Introduction
+Infrastructure and Operational Requirements.
+Connectivity
+Routing
+Traffic Balance
+Additional Requirements
+Contact Information
+Additional Information
+Important Information
+Introduction
+This Guide is used by Colt to evaluate requests made by Network Providers and for evaluating existing interconnect partners for the purpose of directly
+exchanging IP traffic with Colt's Autonomous System (AS) 8220. The third party network must fulfil the following conditions and requirements in order to qualify
+for a Peering Agreement with AS 8220.
+These criteria are only guidelines and are not exhaustive. Any final peering executed by Colt and a potential peer may contain additional terms and conditions.
+Colt reserves the right to decline to enter into a Peering Agreement even if the criteria are nominally met by a potential peering partner.
+Colt currently accepts "public peering" and "private peering" by mutual agreement in Europe, North Americal and Asia Pacific. For details of all our
+facilities and connected exchange points please see our
+peeringdb.com
+record.
+Infrastructure and Operational Requirements.
+The third party network shall have a fully redundant backbone network with enough capacity to exchange traffic without congestion.
+The third party network should operate a fully staffed, 24/7/365 network operations centre (NOC).
+Each third party network must be responsive to routing and security issues, providing a knowledgeable technical response within a 24 hour period after notice
+for network and operational issues and a 2 hour period for security related issues.
+Peers are expected to keep and maintain at all times a record in the peering database at
+peeringdb.com.
+Connectivity
+The third party network must be able to interconnect with Colt at a minimum of four geographically dispersed points of interconnection (in different countries)
+and from two of the following locations: London, Paris, Frankfurt, Amsterdam, Tokyo, Singapore, Hong Kong, Ashburn or San Jose.
+When a third party network who's home region (Such as Asia, North America etc) is not Europe then that thirdy party network MUST interconnect with Colt in their
+home Region in order for Colt to interconnect in Europe. For example Asia providers must interconnect in Asia in order to interconnect in Europe.
+Where multiple locations are not feasible Colt may accept an interconnect as a local peer (where only local country routes are exchanged) solely at the
+discretion of Colt where mutual benefit to both parties exists.
+Where multiple regions are not feasible Colt may at their discretion send only regional routes to the third party network. For example where a third
+party network only peers with Colt in North America colt may only send North American routes.
+Routing
+The third party network should be able to provide and maintain a consistent route announcement at all peering points with AS 8220 unless otherwise agreed in
+advance.
+Hosting and Content providers may receive inconsistent route announcements from Colt in order to reduce inbound traffic load where asymmetric routing occurs and
+Colt infrastructure is being used to carry large amounts of return traffic different from the originating country.
+The third party network must be registered as a Local Internet registry (LIR) with the appropriate Regional Internet Registry (RIR) e.g. RIPE, ARIN, APNIC. Only
+routes specified by the appropriate RIR are accepted from peers.
+The third party network will not use a route of last resort (i.e. default route) or static routing of any of Colt's address space directed at AS 8220.
+No third party routes that allow direct traffic exchange (in either direction) between AS 8220 and the third party should be used by The third party network
+unless mutually agreed. For example, Colt routes should not be advertised to another peer.
+Routes should be aggregated as much as possible by The third party network. AS 8220 does not accept route announcements smaller than a /24.
+Traffic Balance
+The amount of traffic to be sent and received between Colt and The third party network should be in approximate parity.
+The amount of traffic exchanged in either direction over all interconnection links between The third party network and Colt shall equal or exceed 1 Gbps on
+average (measured as a total of all interconnect points).
+Additional Requirements
+The third party network must not be a customer of Colt.
+The third party network must not have been an IP transit customer of Colt in the past twelve (12) months.
+Contact Information
+A contact point (real person, or role account) for abuse/security issues, and a real person escalation contact should be provided, complete with phone numbers
+by The third party network and Colt should be notified of any changes to these details.
+A contact point for network related issues, outages and operational issues (A NOC and peering contact) should be provided by The third party network and Colt
+should be notified of any changes to these details.
+Additional Information
+If a network fulfils all of the requirements outlined above and wishes to proceed with an Internet Peering Agreement with Colt, please contact
+peering@Colt.net
+including a list of exchange points, your AS, company name and contact information as outlined above.
+A peer is expected to continually fulfil Colt's peering policy for the duration of the peering. If a peer no longer meets Colt's peering policy then Colt
+reserve the right to remove the peering without notice.
+Important Information
+This Peering Guide is made available for informational purposes only. It does not constitute an offer to enter into a Peering Agreement. In the event your
+network enters into a Peering Arrangement with Colt that peering shall be on an as is basis and Colt reserve the right to remove temporarily or indefinitely
+that peering without notice.
+Colt reserves the right to revise or change this document at any time and from time to time without notice. As a living document, this guide will be updated
+as necessary to enhance and/or expand the information contained herein.

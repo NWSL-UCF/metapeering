@@ -158,7 +158,7 @@ class LoginForm(FlaskForm):
 
 
 
-    
+
 
 class CustomPeeringQuerryForm(FlaskForm):
     # def validate_asn(self, field):
@@ -205,7 +205,7 @@ class CustomPeeringQuerryForm(FlaskForm):
         if not re.search("^AS[0-9]+$", asn2_val):
             self.asn2.errors.append("The ASN format should be ASXXXX")
             valid = False
-            
+
         if asn1_val == "":
             self.asn1.errors.append("Please select ASN1.")
             valid = False
@@ -222,5 +222,56 @@ class CustomPeeringQuerryForm(FlaskForm):
             return False
         return valid
 
+class MLPeeringQuerryForm(FlaskForm):
+    # def validate_asn(self, field):
+    #     if not re.search("^AS[0-9]+$", field.data):
+    #         raise ValidationError("The ASN format should be ASXXXX")
 
+    asn1 = StringField(
+        "ASN1",
+        [
+            validators.InputRequired(),
+            validators.Length(min=1, max=20, message="Invalid ASN"),
+        ],
+        render_kw={"autofocus": True, "placeholder": "ASXXXX"},
+    )
+    asn2 = StringField(
+        "ASN2",
+        [
+            validators.InputRequired(),
+            validators.Length(min=1, max=20, message="Invalid ASN"),
+        ],
+        render_kw={"autofocus": True, "placeholder": "ASXXXX"},
+    )
 
+    submit = SubmitField("Search")
+
+    def validate(self):
+        valid = True
+        if not FlaskForm.validate(self):
+            return False
+        asn1_val = self.asn1.data
+        asn2_val = self.asn2.data
+
+        if not re.search("^AS[0-9]+$", asn1_val):
+            self.asn1.errors.append("The ASN format should be ASXXXX")
+            valid = False
+        if not re.search("^AS[0-9]+$", asn2_val):
+            self.asn2.errors.append("The ASN format should be ASXXXX")
+            valid = False
+
+        if asn1_val == "":
+            self.asn1.errors.append("Please select ASN1.")
+            valid = False
+        if asn2_val == "":
+            self.asn1.errors.append("Please select ASN2.")
+            valid = False
+        if asn1_val == asn2_val:
+            self.asn1.errors.append(
+                "ASN1 and ANS2 can not be same. Please choose different ASN1."
+            )
+            self.asn2.errors.append(
+                "ASN1 and ANS2 can not be same. Please choose different ASN2."
+            )
+            return False
+        return valid

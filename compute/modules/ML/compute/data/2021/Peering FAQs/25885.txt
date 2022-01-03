@@ -1,0 +1,703 @@
+OPAQ (AS25885) Peering Policy | Fortinet
+Skip to content
+Skip to navigation
+Skip to footer
+Skip to content
+Request a Demo
+Search
+Login to FortiCloud
+username
+USA (English)
+Germany (Deutsch)
+France (Français)
+Italy (Italiano)
+Russia (Русский)
+Japan (日本語)
+Korea (한국어)
+China (简体中文)
+Taiwan (繁體中文)
+Brazil (Portugués)
+Latin America (Español)
+Enterprise
+Security-Driven Networking
+Security-Driven Networking
+Next Generation of Security that is tightly integrated with networking for edges.
+Learn More
+Network Security
+Next-Generation Firewall
+Security Subscription Services
+WAN Edge
+SD-WAN
+5G and LTE
+LAN Edge
+Switching
+Wireless
+Cloud-Delivered Security
+Secure Access Service Edge (SASE)
+Related Products
+Central Management
+Analytics, Reporting & Response
+Network Performance & Digital Experience Monitoring
+Use Cases
+Secure Remote Workforce
+Internal Segmentation
+Hyperscale Applications
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Cloud Security
+Adaptive Cloud Security
+Take advantage of performance and cost savings while ensuring your data is protected.
+Learn More
+Cloud & Data Center
+Virtualized NGFW
+Managed IPS Rules
+Application Delivery
+Application Security
+Web Application Security
+Email Security
+Cloud Access Security Broker
+Phishing Simulation
+Penetration Testing
+Solutions
+Multi-Cloud SD-WAN
+Securing Microsoft 365
+Securing SAP HANA
+Related Products
+Analytics, Reporting & Response
+Central Management
+FortiCloud
+Next-Generation Firewall
+Use Cases
+Cloud Security Use Cases
+Public Cloud Security
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Security Operations
+AI-Driven Security Operations
+Free your teams' cycles with machine learning and artificial intelligence to combat modern threats.
+Learn More
+SOC Platform
+Analytics, Reporting & Response
+SIEM
+SOAR
+XDR
+Artificial Intelligence for IT Operations
+Advance Threat Protection
+Sandboxing
+Deception
+UEBA
+Virtual Security Analyst
+Endpoint Security
+FortiClient Fabric Agent
+Endpoint Protection with EDR
+Use Cases
+Insider Risk
+Automate Security
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Zero Trust Access
+Zero-Trust Access
+Protect your organization from credential theft and an evolution of devices entering your network.
+Learn More
+Application Access
+Zero Trust Network Access (ZTNA)
+Network Access
+NAC and IoT Security
+Identity and Access Management
+Business Communications
+Phones and Voice
+Endpoint Remote Access & Control
+FortiClient Fabric Agent
+Related Products
+Analytics, Reporting & Response
+Central Management
+Security Camera Systems
+Use Cases
+Teleworking at Scale
+Control Access & Rights for Every User
+Unified Communications
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Threat Intelligence
+FortiGuard Labs
+Threat Intellgence and research fuleing AI-enabled autonomous security, providing a real-time coordinated response to attacks across endpoints, networks, and clouds.
+Learn More
+Web Security
+Web & Video Filtering
+Content Security
+Realtime AV
+Cloud Sandbox
+Device Security
+IPS & Vulnerability Scanning
+IoT & OT
+Application Security
+Web Applications
+Cloud Access Security Broker
+FortiGuard lab Consulting
+Overview
+Use Cases
+Network Security
+Endpoint Security
+Cloud Security
+Hybrid worker security
+FortiGuard Outbreak Alerts
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Discover More
+Corporate
+About Us
+Executive Management
+Contact Us
+Careers
+University Recruiting
+Social Responsibility
+Investor Relations
+Newsroom
+Training
+NSE Training Institute
+Certification Program
+Security Academy Program
+Veterans Program
+Authorized Training Centers
+Resources
+Resource Center
+Blog
+Customers
+Fortinet Icon Library
+Certifications
+Events & Webinars
+Support
+FortiCare Technical Services
+Product Demo Center
+Product Downloads
+Product Registration
+Small Mid-Sized Businesses
+Secure Office Networking
+Endpoint and Remote User Protection
+Secure Cloud Applications and Email
+Cloud-Based Management and Analytics
+Discover More
+Corporate
+About Us
+Executive Management
+Contact Us
+Careers
+University Recruiting
+Social Responsibility
+Investor Relations
+Newsroom
+Training
+NSE Training Institute
+Certification Program
+Security Academy Program
+Veterans Program
+Authorized Training Centers
+Resources
+Resource Center
+Blog
+Customers
+Fortinet Icon Library
+Certifications
+Events & Webinars
+Support
+FortiCare Technical Services
+Product Demo Center
+Product Downloads
+Product Registration
+Service Providers
+Managed Services
+Managed Services
+Expand and grow by providing the right mix of adaptive and cost-effective security services
+Learn More
+Solutions
+MSSP Cybersecurity
+Managed SD-WAN for Service Providers
+Managed SOC Service
+Managed Cloud Security Service
+Managed WAF Service
+Case Studies
+Orange Business Services
+GTT Communications
+Spark NZ
+See All
+QUICK LINKS
+Products A-Z
+Resource Center
+Request a Quote
+Communications Service Providers
+Communication Service Provider
+Expand and grow by providing the right mix of adaptive and cost-effective security services
+Learn more
+Solutions
+Overview
+Headquarters Network Security
+PCI Compliance
+Secure Networking
+ATP
+Adaptive Cloud Security
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Mobile Provider
+Mobile Provider
+Protect your 4G and 5G public and private iInfrastructure and services. Monetize security via managed services on top of 4G and 5G.
+Learn More
+Solutions
+Network Security
+SD-WAN & Network Access
+Cloud & Application Security
+Security Operations
+Mobility Use Cases
+Security for 4G and 5G Networks and Services
+Radio Access Network Security
+Security for Private 5G Mobile Networks
+Securing the Mobile IoT Ecosystem
+Security for the Telco Cloud
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+CONTACT US
+Partners
+Technology Alliances
+Open Fabric Ecosystem
+Technology partners that complement, integrate or interoperate with the Fortinet Security Fabric.
+Learn More
+For Tech Partners
+Fabric-Ready Program
+Join the Ecosystem
+For Customers
+Ecosystem Overview
+Fabric Connectors
+Quick Links
+Fabric-Ready Partners A-Z
+Resource Center
+Request a Quote
+Find a Partner
+Become a Partner
+Partner Login
+Discover More
+Corporate
+About Us
+Executive Management
+Contact Us
+Careers
+University Recruiting
+Social Responsibility
+Investor Relations
+Newsroom
+Training
+NSE Training Institute
+Certification Program
+Security Academy Program
+Veterans Program
+Authorized Training Centers
+Resources
+Resource Center
+Blog
+Customers
+Fortinet Icon Library
+Certifications
+Events & Webinars
+Support
+FortiCare Technical Services
+Product Demo Center
+Product Downloads
+Product Registration
+Enterprise
+Security-Driven Networking
+Next Generation of Security that is tightly integrated with networking for edges.
+Learn More
+Network Security
+Next-Generation Firewall
+Security Subscription Services
+WAN Edge
+SD-WAN
+5G and LTE
+LAN Edge
+Switching
+Wireless
+Cloud-Delivered Security
+Secure Access Service Edge (SASE)
+Related Products
+Central Management
+Analytics, Reporting & Response
+Network Performance & Digital Experience Monitoring
+Use Cases
+Secure Remote Workforce
+Internal Segmentation
+Hyperscale Applications
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Cloud Security
+Take advantage of performance and cost savings while ensuring your data is protected.
+Learn More
+Cloud & Data Center
+Virtualized NGFW
+Managed IPS Rules
+Application Delivery
+Application Security
+Web Application Security
+Email Security
+Cloud Access Security Broker
+Phishing Simulation
+Penetration Testing
+Solutions
+Multi-Cloud SD-WAN
+Securing Microsoft 365
+Securing SAP HANA
+Related Products
+Analytics, Reporting & Response
+Central Management
+FortiCloud
+Next-Generation Firewall
+Use Cases
+Cloud Security Use Cases
+Public Cloud Security
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Security Operations
+Free your teams' cycles with machine learning and artificial intelligence to combat modern threats.
+Learn More
+SOC Platform
+Analytics, Reporting & Response
+SIEM
+SOAR
+XDR
+Artificial Intelligence for IT Operations
+Advance Threat Protection
+Sandboxing
+Deception
+UEBA
+Virtual Security Analyst
+Endpoint Security
+FortiClient Fabric Agent
+Endpoint Protection with EDR
+Use Cases
+Insider Risk
+Automate Security
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Zero Trust Access
+Protect your organization from credential theft and an evolution of devices entering your network.
+Learn More
+Application Access
+Zero Trust Network Access (ZTNA)
+Network Access
+NAC and IoT Security
+Identity and Access Management
+Business Communications
+Phones and Voice
+Endpoint Remote Access & Control
+FortiClient Fabric Agent
+Related Products
+Analytics, Reporting & Response
+Central Management
+Security Camera Systems
+Use Cases
+Teleworking at Scale
+Control Access & Rights for Every User
+Unified Communications
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Threat Intelligence
+Threat Intellgence and research fuleing AI-enabled autonomous security, providing a real-time coordinated response to attacks across endpoints, networks, and clouds.
+Learn More
+Web Security
+Web & Video Filtering
+Content Security
+Realtime AV
+Cloud Sandbox
+Device Security
+IPS & Vulnerability Scanning
+IoT & OT
+Application Security
+Web Applications
+Cloud Access Security Broker
+FortiGuard lab Consulting
+Overview
+Use Cases
+Network Security
+Endpoint Security
+Cloud Security
+Hybrid worker security
+FortiGuard Outbreak Alerts
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Discover More
+Corporate
+About Us
+Executive Management
+Contact Us
+Careers
+University Recruiting
+Social Responsibility
+Investor Relations
+Newsroom
+Training
+NSE Training Institute
+Certification Program
+Security Academy Program
+Veterans Program
+Authorized Training Centers
+Resources
+Resource Center
+Blog
+Customers
+Fortinet Icon Library
+Certifications
+Events & Webinars
+Support
+FortiCare Technical Services
+Product Demo Center
+Product Downloads
+Product Registration
+Small Mid-Sized Businesses
+Secure Office Networking
+Endpoint and Remote User Protection
+Secure Cloud Applications and Email
+Cloud-Based Management and Analytics
+Discover More
+Corporate
+About Us
+Executive Management
+Contact Us
+Careers
+University Recruiting
+Social Responsibility
+Investor Relations
+Newsroom
+Training
+NSE Training Institute
+Certification Program
+Security Academy Program
+Veterans Program
+Authorized Training Centers
+Resources
+Resource Center
+Blog
+Customers
+Fortinet Icon Library
+Certifications
+Events & Webinars
+Support
+FortiCare Technical Services
+Product Demo Center
+Product Downloads
+Product Registration
+Service Providers
+Managed Services
+Expand and grow by providing the right mix of adaptive and cost-effective security services
+Learn More
+Solutions
+MSSP Cybersecurity
+Managed SD-WAN for Service Providers
+Managed SOC Service
+Managed Cloud Security Service
+Managed WAF Service
+Case Studies
+Orange Business Services
+GTT Communications
+Spark NZ
+See All
+QUICK LINKS
+Products A-Z
+Resource Center
+Request a Quote
+Communications Service Providers
+Expand and grow by providing the right mix of adaptive and cost-effective security services
+Learn more
+Solutions
+Overview
+Headquarters Network Security
+PCI Compliance
+Secure Networking
+ATP
+Adaptive Cloud Security
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+Mobile Provider
+Protect your 4G and 5G public and private iInfrastructure and services. Monetize security via managed services on top of 4G and 5G.
+Learn More
+Solutions
+Network Security
+SD-WAN & Network Access
+Cloud & Application Security
+Security Operations
+Mobility Use Cases
+Security for 4G and 5G Networks and Services
+Radio Access Network Security
+Security for Private 5G Mobile Networks
+Securing the Mobile IoT Ecosystem
+Security for the Telco Cloud
+Quick Links
+Products A-Z
+Resource Center
+Request a Quote
+CONTACT US
+Partners
+Technology Alliances
+Technology partners that complement, integrate or interoperate with the Fortinet Security Fabric.
+Learn More
+For Tech Partners
+Fabric-Ready Program
+Join the Ecosystem
+For Customers
+Ecosystem Overview
+Fabric Connectors
+Quick Links
+Fabric-Ready Partners A-Z
+Resource Center
+Request a Quote
+Find a Partner
+Become a Partner
+Partner Login
+Discover More
+Corporate
+About Us
+Executive Management
+Contact Us
+Careers
+University Recruiting
+Social Responsibility
+Investor Relations
+Newsroom
+Training
+NSE Training Institute
+Certification Program
+Security Academy Program
+Veterans Program
+Authorized Training Centers
+Resources
+Resource Center
+Blog
+Customers
+Fortinet Icon Library
+Certifications
+Events & Webinars
+Support
+FortiCare Technical Services
+Product Demo Center
+Product Downloads
+Product Registration
+Request a Demo
+FortiGuard Outbreak Alerts: what you need to know about the latest cybersecurity attacks
+OPAQ (AS25885) Peering Policy
+Networks wanting to peer with OPAQ must have the following:
+Publicly routable ASN
+Publicly routable address space (at least one /24 of IPv4 and/or one /48 of IPv6 space)
+ASN record completed in PeeringDB
+24×7 NOC contact capable of resolving BGP routing issues
+Minimum traffic requirements as below
+Traffic requirements – public peering
+OPAQ generally does not have a minimum traffic requirement for public peering (subject to any specific market conditions).
+OPAQ prefers to establish direct BGP sessions for traffic exchange instead of utilizing route-servers, where possible.
+Traffic requirements – private peering
+For networks with sufficient traffic (generally above 2 Gbps), OPAQ prefers private peering via datacenter cross connects using 10G LR.
+Routing policy
+In general, peering sessions with AS25885 will advertise all OPAQ and downstream customer routes originating in the applicable market.
+At times, local infrastructure requirements or constraints may result in a more limited set of routes being advertised via AS25885.
+Maximum prefixes
+We suggest peers set a max-prefix of 500 (IPv4) and 100 (IPv6) routes on peering sessions with OPAQ.
+PeeringDB
+OPAQ’s PeeringDB entry can be found at https://www.peeringdb.com/net/2416
+Contact Us to Get Started
+Learn more
+Get Technical Support Assistance
+Products
+Enterprise
+Security-Driven Networking
+Cloud Security
+Security Operations
+Zero-Trust Access
+Threat Intelligence
+Small Mid-Sized Businesses
+Overview
+Service Providers
+Overview
+Partners
+Overview
+Alliances Ecosystem
+Find a Partner
+Become a Partner
+Partner Login
+Discover More
+About Us
+Contact Us
+Training
+Resources
+Support
+Product Downloads
+COVID-19 Response
+Enter Email Address
+Subscription Successful!
+Request Failed. Please try again later!
+I want to receive news and product emails. Read our privacy policy.
+Connect With Us
+Blog
+Fuse Community
+Products
+Enterprise
+Security-Driven Networking
+Cloud Security
+Security Operations
+Zero-Trust Access
+Threat Intelligence
+Small Mid-Sized Businesses
+Overview
+Service Providers
+Overview
+Partners
+Overview
+Alliances Ecosystem
+Find a Partner
+Become a Partner
+Partner Login
+Discover More
+About Us
+Contact Us
+Training
+Resources
+Support
+Product Downloads
+COVID-19 Response
+Enter Email Address
+Subscription Successful!
+Request Failed. Please try again later!
+I want to receive news and product emails. Read our privacy policy.
+Connect With Us
+Blog
+Fuse Community
+Copyright © 2021 Fortinet, Inc. All Rights Reserved.
+Terms of Service
+Privacy Policy
+Notice for California Residents
+Do Not Sell My Personal Information
+GDPR
+Cookie Settings
+©Gartner is a registered trademark and service mark of Gartner, Inc. and/or its affiliates, and is used herein with permission. All Rights Reserved.
+Also of InterestFortinet Acquires OPAQFortinet’s Enhances Existing SASE Offering by...Fortinet Acquires Cloud Security and...
+×

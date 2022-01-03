@@ -1,0 +1,31 @@
+AS 20055 Netops – Wholesail Networks IP Network information
+Skip to content
+AS 20055 Netops
+Wholesail Networks IP Network information
+Featured
+AS20055 – Wholesail Networks
+This site is where you can find technical documentation for the Wholesail Networks IP backbone network operated by Ziply Fiber.
+You will find all Ziply family ASNs to be single homed to AS20055 for connectivity so, 27017 and 26935
+Author
+wholesailPosted on March 4, 2019March 29, 2021Leave a comment on AS20055 – Wholesail Networks
+Pages
+BGP Communities – Accepted from customers
+BGP Communities – sent to customers
+BGP route server
+BGP Site codes and internal communities
+Route origination policy (AS20055 owned routes)
+Search for:
+Search
+Recent Posts
+AS20055 – Wholesail Networks
+Recent CommentsArchives
+March 2019
+Categories
+Uncategorized
+Meta
+Log in
+Entries feed
+Comments feed
+WordPress.org
+AS 20055 Netops
+Proudly powered by WordPress

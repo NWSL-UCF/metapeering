@@ -1,0 +1,2 @@
+* We only peer with the route servers
+* Any peering request you send will be used for educational purposes

@@ -1,0 +1,297 @@
+K-root Peering Policy — RIPE Network Coordination Centre
+RIPE Database (Whois)
+Website
+Search Site
+only in current section
+By searching you explicitly express your agreement with the RIPE Database terms and conditions
+Manage IPs and ASNs
+We distribute Internet number resources to our members and provide tools to help them manage their allocations and assignments.
+More information about
+Manage IPs and ASNs
+IPv4
+Request /24 Allocation
+IPv4 Run-out
+IPv4 Waiting List
+How Does The IPv4 Waiting List Work?
+IPv4 Transfer Request
+IPv6
+Request IPv6
+IPv6 Info Centre
+AS Numbers
+Request an AS Number
+Reassigning Referenced AS Numbers
+RIPE Database
+Related Software and Tools
+Webupdates
+Release Notes
+Database Support
+DNS
+Reverse DNS
+DNSSEC
+LIR Portal
+Documentation for Resource Management
+Resource Public Key Infrastructure (RPKI)
+Policy Implementation Status
+Assisted Registry Check
+Resource Transfers and Mergers
+Inter-RIR Transfers
+Mergers and Acquisitions
+IPv4 Transfer Listing Service
+Brokers
+Legacy Internet Resources
+Legacy space in the RIPE Registry
+Documentation
+Analyse
+We collect a wide range of Internet data and provide statistics and tools that our members and the wider Internet community can use for their own operations and analyses.
+More information about
+Analyse
+Statistics
+Remaining IPv4 Addresses
+RIPEstat
+Internet Measurements
+RIPE Atlas
+Internet Traffic Maps
+Analyses and Use Cases
+Routing Information Service (RIS)
+IXP Country Jedi (Alpha)
+RIPE IPMap
+DNS
+DNSMON
+Reverse DNS Zonecheck
+K-root
+Raw Datasets
+RIPE Atlas Raw Data Format
+RIPE Atlas Raw Data
+RIS Raw Data
+Terms and Conditions
+Archived Projects
+RIS Tools and Web Interfaces
+TTM
+RRCC
+DISI
+IRRToolset
+Re-implementation Project
+DBConstat
+Participate
+The smooth running of the Internet depends on the involvement of those who give their input on membership and policy issues. And there are many ways to get involved, online and in person.
+More information about
+Participate
+RIPE NCC Membership
+Become a Member
+LIR Basics for Members
+RIPE NCC Access
+Billing, Payment and Fees
+Member Lunches
+RIPE NCC Surveys
+RIPE Community
+The RIPE Chair Team
+RIPE Community Code of Conduct
+Working Groups
+RIPE Community Plenary
+Task Forces
+NRO NC/ASO AC
+Academic Cooperation (RACI)
+RIPE Fellowship
+Rob Blokzijl Foundation
+Meetings and Events
+RIPE Meetings
+Regional Meetings
+General Meetings
+Roundtable Meetings
+Open House
+Upcoming Events
+Policy Development
+Current Policy Proposals
+Policy Implementation Status
+Monthly Policy Updates
+Join a Discussion
+Membership Mailing Lists
+RIPE Mailing Lists
+RIPE Forum
+Internet Governance
+IANA Stewardship Transition
+Internet Technical Community
+Multi-stakeholder Engagement
+Internet Governance News
+Get Support
+We support members and the RIPE community through several channels to offer timely and efficient help â whether itâs a ticket, a tweet or a training course.
+More information about
+Get Support
+Contact Us
+Office Information
+RIPE NCC Report Form
+Report Technical Emergency
+Training and Education
+RIPE NCC Academy
+Webinars
+RIPE NCC::Educa
+Training Courses
+Training Material
+Videos
+Documentation
+Developer Documentation
+RIPE Database Documentation
+FAQs
+Spam, Hacking and Phishing
+RIPE Database Abuse Finder
+RIPEstat Abuse Contact Finder
+Service and Security Announcements
+Community Projects Fund
+Call for Applications
+Certified Professionals
+Schedule an Exam
+Vouchers and Fees
+Publications
+Stay informed about everything Internet-related, from RIPE Policy and RIPE NCC member information to RIPE Labs blog posts and the latest Internet news.
+More information about
+Publications
+IPv6 Info Centre
+About IPv6
+Deploy IPv6 Now
+Statistics and Tools
+Training and Materials
+Documents
+Community
+RIPE NCC Organisational Documents
+Activity Plan and Budget
+Annual Reports
+Charging Schemes
+RIPE Labs
+Contributing to RIPE Labs
+RIPE Document Store
+RIPE Documents by Number
+RIPE Documents by Category
+RIPE Policies
+News
+RSS News Feeds
+About Us
+We're a not-for-profit membership association, a Regional Internet Registry and the secretariat for the RIPE community supporting the Internet through technical coordination.
+More information about
+About Us
+What We Do
+Regional Internet Registry
+RIPE NCC Service Region
+Coordination Function
+Statistics
+Transition to IPv6
+List of RIPE NCC Services
+Staff
+RIPE NCC Staff Structure
+Careers at the RIPE NCC
+Executive Board
+Functions and Expectations
+Minutes from Executive Board Meetings
+Financial Information
+Current Charging Scheme
+Current Billing Procedure
+Press Centre
+RIPE NCC in the News
+Publications and Presentations
+Press Releases
+Press Quality Photos
+Legal
+Corporate Governance
+Internet Number Resources
+Arbitration
+Other RIPE NCC Services
+Information for Law Enforcement Agencies
+Contact
+Add this page to your Bookmarks widget
+Title:
+You are here:
+Home
+>
+Analyse
+>
+DNS
+>
+K-root
+>
+Peering Policy
+Analyse
+Statistics
+Membership by Country
+Remaining IPv4 Addresses
+RIPEstat
+Internet Measurements
+RIPE Atlas
+Internet Traffic Maps
+Analyses and Use Cases
+Routing Information Service (RIS)
+IXP Country Jedi (Alpha)
+RIPE IPMap
+DNS
+DNSMON
+AS112
+Reverse DNS Zonecheck
+K-root
+Hosting a K-root node
+Hosting Requirements
+FAQs
+Peering Policy
+Statistics
+AuthDNS
+Raw Datasets
+RIPE Atlas Raw Data Format
+RIPE Atlas Raw Data
+RIS Raw Data
+Reverse DNS Delegations
+IPv6 Web Statistics
+RIPE NCC Active Measurements Of World IPv6 Day Dataset
+RIPE NCC Active Measurements of World IPv6 Launch Dataset
+iPlane traceroute Dataset
+NLANR AMP Data
+NLANR PMA Data
+WITS Passive Datasets
+Terms and Conditions
+Archived Projects
+RIS Tools and Web Interfaces
+TTM
+RRCC
+DISI
+IRRToolset
+Re-implementation Project
+Hostcount
+DBConstat
+Mediterranean Fibre Cable Cut - a RIPE NCC Analysis
+K-root Peering Policy
+https://www.ripe.net/analyse/dns/k-root/k-root-peering-policy
+https://www.ripe.net/logo.png
+K-root Peering Policy
+K-root originates all our prefixes from AS25152.
+We operate a generally open peering policy.
+This is subject to certain operational policies, which are detailed below:
+Core (Global) nodes
+At our Core nodes, we accept all prefixes from IXP route servers, subject to a minimum size (IPv4: /24, IPv6: /48). We advertise all our prefixes to the IXP route servers. We encourage peering partners to use the IXP route servers to reduce administration overhead.
+If you do not normally peer with the IXP route servers (due to your own policy), we encourage you to use the IXP route servers filtering communities to restrict prefix advertisements to our ASN.
+We will also consider direct peering requests, provided your routes are not also visible via the IXP route servers.
+Below is a list of our Core (Global) nodes
+Amsterdam (nl-ams) - AMS-IX & NL-IX
+Frankfurt (de-fra) - DE-CIX
+London (gb-lon) - LINX (Juniper and Extreme LANs) & LONAP
+Miami (us-mia) - NAP Of The Americas (NOTA)
+Tokyo (jp-tyo) - JPNAP & DIX-IE
+Hosted (IX) nodes
+At our Hosted (IX) nodes, we accept all prefixes from IXP route servers, subject to a minimum size (IPv4: /24, IPv6: /48). We advertise all our prefixes to the IXP route servers. We encourage peering partners to use the IXP route servers to reduce administration overhead.
+If you do not normally peer with the IXP route servers (due to your own policy), we encourage you to use the IXP route servers filtering communities to restrict prefix advertisements to our ASN.
+We will only consider direct peerings in locations that do not have IXP route servers.
+Our Hosted (IX) nodes are those which are present on IXPs, but are not in the list of Core (Global) nodes above.
+Created:
+22 Apr 2016 - Last updated:
+30 Sep 2016
+RSSAC 002 Metrics
+ICANN's Root Server System Advisory Committee (RSSAC) has published a document, RSSAC002, that requests root name server operators to collect and publish certain key metrics about the root name server system. K-root's statistics are available at the following address:
+RSSAC 002 Metrics
+DSC Graphs
+These graphs show the query rate at K-root. The first graph shows the combined rate across all K-root nodes. The next four show combined query rates for the four different categories of K-root nodes. Clicking on the graphs will show more details.
+K-root DSC Graphs
+Home
+Sitemap
+Contact Us
+Service Announcements
+Privacy Statement
+Legal
+Cookies
+Copyright Statement
+Terms of Service
+The RIPE NCC uses cookies. Some of these cookies may have been set already. More information about our cookies can be found in our privacy policy. You can accept our cookies either by clicking here or by continuing to use the site.

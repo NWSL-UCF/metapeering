@@ -1,0 +1,144 @@
+Centauri - Peering
+Centauri Communications
+Home
+Solutions
+Internet Access
+Private Line
+Private IP
+Voice
+Voip
+Colocation Services
+IP TV
+Broadband
+Home DSL
+Network
+Network Map
+Peering
+Looking Glass
+Centauri PoPs
+Flash Speed Test
+Company
+About Us
+Careers
+Contact Us
+History
+Leadership
+News & Events
+Log In
+1-415-294-2240
+Centauri
+Peering
+Network Map
+Peering
+Looking Glass
+Centauri PoPs
+Flash Speed Test
+In general, Centauri maintains a reasonably open peering policy
+and is willing to peer with other networks across public peering
+points where both networks are present.
+There are however certain
+requirements which will be described below
+Centauri is primarily interested in peering with
+networks of similar size, where multiple geographically diverse
+interconnections are possible.
+All peers must supply an Operational contact that is available
+on a 24x7 basis, such as a Network Operations Center or equivalent.
+Both Voice and Email contact information is required.
+Peers must not utilize any form of gateway of last resort or
+default route that is directed at Centauri Communications
+Use of the Internet Routing Registry (IRR) is strongly encouraged
+for prompt prefix filter updates.
+Networks that do not provide
+a Routing Registry object to use for filter generation may
+have all routes filtered based upon some arbitrary criteria,
+such as mask length, or number of prefixes announced.
+Centauri maintains the right to add an entry describing any
+peering interconnect into the Internet Routing Registry system
+for the purpose of easing BGP filter generation..
+Peers should provide access to a looking glass or traceroute
+server to facilitate troubleshooting.
+A good faith effort should be made to aggregate route announcements
+as much as practical.
+All announcements are to be consistent, in terms of prefix aggregation
+properties, across all interconnect locations.
+Peers are expected to filter their clients to reject both
+unauthorized BGP announcements as well as IP datagrams with
+invalid source addresses.
+Under no circumstances will Centauri maintain both a transit
+and peering relationship with a given network simultaneously.
+Centauri reserves the right to suspend peering for an indefinite
+period of time should any form of network abuse be verified to
+take place via the peering interconnect.
+The following non-exhaustive
+list serves to provide examples of such abuse:
+Denial of Service attacks
+Unsolicited Bulk Email sources
+Setting default-route to Centauri Communications
+Final decision in peering is based upon a mutually
+agreeable decision to peer based upon operational needs. If
+Centauri Communications operational needs cause a peering arrangement to
+conflict with the best interest of Centauri, Centauri reserves
+the right to terminate the peering agreement with reasonable
+advance notice.
+Admin/Peering Information:
+ASN:
+19214
+IRR AS-SET:
+ARIN::AS19214:AS-CENTAURI
+NOC email:
+NOC voice:
+1-415-294-2240 x3
+Looking Glass:
+http://lg.centaurico.com
+Private Peering Locations:
+Location:
+San Francisco, Ca, 200 Paul (Digital Realty Trust )
+Centauri BGP Community policy:
+Customer Local-preference Options
+Local-Pref
+Community
+Description
+90
+19214:90
+Lower (less preferred) than all other routes on the network (Back up route only)
+100
+19214:100
+Default preference - If not matched by any other custom route-map
+110
+19214:110
+Lower than IP Transit routes
+120
+19214:120
+Reserved for future use
+130
+19214:130
+Higher than IP Transit routes
+150
+19214:150
+Higher than Public peer routes but lower than private peer routes
+180
+19214:180
+Higher than Private peer routes
+190
+19214:190
+BGP customers with two links that want to select which link has preference
+200
+none
+Default customer IP routes - Highest local preference on the network
+Communities that Change Customer Announcements to specific Peers at AS19214 Border
+Provider Name or AS
+"Don't Advertise"
+"Prepend Once"
+"Prepend Twice"
+"Prepend Thrice"
+Cogent-AS174
+19214:1003
+19214:1103
+19214:1203
+19214:1303
+Nlayer-AS4436
+19214:1004
+19214:1104
+19214:1204
+19214:1304
+© Copyright <%= year(now) %> Centauri Communications - All rights reserved. Home | Site Map | Privacy Policy

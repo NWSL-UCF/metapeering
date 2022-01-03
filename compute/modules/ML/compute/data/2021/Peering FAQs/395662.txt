@@ -1,0 +1,126 @@
+Peering Policy - OzarksGo
+OzarksGo Home
+Check AvailabilityStatus Map
+FAQ
+Pricing
+Tech Support
+Accessibility
+watchTVeverywhere
+Go Fiber
+Internet
+TV
+Phone
+Commercial Lifeline Assistance
+Emergency Broadband Benefit
+Who We Are
+Rural @merica
+Careers
+Blog ›
+ConstructionTerms and Conditions
+Contact Us
+OzarksGo Home
+Check Availability
+MENU
+MyOzarks
+MyOzarks Login
+Pay Without Logging In
+Peering Guidelines
+OzarksGo (AS395662) has a selective peering policy and actively peers with networks that provide or host content.
+General requirements
+The ISP must be able to interconnect at a peering location shared with the OzarksGo network (AS395662).
+All peers must supply a contact that is available on a 24x7 basis, such as a Network Operations Center (NOC) or equivalent.
+Neither party shall establish a static route, a route of last resort, or otherwise send traffic to the other party for a route not announced via BGP.
+Neither party shall announce to the other the more specific routes of prefixes learned via a third-party transit customer.
+Use of the Internet Routing Registry (IRR) is required for prefix filtering. (RADB is preferred)
+Peers should provide access to a looking glass or traceroute server to facilitate troubleshooting.
+All announcements are to be consistent across all interconnect locations.
+OzarksGo reserves the right to suspend peering for an indefinite period of time should any form of network abuse be verified to take place via the peering interconnect such as denial of service attacks (DOS), unsolicited bulk email (SPAM), or setting default-route to OzarksGo.
+OzarksGo will not accept any announcement smaller than /24.
+Dual stack IPv4 and IPv6 BGP peering is required.
+OzarksGo's final decision on peering is based upon a mutually agreeable decision to peer based upon operational needs. If OzarksGo's operational needs cause a peering arrangement to conflict with the best interest of OzarksGo, OzarksGo reserves the right to terminate the peering agreement with reasonable advance notice.
+A network that is a customer of AS395662 for any dedicated IP transit services may not simultaneously be a peer.
+OzarksGo will send and honor MED attributes by request only.
+All potential and current peers must have and maintain valid PeeringDB.com records.
+PNI capacity upgrades should occur in a timely manner to ensure a high end-user quality of experience.
+Questions?
+Contact OzarksGo_Tech@ozarksgo.net for peering inquiries.
+Peering Guidelines
+OzarksGo (AS395662) has a selective peering policy and actively peers with networks that provide or host content.
+General requirements
+The ISP must be able to interconnect at a peering location shared with the OzarksGo network (AS395662).
+All peers must supply a contact that is available on a 24x7 basis, such as a Network Operations Center (NOC) or equivalent.
+Neither party shall establish a static route, a route of last resort, or otherwise send traffic to the other party for a route not announced via BGP.
+Neither party shall announce to the other the more specific routes of prefixes learned via a third-party transit customer.
+Use of the Internet Routing Registry (IRR) is required for prefix filtering. (RADB is preferred)
+Peers should provide access to a looking glass or traceroute server to facilitate troubleshooting.
+All announcements are to be consistent across all interconnect locations.
+OzarksGo reserves the right to suspend peering for an indefinite period of time should any form of network abuse be verified to take place via the peering interconnect such as denial of service attacks (DOS), unsolicited bulk email (SPAM), or setting default-route to OzarksGo.
+OzarksGo will not accept any announcement smaller than /24.
+Dual stack IPv4 and IPv6 BGP peering is required.
+OzarksGo's final decision on peering is based upon a mutually agreeable decision to peer based upon operational needs. If OzarksGo's operational needs cause a peering arrangement to conflict with the best interest of OzarksGo, OzarksGo reserves the right to terminate the peering agreement with reasonable advance notice.
+A network that is a customer of AS395662 for any dedicated IP transit services may not simultaneously be a peer.
+OzarksGo will send and honor MED attributes by request only.
+All potential and current peers must have and maintain valid PeeringDB.com records.
+PNI capacity upgrades should occur in a timely manner to ensure a high end-user quality of experience.
+Questions?
+Contact OzarksGo_Tech@ozarksgo.net for peering inquiries.
+Peering Guidelines
+OzarksGo (AS395662) has a selective peering policy and actively peers with networks that provide or host content.
+General requirements
+The ISP must be able to interconnect at a peering location shared with the OzarksGo network (AS395662).
+All peers must supply a contact that is available on a 24x7 basis, such as a Network Operations Center (NOC) or equivalent.
+Neither party shall establish a static route, a route of last resort, or otherwise send traffic to the other party for a route not announced via BGP.
+Neither party shall announce to the other the more specific routes of prefixes learned via a third-party transit customer.
+Use of the Internet Routing Registry (IRR) is required for prefix filtering. (RADB is preferred)
+Peers should provide access to a looking glass or traceroute server to facilitate troubleshooting.
+All announcements are to be consistent across all interconnect locations.
+OzarksGo reserves the right to suspend peering for an indefinite period of time should any form of network abuse be verified to take place via the peering interconnect such as denial of service attacks (DOS), unsolicited bulk email (SPAM), or setting default-route to OzarksGo.
+OzarksGo will not accept any announcement smaller than /24.
+Dual stack IPv4 and IPv6 BGP peering is required.
+OzarksGo's final decision on peering is based upon a mutually agreeable decision to peer based upon operational needs. If OzarksGo's operational needs cause a peering arrangement to conflict with the best interest of OzarksGo, OzarksGo reserves the right to terminate the peering agreement with reasonable advance notice.
+A network that is a customer of AS395662 for any dedicated IP transit services may not simultaneously be a peer.
+OzarksGo will send and honor MED attributes by request only.
+All potential and current peers must have and maintain valid PeeringDB.com records.
+PNI capacity upgrades should occur in a timely manner to ensure a high end-user quality of experience.
+Questions?
+Contact OzarksGo_Tech@ozarksgo.net for peering inquiries.
+Check Availability
+Fiber Services
+Go FiberInternetTVPhoneCommercial Lifeline Assistance
+About Us
+Who We AreRural @mericaCareers
+News
+BlogConstruction
+Connect
+Contact Us FacebookTwitterInstagramLinkedIn
+Terms and Conditions
+Privacy Policy
+Vendor requests: vendor@ozarksgo.net
+© 2021 OzarksGo, LLC.  |  479.684.4900 | 24/7 tech supportA subsidiary of Ozarks Electric Cooperative
+Check Availability
+Fiber Services
+Go FiberInternetTVPhoneCommercial Lifeline Assistance
+About Us
+Who We AreRural @mericaCareers
+News
+BlogConstruction
+Connect
+Contact Us FacebookTwitterInstagramLinkedIn
+Terms and Conditions
+Privacy Policy
+Vendor requests: vendor@ozarksgo.net
+© 2021 OzarksGo, LLC.  |  479.684.4900 | 24/7 tech supportA subsidiary of Ozarks Electric Cooperative Check Availability
+Fiber Services
+Go FiberInternetTVPhoneCommercialLifeline Assistance
+Connect
+Contact Us FacebookTwitterInstagramLinkedIn
+About Us
+Who We AreRural @mericaCareers
+News
+BlogConstruction
+Terms and Conditions
+Privacy Policy
+Vendor requests: vendor@ozarksgo.net
+© 2021 OzarksGo, LLC  |  479.684.4900 | 24/7 tech supportA subsidiary of Ozarks Electric Cooperative
+OzarksGo Coronavirus Response
+For the safety of our customers and employees during the COVID-19 outbreak, our lobbies will be closed for 30 days starting Monday, March 16. Customers can still make payments and manage their accounts through MyOzarks, over the phone or at one of our drive-throughs.

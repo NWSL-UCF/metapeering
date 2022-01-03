@@ -1,0 +1,9 @@
+Please do not send peering requests to our NOC!
+
+As of September 27th, 2017, BroadbandONE/Host.net has been acquired by 365 Data Centers and will continue to operate as BBOI.
+
+The BBOI transit backbone serves a wide array of end users through our downstream clients which include cable operators/MSOs, rural telephone operators and cooperatives, universities, enterprise clients through our various last mile service offerings, as well as thousands of hosting companies, enterprises, publishers and others that are colocated or purchase our cloud products within one of our 13 data centers throughout the Midwest and Eastern United States. You may not directly see a lot of traffic with AS19151 in the path as many of our clients are multi-homed. The only way to determine traffic levels is to set up test sessions.
+
+We have extended the BBOI network to all 365 Data Centers locations at this time.
+
+NOTE: Route server listed above has view from AS13645's perspective (legacy Host.net). Please use the BBOI looking glass if you want a view from AS19151.

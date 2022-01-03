@@ -1,0 +1,3 @@
+Please send all new peering requests to noc@tncconnected.com. Remember to include your ASN.
+
+An engineer will check to ensure an accurate Peering DB Entry prior to any Peering requests.

@@ -1,0 +1,110 @@
+Peering | Total UptimeÂ®
+Toggle navigation
+Products
+ADC-AS-A-SERVICE (ADCaaS)Improve availability, security, performance and cloud integration for any application.
+CLOUD DNS SERVICEEnsure 100% reliability of the most critical piece of the Internet. Name resolution.
+CLOUD LOAD BALANCINGDistribute traffic effectively to any cloud or any device while maintaining full control.
+GLOBAL SERVER LOAD BALANCINGProximity-based routing to any device behind a single global anycast IP address.
+WEB APPLICATION AND API PROTECTIONProtect apps and APIs at the edge of the Internet from 15 classes of vulnerabilities.
+MULTICLOUD NETWORKINGBuild a mesh of networks between sites wherever they are for the ultimate in control.
+BGP Over GRE / VPNGet a static IP anywhere over standard ISP links where it is otherwise unsupported.
+USE CASES
+DISASTER RECOVERY AND BUSINESS CONTINUITY
+AUTOMATED ISP LINK FAILOVER
+INCREASE APP AVAILABILITY
+AUTOMATE DATA CENTER FAILOVER
+DECREASE VENDOR LOCK-IN
+NETWORK TRAFFIC ROUTING
+GOVERNMENT DNS SERVICE
+Pricing
+SMALL BUSINESS
+ENTERPRISE
+Resources
+BLOG
+KNOWLEDGE BASE
+ONLINE MANUAL
+VIDEO TUTORIALS
+API DOCUMENTATION
+About us
+OUR COMPANY
+OUR CLOUD PLATFORM
+OUR CUSTOMERS
+CAREERS
+NEWS ROOM
+CONTACT US
+PARTNERS
+LEGAL INFO
+Support
+CREATE A TICKET
+PLATFORM STATUS
+KNOWLEDGE BASE
+API DOCUMENTATION
+Login
+MANAGEMENT PANEL
+SUPPORT PANEL
+SECURE PAYMENTS
+PARTNER PANEL
+Try Now!
+Peering
+Peering with Total Uptime AS53334
+Contacts
+Email: peering@totaluptime.com
+Phone: +1 828-490-4290 opt. 3
+ASN: 53334
+AS-SET (RADB): AS-TOTALUPTIME
+General Information
+We operate a global anycast network. We determine which routes to send you based on the location of your network, your footprint and where we interconnect.
+Our policy is “selective”, but we probably want to peer with you. We just need to ensure optimal routing across our global network, based on our point above.
+All peers must supply a contact that is available on a 24×7 basis, such as a Network Operations Center (NOC) or equivalent.
+Peers must not utilize any form of gateway of last resort or default route that is directed at Total Uptime.
+Use of the Internet Routing Registry (IRR) is preferred for prefix filtering. (RADB is preferred).
+Peers should provide access to a looking glass or traceroute server to facilitate troubleshooting.
+Do not announce prefixes at a distant peering point when a closer one is available. E.G. if you are a network in China, you should only announce a prefix in Los Angeles if you are also announcing it to us in Hong Kong, Singapore or other closer location. This is paramount to ensure optimal routing for our customers. We want to make every effort to ensure that traffic does not cross countries or oceans unnecessarily, causing undesired latency.
+Total Uptime reserves the right to suspend peering for an indefinite period of time should any form of network abuse take place via the peering interconnect such as a denial of service attack, SPAM, or default route towards Total Uptime.
+MD5 password is preferred, but not required
+Total Uptime’s final decision on peering is based on a mutually agreeable decision to peer based on operational needs. If Total Uptime’s operational needs cause a peering arrangement to conflict with the best interest of Total Uptime, we reserve the right to terminate the peering agreement with reasonable advance notice.
+Total Uptime does not send or honor MED attributes.
+All potential and current peers must have and maintain a valid PeeringDB.com record
++1 800.584.1514
++44 (0)330.808.0228
++1 828.490.4290
+Products
+ADC-as-a-Service
+Cloud DNS Service
+Cloud Load Balancing
+Global Server Load Balancing
+Web Application and API Protection
+Multicloud Networking
+BGP Over GRE / VPN
+Pricing
+Cloud DNS
+Load Balancing / Failover
+Web App Firewall
+Resources
+Blog
+Knowledge Base
+Manual
+Video Tutorials
+API Docs
+About Us
+Our Company
+Our Cloud Platform
+Our Customers
+Careers
+News Room
+Contact Total Uptime
+Partner Programs
+Legal Info
+Support
+Create a ticket
+Platform Status
+Knowledge Base
+API Documentation
+Log In
+Management Panel
+Support Panel
+Secure Payments
+Partner Panel
+2021 Total Uptime Technologies, LLC. All rights reserved.
+Total UptimeÂ® and the Total Uptime logo are registered trademarks of Total Uptime Technologies, LLC. All other trademarks and services marks are the property of their respective owners. [1]
+We use scripts and cookies to personalize content, to provide social media features and to analyze our traffic. We also share information about your use of our site with our analytics partners.I AcceptRead more

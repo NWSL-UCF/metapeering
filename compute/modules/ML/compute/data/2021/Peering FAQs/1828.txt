@@ -1,0 +1,18 @@
+Unitas Global is an enterprise cloud connectivity provider serving regional and multi-national organizations. We operate an IP backbone with worldwide presence to support our customers, and actively seek peering with other networks to improve performance for our mutual users. We generally require peering at all common locations.
+
+We recommend setting max-prefix at 5,000 while we continue to build our network and interconnect our global locations, as well as consolidate ASNs behind AS1828. Our network traffic ratio is approximately 2:1 inbound.
+
+Note as of December 2020 Sungard AS7381 and AS15533 have been consolidated behind AS1828.
+
+Additional peering locations planned (updated February 2021):
+
+* Mumbai IX
+* HKIX Hong Kong
+* ExtremeIX New Delhi
+* ExtremeIX Mumbai
+* BBIX Tokyo
+* BBIX Hong Kong
+* BBIX Singapore
+* DE-CIX Dallas
+* Any2 Denver
+* KCIX Kansas City

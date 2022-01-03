@@ -1,0 +1,94 @@
+{
+  "aka": "University of Minnesota",
+  "asn": 57,
+  "created": "2016-05-26 12:04:21.342863",
+  "id": "6717",
+  "info_ipv6": 1,
+  "info_multicast": 1,
+  "info_prefixes4": 250,
+  "info_prefixes6": 13,
+  "info_ratio": "Mostly Inbound",
+  "info_scope": "Regional",
+  "info_traffic": "50-100 Gbps",
+  "info_type": "education",
+  "info_unicast": 1,
+  "irr_as_set": "",
+  "looking_glass": "",
+  "name": "Northern Lights GigaPOP",
+  "notes": "Provides Internet and Internet2 R&E connectivity for University of Minnesota, MnSCU, State of Minnesota, other K12, Higher Ed, and governmental entities in Minnesota and the surrounding states.",
+  "notes_private": "",
+  "org_id": 9189,
+  "policy_contracts": "Not Required",
+  "policy_general": "Open",
+  "policy_locations": "Not Required",
+  "policy_ratio": 0,
+  "policy_url": "",
+  "route_server": "",
+  "status": "ok",
+  "updated": "2016-05-26 12:04:21.342883",
+  "version": 0,
+  "website": "http://www.northernlights.gigapop.net/",
+  "pop_list": [
+    {
+      "city": "Chicago",
+      "country": "US",
+      "state": "IL",
+      "org_name": "Level 3 Communications, LLC",
+      "isp_id_in_peering_db": 1730,
+      "location": [
+        41.9,
+        -87.64
+      ],
+      "port_capacity": 1000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.865
+    },
+    {
+      "city": "Chicago",
+      "country": "US",
+      "state": "IL",
+      "org_name": "710facility@ittns.northwestern.edu",
+      "isp_id_in_peering_db": 1707,
+      "location": [
+        41.9,
+        -87.62
+      ],
+      "port_capacity": 1000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.865
+    },
+    {
+      "city": "Kansas City",
+      "country": "US",
+      "state": "MO",
+      "org_name": "1102 Grand",
+      "isp_id_in_peering_db": 435,
+      "location": [
+        39.1,
+        -94.58
+      ],
+      "port_capacity": 2000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.833
+    },
+    {
+      "city": "Minneapolis",
+      "country": "US",
+      "state": "MN",
+      "org_name": "Cologix",
+      "isp_id_in_peering_db": 803,
+      "location": [
+        44.97,
+        -93.25
+      ],
+      "port_capacity": 21000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.856
+    }
+  ],
+  "prefixes": 375,
+  "total_prefixes_in_globe": 8388478,
+  "address_space": 1905664,
+  "total_addresses_in_globe": 22264797636,
+  "neighbor": 31
+}

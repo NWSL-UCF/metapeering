@@ -1,0 +1,43 @@
+DigitalOcean Network Operations
+DigitalOcean home
+Network Operations (current)
+PeeringDB
+Peering Policy
+Summary
+This document describes the peering policies for DigitalOcean (AS14061).
+Background
+An Internet Exchange (IX) is a location where ISPs and network operators come together to peer directly or indirectly. Most often these peerings are settlement-free. Peering enables us to provide better experience for customers by interfacing with the networks directly rather than via transit paths.
+Policy Statement
+DigitalOcean will peer with network operators at IXs where traffic levels meet a specified minimum. Our preference is to setup multiple peering sessions for redundancy wherever and whenever possible. DigitalOcean will also peer with route servers on all IXs where we are present.
+Peering eligibility will be reviewed to determine if the traffic exchanged between both parties justifies the necessity to establish a direct BGP session at an IX. If it is determined that there is no traffic currently exchanged and or very low amounts of traffic is exchanged then we will recommend that the peering requester use the IX route servers instead. We do not require any peering contracts or formal agreements with our peering partners.
+Peering Requirements (General)
+To be eligible for peering, each candidate must:
+Use a registered public autonomous system (AS) number;
+Publish valid contact information via PeeringDB; and
+Maintain valid AS and prefix records with a public Internet Routing Registry (IRR).
+A peer may only send toward us traffic intended for a destination network we advertise. The use of static or default routes toward us is not permitted.
+Peers must ensure that their policies in PeeringDB (e.g. maximum prefix count) are kept accurate.
+Peers are encouraged to implement Mutually Agreed Norms for Routing Security (MANRS)
+The following features are encouraged but not required:
+RFC 2385—BGP MD5 authentication
+RFC 7999—BLACKHOLE community
+RFC 8326—Graceful BGP session shutdown
+Peering Requirements (IX)
+Traffic volume at the desired IX must be equal to or in excess of 500 Mbps measured at 95th percentile across a 7 day period.
+Where multiple connections to an IX exist, peers must establish BGP sessions with all neighbors and enable multipath routing.
+Peering Requirements (PNI)
+Traffic volume at the desired region must be equal to or in excess of 5Gbps measured at 95th percentile over a 30 day period.
+A minimum of two 10GE cross-connects are required. These will terminate across diverse AS14061 border routers. Multipath and LACP must be enabled.
+Both parties agree to periodically review capacity and upgrade as required.
+The peer should make a reasonable effort to inform us in advance of scheduled maintenance affecting the PNI circuits.
+Operations
+DigitalOcean will review itâs peering policy quarterly and reserves the right to modify this policy at any time. We may also filter any routes which we determine should not be advertised to DigitalOcean over the agreed upon peering session. We will by default filter any bogon prefixes (i.e. IP space allocated by RFCs 1918, 5735, and 6598).
+Contacts
+Abuse
+Report Abuse—Reports of abusive activity originating from AS14061 (spam, DDoS, copyright violations, etc.)
+Customer Support
+Contact Support—If you are a DigitalOcean customer, use this.
+Peering
+peering@digitalocean.com—Requests for new peering sessions or changes to existing sessions.
+NOC
+noc@digitalocean.com—All other routing/network related issues.

@@ -1,0 +1,5 @@
+AS112 nodes announce anycast prefixes and are operated by many people around the world. We try to collect the IXP connected AS112 nodes here.
+
+As everyone can operate an AS112 node without telling anyone else it's not possible to have all the contacts listed here. There is a [mailing list](https://lists.dns-oarc.net/mailman/listinfo/as112-ops) where operators can subscribe to.
+
+There are also more nodes outside of IXPs. The project tries to [list them](https://www.as112.net/ops-listing.html), but as it is not mandatory to tell the project about your AS112 node the list is not complete.

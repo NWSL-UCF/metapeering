@@ -1,0 +1,6 @@
+*** PLEASE SET MAX PREFIX TO 250000 ON ALL
+SESSIONS WITH US ***
+Will do IPv6 with existing IPv4 peers.
+AS-SEABONE-V6 is the corresponding IRR record. About 20000 prefixes announced (recommended maxprefix 30000).
+Please note we no longer have a port on 
+LINX' Extreme LAN

@@ -1,0 +1,740 @@
+Cloudflare Peering Policy | Cloudflare
+Sales:
++1 650 319 8930
++1 650 319 8930
+|
+Support
+Contact Support
+Help Center
+Cloudflare Community
+|
+My Account
+Log In
+My Profile
+Account Home
+Billing
+Secure remote employees with Cloudflare
+|
+English
+English
+English (United Kingdom)
+English (Canada)
+English (Australia)
+English (India)
+Deutsch
+Español (España)
+Español (Latinoamérica)
+Français
+Italiano
+日本語
+한국어
+Português
+繁體中文
+简体中文
+Support
+|
+Sales:
++1 650 319 8930
++1 650 319 8930
+|
+English
+▶
+▼
+English
+English (United Kingdom)
+English (Canada)
+English (Australia)
+English (India)
+Deutsch
+Español (España)
+Español (Latinoamérica)
+Français
+Italiano
+日本語
+한국어
+Português
+繁體中文
+简体中文
+Solutions
+Products
+Documentation
+Resources
+Partners
+For Enterprise
+Pricing
+Log In
+Sign Up
+Under Attack?
+SOLUTIONS
+Deliver Superior Online Experiences
+Mitigate DDoS Attacks
+Stop Malicious Bot Abuse
+Accelerate Internet Applications
+Ensure Application Availability
+Optimize Web Experiences
+Stream Videos On-Demand
+Secure Employee Applications and Devices
+Deliver Zero Trust Access to Applications
+Implement Secure Access Service Edge (SASE)
+Protect Users Accessing the Internet
+Protect Corporate Networks
+Manage Secure Contractor Access
+Replace Virtual Private Networks (VPNs)
+Secure Your Remote Workforce
+Stop Zero Day Attacks with Browser Isolation
+Protect and Accelerate Networks
+Solutions-Solutions-Protect and Accelerate Networks-Cloudflare's Network Services
+Mitigate L3 DDoS Attacks
+Connect network infrastructure with Cloudflare
+Transform Corporate Networks
+Code on the Network Edge
+Build a Serverless Application
+Deploy a Static Website
+Configure a CDN
+Define Conditional Request Routing
+Manage a Secure Cloud
+Secure Hybrid, Cloud, & SaaS Platforms
+Enable SSL for SaaS Applications
+Reduce Cloud Data Transfer Costs
+Register a Website
+Register or Transfer a Website
+INDUSTRIES
+eCommerce
+Financial Services
+Gaming
+Healthcare and Life Sciences
+Media and Entertainment
+Public Sector
+SaaS
+Education
+PUBLIC INTEREST
+Election Campaigns
+Athenian Project
+Project Galileo
+Project Fair Shot
+FOR INFRASTRUCTURE
+Application & Network Security
+DDoS Protection
+WAF
+Bot Management
+Magic Transit
+Magic WAN
+Rate Limiting
+SSL / TLS
+SSL/TLS for SaaS Providers
+Cloudflare Spectrum
+Network Interconnect
+Performance & Reliability
+CDN
+DNS
+Argo Smart Routing
+Load Balancing
+Stream Delivery
+China Network
+Waiting Room
+FOR TEAMS
+Cloudflare for Teams
+Access
+Gateway
+Browser Isolation
+FOR DEVELOPERS
+Serverless Applications
+Cloudflare Workers
+Cloudflare Workers KV
+Domain Registration
+Cloudflare Registrar
+Website Development
+Cloudflare Pages
+Cloudflare Stream
+SaaS Developers
+Cloudflare for SaaS
+FOR EVERYONE
+1.1.1.1
+1.1.1.1 with WARP (App)
+1.1.1.1 for Families
+INSIGHTS
+Analytics
+Cloudflare Logs
+Web Analytics
+Cloudflare Radar
+PRIVACY
+Data Localization
+Compliance
+FOR INFRASTRUCTURE
+Advanced Security
+Bot Management
+Firewall rules
+Magic Transit
+Spectrum (TCP/UDP)
+SSL
+WAF
+Performance & Reliability
+CDN
+DNS
+Image Resizing
+Load Balancing
+Stream (Video)
+Insights
+Analytics
+Domain Registration
+Registrar
+FOR SERVERLESS APPLICATIONS
+Workers Quick Start
+Cloudflare Pages
+Sample Workers Projects
+Workers Tutorials
+Command-line (Wrangler)
+Runtime
+FOR TEAMS
+Cloudflare for Teams
+EXPLORE CLOUDFLARE API
+Cloudflare API
+API Authentication
+DOCUMENTATION HUB
+Dev Documentation Hub
+RESOURCES
+Resource Hub
+Whitepapers
+Webinars
+Solutions & Product Guides
+Case Studies
+Analysts
+EXPLORE
+What's New?
+Network Map
+Cloudflare in China
+GDPR
+GET STARTED
+Register Your Website
+Welcome Center
+Get Help
+LEARN
+Learning Center
+Security
+DDoS
+Bot Management
+SSL
+Identity and Access Management
+Performance
+CDN
+DNS
+Cloud
+Serverless
+Network Layer
+CONNECT
+Blog
+Community
+TRUST
+Trust Hub
+Privacy & Data Protection
+Certifications
+Trust & Safety
+GDPR
+Legal Documentation
+CONTACT
++1 650 319 8930
+CHANNEL & ALLIANCE PARTNERS
+Partner Network
+Partner Portal
+TECHNOLOGY PARTNERS
+Overview
+Analytics Partners
+Bandwidth Alliance
+Endpoint Security Partnerships
+Interconnect Partnerships
+Network On-ramp Partnerships
+Peering Portal
+PRICING BY PLAN
+Free
+Pro
+Business
+Enterprise
+COMPARE AND EXPLORE
+Need Help Choosing a Plan?
+Add Ons
+Compare All Plans
+Solutions
+SOLUTIONS
+Deliver Superior Online Experiences
+Mitigate DDoS Attacks
+Stop Malicious Bot Abuse
+Accelerate Internet Applications
+Ensure Application Availability
+Optimize Web Experiences
+Stream Videos On-Demand
+Secure Employee Applications and Devices
+Deliver Zero Trust Access to Applications
+Implement Secure Access Service Edge (SASE)
+Protect Users Accessing the Internet
+Protect Corporate Networks
+Manage Secure Contractor Access
+Replace Virtual Private Networks (VPNs)
+Secure Your Remote Workforce
+Stop Zero Day Attacks with Browser Isolation
+Protect and Accelerate Networks
+Solutions-Solutions-Protect and Accelerate Networks-Cloudflare's Network Services
+Mitigate L3 DDoS Attacks
+Connect network infrastructure with Cloudflare
+Transform Corporate Networks
+Code on the Network Edge
+Build a Serverless Application
+Deploy a Static Website
+Configure a CDN
+Define Conditional Request Routing
+Manage a Secure Cloud
+Secure Hybrid, Cloud, & SaaS Platforms
+Enable SSL for SaaS Applications
+Reduce Cloud Data Transfer Costs
+Register a Website
+Register or Transfer a Website
+INDUSTRIES
+eCommerce
+Financial Services
+Gaming
+Healthcare and Life Sciences
+Media and Entertainment
+Public Sector
+SaaS
+Education
+PUBLIC INTEREST
+Election Campaigns
+Athenian Project
+Project Galileo
+Project Fair Shot
+Products
+FOR INFRASTRUCTURE
+Application & Network Security
+DDoS Protection
+WAF
+Bot Management
+Magic Transit
+Magic WAN
+Rate Limiting
+SSL / TLS
+SSL/TLS for SaaS Providers
+Cloudflare Spectrum
+Network Interconnect
+Performance & Reliability
+CDN
+DNS
+Argo Smart Routing
+Load Balancing
+Stream Delivery
+China Network
+Waiting Room
+FOR TEAMS
+Cloudflare for Teams
+Access
+Gateway
+Browser Isolation
+FOR DEVELOPERS
+Serverless Applications
+Cloudflare Workers
+Cloudflare Workers KV
+Domain Registration
+Cloudflare Registrar
+Website Development
+Cloudflare Pages
+Cloudflare Stream
+SaaS Developers
+Cloudflare for SaaS
+FOR EVERYONE
+1.1.1.1
+1.1.1.1 with WARP (App)
+1.1.1.1 for Families
+INSIGHTS
+Analytics
+Cloudflare Logs
+Web Analytics
+Cloudflare Radar
+PRIVACY
+Data Localization
+Compliance
+Documentation
+FOR INFRASTRUCTURE
+Advanced Security
+Bot Management
+Firewall rules
+Magic Transit
+Spectrum (TCP/UDP)
+SSL
+WAF
+Performance & Reliability
+CDN
+DNS
+Image Resizing
+Load Balancing
+Stream (Video)
+Insights
+Analytics
+Domain Registration
+Registrar
+FOR SERVERLESS APPLICATIONS
+Workers Quick Start
+Cloudflare Pages
+Sample Workers Projects
+Workers Tutorials
+Command-line (Wrangler)
+Runtime
+FOR TEAMS
+Cloudflare for Teams
+EXPLORE CLOUDFLARE API
+Cloudflare API
+API Authentication
+DOCUMENTATION HUB
+Dev Documentation Hub
+Resources
+RESOURCES
+Resource Hub
+Whitepapers
+Webinars
+Solutions & Product Guides
+Case Studies
+Analysts
+EXPLORE
+What's New?
+Network Map
+Cloudflare in China
+GDPR
+GET STARTED
+Register Your Website
+Welcome Center
+Get Help
+LEARN
+Learning Center
+Security
+DDoS
+Bot Management
+SSL
+Identity and Access Management
+Performance
+CDN
+DNS
+Cloud
+Serverless
+Network Layer
+CONNECT
+Blog
+Community
+TRUST
+Trust Hub
+Privacy & Data Protection
+Certifications
+Trust & Safety
+GDPR
+Legal Documentation
+CONTACT
++1 650 319 8930
+Partners
+CHANNEL & ALLIANCE PARTNERS
+Partner Network
+Partner Portal
+TECHNOLOGY PARTNERS
+Overview
+Analytics Partners
+Bandwidth Alliance
+Endpoint Security Partnerships
+Interconnect Partnerships
+Network On-ramp Partnerships
+Peering Portal
+For Enterprise
+Pricing
+PRICING BY PLAN
+Free
+Pro
+Business
+Enterprise
+COMPARE AND EXPLORE
+Need Help Choosing a Plan?
+Add Ons
+Compare All Plans
+Support
+Contact Support
+Help Center
+Cloudflare Community
+My Account
+Log In
+My Profile
+Account Home
+Billing
+Secure remote employees with Cloudflare
+English
+English (United Kingdom)
+English (Canada)
+English (Australia)
+English (India)
+Deutsch
+Español (España)
+Español (Latinoamérica)
+Français
+Italiano
+日本語
+한국어
+Português
+繁體中文
+简体中文
+Log In
+Sign Up
+Under Attack?
+SOLUTIONS
+Deliver Superior Online Experiences
+Mitigate DDoS Attacks
+Stop Malicious Bot Abuse
+Accelerate Internet Applications
+Ensure Application Availability
+Optimize Web Experiences
+Stream Videos On-Demand
+Secure Employee Applications and Devices
+Deliver Zero Trust Access to Applications
+Implement Secure Access Service Edge (SASE)
+Protect Users Accessing the Internet
+Protect Corporate Networks
+Manage Secure Contractor Access
+Replace Virtual Private Networks (VPNs)
+Secure Your Remote Workforce
+Stop Zero Day Attacks with Browser Isolation
+Protect and Accelerate Networks
+Solutions-Solutions-Protect and Accelerate Networks-Cloudflare's Network Services
+Mitigate L3 DDoS Attacks
+Connect network infrastructure with Cloudflare
+Transform Corporate Networks
+Code on the Network Edge
+Build a Serverless Application
+Deploy a Static Website
+Configure a CDN
+Define Conditional Request Routing
+Manage a Secure Cloud
+Secure Hybrid, Cloud, & SaaS Platforms
+Enable SSL for SaaS Applications
+Reduce Cloud Data Transfer Costs
+Register a Website
+Register or Transfer a Website
+INDUSTRIES
+eCommerce
+Financial Services
+Gaming
+Healthcare and Life Sciences
+Media and Entertainment
+Public Sector
+SaaS
+Education
+PUBLIC INTEREST
+Election Campaigns
+Athenian Project
+Project Galileo
+Project Fair Shot
+FOR INFRASTRUCTURE
+Application & Network Security
+DDoS Protection
+WAF
+Bot Management
+Magic Transit
+Magic WAN
+Rate Limiting
+SSL / TLS
+SSL/TLS for SaaS Providers
+Cloudflare Spectrum
+Network Interconnect
+Performance & Reliability
+CDN
+DNS
+Argo Smart Routing
+Load Balancing
+Stream Delivery
+China Network
+Waiting Room
+FOR TEAMS
+Cloudflare for Teams
+Access
+Gateway
+Browser Isolation
+FOR DEVELOPERS
+Serverless Applications
+Cloudflare Workers
+Cloudflare Workers KV
+Domain Registration
+Cloudflare Registrar
+Website Development
+Cloudflare Pages
+Cloudflare Stream
+SaaS Developers
+Cloudflare for SaaS
+FOR EVERYONE
+1.1.1.1
+1.1.1.1 with WARP (App)
+1.1.1.1 for Families
+INSIGHTS
+Analytics
+Cloudflare Logs
+Web Analytics
+Cloudflare Radar
+PRIVACY
+Data Localization
+Compliance
+FOR INFRASTRUCTURE
+Advanced Security
+Bot Management
+Firewall rules
+Magic Transit
+Spectrum (TCP/UDP)
+SSL
+WAF
+Performance & Reliability
+CDN
+DNS
+Image Resizing
+Load Balancing
+Stream (Video)
+Insights
+Analytics
+Domain Registration
+Registrar
+FOR SERVERLESS APPLICATIONS
+Workers Quick Start
+Cloudflare Pages
+Sample Workers Projects
+Workers Tutorials
+Command-line (Wrangler)
+Runtime
+FOR TEAMS
+Cloudflare for Teams
+EXPLORE CLOUDFLARE API
+Cloudflare API
+API Authentication
+DOCUMENTATION HUB
+Dev Documentation Hub
+RESOURCES
+Resource Hub
+Whitepapers
+Webinars
+Solutions & Product Guides
+Case Studies
+Analysts
+EXPLORE
+What's New?
+Network Map
+Cloudflare in China
+GDPR
+GET STARTED
+Register Your Website
+Welcome Center
+Get Help
+LEARN
+Learning Center
+Security
+DDoS
+Bot Management
+SSL
+Identity and Access Management
+Performance
+CDN
+DNS
+Cloud
+Serverless
+Network Layer
+CONNECT
+Blog
+Community
+TRUST
+Trust Hub
+Privacy & Data Protection
+Certifications
+Trust & Safety
+GDPR
+Legal Documentation
+CONTACT
++1 650 319 8930
+CHANNEL & ALLIANCE PARTNERS
+Partner Network
+Partner Portal
+TECHNOLOGY PARTNERS
+Overview
+Analytics Partners
+Bandwidth Alliance
+Endpoint Security Partnerships
+Interconnect Partnerships
+Network On-ramp Partnerships
+Peering Portal
+PRICING BY PLAN
+Free
+Pro
+Business
+Enterprise
+COMPARE AND EXPLORE
+Need Help Choosing a Plan?
+Add Ons
+Compare All Plans
+DDoS Protection Hotline
+Thank You
+Someone from Cloudflare will be in touch with you shortly.
+Contact Us
+Help! I'm Under Attack!
+Email Sales
+Support
+1-888-993-5273
+Cloudflare Peering Policy
+Cloudflare operates a global network spanning 200 cities. Cloudflare (AS13335) has an open peering policy, and will peer with networks that have a presence on mutual exchange points in accordance with the policies described below.
+Cloudflare's Peering Portal allows peering partners to see traffic statistics (growth over time, and the relative traffic for each location), peering session statistics (how many sessions are established in various locations), prefix data (IP routes), relative traffic weighting by POP (data flows in and out of connections to Cloudflare from your ASN), plus much more. If you operate a peering network, you can sign up at the Cloudflare Peering Portal or contact us at peering@cloudflare.com
+Requirements
+Cloudflare uses PeeringDB as a single authoritative source of truth. This means peering partners must have an up-to-date PeeringDB entry before a bilateral peering session can be established.
+Cloudflare will use industry standards to secure the peering sessions. This includes industry standard practices and best common practices, including but not limited to BCP-38 and route filtering. Both parties should have a well set-up route-set or AS-SET as well as up-to date prefix maximums defined in PeeringDB. Cloudflare will use this data to filter routes received from the network’s BGP sessions.
+Both parties must have an up-to-date NOC contact email, which is responsive to raised issues and concerns.
+Private Interconnection (PNI) Requirements
+If the network exchanges more than 1Gbps of traffic in a specific (shared) location, either party can request a PNI. We accept single or multiples of 10G or 100G connections. Upgrades to this capacity must happen in a timely manner to ensure congestion-free exchange of traffic.
+Important Notices
+To ensure quality of operations, we reserve the following rights under our Peering Policy:
+To alter our peering policy and peering requirements at any time.
+To accept or decline a peering request at any time for any reason.
+To suspend, without notice, peering connectivity in the event of a severe quality of service issue such as high latency, packet loss, or jitter pattern is detected and to take appropriate traffic engineering steps to maintain service quality.
+To selectively withdraw prefixes from public IXP fabrics as needed to protect service quality.
+To terminate any peering connection at any time without notice.
+More details on PeeringDB at https://www.peeringdb.com/asn/13335.
+Have Questions?
+If you have questions about these terms or anything else about Cloudflare, please don't hesitate to contact us:
+Cloudflare, Inc.101 Townsend St,San Francisco, CA 94107USA
+Sales
+Enterprise Sales
+Become a Partner
+Contact Sales:+1 650 319 8930
++1 650 319 8930
+Getting Started
+Industry Analysts
+Pricing
+Case Studies
+White Papers
+Webinars
+Learning Center
+Community
+Community Hub
+Blog
+Project Galileo
+Athenian Project
+Cloudflare for Campaigns
+Cloudflare TV
+Developers
+Developer Hub
+Cloudflare Workers
+Integrations
+Support
+Help Center
+Cloudflare Status
+Compliance
+GDPR
+Trust & Safety
+Company
+About Cloudflare
+Investor Relations
+Our Team
+Press
+Careers
+Cloudflare Connect
+Logo
+Network Map
+© 2021 Cloudflare, Inc.
+Privacy Policy
+Terms of Use
+Disclosure
+Cookie Preferences
+Trademark
+To provide you with the best possible experience on our website, we may use cookies, as described here.By clicking accept, closing this banner, or continuing to browse our websites, you consent to the use of such cookies.
+I accept

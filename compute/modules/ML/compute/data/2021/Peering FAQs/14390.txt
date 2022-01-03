@@ -1,0 +1,3 @@
+We will peer with you.
+
+CoreTel (AS14390) is in process of migrating from Equinix Ashburn legacy peering IP space (206.223.115.0/24) to new peering IP space (206.126.236.0/22).   We have updated all peering sessions to reflect new peering IP.

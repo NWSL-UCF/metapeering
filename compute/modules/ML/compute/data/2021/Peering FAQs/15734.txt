@@ -1,0 +1,3 @@
+This network is currently being integrated into [as15830] (https://www.peeringdb.com/asn/15830), hence is no longer considering requests for new peering sessions.
+
+However as this network is now visible via [as15830] (https://www.peeringdb.com/asn/15830) we would encourage you to consider requesting peering with [that ASN] (https://www.peeringdb.com/asn/15830).
