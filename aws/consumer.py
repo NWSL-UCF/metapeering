@@ -1,98 +1,53 @@
-from flask import Blueprint, render_template, request ,redirect, url_for, session
-from app.forms import CustomPeeringQuerryForm
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.quoprimime import body_check
+#from inspect import _SourceObjectType
+#from msilib.schema import MIME
+import boto3
+import json
 from compute.peeringAlgorithm import getCommmonPops, getIndvPops, customPeeringAlgo
 import json, os, copy
 import pandas as pd
 from subprocess import call
 from zipfile import ZipFile
-from werkzeug.utils import secure_filename
+import shutil
 import statistics
-import requests
 
-Custom = Blueprint("custom", __name__, static_folder="static", template_folder="template")
+sqs = boto3.resource("sqs")
+queue = sqs.get_queue_by_name(QueueName='Message-Queue-Metapeering')
 
-@Custom.route("/", methods=["GET", "POST"])
-def custom():
-    form = CustomPeeringQuerryForm()
-    if request.method == "POST":
-        if form.validate_on_submit():
-            # Turn form file content to proper string representation
-            asn1_content = form.asn1.data.read()
-            asn1_content = asn1_content.decode('utf-8')
-            return custom_peering_query_form_handler(request.form, asn1_content)
-        else:
-            return render_template("custom.html", form=form)
+def send_email_with_attachment(receiver, attachment_filename, attachment_path):
+    
+    message = MIMEMultipart()
 
-    return render_template("custom.html", form=form)
+    # Testing verified users first
+    sender = "metapeering@gmail.com"
+    subject = "Your Report is Ready"
+    body = "Your generated report is attached."
 
-@Custom.route("/result", methods=["GET","POST"])
-def customResult():
-    if request.method == "POST":
-        # if len(request.form.getlist("selectedPop")) == 0:
-        #     session['noCommonPops'] = True
-        #     return redirect(url_for("custom.custom"))
-        return custom_request_handler(request.form.getlist("selectedPop"))
+    message["To"] = receiver
+    message["From"] = sender
+    message['Subject'] = subject
+    message_body = MIMEText(body, "plain")
 
-    if(session.pop('authorized', False)):
-        return render_template('result.html')
-    else:
-        raise Exception('401Unauthorized: You cannot access this page directly.')
+    message.attach(message_body)
 
-    # else:
-        # raise Exception('404: Page Not Found: The page you are looking for does not exist!')
-    # return redirect(url_for("success.success"))
+    part = MIMEApplication(open(attachment_path, 'rb').read())
+    part.add_header("Content-Disposition", "attachment", filename = attachment_filename)
+    message.attach(part)
 
-def custom_peering_query_form_handler(request, asn1_data):
-    data = {}
-    data["asn1"] = request["asn1_string"][2:]
-    data["asn2"] = request["asn2"][2:]
-    data["threshold"] = request["threshold"]
+    ses_client = boto3.client("ses", region_name='us-east-1')
 
-    # Make call to AWS and add request to S3 bucket
-    # NOTE: Request does not take into account selections by the user to exclude locations for peering.
-    params = {"filename" : data["asn1"], "email" : request["email"]}
-    url = os.environ.get('AWS_S3_URL')
-    response = requests.get(url, params=params)
-    response = response.json()
-    s3_put_url = response['response']
-    user_id = response['id']
-    headers={'content-type': 'application/json'}
-    file = json.loads(asn1_data)
-
-    info = {'id' : user_id}
-    email = {'email' : request["email"]}
-    threshold = {'threshold' : data["threshold"]}
-    asn2 = {'asn2' : data["asn2"]}
-    file.update(info)
-    file.update(email)
-    file.update(threshold)
-    file.update(asn2)
+    response = ses_client.send_raw_email(Source = sender, Destinations = [receiver], RawMessage={"Data" : message.as_string()})
    
-    res = requests.put(url=s3_put_url, json=json.dumps(file), headers=headers)
-    # End of call to S3 storage
-
-    commonPops = getCommmonPops(int(data["asn1"]), int(data["asn2"]))
-    isp_a_pops, isp_b_pops = getIndvPops(int(data["asn1"]), int(data["asn2"]))
-
-    if len(commonPops) == 0:
-        session['noCommonPops'] = True
-    session['commonPops'] = commonPops
-    session['ispAPops'] = isp_a_pops
-    session['ispBPops'] = isp_b_pops
-    session['asn1'] = data["asn1"]
-    session['asn2'] = data["asn2"]
-    session['threshold'] = data["threshold"]
-    session["authorized"] = True
-    # print(session)
-    return redirect(url_for("custom.custom"))
-    # return custom_request_handler(data)
+    return response
 
 
-def custom_request_handler(data):
-    print(data)
-    isp1 = ['',session.pop('asn1')]
-    isp2 = ['',session.pop('asn2')]
-    threshold = session.pop('threshold',0.5)
+def compute_asns(isp1, isp2, threshold, email):
+
+    commonPops = getCommmonPops(isp1[1], isp2[1])
+    isp_a_pops, isp_b_pops = getIndvPops(isp1[1], isp2[1])
 
     with open("./compute/data/cache/"+str(isp1[1])+"_peering_db_data_file.json") as f:
         jsonData = json.load(f)
@@ -105,6 +60,7 @@ def custom_request_handler(data):
     asn1_asn2 = str(isp1[1]) + "_" + str(isp2[1])
     if not os.path.exists("./app/static/" + asn1_asn2):
         call("mkdir ./app/static/" + asn1_asn2, shell=True)
+    data = []
 
     if customPeeringAlgo(tuple(isp1),tuple(isp2), [int(num) for num in data]):
 
@@ -134,9 +90,10 @@ def custom_request_handler(data):
 
             call("mv "+ asn1_asn2 + "_results.zip "+ resultFolder , shell=True)
 
-
+        # results that are used for top 3 peering deals
         with open('./compute/output/'+asn1_asn2+'/ppc_data.json','r') as f:
             ppc_data = json.load(f)[asn1_asn2]
+            print(ppc_data)
 
     call('cp ./compute/output/'+asn1_asn2+'/graph/'+asn1_asn2+'_results.zip ./app/static/'+asn1_asn2+'/', shell=True)
     call('cp ./compute/output/'+asn1_asn2+'/graph/'+asn1_asn2+'_overlap.png ./app/static/'+asn1_asn2+'/', shell=True)
@@ -144,16 +101,20 @@ def custom_request_handler(data):
     call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/own_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
     call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/ratio_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
     call('rm -r ./compute/output/'+asn1_asn2+'/', shell=True)
+    
+    # Add ppc data to the results zip file
+    with open('./app/static/' + asn1_asn2 + '/ppc_data', 'w') as f:
+        json.dump(ppc_data, f)
 
-    session['title'] = "Peering possibility"
-    session['peering_recommended']=peering_recommended
-    session['threshold_too_high']=threshold_too_high
-    session['ppc']=ppc_data
-    session['requester']=isp1
-    session['candidate']=isp2
-    session['custom']=True
+    # Clean up
+    shutil.make_archive('result_zip_' + asn1_asn2, 'zip', './app/static/' + asn1_asn2)
+    call('rm -r ./app/static/'+asn1_asn2+'/', shell=True)
+    call('rm -r ./compute/data/cache/' + isp1[1] + '_peering_db_data_file.json', shell=True)
 
-    return redirect(url_for("custom.customResult"))
+    print("sending email...")
+    response = send_email_with_attachment(email, 'result_zip_' + asn1_asn2 + '.zip', './result_zip_' + asn1_asn2 + '.zip')
+    call('rm -r ./result_zip_' + asn1_asn2 + '.zip', shell=True)
+    print(response)
 
 
 def generateContracts(isp1_asn, isp2_asn):
@@ -198,3 +159,42 @@ def generateContracts(isp1_asn, isp2_asn):
 
     with open('./compute/output/'+isp_pair+'/ppc_data.json','w') as f:
         json.dump(top_3_pops_details, f)
+
+    print("successful generation")
+
+def process_message(message_body):
+    msg = json.loads(message_body)
+    msg = msg['responsePayload']
+    msg = json.loads(msg)
+  
+    data = {
+    "asn1" : msg['id'],
+    "asn2" : msg['asn2'],
+    "threshold" : msg['threshold'],
+    "receiver" : msg['email']
+    }
+
+    isp1 = ['', data["asn1"]]
+    isp2 = ['',int(data["asn2"])]
+    threshold = data['threshold']
+    email = data['receiver']
+
+    print(data['asn1'])
+
+    # create a file with asn name
+    with open('./compute/data/cache/' + data['asn1'] + '_peering_db_data_file.json', "w") as f:
+        json.dump(msg, f)
+
+    compute_asns(isp1, isp2, int(threshold), email)
+    pass
+
+if __name__ == "__main__":
+    while True:
+        messages = queue.receive_messages(WaitTimeSeconds=20)
+        for message in messages:
+            try:
+                process_message(message.body)
+            except Exception as e:
+                print(e)
+                continue
+            message.delete()

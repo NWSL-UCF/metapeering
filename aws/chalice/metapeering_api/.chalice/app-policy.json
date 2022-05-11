@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Id": "default",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Sid": "7c63961793a94a0288fbc41fa3fbe620"
+    }
+  ]
+}

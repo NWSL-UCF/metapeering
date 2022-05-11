@@ -18,7 +18,7 @@ from .modules.find_best_deals import find_best_deals
 from .modules.draw_brittleness import draw_brittleness
 from .modules.draw_scatter_plot import draw_scatter_plot
 from .modules.do_work import do_work
-from .modules.ensure_isp_json_files import ensure_isp_json_files
+from .modules.ensure_isp_json_files import ensure_isp_json_files, ensure_isp_json_files_custom
 import json, warnings, sys
 
 
@@ -30,7 +30,7 @@ def save_felicity_score_to_file(isp_a_asn, isp_b_asn, felicityScore):
         json.dump(felicityScore, f)
 
 def getIndvPops(isp_a_asn, isp_b_asn):
-    ensure_isp_json_files(('',isp_a_asn), ('',isp_b_asn))
+    ensure_isp_json_files(('',isp_a_asn),('',isp_b_asn))
 
     isp_a_pops = []
     with open('./compute/data/cache/'+str(isp_a_asn)+'_peering_db_data_file.json', 'r') as f:
@@ -57,10 +57,9 @@ def getCommmonPops(isp_a_asn, isp_b_asn):
 
     return common_pops
 
-
 def customPeeringAlgo(isp_a, isp_b, pop_list):
 
-    ensure_isp_json_files(isp_a, isp_b)
+    ensure_isp_json_files_custom(isp_a, isp_b)
     # common_pop_list = getCommmonPops(isp_a[1], isp_b[1])
 
     scatter_plot_data = {"data": {}}

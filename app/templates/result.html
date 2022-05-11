@@ -43,6 +43,7 @@
 				<div class="text-center">
 					{% if custom is sameas true %}
 					<figure id = "map" class="figure">
+						<!--figure id = "map" class="figure"></figure>
 						{% set isp_a_pops = session.pop('ispAPops', []) %}
 						{% set isp_b_pops = session.pop('ispBPops', []) %}
 						<link rel = "stylesheet" type="text/css" href="../static/mapstyle.css">
@@ -54,7 +55,8 @@
 							var isp_b = {{isp_b_pops|tojson}};
 						</script>
 						<script type="text/javascript" src = "../static/map.js"></script>
-						<!--img src="/static/{{ requester[1]+'_'+candidate[1] }}/{{ requester[1]+'_'+candidate[1] }}_overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs."-->
+					</figure-->
+						<img src="/static/{{ requester[1]+'_'+candidate[1] }}/{{ requester[1]+'_'+candidate[1] }}_overlap.png" class="figure-img img-fluid rounded" alt="Overlap between ISPs.">
 						<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
 				  </figure>
 					{% else %}

@@ -17,10 +17,10 @@
 						// $().html(response)
 						// location.reload()
 						// window.location.href = response;
-						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
+						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV
 					},
 					beforeSend: function(){
-						searchButton.val("Proccesing...");
+						searchButton.val("Processing...");
 						searchButton.attr("disabled", "disabled");
 					},
 					complete: function(){
@@ -39,10 +39,10 @@
 					success: function(response) { // on success..
 						document.body.innerHTML = response;
 						// window.location.href = response;
-						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
+						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV
 					},
 					beforeSend: function(){
-						submitButton.val("Proccesing...");
+						submitButton.val("Processing...");
 						submitButton.attr("disabled","disabled");
 					},
 					complete: function(){
@@ -54,9 +54,7 @@
 			});
 		});
 	</script>
-	
 
-	
 	<div id="custom-querry" class="col-12-xs">
 	  	<div class="py-3 text-center">
 			<h2 class="mb-4">Custom Peering Query form</h2>
@@ -77,26 +75,34 @@
 					    {% endfor %}
 				  	{% endif %}
 				{% endwith %}
-				<form action="" method="post" class="form" role="form" id="asn-form">
-	   				{{ form.csrf_token() }}
+				<form action="" method="post" class="form" role="form" id="asn-form" enctype="multipart/form-data">
+					{{ form.csrf_token() }}
 	   				<div class="row">
+						   <br>
 	    				<div class="form-group col-md-6">
-	     					<!--{{ wtf.form_field(form.asn1, class='form-control')|safe }}-->
 	     					<label>Requester AS</label>
 							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Requester Autonomous System. You will be able to choose the PoP locations later.">?</span>
-	     					{{ form.asn1(class='form-control')|safe }}
+							<br>
+							{{ form.asn1_string(class='form-control')|safe }}
 	     					</br>
-					    	{% if form.asn1.errors %}
-					            {% for error in form.asn1.errors %}
+					    	{% if form.asn1_string.errors %}
+					            {% for error in form.asn1_string.errors %}
 						            <div class="alert alert-danger">{{ error }}</div>
 					            {% endfor %}
 				            {% endif %}
+							
+							{{ form.asn1 (class="form-control-file") }}
+							<!--/br-->
+					        {% for error in form.asn1.errors %}
+						        <div class="alert alert-danger">{{ error }}</div>
+					        {% endfor %}
+						</br>	
 	    				</div>
 	    				<div class="form-group col-md-6">
 	     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
 	     					<label>Candidate AS</label>
 							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Autonomous System you want to peer with.">?</span>
-	     					{{ form.asn2(class='form-control')|safe }}
+							{{ form.asn2(class='form-control')|safe }}
 	     					</br>
 					    	{% if form.asn2.errors %}
 					            {% for error in form.asn2.errors %}
@@ -105,25 +111,33 @@
 				            {% endif %}
 	    				</div>
 					   </div>
-					   <label>Threshold</label> 
+					   <label>Threshold</label>
 						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="How selective are you in peering? 0=Open, 1=Closed.">?</span>
-						{{ form.threshold(class='form-control', 
-							placeholder='Peering threshold (0.0 to 1.0)') }}
+						{{ form.threshold(class='form-control', placeholder='Peering threshold (0.0 to 1.0)') }}
 						</br>
 						{% if form.threshold.errors %}
 							{% for error in form.threshold.errors %}
 								<div class="alert alert-danger">{{ error }}</div>
 							{% endfor %}
 						{% endif %}
+
+						<label>Enter an email address to obtain the results</label>
+						{{ form.email(class='form-control')|safe }}
+						{% if form.email.errors %}
+					            {% for error in form.email.errors %}
+						            <div class="alert alert-danger">{{ error }}</div>
+					            {% endfor %}
+				            {% endif %}
+						<br></br>
 	    			<input type="submit" class="btn btn-primary" form="asn-form" id="searchButton" value="Search">
-	  			</form>		
-			</div>  
+	  			</form>
+			</div>
 		</div>
 	{% if session.get('commonPops', [])|length != 0 %}
 		<h5>Here is a list of all the locations that where both the Autonomous Systems have a presence:</h5>
 		<h6>
 			If you want to exclude any of these locations from consideration for peering, please select them before submitting. <br>
-		</h6> 
+		</h6>
 		<form method="post", action="result", class="form", role="form" id="common-pops-form">
 			<div class="container-fluid">
 				<div class="tab-content">
@@ -188,12 +202,12 @@
   			<h3 class="alert-heading"> No Common PoPs found!</h3>
   			<hr>
   			<p>
-				Peering among the provided Autonomous Systems is not possible. 
+				Peering among the provided Autonomous Systems is not possible.
 				This may be because you didn't choose any locations to peer at,
 				or there are no locations where both Autonomous Systems have a presensce.
 			</p>
 		</div>
-	</div>	
+	</div>
 	{% endif %}
 	</div>
 {% endblock content %}
