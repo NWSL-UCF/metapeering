@@ -35,6 +35,7 @@ from app.routes.user import LoginUser
 from app.routes.feedback import FeedbackPage
 from app.routes.error import Error
 from app.routes.ml import ML
+from app.routes.interpret import Interpret
 
 
 s3 = boto3.client(
@@ -66,6 +67,7 @@ app.register_blueprint(Custom, url_prefix="/custom")
 app.register_blueprint(Success, url_prefix="/success")
 app.register_blueprint(Logout, url_prefix="/logout")
 app.register_blueprint(LoginUser, url_prefix="/user")
+app.register_blueprint(Interpret, url_prefix="/interpret")
 app.register_blueprint(Error)
 app.register_blueprint(ML, url_prefix="/ml")
 

@@ -15,10 +15,10 @@ import shutil
 import statistics
 
 sqs = boto3.resource("sqs")
-queue = sqs.get_queue_by_name(QueueName='Message-Queue-Metapeering')
+queue = sqs.get_queue_by_name(QueueName='Message-Queue-Metapeering', region_name='us-east-1')
 
 def send_email_with_attachment(receiver, attachment_filename, attachment_path):
-    
+
     message = MIMEMultipart()
 
     # Testing verified users first
@@ -40,7 +40,7 @@ def send_email_with_attachment(receiver, attachment_filename, attachment_path):
     ses_client = boto3.client("ses", region_name='us-east-1')
 
     response = ses_client.send_raw_email(Source = sender, Destinations = [receiver], RawMessage={"Data" : message.as_string()})
-   
+
     return response
 
 
@@ -101,7 +101,7 @@ def compute_asns(isp1, isp2, threshold, email):
     call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/own_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
     call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/ratio_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
     call('rm -r ./compute/output/'+asn1_asn2+'/', shell=True)
-    
+
     # Add ppc data to the results zip file
     with open('./app/static/' + asn1_asn2 + '/ppc_data', 'w') as f:
         json.dump(ppc_data, f)
@@ -166,9 +166,10 @@ def process_message(message_body):
     msg = json.loads(message_body)
     msg = msg['responsePayload']
     msg = json.loads(msg)
-  
+
     data = {
     "asn1" : msg['id'],
+    "asn1_string" : msg['asn1'],
     "asn2" : msg['asn2'],
     "threshold" : msg['threshold'],
     "receiver" : msg['email']
@@ -179,13 +180,14 @@ def process_message(message_body):
     threshold = data['threshold']
     email = data['receiver']
 
+    data["asn1"] = data["asn1"] + "_" + data["asn1_string"]
     print(data['asn1'])
 
     # create a file with asn name
     with open('./compute/data/cache/' + data['asn1'] + '_peering_db_data_file.json', "w") as f:
         json.dump(msg, f)
 
-    compute_asns(isp1, isp2, int(threshold), email)
+    compute_asns(isp1, isp2, int(float(threshold)), email)
     pass
 
 if __name__ == "__main__":
@@ -196,5 +198,7 @@ if __name__ == "__main__":
                 process_message(message.body)
             except Exception as e:
                 print(e)
+                # delete message that had an error for now
+                message.delete()
                 continue
             message.delete()

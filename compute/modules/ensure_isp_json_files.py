@@ -93,6 +93,8 @@ def clean(state):
         state = us_state_abbrev[state.lower()]
     return excludedStates.get(state,state)
 
+
+# commented out because with the file upload, we are only considering isp_b as a possibility of missing data.
 def ensure_isp_json_files(isp_a, isp_b, force=False):
     # print("Entering ensure_isp_json_files")
     '''
@@ -101,12 +103,14 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
     and generate the json file before those are used in do_work().
     '''
 
+    '''
     isp_a_asn = isp_a[1]
     isp_b_asn = isp_b[1]
 
     isp_a_json_file_name = Data_Directory + "/cache/" + str(isp_a_asn) + "_peering_db_data_file.json"
     isp_b_json_file_name = Data_Directory + "/cache/" + str(isp_b_asn) + "_peering_db_data_file.json"
 
+    # With file upload, remove the need to verify isp_a_json_file_name
     if (not os.path.exists(isp_a_json_file_name)) or (not os.path.exists(isp_b_json_file_name)) or force:
         peeringInfo = PeeringInfo()
 
@@ -164,7 +168,11 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
                 # print('Data to be written in file (2): ',data)
                 json.dump(data, fout)
     # print("Leaving ensure_isp_json_files")
+    '''
+    return
 
+# Alternative function from above where we consider missining isp_b information onlyself.
+# iisp_a should have the required information in the file upload by the user.
 def ensure_isp_json_files_custom(isp_b, force=False):
 
     isp_b_asn = isp_b[1]
@@ -182,8 +190,7 @@ def ensure_isp_json_files_custom(isp_b, force=False):
             if (not os.path.exists(isp_b_json_file_name)) or force:
                 remPop = []
                 temp_b_city_state_list = peeringInfo.get_all_possible_peering_city(isp_b_pdb_net_id)
-                # print('temp_b_city_state_list: ',temp_b_city_state_list)
-                # print("HERE 2: -----> temp_b_city_state_list: ",temp_b_city_state_list)
+
                 for i, p in enumerate(temp_b_city_state_list):
                     p["state"] = clean(p["state"])
                     if (p['state'] == 'exclude'):
@@ -200,5 +207,5 @@ def ensure_isp_json_files_custom(isp_b, force=False):
                                         "prefixes": prefixes, "total_prefixes_in_globe": total_prefixes_in_globe,
                                         "address_space": address_space, "total_addresses_in_globe": total_addresses_in_globe,
                                         "neighbor": neighbor,"info_type":info_type_b}}
-                    # print('Data to be written in file (2): ',data)
+                    
                     json.dump(data, fout)

@@ -63,11 +63,14 @@ def custom_peering_query_form_handler(request, asn1_data):
     email = {'email' : request["email"]}
     threshold = {'threshold' : data["threshold"]}
     asn2 = {'asn2' : data["asn2"]}
+    asn1 = {'asn1' : data["asn1"]}
+
     file.update(info)
     file.update(email)
     file.update(threshold)
     file.update(asn2)
-   
+    file.update(asn1)
+
     res = requests.put(url=s3_put_url, json=json.dumps(file), headers=headers)
     # End of call to S3 storage
 
