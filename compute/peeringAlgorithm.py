@@ -52,10 +52,15 @@ def getCommmonPops(isp_a_asn, isp_b_asn):
     count = 0
     for a_pop in isp_a_pops:
         for b_pop in isp_b_pops:
-            if (a_pop['isp_id_in_peering_db'] == b_pop['isp_id_in_peering_db']) and (a_pop['isp_type_in_peering_db'] == b_pop['isp_type_in_peering_db']):
+            #if (a_pop['isp_id_in_peering_db'] == b_pop['isp_id_in_peering_db']) and (a_pop['isp_type_in_peering_db'] == b_pop['isp_type_in_peering_db']):
+            if (a_pop['state'] == b_pop['state']) and (a_pop['city'] == b_pop['city']):
                 count += 1
                 common_pops.append(a_pop)
 
+    # TODO: make sure webapp does not display copies.
+    # maybe if it's the same org then only one copy in here?
+
+    print(*common_pops)
     return common_pops
 
 def customPeeringAlgo(isp_a, isp_b, pop_list):
@@ -63,6 +68,8 @@ def customPeeringAlgo(isp_a, isp_b, pop_list):
     # common_pop_list = getCommmonPops(isp_a[1], isp_b[1])
 
     scatter_plot_data = {"data": {}}
+    print("pop_list in customPeeringAlgo: ", pop_list)
+    # pop_list is empty because none were exluded.
     scatter_plot_data["data"]['access'] = [do_work((isp_a, isp_b), customPoPList=pop_list)]
 
 

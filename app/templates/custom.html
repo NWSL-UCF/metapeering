@@ -90,13 +90,13 @@
 						            <div class="alert alert-danger">{{ error }}</div>
 					            {% endfor %}
 				            {% endif %}
-							
+
 							{{ form.asn1 (class="form-control-file") }}
 							<!--/br-->
 					        {% for error in form.asn1.errors %}
 						        <div class="alert alert-danger">{{ error }}</div>
 					        {% endfor %}
-						</br>	
+						</br>
 	    				</div>
 	    				<div class="form-group col-md-6">
 	     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
@@ -178,6 +178,7 @@
 								</td>
 								<td scope="row" class="align-middle">
 									<a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}" target="_blank">
+										<!-- remove the isp type and id in peering db when showing-->
 									{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}
 								</td>
 								<!-- <td scope = "row" class="text-center align-middle"><a href="{{ 'https://www.google.com/maps/search/?api=1&query=%s,%s'%(_item['location'][0], _item['location'][1]) }}" target="_blank">

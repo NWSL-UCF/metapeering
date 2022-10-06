@@ -3,7 +3,7 @@
 '''
 import os, json
 from .gVars import List_Of_POP_Locations, Max_Common_Pop_Count, Output_Directory
-from .convert_city_state_to_pop_location import convert_city_state_to_pop_location
+from .convert_city_state_to_pop_location import convert_city_state_to_pop_location, convert_city_state_to_pop_location_custom_requester
 from .peering_algorithm_implementation import peering_algorithm_implementation
 from .ISP import ISP
 from .compute_all_acceptable_peering_contracts import compute_all_acceptable_peering_contracts
@@ -77,9 +77,9 @@ def do_work(isp_pair, customPoPList=None):
         return None
     # print('Jaaying: ', temp_a_city_state_list)
     # print('Jaaying: ', temp_b_city_state_list)
-    isp_a_pop_location_id_list = convert_city_state_to_pop_location(
+    isp_a_pop_location_id_list = convert_city_state_to_pop_location_custom_requester(
         temp_a_city_state_list)
-    isp_b_pop_location_id_list = convert_city_state_to_pop_location(
+    isp_b_pop_location_id_list = convert_city_state_to_pop_location_custom_requester(
         temp_b_city_state_list)
     # print('AAying: ', isp_a_pop_location_id_list)
     # print('AAying: ', isp_b_pop_location_id_list)
@@ -90,12 +90,19 @@ def do_work(isp_pair, customPoPList=None):
     isp_a_port_capacity_at_common_pop_dict = {}
     isp_b_port_capacity_at_common_pop_dict = {}
 
+    # Edited for custom pop
+    # tuple 5 : ('LA', 'California')
+    # Figure out for port capacity enoigh id
+    # TODO: check by testing!
     common_pop_location_isp_id_isp_type_in_peeringdb_tuple_list = {i: (
-        List_Of_POP_Locations[i].isp_type_in_peering_db, List_Of_POP_Locations[i].isp_id_in_peering_db) for i in common_pop_location_id_list}
+        List_Of_POP_Locations[i].city, List_Of_POP_Locations[i].state) for i in common_pop_location_id_list}
+        #List_Of_POP_Locations[i].isp_type_in_peering_db, List_Of_POP_Locations[i].isp_id_in_peering_db) for i in common_pop_location_id_list}
     temp_dict_for_isp_a_port_capacity = {
-        (i['isp_type_in_peering_db'], i['isp_id_in_peering_db']): i['port_capacity'] for i in temp_a_city_state_list}
+        (i['city'], i['state']): i['port_capacity'] for i in temp_a_city_state_list}
+        #(i['isp_type_in_peering_db'], i['isp_id_in_peering_db']): i['port_capacity'] for i in temp_a_city_state_list}
     temp_dict_for_isp_b_port_capacity = {
-        (i['isp_type_in_peering_db'], i['isp_id_in_peering_db']): i['port_capacity'] for i in temp_b_city_state_list}
+        (i['city'], i['state']): i['port_capacity'] for i in temp_b_city_state_list}
+        #(i['isp_type_in_peering_db'], i['isp_id_in_peering_db']): i['port_capacity'] for i in temp_b_city_state_list}
 
     for k, v in common_pop_location_isp_id_isp_type_in_peeringdb_tuple_list.items():
         isp_a_port_capacity_at_common_pop_dict[k] = temp_dict_for_isp_a_port_capacity[v]
