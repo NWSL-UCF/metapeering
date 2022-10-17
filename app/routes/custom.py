@@ -50,6 +50,7 @@ def custom_peering_query_form_handler(request, asn1_data):
 
     # Make call to AWS and add request to S3 bucket
     # NOTE: Request does not take into account selections by the user to exclude locations for peering.
+    # Move to take into account user exclusions by observing custom_request_handler
     params = {"filename" : data["asn1"], "email" : request["email"]}
     url = os.environ.get('AWS_S3_URL')
     response = requests.get(url, params=params)
@@ -74,7 +75,7 @@ def custom_peering_query_form_handler(request, asn1_data):
     res = requests.put(url=s3_put_url, json=json.dumps(file), headers=headers)
     # End of call to S3 storage
 
-    commonPops = getCommmonPops(int(data["asn1"]), int(data["asn2"]))
+    commonPops, commonLocations = getCommmonPops(int(data["asn1"]), int(data["asn2"]))
     isp_a_pops, isp_b_pops = getIndvPops(int(data["asn1"]), int(data["asn2"]))
 
     if len(commonPops) == 0:
@@ -85,6 +86,7 @@ def custom_peering_query_form_handler(request, asn1_data):
     session['asn1'] = data["asn1"]
     session['asn2'] = data["asn2"]
     session['threshold'] = data["threshold"]
+    session['commonLocations'] = commonLocations
     session["authorized"] = True
     # print(session)
     return redirect(url_for("custom.custom"))
@@ -92,7 +94,9 @@ def custom_peering_query_form_handler(request, asn1_data):
 
 
 def custom_request_handler(data):
-    print(data)
+
+    #commonLocation = data
+    #data = session.pop('commonPops')
     isp1 = ['',session.pop('asn1')]
     isp2 = ['',session.pop('asn2')]
     threshold = session.pop('threshold',0.5)
@@ -109,7 +113,9 @@ def custom_request_handler(data):
     if not os.path.exists("./app/static/" + asn1_asn2):
         call("mkdir ./app/static/" + asn1_asn2, shell=True)
 
-    if customPeeringAlgo(tuple(isp1),tuple(isp2), [int(num) for num in data]):
+    # was previously a list of peeringdb id's. Official list is implemented in do_work customizePoPs
+    #if customPeeringAlgo(tuple(isp1),tuple(isp2), [int(num) for num in data]):
+    if customPeeringAlgo(tuple(isp1),tuple(isp2), data):
 
         generateContracts(str(isp1[1]), str(isp2[1]))
 

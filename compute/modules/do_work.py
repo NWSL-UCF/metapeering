@@ -8,20 +8,25 @@ from .peering_algorithm_implementation import peering_algorithm_implementation
 from .ISP import ISP
 from .compute_all_acceptable_peering_contracts import compute_all_acceptable_peering_contracts
 
+# Note: customPoPList is a list of tuples in the format (city, state)
 def customizePoPs(popList, customPoPList):
-    # print('Incoming pop list: ', popList)
-    # print('Incoming customPoPList: ', customPoPList)
+
     if customPoPList:
         newPoPList = []
         for pop in popList:
-            if not (pop['isp_id_in_peering_db'] in customPoPList):
+            if (not isInCustomList(customPoPList, pop)):
                 newPoPList.append(pop)
-        # print("Outgoing poplist: ",newPoPList)
         return newPoPList
     else:
         # print("Outgoing poplist: ",popList)
         return popList
 
+def isInCustomList(customPoPList, PoP):
+    for loc in customPoPList:
+        if (PoP['city'] == loc[0] and PoP['state'] == loc[1]):
+            return True
+
+    return False
 
 def do_work(isp_pair, customPoPList=None):
     '''

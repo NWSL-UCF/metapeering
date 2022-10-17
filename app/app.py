@@ -47,6 +47,7 @@ s3 = boto3.client(
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "metapeering"
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 Bootstrap(app)
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False

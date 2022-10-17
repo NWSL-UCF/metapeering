@@ -133,8 +133,9 @@
 	  			</form>
 			</div>
 		</div>
+		<div>
 	{% if session.get('commonPops', [])|length != 0 %}
-		<h5>Here is a list of all the locations that where both the Autonomous Systems have a presence:</h5>
+		<h5>Here is a list of all the locations where both the Autonomous Systems have a presence:</h5>
 		<h6>
 			If you want to exclude any of these locations from consideration for peering, please select them before submitting. <br>
 		</h6>
@@ -151,39 +152,29 @@
 							</tr>
 						</thead>
 						<tbody>
-							{% for _item in session.pop('commonPops', [])  %}
+							{% for _item in session.pop('commonLocations', [])  %}
 							<tr>
 								<td scope="row">
-									<!-- <div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="{{ _item['isp_id_in_peering_db'] }}" value="{{ _item['isp_id_in_peering_db'] }}" name="selectedPop">
-										<label class="custom-control-label" for="{{ _item['isp_id_in_peering_db'] }}"></label>
-									</div> -->
 									<div class="pretty p-svg p-curve">
-										<input type="checkbox" id="{{ _item['isp_id_in_peering_db'] }}" value="{{ _item['isp_id_in_peering_db'] }}" name="selectedPop"/>
+										<input type="checkbox" id="{{ _item[0] }}-{{ _item[1] }}" value="{{ _item[0] }}-{{ _item[1] }}" name="selectedPop"/>
 										<div class="state p-danger">
 											<!-- svg path -->
 											<svg class="svg svg-icon" viewBox="0 0 20 20">
 												<path d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z" style="stroke: white;fill:white;"></path>
 											</svg>
-											<label style="color:white" for="{{ _item['isp_id_in_peering_db'] }}">.</label>
+											<label style="color:white" for="{{ _item[0] }}">.</label>
 										</div>
 									</div>
 								</td>
-								<td>
-									{{ _item['org_name'] }}
+								<td scope="row" class="align-middle">
+									<a href="{{ 'https://www.google.com/maps/search/?api=1&query=%s,%s'%(_item[0], _item[1]) }}" target="_blank">
+									{{ _item[0] }}, {{ _item[1] }}
 								</td>
 								<td scope="row" class="align-middle">
-									<a href="{{ 'https://www.google.com/maps/search/?api=1&query=%s,%s'%(_item['location'][0], _item['location'][1]) }}" target="_blank">
-									{{ _item['city'] }}, {{ _item['state'] }}
+									<!--a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}" target="_blank"-->
+										<!-- remove the isp type and id in peering db when showing for new changes-->
+								<!--	{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }} -->
 								</td>
-								<td scope="row" class="align-middle">
-									<a href="{{ 'https://peeringdb.com/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}" target="_blank">
-										<!-- remove the isp type and id in peering db when showing-->
-									{{ 'www.peeringdb/%s/%s'%(_item['isp_type_in_peering_db'], _item['isp_id_in_peering_db']) }}
-								</td>
-								<!-- <td scope = "row" class="text-center align-middle"><a href="{{ 'https://www.google.com/maps/search/?api=1&query=%s,%s'%(_item['location'][0], _item['location'][1]) }}" target="_blank">
-									<img src="/static/location.png" alt="Google Maps Location" width=20 height=27>
-								</td>	 -->
 							</tr>
 							{% endfor %}
 						</tbody>
