@@ -48,33 +48,6 @@ def custom_peering_query_form_handler(request, asn1_data):
     data["asn2"] = request["asn2"][2:]
     data["threshold"] = request["threshold"]
 
-    # Make call to AWS and add request to S3 bucket
-    # NOTE: Request does not take into account selections by the user to exclude locations for peering.
-    # Move to take into account user exclusions by observing custom_request_handler
-    params = {"filename" : data["asn1"], "email" : request["email"]}
-    url = os.environ.get('AWS_S3_URL')
-    response = requests.get(url, params=params)
-    response = response.json()
-    s3_put_url = response['response']
-    user_id = response['id']
-    headers={'content-type': 'application/json'}
-    file = json.loads(asn1_data)
-
-    info = {'id' : user_id}
-    email = {'email' : request["email"]}
-    threshold = {'threshold' : data["threshold"]}
-    asn2 = {'asn2' : data["asn2"]}
-    asn1 = {'asn1' : data["asn1"]}
-
-    file.update(info)
-    file.update(email)
-    file.update(threshold)
-    file.update(asn2)
-    file.update(asn1)
-
-    res = requests.put(url=s3_put_url, json=json.dumps(file), headers=headers)
-    # End of call to S3 storage
-
     commonPops, commonLocations = getCommmonPops(int(data["asn1"]), int(data["asn2"]))
     isp_a_pops, isp_b_pops = getIndvPops(int(data["asn1"]), int(data["asn2"]))
 
@@ -88,6 +61,8 @@ def custom_peering_query_form_handler(request, asn1_data):
     session['threshold'] = data["threshold"]
     session['commonLocations'] = commonLocations
     session["authorized"] = True
+    session["asn1Data"] = json.loads(asn1_data)
+    session["email"] = request["email"]
     # print(session)
     return redirect(url_for("custom.custom"))
     # return custom_request_handler(data)
@@ -95,11 +70,37 @@ def custom_peering_query_form_handler(request, asn1_data):
 
 def custom_request_handler(data):
 
-    #commonLocation = data
-    #data = session.pop('commonPops')
     isp1 = ['',session.pop('asn1')]
     isp2 = ['',session.pop('asn2')]
     threshold = session.pop('threshold',0.5)
+    userEmail = session.pop('email')
+
+
+    params = {"filename" : isp1[1], "email" : userEmail}
+    url = os.environ.get('AWS_S3_URL')
+    response = requests.get(url, params=params)
+    response = response.json()
+    s3_put_url = response['response']
+    user_id = response['id']
+    headers={'content-type': 'application/json'}
+    file = session.pop('asn1Data')
+
+    saveInfo = {'id' : user_id}
+    saveEmail = {'email' : userEmail}
+    saveThreshold = {'threshold' : threshold}
+    saveAsn2 = {'asn2' : isp2[1]}
+    saveAsn1 = {'asn1' : isp1[1]}
+    saveOmit = {'omit' : data}
+
+    file.update(saveInfo)
+    file.update(saveEmail)
+    file.update(saveThreshold)
+    file.update(saveAsn2)
+    file.update(saveAsn1)
+    file.update(saveOmit)
+
+    res = requests.put(url=s3_put_url, json=json.dumps(file), headers=headers)
+    # End of call to S3 storage
 
     with open("./compute/data/cache/"+str(isp1[1])+"_peering_db_data_file.json") as f:
         jsonData = json.load(f)
