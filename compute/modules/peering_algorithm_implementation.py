@@ -67,7 +67,7 @@ def peering_algorithm_implementation(isp_a, isp_b):
 
     isp_a_pop_locations_list = [(List_Of_POP_Locations[i].longitude, List_Of_POP_Locations[i].latitude) for i in isp_a.my_pop_locations_list]
     isp_b_pop_locations_list = [(List_Of_POP_Locations[i].longitude, List_Of_POP_Locations[i].latitude) for i in isp_b.my_pop_locations_list]
-    
+
     common_pop_locations = [(List_Of_POP_Locations[i].longitude, List_Of_POP_Locations[i].latitude) for i in isp_a.common_pop_locations]
 
     affinity_score_combined = affinityScore((isp_a.name,str(isp_a.as_number)), (isp_b.name, str(isp_b.as_number)), isp_a_pop_locations_list, isp_b_pop_locations_list, common_pop_locations)

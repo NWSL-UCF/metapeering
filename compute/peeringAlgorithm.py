@@ -51,6 +51,8 @@ def getCommmonPops(isp_a_asn, isp_b_asn):
     common_pops = []
     common_locations = set()
 
+    # verify if we need to add in b_pop too since they would have new loccations and do not have the same data such as with peering id
+    # common_pops list might not be needed anymore and only common_locations. Check use in custom.py
     for a_pop in isp_a_pops:
         for b_pop in isp_b_pops:
             #if (a_pop['isp_id_in_peering_db'] == b_pop['isp_id_in_peering_db']) and (a_pop['isp_type_in_peering_db'] == b_pop['isp_type_in_peering_db']):

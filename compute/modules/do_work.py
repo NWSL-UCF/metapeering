@@ -16,6 +16,7 @@ def customizePoPs(popList, customPoPList):
         for pop in popList:
             if (not isInCustomList(customPoPList, pop)):
                 newPoPList.append(pop)
+        print("---len of newpoplist---", len(newPoPList))
         return newPoPList
     else:
         # print("Outgoing poplist: ",popList)
@@ -89,8 +90,25 @@ def do_work(isp_pair, customPoPList=None):
     # print('AAying: ', isp_a_pop_location_id_list)
     # print('AAying: ', isp_b_pop_location_id_list)
 
-    common_pop_location_id_list = [
-        a for a in isp_a_pop_location_id_list if a in isp_b_pop_location_id_list]
+    #common_pop_location_id_list = [
+        #a for a in isp_a_pop_location_id_list if a in isp_b_pop_location_id_list]
+
+    # set works bc the id is constructured with city, state, org name and name in place!
+    #common_pop_location_id_list = []
+    common_pop_location_set = set()
+    for a in isp_a_pop_location_id_list:
+        for b in isp_b_pop_location_id_list:
+            if List_Of_POP_Locations[a].city == List_Of_POP_Locations[b].city and List_Of_POP_Locations[a].state == List_Of_POP_Locations[b].state:
+                common_pop_location_set.add(a)
+                common_pop_location_set.add(b)
+
+
+    common_pop_location_id_list = list(common_pop_location_set)
+    print("len of common = ", len(common_pop_location_id_list))
+    # have a set and pass in the list of states in which common pops SHOULD be in. This should be done by finding common pops plus the pops the user doesnt want.
+    # Now for each pop, create city-state-name-org_name
+
+    print("common pop location id list edited: ", common_pop_location_set)
 
     isp_a_port_capacity_at_common_pop_dict = {}
     isp_b_port_capacity_at_common_pop_dict = {}
@@ -101,6 +119,7 @@ def do_work(isp_pair, customPoPList=None):
     # TODO: check by testing!
     common_pop_location_isp_id_isp_type_in_peeringdb_tuple_list = {i: (
         List_Of_POP_Locations[i].city, List_Of_POP_Locations[i].state) for i in common_pop_location_id_list}
+    print("common tuple list: ", common_pop_location_isp_id_isp_type_in_peeringdb_tuple_list)
         #List_Of_POP_Locations[i].isp_type_in_peering_db, List_Of_POP_Locations[i].isp_id_in_peering_db) for i in common_pop_location_id_list}
     temp_dict_for_isp_a_port_capacity = {
         (i['city'], i['state']): i['port_capacity'] for i in temp_a_city_state_list}
@@ -121,6 +140,7 @@ def do_work(isp_pair, customPoPList=None):
     '''
     # isp_a_port_capacity_at_common_pop_dict = sorted(isp_a_port_capacity_at_common_pop_dict.items(), key=lambda (k, v):(v, k), reverse=True)
     # try: converting to python 3, above line gives error!
+    # Note port capacity is not being used in peering_algorithm_implementation
     isp_a_port_capacity_at_common_pop_dict = sorted(
         isp_a_port_capacity_at_common_pop_dict.items(), key=lambda k_v: (k_v[1], k_v[0]), reverse=True)
 
@@ -132,6 +152,8 @@ def do_work(isp_pair, customPoPList=None):
     common_pop_location_id_list = list(
         isp_a_port_capacity_at_common_pop_dict.keys())
 
+    print("common_id_list", common_pop_location_id_list)
+
     isp_a = ISP(isp_a_asn, isp_a_name, (isp_a_ip_address_count * 100.0) / global_ip_address_count, (isp_a_prefix_count * 100.0) / global_prefix_count,
                 isp_a_pop_location_id_list, isp_b_pop_location_id_list, common_pop_location_id_list, isp_a_port_capacity_at_common_pop_dict, isp_a_traffic_ratio_type)
     isp_b = ISP(isp_b_asn, isp_b_name, (isp_b_ip_address_count * 100.0) / global_ip_address_count, (isp_b_prefix_count * 100.0) / global_prefix_count,
@@ -139,9 +161,10 @@ def do_work(isp_pair, customPoPList=None):
 
     isp_a.all_acceptable_peering_contracts, isp_a.all_acceptable_peering_contracts_count, isp_b.all_acceptable_peering_contracts, isp_b.all_acceptable_peering_contracts_count = compute_all_acceptable_peering_contracts(
         isp_a.sorting_strategy, isp_a.my_pop_locations_list, isp_a.offloaded_traffic_list_to_opponent_at_common_pops, isp_b.sorting_strategy, isp_b.my_pop_locations_list, isp_b.offloaded_traffic_list_to_opponent_at_common_pops, common_pop_location_id_list, isp_a.isp_traffic_ratio_type, isp_b.isp_traffic_ratio_type)
-    willingness_score, affinity_score, felicity_score = peering_algorithm_implementation(
-        isp_a, isp_b)
 
+    willingness_score, affinity_score, felicity_score = peering_algorithm_implementation(isp_a, isp_b)
+
+    print("here2")
     fout_for_apc_count = open(os.path.abspath(
         Output_Directory + "/" + "apc_count_" + str(Max_Common_Pop_Count) + ".txt"), "a+")
     fout_for_apc_count.write("ISP {:<12} has {:>3} PoP location, ISP {:<12} has {:>3} PoP location, Common location count: {:<3}\n".format(
@@ -173,5 +196,11 @@ def do_work(isp_pair, customPoPList=None):
             similarity_score_on_prefix = similarity_score
         elif i == 2:
             similarity_score_on_address = similarity_score
+
+    print("isp_a len: ", len(isp_a.my_pop_locations_list))
+    print("isp_b list in dowork: ", isp_b.my_pop_locations_list)
+    print("isp_a list in dowork: ", isp_a.my_pop_locations_list)
+    print("isp_b len: ", len(isp_b.my_pop_locations_list))
+
 
     return {'isp_a': {'name': isp_a.name, 'asn': isp_a_asn, 'pop_count': len(isp_a.my_pop_locations_list)}, 'isp_b': {'name': isp_b.name, 'asn': isp_b_asn, 'pop_count': len(isp_b.my_pop_locations_list)}, 'apc_count': isp_a.all_acceptable_peering_contracts_count, 'willingness_score': willingness_score, 'affinity_score': affinity_score, 'felicity_score': felicity_score, 'ppc_count': isp_a.all_possible_peering_contracts_count, 'similarity_score': {'based_on_address': similarity_score_on_address, 'based_on_prefix': similarity_score_on_prefix, 'based_on_pop': similarity_score_based_on_pop_count}, }
