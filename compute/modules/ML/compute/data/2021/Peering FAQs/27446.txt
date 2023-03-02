@@ -1,9 +1,0 @@
-ERC encourages IPv4 and IPv6 peering -- please contact us to establish direct peering via Digital Realty Atlanta (56 Marietta), Level(3)/CenturyLink Charlotte, Equinix IX Ashburn, or ERC's multi-carrier POP in Asheville, NC.
-
-ERC Broadband's mission is to provide fast, reliable and secure fiber-based network services across education, healthcare, government, and economic development communities, with a vision to increase the adoption of new technology.
-
-We are based in Western North Carolina (Asheville area) and offer co-location, multi-carrier cross-connections, dark fiber as well as lit services over a wide fiber footprint.
-
-
-eLIT/ERC Peers as 64213 at IX's and PNIs.
-eLIT/ERC Peers as 27446 with commodity upstreams

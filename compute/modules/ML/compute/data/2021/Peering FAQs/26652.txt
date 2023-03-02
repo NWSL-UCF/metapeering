@@ -1,1 +1,0 @@
-AS26652 does not generally peer directly. For peering see AS11796.

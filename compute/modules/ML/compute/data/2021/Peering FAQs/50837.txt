@@ -1,8 +1,0 @@
-CloudSigma is a Cloud-as-a-Service (CaaS) provider
-that’s enabling IT service providers through its fully
-outsourced and completely managed cloud platform
-in Europe, the U.S., Middle East, Asia and Australia.
-CloudSigma’s global eco-system of and partners
-locations create the perfect foundation for new
-cloud business around the world with multiple
-revenue streams.

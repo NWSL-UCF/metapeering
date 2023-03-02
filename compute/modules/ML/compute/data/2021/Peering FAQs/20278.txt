@@ -1,1 +1,0 @@
-We have a selective peering policy for public fabrics where our speed is <1G due to bandwidth constraints.

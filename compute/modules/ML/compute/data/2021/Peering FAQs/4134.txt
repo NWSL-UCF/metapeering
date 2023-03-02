@@ -1,1 +1,0 @@
-Max prefix settings: IPv4 set to 40K, IPv6 set to 4K.

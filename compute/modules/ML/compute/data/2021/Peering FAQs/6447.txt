@@ -1,1 +1,0 @@
-Telnet to collectors: route-views, route-views{2,3,4,6,.paix,.eqix,.linx,.wide,.sydney,.saopaulo,.telxatl,.jinx,.kixp,.perth,.soxrs,.nwax,.sg,.sfmix,.chicago, napafrica,.phoix,.gixa,2.saopualo,.rio,.fortaleza,.flix,.amsix}, See also http://archive.routeviews.org for data archives.

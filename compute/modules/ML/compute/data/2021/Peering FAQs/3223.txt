@@ -1,2 +1,0 @@
-We use hot-potato routing except cases when a better latency or bandwidth availability can be observed through other circuits.
-Please contact us to peer.

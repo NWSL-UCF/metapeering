@@ -1,7 +1,0 @@
-Please visit 
-
-https://peering.google.com/ 
-
-for information about Google's traffic delivery and management practices. 
-
-It is not possible to peer with AS43515. If you are unexpectedly receiving traffic from AS43515 please consider to request peering with Google AS15169 at https://peering.google.com/iwantpeering

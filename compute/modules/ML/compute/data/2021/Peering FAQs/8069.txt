@@ -1,3 +1,0 @@
-This ASN is used for the Microsoft Routing Preference product.  To peer with Microsoft please reference AS8075. 
-
-AS-SET:  AS-MICROSOFT-AS8069

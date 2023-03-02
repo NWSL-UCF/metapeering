@@ -1,3 +1,0 @@
-Also perform some Network Service Provider functions
-looking_glass: http://Not publicly available
-route_server: http://Not publicly available

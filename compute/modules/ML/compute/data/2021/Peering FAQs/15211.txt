@@ -1,1 +1,0 @@
-Note: AS 15211 (Square backbone) provides transit for AS 394628 (corporate network). Please allow traffic to both.

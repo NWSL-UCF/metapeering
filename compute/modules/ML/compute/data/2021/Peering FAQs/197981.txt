@@ -1,5 +1,0 @@
-Other ASNs:
-
- - 29326: EMEA
- - 62602: NA/LATAM
- - 134187: APAC

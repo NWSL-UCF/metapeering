@@ -1,1 +1,0 @@
-Note that the number of announced prefixes might vary widely.

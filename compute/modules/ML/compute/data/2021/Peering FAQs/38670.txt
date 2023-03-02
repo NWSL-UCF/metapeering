@@ -1,1 +1,0 @@
-We are using AS36408 for peering at most of locations except KINX with AS38107. Therefore, Please refer as36408.peeringdb.com.

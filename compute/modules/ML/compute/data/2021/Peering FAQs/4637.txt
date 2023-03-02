@@ -1,8 +1,0 @@
-Note:
-1. Pacnet(AS10026) no longer available for Peering
-
-2. We recommend our Peering partner to set bgp max prefix-list number to v4: 80K & v6: 12K
-
-3. For operation issues or emergency, make sure you report the case to our 24x7 IPNOC in time, their contact: ipnoc@team.telstra.com / +852 2983 4018
-
-Thank you for your cooperation!

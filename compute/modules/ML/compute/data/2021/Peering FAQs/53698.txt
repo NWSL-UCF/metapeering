@@ -1,3 +1,0 @@
-AS 5118 is used for Route Server for Public Peering LAN . Please also peer with the route viewer /looking glass AS65000 on .1 / ::1.   Peering with AS5118 will include all participants connected to the route servers plus ROOT Servers and AS112.  
-
-AS 53698 is for transit service of the IX'es services such as statistics, website and other services.  Also behind it maybe management blocks for root servers.

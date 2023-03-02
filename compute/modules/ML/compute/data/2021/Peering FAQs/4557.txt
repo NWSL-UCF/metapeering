@@ -1,5 +1,0 @@
-SETG (Southeast Texas GigaPOP) is a collaboration of universities, colleges, and K-12 schools in the Texas region that interconnects members to national R&E networks as well as CDNs and service providers.  Members are typically connected at 100Gbps with locations in Houston and Dallas.
-
-SETG is the fastest path to deliver traffic to our researchers, faculty, students and staff.
-
-Please contact us if you are interested peering or collaborating.

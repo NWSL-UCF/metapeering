@@ -1,3 +1,0 @@
-Prefix limit of 100 for both IPv4 and IPv6 is suggested to accommodate planned growth.
-
-We only advertise local routes to route-servers. Please request a direct session for full global routes.

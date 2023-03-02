@@ -1,6 +1,0 @@
-Global Network Service Provider,
-Native IPv4/IPv6,
-Presence in 66 POPs Worldwide,
-DDoS and Cloud Firewall Solutions,
-White labelled ISP for ISP solutions in the cloud,
-Global Network with a single ASN

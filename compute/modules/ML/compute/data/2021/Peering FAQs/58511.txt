@@ -1,3 +1,0 @@
-Please set max-prefix to 5,000 for IPv4, and 500 for IPv6.
-
-MD5 supported, but not preferred.

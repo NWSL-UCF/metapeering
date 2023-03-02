@@ -1,3 +1,0 @@
-After May 18, 2020 we will be discarding all ROA:INVALID prefixes.
-
-Volterra is now part of F5 (was acquired in January 2021)

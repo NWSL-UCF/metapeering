@@ -1,1 +1,0 @@
-Welcome to F-Root. This ASN is used for peering with you. F-Root prefixes will always be sourced from AS3557.

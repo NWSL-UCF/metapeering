@@ -1,3 +1,0 @@
-Services in all Zscaler data centers are accessible via local transit and peering connections only, therefore Zscaler only announces local routes.
-
-Besides AS22616, Zscaler also manages AS32921, AS40384, AS53444, AS53813, AS55242 and AS62044.

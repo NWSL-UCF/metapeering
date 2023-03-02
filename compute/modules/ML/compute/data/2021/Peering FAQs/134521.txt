@@ -1,1 +1,0 @@
-Please request peering with Dialpad's primary AS63399 for production traffic.

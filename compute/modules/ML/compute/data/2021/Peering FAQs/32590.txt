@@ -1,5 +1,0 @@
-We operate Steam® (www.steampowered.com), a leading platform for PC, Mac, and Linux software with over 100 million registered users and over 6,000 titles from developers and publishers around the world.
-
-Each PoP only announces prefixes for that site. Clients automatically find the closest location.
-
-We provision our configuration automatically from PeeringDB, please ensure your entry is kept up-to-date including IP addresses and number of prefixes announced.

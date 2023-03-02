@@ -1,3 +1,0 @@
-With AS3856 we collect, archive, and display peering routes from exchanges around the world. 
-
-Please also see AS42 - http://as42.peeringdb.com - With AS42, we do Anycast hosting for Root-Servers and about 400 gTLDs/ccTLDs. In many locations, PCH also provides transit to the Quad9.net open recursive resolver.

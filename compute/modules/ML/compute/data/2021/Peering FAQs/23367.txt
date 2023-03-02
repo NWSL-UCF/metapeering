@@ -1,1 +1,0 @@
-Advertising consistent prefixes across all public and private peering locations.  Please contact us for peering.

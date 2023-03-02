@@ -1,3 +1,0 @@
-Max-Prefix:
-IPv4: 800
-IPv6: 100

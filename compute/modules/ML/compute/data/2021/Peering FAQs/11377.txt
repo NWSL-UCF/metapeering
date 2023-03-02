@@ -1,3 +1,0 @@
-We maintain BGP sessions with route server(s) in each public internet exchange where we have a presence. All public prefixes from the SendGrid site most local to the exchange are advertised to the route servers, and this is our preferred interconnection method in most cases.
-
-Networks with unique requirements which cannot be satisfied by route servers may contact the peering address listed below to discuss establishing a bilateral session.

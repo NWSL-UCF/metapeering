@@ -1,3 +1,0 @@
-AS3257/AS7922/AS1299/AS2914/AS1221 announces best anycast route at all locations in addition to direct peering.
-
-Please note we only peer with local/regional carriers in each location.

@@ -1,7 +1,0 @@
-We are not adding new peering to this ASN, AS20055 will be where new peering is done as we integrate into Wholesail Networks.
-
-NOC is staffed 24 x 7 x 365.
-
-Phone: 1-800-800-5347 or 1-509-575-4780
-
-NOC: noc@noelcomm.com

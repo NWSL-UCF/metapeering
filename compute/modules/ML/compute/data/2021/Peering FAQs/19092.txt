@@ -1,1 +1,0 @@
-Please note that Zayo acquired AboveNet AS6461 and no longer offer peering with AS19092 directly. You can visit www.above.net/peering to view requirements. AS6461 has a restrictive peering policy.

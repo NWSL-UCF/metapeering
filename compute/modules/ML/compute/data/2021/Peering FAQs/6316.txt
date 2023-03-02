@@ -1,3 +1,0 @@
-*** Starnet is no longer accepting peers as part of our integration into AS7029 ***
-
-If you would like to continue receiving AS6316 routes, please send a request to Windstream Peering; wci.peering@windstream.com, to establish peering with AS7029.

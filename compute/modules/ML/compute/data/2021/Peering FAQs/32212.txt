@@ -1,3 +1,0 @@
-ISP providing internet, L2 and L3 transport via fixed wireless, fiber, and some colocation. Also carry video/webcam streams for several local/regional organizations. Wireless footprint throughout Nevada and California. Fiber services nationwide, with large footprints in the West (Nevada, California), and South/Southeast (Texas, Kentucky, Georgia, and Carolinas).
-
-Open peering policy. Prefer direct BGP sessions. We maintain a backbone between all peering locations, but may only advertise regional routes to route servers - for our full routes we recommend direct peering.

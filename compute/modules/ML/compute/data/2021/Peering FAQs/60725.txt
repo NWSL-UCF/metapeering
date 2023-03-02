@@ -1,7 +1,0 @@
-SES Networks operates multiple discontiguous networks globally, each serving a Gateway used to connect to our satellite based network.
-
-SES has seperate CIDR blocks for each discontigous network and only announces those CIDR blocks, and those of locally connected downstream ASes, to its peers for that particular discontiguous network.
-
-SES uses a single ASN and disables AS loop detection on prefixes learnt from peers to enable this. 
-
-Peering is welcomed at all locations where O3b connects to a peering exchange.

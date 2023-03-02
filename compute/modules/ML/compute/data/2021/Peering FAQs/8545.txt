@@ -1,5 +1,0 @@
-The Legacy PLIX route-server are being replaced with the standard Equinix MLPE servers, and "will be decommissioned by June 30th 2020"
-
-[ix.equinix.com/home/ip-migration/wa/](https://ix.equinix.com/home/ip-migration/wa/)
-
-Please see [as24115] (https://as24115.peeringdb.com/) for details of the Equinix MLPE route-servers.

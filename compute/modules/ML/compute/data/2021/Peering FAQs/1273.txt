@@ -1,8 +1,0 @@
-Max-prefix limit recommended:
-
-- 90,000-100,000 (v4)
-- 8,000 (v6)
-
-Our prefix count can vary as we are used as a backup upstream for several large carriers.  Please set it high to prevent session flaps
-
-100GE PNIs preferred.

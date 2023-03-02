@@ -1,3 +1,0 @@
-PAXIO is a fiber based provider operating within the San Francisco Bay Area region.
-
-_(We have departed AMS-IX Bay for lack of demand)_

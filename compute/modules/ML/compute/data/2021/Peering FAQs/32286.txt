@@ -1,1 +1,0 @@
-We will also advertise routes from AS60038 via AS32286.   Please adjust your filter.

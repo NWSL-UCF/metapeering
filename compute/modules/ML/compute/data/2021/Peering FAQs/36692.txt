@@ -1,3 +1,0 @@
-Cisco Umbrella (aka OpenDNS) is a critical piece of Internet infrastructure providing recursive DNS and cloud-based security services to 80+ million end-users worldwide and 180 billion DNS queries per day. OpenDNS operates a high-speed anycast recursive DNS network and related services. 
--- If you have eyeballs/users, we should peer. 
--- If you have authoritative DNS servers, we should peer.

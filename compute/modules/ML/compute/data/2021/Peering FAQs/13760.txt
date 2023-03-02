@@ -1,1 +1,0 @@
-We only accept direct peering with peers that have a published AS-SET. We automatically process AS-SET changes and route validations, so there is no need to contact us with your updates.

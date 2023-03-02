@@ -1,3 +1,0 @@
-iomart also carry peering for Rapidswitch AS29131, Redstation AS35662, Melbourne AS39451, Bytemark AS35425
-
-If you have any sessions for the above ASNs, please get in touch to update these to 20860.

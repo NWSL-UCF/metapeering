@@ -1,3 +1,0 @@
-Related ASN: 
-- AS9808 (CMNET)
-- AS9231 (CMHK)

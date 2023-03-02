@@ -1,2 +1,0 @@
-WiscNet Peering Policy
-Please see https://confluence.wiscnet.net/display/WPKB/BGP+Peering+Information as of 2016-11

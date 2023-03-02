@@ -1,1 +1,0 @@
-whois -h rr.arin.net -- -T as-set AS-UWSYSNET

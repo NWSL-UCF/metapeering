@@ -1,1 +1,0 @@
-We announce our Prefix's to Equinix Route Servers for public peering. We also accept private peering request. All of our Prefix's are registered in the radb.net IRR.

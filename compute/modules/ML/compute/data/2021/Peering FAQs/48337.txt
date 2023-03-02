@@ -1,3 +1,0 @@
-This is the ASN for Linode's Corporate Offices.
-
-Our global customer network is AS63949.

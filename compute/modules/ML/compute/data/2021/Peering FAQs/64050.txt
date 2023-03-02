@@ -1,3 +1,0 @@
-We would like to request our members to set the max prefix-limit to v4:5000 and v6:100.
-
-Thanks

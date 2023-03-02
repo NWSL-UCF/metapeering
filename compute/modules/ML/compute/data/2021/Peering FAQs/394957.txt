@@ -1,5 +1,0 @@
-Contact support at zadarastorage.com for routing/peering questions; not all locations are listed in PeeringDB.
-
-Service-based company selling storage to private and cloud customers over private links in multiple locations.
-
-Network peering is predominately exchange of RFC1918 networks.

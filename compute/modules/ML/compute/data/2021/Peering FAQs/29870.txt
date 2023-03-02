@@ -1,1 +1,0 @@
-this network no longer peers, please peer with 11404

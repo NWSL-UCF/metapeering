@@ -1,3 +1,0 @@
-Sohonet provide high bandwidth network solutions to the Media Industry. See website for more info.
-
-AS16164 is the Sohonet Transit AS which serves the Sohonet Media Network (AS5555).

@@ -1,1 +1,0 @@
-please set max-prefix to 1500 for v4 and 100 for v6
