@@ -8,6 +8,7 @@ from zipfile import ZipFile
 from werkzeug.utils import secure_filename
 import statistics
 import requests
+import uuid
 
 Custom = Blueprint("custom", __name__, static_folder="static", template_folder="template")
 
@@ -62,6 +63,8 @@ def custom_peering_query_form_handler(request, asn1_data):
     session['commonLocations'] = commonLocations
     session["authorized"] = True
     session["asn1Data"] = json.loads(asn1_data)
+    # TODO: add "asn2Data" at this point file for asn2 should exist due to getCommonPop calls to ensure json file
+    # currently duplicated in ec2 instance and here
     session["email"] = request["email"]
     # print(session)
     return redirect(url_for("custom.custom"))
@@ -69,17 +72,16 @@ def custom_peering_query_form_handler(request, asn1_data):
 
 
 def custom_request_handler(data):
-
     isp1 = ['',session.pop('asn1')]
     isp2 = ['',session.pop('asn2')]
     threshold = session.pop('threshold',0.5)
     userEmail = session.pop('email')
 
-
     params = {"filename" : isp1[1], "email" : userEmail}
     url = os.environ.get('AWS_S3_URL')
     response = requests.get(url, params=params)
     response = response.json()
+    print(response)
     s3_put_url = response['response']
     user_id = response['id']
     headers={'content-type': 'application/json'}

@@ -17,10 +17,12 @@ EXPIRATION = 60
 def generate_url_s3():
 
     parameters = app.current_request.query_params
-    file_name = parameters['filename']
     email = parameters['email']
+    asn = parameters['filename']
 
-    user_id = create_db_entry(email)
+    user_id = uuid.uuid4()
+    file_name = str(user_id) + "_" + asn
+    create_db_entry(email, user_id)
 
     s3_client = boto3.client("s3", region_name = REGION)
 
@@ -35,8 +37,7 @@ def generate_url_s3():
 
     return json.dumps({'status' : 'OK', 'response' : response, 'id' : str(user_id)})
 
-def create_db_entry(email):
-    user_id = uuid.uuid4()
+def create_db_entry(email, user_id):
     try:
         with connect(
             host = chalicelib.rds_config.AWS_RDS_CONNECTION,
@@ -53,7 +54,6 @@ def create_db_entry(email):
             with connection.cursor() as cursor:
                 cursor.execute("insert into metapeering_jobs (id, job_status, time_date, email) VALUES (%s, %s, %s, %s)", (str(id), job_status, date, email))
                 connection.commit()
-        return user_id
 
     except Error as e:
         print(e)
