@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-sudo /usr/local/bin/certbot --nginx -n -d {DOMAIN_NAME} --agree-tos --email {EMAIL}
