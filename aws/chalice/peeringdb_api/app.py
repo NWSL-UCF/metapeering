@@ -12,6 +12,7 @@ def index():
     API_TYPE_IX = "ix"
     API_TYPE_FAC = "fac"
     API_TYPE_NET = "net"
+    API_TYPE_RATIO = "ratio"
 
     parameters = app.current_request.query_params
     api_type = parameters['type']
@@ -30,6 +31,11 @@ def index():
     elif api_type == API_TYPE_NET:
         try:
             return get_data_net(isp_id)
+        except Error as e:
+            return json.dumps({'Error' : 'ASN does not exist in the database.'})
+    elif api_type == API_TYPE_RATIO:
+        try:
+            return get_info_ratio(isp_id)
         except Error as e:
             return json.dumps({'Error' : 'ASN does not exist in the database.'})
     else:
