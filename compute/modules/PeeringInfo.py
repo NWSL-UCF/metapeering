@@ -197,17 +197,18 @@ class PeeringInfo(object):
         fac: for Private Peering Facility,
         net: for ISP Network information.
         @return: entire JSON object obtained from peeringdb api for IX.
+
+
+        Query parameters for api: type (api type) and id (isp id). Api token required.
         '''
 
-        if api_type == self.API_TYPE_IX:
-            return get_data_ix(isp_id)
-        elif api_type == self.API_TYPE_FAC:
-            return get_data_fac(isp_id)
-        elif api_type == self.API_TYPE_NET:
-            return get_data_net(isp_id)
-        else:
-            # type not currently supported
-            return
+        api_url = os.environ.get('AWS_PEERINGDB_URL')
+        params = {"type" : api_type, "id" : isp_id}
+        headers = {'X-API-KEY' : os.environ.get('AWS_PEERINGDB_API_TOKEN')}
+        r = requests.get(api_url, params=params, headers = headers)
+        r = r.json()
+
+        return r
 
     def get_isp_net_set_id(self, isp_id):
 
@@ -229,8 +230,12 @@ class PeeringInfo(object):
         @return: BALANCED, MOSTLY INBOUND, NOT DISCLOSED or others..
         '''
 
-        ratio = get_info_ratio(isp_id).upper()
-        return ratio
+        api_url = os.environ.get('AWS_PEERINGDB_URL')
+        params = {"type" : "ratio", "id" : isp_id}
+        headers = {'X-API-KEY' : os.environ.get('AWS_PEERINGDB_API_TOKEN')}
+        r = requests.get(api_url, params=params, headers = headers)
+
+        return r.text.upper()
 
     def get_all_pops_net_id_for_single_isp_id(self, isp_id):
         # print("Entering get_all_pops_net_id_for_single_isp_id")
@@ -350,6 +355,7 @@ class PeeringInfo(object):
         city_list = [item['city'] for item in pop_city_state_loc_population_frequency_list]
         city_freq_dict = convert_list_to_frequency_dict(city_list)
 
+        # turn location to float. MySQL stores it as a string currently.
         location_list = [item['location'] for item in pop_city_state_loc_population_frequency_list]
         location_list_freq = convert_list_to_frequency_dict(location_list)
 
@@ -457,8 +463,8 @@ class PeeringInfo(object):
                 for i in range(len(ix_or_fac_info['data'][0]['fac_set'])):
                     if ix_or_fac_info['data'][0]['fac_set'][i]['city'] == city:
                         state = ix_or_fac_info['data'][0]['fac_set'][i]['state'].encode('ascii', 'ignore')
-                        latitude = ix_or_fac_info['data'][0]['fac_set'][i]['latitude']
-                        longitude = ix_or_fac_info['data'][0]['fac_set'][i]['longitude']
+                        latitude = float(ix_or_fac_info['data'][0]['fac_set'][i]['latitude'])
+                        longitude = float(ix_or_fac_info['data'][0]['fac_set'][i]['longitude'])
                         break
                 # except:
                 #     print("Error: {}: {}".format(api_type, isp_id))
@@ -472,8 +478,8 @@ class PeeringInfo(object):
                 if " and " in city:
                     city = city.split(" and ")[0]
                 state = ix_or_fac_info['data'][0]['state'].encode('ascii', 'ignore')
-                latitude = ix_or_fac_info['data'][0]['latitude']
-                longitude = ix_or_fac_info['data'][0]['longitude']
+                latitude = float(ix_or_fac_info['data'][0]['latitude'])
+                longitude = float(ix_or_fac_info['data'][0]['longitude'])
                 # except:
                 #     print("Error: {}: {}".format(api_type, isp_id))
 
@@ -501,8 +507,8 @@ class PeeringInfo(object):
                     state = ix_or_fac_info['data'][0]['fac_set'][0]['state'].encode('utf-8')
                 except:
                     state = ix_or_fac_info['data'][0]['fac_set'][0]['state']
-                latitude = ix_or_fac_info['data'][0]['fac_set'][0]['latitude']
-                longitude = ix_or_fac_info['data'][0]['fac_set'][0]['longitude']
+                latitude = float(ix_or_fac_info['data'][0]['fac_set'][0]['latitude'])
+                longitude = float(ix_or_fac_info['data'][0]['fac_set'][0]['longitude'])
 
             # print("Leaving get_peering_location_city_state_lat_long")
             if latitude == None or longitude == None:
