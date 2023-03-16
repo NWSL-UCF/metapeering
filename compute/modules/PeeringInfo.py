@@ -31,7 +31,8 @@ This is also used to decide whether or not to use "stringify_keys()" method.
 
 @note: Set "is_peering_location_frequency_required" TRUE to access the files! Otherwise, the filename will not be same and can't access the source JSON files.
 @note: Mark for Future Removal: We used these temporarily and will be removed later on. is_microsoft_transit, is_state_name_required, is_public_private_classification_required
-
+@note: API call omitted due to timeout issues. Calls will now be made with local db of peeringdb using sqlite (Natalia, Jan, 18, 2023).
+@note ix_id changed to ixlan_id due to naming in local db.
 '''
 
 for_icc = True
@@ -133,6 +134,7 @@ class PeeringInfo(object):
         ix = self.pdb.all('ix', name='chix', country='us')[0]
         @note: From https://github.com/grizz/pdb-examples/blob/master/get_peerinfo.py
         '''
+
         try:
             data = self.pdb.fetch_all(resource.get_resource(self.API_TYPE_IX), 999, name=name, country='us')[0]
         except:
@@ -153,6 +155,7 @@ class PeeringInfo(object):
         ix = self.pdb.all('net', asn=16509)
         @note: From https://github.com/grizz/pdb-examples/blob/master/get_peerinfo.py
         '''
+
         try:
             data = self.pdb.fetch_all(resource.get_resource(self.API_TYPE_NET), 999, asn=asn)[0]
         except:
@@ -185,7 +188,7 @@ class PeeringInfo(object):
 
 
     def json_call_from_peeringdb_api(self, api_type, isp_id):
-        # print("Entering json_call_from_peeringdb_api.")
+
         '''
         @param api_type: Any of the following:
         @param isp_id: ID of which ISP/IX/NET we're interested in.
@@ -193,41 +196,45 @@ class PeeringInfo(object):
         fac: for Private Peering Facility,
         net: for ISP Network information.
         @return: entire JSON object obtained from peeringdb api for IX.
-        '''
-        api_url = self.peeringdb_api + api_type + "/" + str(isp_id)
-        r = requests.get(api_url)
-        r = r.json()
-        # print("Leaving json_call_from_peeringdb_api.")
 
-        if(r.get('data',None)):
-            return r
-        else:
-            raise ASNNotFoundError(isp_id)
+
+        Query parameters for api: type (api type) and id (isp id). Api token required.
+        '''
+
+        api_url = os.environ.get('AWS_PEERINGDB_URL')
+        params = {"type" : api_type, "id" : isp_id}
+        headers = {'X-API-KEY' : os.environ.get('AWS_PEERINGDB_API_TOKEN')}
+        r = requests.get(api_url, params=params, headers = headers)
+        r = r.json()
+
+        return r
 
     def get_isp_net_set_id(self, isp_id):
-        # print("Entering get_isp_net_set_id.")
+
         '''
-        @note: This calls JSON to https://peeringdb.com/api/net/1418
+        @note: This calls JSON to local sqlite peeringdb database.
         and gets the list of all the ISP_ID (kind of colleague) from "net_set" in JSON object.
         '''
-        data = self.json_call_from_peeringdb_api(self.API_TYPE_NET, isp_id)['data']
-        net_set = data[0]['org']['net_set']
-
-        # print("Leaving get_isp_net_set_id.")
-        return net_set
+        temp = self.json_call_from_peeringdb_api(self.API_TYPE_NET, isp_id)
+        if temp != None:
+            data = temp['data']
+            net_set = data[0]['org']['net_set']
+            return net_set
+        return []
 
     def get_isp_traffic_ratio(self, isp_id):
-        # print("Entering get_isp_traffic_ratio")
+
         '''
-        @note: This directly JSON calls the isp from peeringdb and returns the traffic ratio of that.
+        @note: This directly calls the isp from peeringdb and returns the traffic ratio of that.
         @return: BALANCED, MOSTLY INBOUND, NOT DISCLOSED or others..
         '''
-        res = requests.get(self.peeringdb_api + self.API_TYPE_NET + "/" + str(isp_id)).json()
-        ratio = str(res['data'][0]['info_ratio']).upper()
-        if ratio == "":
-            ratio = "NOT DISCLOSED"
-        # print("Leaving get_isp_traffic_ratio")
-        return ratio
+
+        api_url = os.environ.get('AWS_PEERINGDB_URL')
+        params = {"type" : "ratio", "id" : isp_id}
+        headers = {'X-API-KEY' : os.environ.get('AWS_PEERINGDB_API_TOKEN')}
+        r = requests.get(api_url, params=params, headers = headers)
+
+        return r.text.upper()
 
     def get_all_pops_net_id_for_single_isp_id(self, isp_id):
         # print("Entering get_all_pops_net_id_for_single_isp_id")
@@ -247,20 +254,25 @@ class PeeringInfo(object):
         ix_id_set = list()
 
         for net_id in net_set:
-            data = self.json_call_from_peeringdb_api(self.API_TYPE_NET, net_id)['data']
+            data_temp = self.json_call_from_peeringdb_api(self.API_TYPE_NET, net_id)
+
+            if data_temp is None:
+                continue
+
+            data = data_temp['data']
             netfac_set_temp = data[0]['netfac_set']
             netixlan_set_temp = data[0]['netixlan_set']
 
             for temp in netfac_set_temp:
                 fac_id_set.append(temp['fac_id'])
             for temp in netixlan_set_temp:
-                ix_id_set.append(temp['ix_id'])
+                ix_id_set.append(temp['ixlan_id'])
 
         # print("Leaving get_all_pops_net_id_for_single_isp_id")
         return ix_id_set, fac_id_set
 
     def get_all_pops_port_capacity_with_net_id_for_single_isp_id(self, isp_id):
-        # print("Entering get_all_pops_port_capacity_with_net_id_for_single_isp_id")
+
         '''
         @note: This is exactly same as get_all_pops_with_net_id_for_single_isp_id().
         Except, this returns the "port_capacity" of public IXPs as well. Private facilities don't have "port_capacity"
@@ -280,7 +292,12 @@ class PeeringInfo(object):
         ix_id_port_cap_dict = dict()
 
         for net_id in net_set:
-            data = self.json_call_from_peeringdb_api(self.API_TYPE_NET, net_id)['data']
+            data_temp = self.json_call_from_peeringdb_api(self.API_TYPE_NET, net_id)
+
+            if data_temp is None:
+                continue
+
+            data = data_temp['data']
             netfac_set_temp = data[0]['netfac_set']
             netixlan_set_temp = data[0]['netixlan_set']
 
@@ -290,14 +307,14 @@ class PeeringInfo(object):
                 fac_id_port_cap_dict.update({temp['fac_id']:1000})
             for temp in netixlan_set_temp:
                 try:
-                    ix_id_port_cap_dict.update({temp['ix_id']:(temp['speed'] + ix_id_port_cap_dict[temp['ix_id']])})
+                    ix_id_port_cap_dict.update({temp['ixlan_id']:(temp['speed'] + ix_id_port_cap_dict[temp['ixlan_id']])})
                 except:
-                    ix_id_port_cap_dict.update({temp['ix_id']:temp['speed']})
-        # print("Leaving get_all_pops_port_capacity_with_net_id_for_single_isp_id")
+                    ix_id_port_cap_dict.update({temp['ixlan_id']:temp['speed']})
+
         return ix_id_port_cap_dict, fac_id_port_cap_dict
 
     def get_all_pops_locations_with_population_for_single_isp_id(self, isp_id):
-        # print("Entering get_all_pops_locations_with_population_for_single_isp_id")
+
         '''
         @return a list of pops information as a dictionary with: {"city":"San Fransisco", "state":"CA", "location":(lat, long), "state_population":123456, "pop_freq_in_state":5}.
         '''
@@ -337,6 +354,7 @@ class PeeringInfo(object):
         city_list = [item['city'] for item in pop_city_state_loc_population_frequency_list]
         city_freq_dict = convert_list_to_frequency_dict(city_list)
 
+        # turn location to float. MySQL stores it as a string currently.
         location_list = [item['location'] for item in pop_city_state_loc_population_frequency_list]
         location_list_freq = convert_list_to_frequency_dict(location_list)
 
@@ -344,8 +362,6 @@ class PeeringInfo(object):
             item.update({'pop_freq_in_state':state_freq_dict[item['state']]})
             item.update({'pop_freq_in_city':city_freq_dict[item['city']]})
             item.update({'same_pop_location_freq':location_list_freq[item['location']]})
-
-        # print("Leaving get_all_pops_locations_with_population_for_single_isp_id")
 
         return [dict(s) for s in set(frozenset(pop_loc.items()) for pop_loc in pop_city_state_loc_population_frequency_list)]
 
@@ -382,6 +398,8 @@ class PeeringInfo(object):
         We need this for one ISP information in PeeringAlgo.py
         @return: city_state list for isp_a.
         '''
+        if self.get_all_pops_port_capacity_with_net_id_for_single_isp_id(isp_a_net_id) == None:
+            return
 
         isp_a_ix_id_dict, isp_a_fac_id_dict = self.get_all_pops_port_capacity_with_net_id_for_single_isp_id(isp_a_net_id)
         isp_a_ix_id_list = isp_a_ix_id_dict.keys()
@@ -415,6 +433,10 @@ class PeeringInfo(object):
         @return: City name of that IX/ facility.
         '''
         ix_or_fac_info = self.json_call_from_peeringdb_api(api_type, isp_id)
+
+        if ix_or_fac_info is None:
+            return None
+
         name = ix_or_fac_info['data'][0]['name']
         org_name = ix_or_fac_info['data'][0].get('org_name',name)
 
@@ -433,11 +455,12 @@ class PeeringInfo(object):
                     city = city.split("/")[0]
                 if " and " in city:
                     city = city.split(" and ")[0]
+
                 for i in range(len(ix_or_fac_info['data'][0]['fac_set'])):
                     if ix_or_fac_info['data'][0]['fac_set'][i]['city'] == city:
                         state = ix_or_fac_info['data'][0]['fac_set'][i]['state'].encode('ascii', 'ignore')
-                        latitude = ix_or_fac_info['data'][0]['fac_set'][i]['latitude']
-                        longitude = ix_or_fac_info['data'][0]['fac_set'][i]['longitude']
+                        latitude = float(ix_or_fac_info['data'][0]['fac_set'][i]['latitude'])
+                        longitude = float(ix_or_fac_info['data'][0]['fac_set'][i]['longitude'])
                         break
                 # except:
                 #     print("Error: {}: {}".format(api_type, isp_id))
@@ -451,8 +474,8 @@ class PeeringInfo(object):
                 if " and " in city:
                     city = city.split(" and ")[0]
                 state = ix_or_fac_info['data'][0]['state'].encode('ascii', 'ignore')
-                latitude = ix_or_fac_info['data'][0]['latitude']
-                longitude = ix_or_fac_info['data'][0]['longitude']
+                latitude = float(ix_or_fac_info['data'][0]['latitude'])
+                longitude = float(ix_or_fac_info['data'][0]['longitude'])
                 # except:
                 #     print("Error: {}: {}".format(api_type, isp_id))
 
@@ -480,8 +503,8 @@ class PeeringInfo(object):
                     state = ix_or_fac_info['data'][0]['fac_set'][0]['state'].encode('utf-8')
                 except:
                     state = ix_or_fac_info['data'][0]['fac_set'][0]['state']
-                latitude = ix_or_fac_info['data'][0]['fac_set'][0]['latitude']
-                longitude = ix_or_fac_info['data'][0]['fac_set'][0]['longitude']
+                latitude = float(ix_or_fac_info['data'][0]['fac_set'][0]['latitude'])
+                longitude = float(ix_or_fac_info['data'][0]['fac_set'][0]['longitude'])
 
             # print("Leaving get_peering_location_city_state_lat_long")
             if latitude == None or longitude == None:
@@ -497,7 +520,7 @@ class PeeringInfo(object):
                 return None
 
     def get_peering_location_lat_long(self, api_type, isp_id):
-        # print("Entering get_peering_location_lat_long")
+
         '''
         @param api_type: Any of the following:
         @param isp_id: ID of which ISP/IX/NET we're interested in.
@@ -507,12 +530,11 @@ class PeeringInfo(object):
 
         temp = self.get_peering_location_city_state_lat_long(api_type, isp_id)
 
-        # print("Leaving get_peering_location_lat_long")
         if temp != None:
             return temp['location']
 
     def get_peering_location_state_name(self, api_type, isp_id):
-        # print("Entering get_peering_location_state_name")
+
         '''
         @param api_type: Any of the following: 'ix', 'fac', 'net'
         @param isp_id: ID of which ISP/IX/NET we're interested in.
@@ -521,12 +543,11 @@ class PeeringInfo(object):
         '''
         temp = self.get_peering_location_city_state_lat_long(api_type, isp_id)
 
-        # print("Leaving get_peering_location_state_name")
         if temp != None:
             return temp['state']
 
     def get_peering_location(self, api_type, isp_id):
-        # print("Entering get_peering_location")
+
         '''
         @note: we call get_peering_location_state_name() to get state name.
         or, we call get_peering_location_lat_long() to get (latitude, longitude) information.
@@ -534,11 +555,9 @@ class PeeringInfo(object):
 
         if is_state_name_required:
             loc = self.get_peering_location_state_name(api_type, isp_id)
-            # print("Leaving get_peering_location")
             return loc
         else:
             loc = self.get_peering_location_lat_long(api_type, isp_id)
-            # print("Leaving get_peering_location")
             if loc != None and (loc[0] != None or loc[1] != None):
                 return loc
             else:
@@ -617,10 +636,8 @@ def get_peering_points_for_all_isps_of_one_type_in_detail(isp_dict):
 
     for isp_name, asn_list in isp_dict.items():
         all_peering_points_for_isp = {}
-        print("ISP: {}".format(isp_name))
         for asn in asn_list:
             isp_id= peeringInfo.get_net_id_from_asn(asn)
-            print("ISP_ID: {}, ASN: {}".format(isp_id, asn))
             if for_icc:
                 all_peering_points_for_isp = peeringInfo.get_all_pops_locations_with_population_for_single_isp_id(isp_id)
             else:
@@ -664,7 +681,7 @@ def get_total_distance_for_all_points_from_current_point(cur_point, peering_loca
     @var cur_point: is the point we want to check whether distance of all points from it, is the minimum.
     '''
     n = numpy.sum([get_distance_in_mile(cur_point[0], cur_point[1], pop['location'][0], pop['location'][1]) for pop in peering_locations_list])
-    print("Leaving get_total_distance_for_all_points_from_current_point")
+    # print("Leaving get_total_distance_for_all_points_from_current_point")
     return n
 #     return numpy.sum([pop['state_population'] * get_distance_in_mile(cur_point[0], cur_point[1], pop['location'][0], pop['location'][1]) for pop in peering_locations_list])
 #     return numpy.sum([pop['city_population'] * get_distance_in_mile(cur_point[0], cur_point[1], pop['location'][0], pop['location'][1]) for pop in peering_locations_list])

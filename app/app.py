@@ -8,6 +8,7 @@ from flask import (
     url_for,
     abort
 )
+from flask_session import Session
 from flask_bootstrap import Bootstrap
 from flask_s3 import FlaskS3
 import boto3
@@ -46,6 +47,11 @@ s3 = boto3.client(
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "metapeering"
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_PERMANENT'] = False
+app.secret_key = "metapeering"
+
+Session(app)
 Bootstrap(app)
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
