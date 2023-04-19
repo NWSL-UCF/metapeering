@@ -89,7 +89,7 @@ def custom_request_handler(data):
 
     asn1_asn2 = str(isp1[1]) + "_" + str(isp2[1])
     if not os.path.exists("./app/static/" + asn1_asn2):
-        call("mkdir ./app/static/" + asn1_asn2, shell=True)
+        call("md ./app/static/" + asn1_asn2, shell=True)
 
     if customPeeringAlgo(tuple(isp1),tuple(isp2), [int(num) for num in data]):
 
