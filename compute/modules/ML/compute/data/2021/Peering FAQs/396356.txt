@@ -1,0 +1,15 @@
+Through the Bare Metal Cloud proprietary platform, Maxihost deploys high-performance physical servers in multiple regions around the globe. Maxihost owns a Tier 3 compliant Datacenter in São Paulo, where its headquarter is located. See more at https://www.maxihost.com/
+
+We connect directly with the following ISPs,
+- Algar (AS16735)
+- Sparkle (AS6762)
+- Voxility (AS3223)
+- GTT (AS3257)
+- Cogent (AS174)
+- FL-IX (Florida Internet Exchange)
+- IX.br (Brazilian Internet Exchange)
+- Equinix Exchange
+- Any2 California (CoreSite Exchange)
+- DE-CIX New York
+- DE-CIX Dallas
+- NSW-IX (Australia Internet Exchange)

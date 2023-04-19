@@ -1,0 +1,56 @@
+# DE-CIX New York Route Servers
+
+Number of prefixes are suggested maxpref values!
+
+---
+
+## Route Server Address Information
+
+**rs1.nyc.de-cix.net**
+
+* 206.82.104.254
+* 2001:504:36::f63a:afc:1
+
+**rs2.nyc.de-cix.net**
+
+* 206.82.106.254
+* 2001:504:36::f63a:afd:1
+
+---
+
+## Route Server Control
+
+You may use BGP Standard/Extended/Large Communities to control route advertisement via the route servers:
+
+* **(63034:63034), (63034:1:0):** Redistribute to all route server peers (default)
+
+* **(63034:$PEER-AS), (rt:63034:$PEER-AS), (63034:1:63034):** Redistribute to $PEER-AS
+
+* **(0:$PEER-AS), (rt:0:$PEER-AS), (63034:0:$PEER-AS):** Do not redistribute to $PEER-AS
+
+* **(0:63034), (63034:0:0):** Do not redistribute
+
+If $PEER-AS uses a 16b ASN, you may use Standard, Extended or Large Communities
+
+If $PEER-AS uses a 32b ASN, you have to use Extended or Large Communities
+
+There are additional communities for controlling announcements:
+
+* **65535:0** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GRACEFUL_SHUTDOWN
+* **65535:666** &nbsp; &nbsp; &nbsp; BLACKHOLE
+* **63034:65281** &nbsp; NO-EXPORT
+* **63034:65282** &nbsp; NO-ADVERTISE
+
+---
+
+## Additional Information
+
+For more information on route server control and Blackholing, please see:
+
+[DE-CIX NYC Route Server Guide](https://www.de-cix.net/en/locations/united-states/new-york/routeserver-guide)
+
+[DE-CIX Blackholing Guide](https://www.de-cix.net/en/resources/de-cix-blackholing-guide)
+
+[DE-CIX Route Server Informational BGP Communities](https://www.de-cix.net/en/resources/informational-bgp-communities)
+
+[DE-CIX Route Server Operational BGP Communities](https://www.de-cix.net/en/resources/operational-bgp-communities)

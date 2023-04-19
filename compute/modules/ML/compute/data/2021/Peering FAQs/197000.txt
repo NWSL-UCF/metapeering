@@ -1,0 +1,9 @@
+This system carries traffic for the following DNS services:
+- f.in-addr-servers.arpa (in-addr.arpa zone - IPv4 reverse)
+- f.ip6-servers.arpa (ip6.arpa zone - IPv6 reverse)
+- pri.authdns.ripe.net (RIPE NCC zones)
+- sec1.authdns.ripe.net (Secondary for RIR zones)
+- sec2.authdns.ripe.net (Secondary for various zones)
+
+Our PGP keys (use for peering passwords):
+Anand Buddhdev <anandb@ripe.net>: 0x44B0942B

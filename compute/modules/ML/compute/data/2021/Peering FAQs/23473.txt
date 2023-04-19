@@ -1,0 +1,3 @@
+Please use AS23473. We are no longer using AS46925 for peering.
+
+MD5 accepted; not preferred.

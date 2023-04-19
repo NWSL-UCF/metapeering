@@ -1,0 +1,5 @@
+Twitter is a global anycast network. We determine the scope of routes to send you based upon your network's scope and footprint in relation to our point of interconnect.
+
+Twitter will accept peering requests with networks that exchange 100Mbit or more of traffic with us. We are willing to be flexible on this number outside of North America and Europe, or in any scenario that sees direct interconnection solve a user performance issue.
+
+Interconnection in the nearest POP(s) to your home market is a mandatory requirement.

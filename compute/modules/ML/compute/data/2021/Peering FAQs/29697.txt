@@ -1,0 +1,26 @@
+AS29697 Peering Policy
+English (U.S.)
+Support HomeKnowledgebaseNewsTroubleshooterCloud Support
+Please login to post or view tickets
+Knowledgebase
+Windows Virtual Machines (VM),​including desktops and servers (170)
+Linux Virtual Machines (2)
+CNS Software & Updates (17)
+Network Connectivity (11)
+Misc (1)
+Software as a Service​Licensing (SaaS)
+Domain management (3)
+Billing, Payments &​Customer Service (4)
+Streaming Media
+SEARCH
+Knowledgebase: Network Connectivity
+AS29697 Peering Policy
+Posted by Barry Bahrami on 20 May 2018 11:01 AM
+CNS (AS29697) operates an open network.  Our routes are available on all route servers at Internet Traffic Exchanges where we have a presence.  At our sole discretion, CNS will generally agree to setup a private peering session when required and in situations where it will benefit our mutual users.
+In cases where private peering is established, we typically require peering at all points where we share a common POP.We are listed in PeeringDB at https://www.peeringdb.com/net/6611
+For peering inquiries, please contact NOC (at) CommercialNetworkServices.com and put "peering" in the subject.
+(0 vote(s))
+Helpful Not helpful
+© 2016 Commercial Network Services.
+All rights reserved.No content may be reproduced or redistributed without express written permission on CNS letterhead.Only Commercial Network Services subscribers are authorized to use our content during their subscription period.Permission to use our content may be revoked at any time, and at the sole discretion of Commercial Network Services.
+Some content on this site is © by their respective owners.

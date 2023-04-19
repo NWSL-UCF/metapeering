@@ -1,0 +1,2 @@
+Most prefixes are currently announced via Highwinds/BandCon
+AS12989 / AS26769

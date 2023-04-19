@@ -1,0 +1,3 @@
+This is our APAC entity.
+
+Please look up the main entity for Public and Private Peering listings: [InterCloud (197981)](https://www.peeringdb.com/net/4345)

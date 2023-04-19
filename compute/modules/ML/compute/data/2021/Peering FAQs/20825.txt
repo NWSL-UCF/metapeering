@@ -1,0 +1,436 @@
+PeeringDB
+Advanced Search
+Register or Login
+Exchanges ()
+Networks ()
+Facilities ()
+Organizations ()
+Liberty Global
+Organization
+Liberty Global
+Also Known As
+UPC Distribution Services, UPC Broadband, UGC Europe, LGI, chello, aorta
+Long Name
+Company Website
+http://www.libertyglobal.com/
+ASN
+6830
+IRR as-set/route-set
+RIPE::AS-AORTA
+Route Server URL
+telnet://route-views.linx.routeviews.org
+Looking Glass URL
+Network Type
+Cable/DSL/ISP
+IPv4 Prefixes
+30000
+IPv6 Prefixes
+4000
+Traffic Levels
+Not Disclosed
+Traffic Ratios
+Not Disclosed
+Geographic Scope
+Global
+Protocols Supported
+Unicast IPv4
+Multicast
+IPv6
+Never via route servers
+Last Updated
+2020-10-21T06:20:09Z
+Public Peering Info Updated
+2021-06-20T00:12:15
+Peering Facility Info Updated
+2021-06-16T11:11:54
+Contact Info Updated
+2020-12-14T09:24:52Z
+Notes
+We evaluate and respond to peering requests once per month. If you use max prefix please set to at least 30000 for IPv4 and 4000 for IPv6 and regularly re-check this entry for updates.
+Large networks behind AS6830: AS5089 VirginMedia (UK), AS6848 Telenet (BE), AS33915 Vodafone-Ziggo (NL) & AS23520 Columbus (Caribbean).
+AS6830 has no upstream - peering partners are encouraged to actively filter out all routes with AS6830 in the as-path received from any other peer or customer.
+NOC email address (which doesn't fit in the box below): CSDIPInfrastructureandVoice@libertyglobal.com
+Peering Policy Information
+Peering Policy
+https://www.libertyglobal.com/operations/business-services/ip-interconnection-portfolio/
+General Policy
+Restrictive
+Multiple Locations
+Required - International
+Ratio Requirement
+Yes
+Contract Requirement
+Required
+Contact Information
+Some of this network's contacts are hidden because they are only visible to authenticated users and you are currently not logged in.
+Role
+Name
+Visiblity
+Phone
+E-Mail
+346
+Policy
+Policy
+Peering Mailbox
+peering@aorta.net
+346
+NOC
+NOC
+CSD IP (NOC)
++31207788129
+CSDIPInfrastructureandVoice@libertyglobal.com
+346
+Sales
+Sales
+Business Services
++31207788069
+businessservices@libertyglobal.com
+346
+Abuse
+Abuse
+Abuse PoC
+abuse@libertyglobal.com
+Public Peering Exchange Points
+Exchange
+ASN
+IPv4
+IPv6
+Speed
+RS Peer
+No filter matches.
+You may filter by Exchange, ASN or Speed.
+346
+26
+AMS-IX
+6830
+Operational
+80.249.208.106
+2001:7f8:1::a500:6830:2
+10G
+346
+1812
+Asteroid Amsterdam
+6830
+Operational
+185.1.94.45
+2001:7f8:b6::1aae:1
+10G
+346
+33
+CIXP
+6830
+Operational
+192.65.185.163
+2001:7f8:1c:24a::1aae:1
+10G
+346
+2031
+Equinix Amsterdam
+6830
+Operational
+185.1.112.25
+2001:7f8:83::6830:1
+10G
+346
+1
+Equinix Ashburn
+6830
+Operational
+206.126.236.117
+2001:504:0:2::6830:1
+10G
+346
+1926
+Equinix Dublin
+6830
+Operational
+185.1.109.34
+2001:7f8:c3::6830:1
+10G
+346
+1998
+Equinix Frankfurt
+6830
+Operational
+185.1.102.37
+2001:7f8:bd::6830:1
+10G
+346
+1997
+Equinix London
+6830
+Operational
+185.1.104.34
+2001:7f8:be::6830:1
+10G
+346
+12
+Equinix New York
+6830
+Operational
+198.32.118.140
+2001:504:f::8c
+10G
+346
+264
+Equinix Warsaw
+6830
+Operational
+195.182.218.12
+2001:7f8:42::a500:6830:1
+10G
+346
+29
+Equinix Zurich
+6830
+Operational
+194.42.48.53
+2001:7f8:c:8235::6830:1
+10G
+346
+48
+INEX LAN1
+6830
+Operational
+185.6.36.39
+2001:7f8:18::39
+10G
+346
+387
+INEX LAN2
+6830
+Operational
+194.88.240.28
+2001:7f8:18:12::28
+10G
+346
+18
+LINX LON1
+6830
+Operational
+195.66.224.89
+2001:7f8:4::1aae:4
+10G
+346
+299
+NIX.SK
+6830
+Operational
+194.30.187.20
+2001:7f8:91::1a:1
+10G
+346
+64
+NL-ix
+6830
+Operational
+193.239.118.145
+2001:7f8:13::a500:6830:1
+10G
+346
+64
+NL-ix
+6830
+Operational
+193.239.118.146
+2001:7f8:13::a500:6830:2
+10G
+346
+713
+Peering.cz
+6830
+Operational
+91.213.211.181
+2001:7f8:7f::181
+10G
+346
+50
+VIX
+6830
+Operational
+193.203.0.8
+2001:7f8:30:0:2:1:0:6830
+10G
+Private Peering Facilities
+Facility
+ASN
+Country
+City
+No filter matches.
+You may filter by Facility, ASN, Country or City.
+2383
+346
+ATMAN Data Center Warsaw-2 (WAW-2, Konstruktorska 5)
+6830
+Poland
+Warsaw
+10702
+346
+Beyond.pl - DC1 / Poznan
+6830
+Poland
+Poznan
+2602
+346
+EdgeConneX Amsterdam (EDCAMS01)
+6830
+Netherlands
+Amsterdam
+6031
+346
+EdgeConneX Warsaw (EDCWAW01)
+6830
+Poland
+Warsaw
+1236
+346
+Equinix AM5 - Amsterdam, Schepenbergweg
+6830
+Netherlands
+Amsterdam
+62
+346
+Equinix AM7 - Amsterdam, Kuiperberweg
+6830
+Netherlands
+Amsterdam
+7
+346
+Equinix CH1/CH2/CH4 - Chicago
+6830
+United States of America
+Chicago
+164
+346
+Equinix DB1 - Dublin, CityWest
+6830
+Ireland
+Dublin
+1
+346
+Equinix DC1-DC15 - Ashburn
+6830
+United States of America
+Ashburn
+60
+346
+Equinix FR5 - Frankfurt, KleyerStrasse
+6830
+Germany
+Frankfurt
+139
+346
+Equinix GV1 - Geneva, City
+6830
+Switzerland
+Geneva
+45
+346
+Equinix LD8 - London, Docklands
+6830
+United Kingdom
+London
+15
+346
+Equinix MI1 - Miami, NOTA
+6830
+United States of America
+Miami
+38
+346
+Equinix NY9 - New York, 111 8th Avenue
+6830
+United States of America
+New York
+6
+346
+Equinix SV1/SV5/SV10 - Silicon Valley, San Jose
+6830
+United States of America
+San Jose
+509
+346
+Equinix WA1 - Warsaw, Centrum LIM
+6830
+Poland
+Warsaw
+833
+346
+Equinix ZH4 - Zurich
+6830
+Switzerland
+Zurich
+177
+346
+Interxion Dublin (DUB1 & DUB2)
+6830
+Ireland
+Dublin
+58
+346
+Interxion Frankfurt (FRA1-15)
+6830
+Germany
+Frankfurt
+67
+346
+Interxion Vienna (VIE1, VIE2)
+6830
+Austria
+Vienna
+462
+346
+LIM Warsaw
+6830
+Poland
+Warsaw
+18
+346
+NIKHEF Amsterdam
+6830
+Netherlands
+Amsterdam
+465
+346
+Sitel Bratislava
+6830
+Slovakia
+Bratislava
+835
+346
+Telehouse - London (Docklands West)
+6830
+United Kingdom
+London
+53
+346
+Telehouse - Paris 2 (Voltaire - LÃ©on Frot)
+6830
+France
+Paris
+Cancel
+Save
+Operational
+© 2004-2021 PeeringDB
+All Rights Reserved. By using this service, you agree to adhere to our
+AUP.
+2.27.1 - Privacy Policy
+About
+Register
+Search
+Sponsors
+Resources
+API
+Documentation
+FAQ
+Governance
+Status
+Contact Us
+support@peeringdb.com
+Global System Statistics
+891 Exchanges
+22480 Networks
+4165 Facilities
+39930 Connections to Exchanges
+35857 Connections to Facilities
+4253 Automated Networks

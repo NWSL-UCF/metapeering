@@ -1,0 +1,630 @@
+Peering Policy - Hurricane Electric Internet Services
+Services
+Colocation
+Get Quote
+Dedicated Server
+Get Quote
+IP Transit
+Get Quote
+Information
+About Us
+Network
+Products Overview
+News
+Legal
+Contacts
+FAQ
+Customer Login
+Hurricane Electric Peering Policy
+Hurricane Electric Peering Requirements
+Hurricane Electric is willing to peer (IPv4 and IPv6) with networks which are connected
+to one or more exchange points which we have in common.
+If you require a more formal agreement, contact us and we will make arrangements.
+We will announce to you via BGP4 any routes which we carry and will listen to any routes
+that you carry. Our peering policy is simple, if you peer with Hurricane, we expect the
+following:
+Only send us traffic that is destined for the prefixes we announce to you. Do not point
+default at us or use static routes to send us traffic that does not match the routes we
+announce to you.
+Hurricane Electric will generally announce consistent routes at each exchange point
+and expects peers to generally do the same.
+We understand that due to submarine cable faults
+or other reasons you may need to temporarily vary your announcements.
+Hurricane Electric expects you to peer at all exchange fabrics we have in common if we
+peer with you via public exchanges or all facilities we have in common if we peer via
+private interconnect with you. In other words, if you are peering in the US, Asia and Europe
+at the same locations as Hurricane you must peer with Hurricane at all those locations.
+This is to prevent problems for your and our US and European customers so that customer
+traffic does not cross the Pacific or Atlantic twice to return back to the same continent.
+Hurricane Electric sets up IPv6 peering (along with IPv4 peering) with all networks that
+run both protocols.
+Network Information (Registered at PeeringDB and RADb)
+Any network is welcome to contact Hurricane Electric via email at peering@he.net
+to discuss peering.
+Please include your ASN and peering point locations.
+An up-to-date peeringDB entry is nearly always
+required.
+General Peering Information
+ASNAS6939
+AS-SETAS-HURRICANE, AS-HURRICANEv6
+Max Prefix IPv4195000
+Max Prefix IPv6120000
+Peering Informationhttp://he.net/peering.html
+Peering PolicyOpen (for both IPv6 & IPv4)
+Public Peering LocationsSee below
+Private Peering LocationsSee Network Locations Page
+Peering Contact Information
+Peering Contactpeering@he.net
+NOC Contactnoc@he.net or +1 510-580-4100 (24 hours a day by 7 days by 365 days)
+PeeringDBhttp://as6939.peeringdb.com/ (contains full contact information)
+INOC-DBA VoIP Access6939 * 121
+Postal AddressHurricane Electric760 Mission Court,Fremont, CA 94539, USA
+Hurricane Electric Exchange Point Information
+Hurricane Electric strives to provide uncongested bandwidth at all exchange points.
+All exchange port bandwidth is monitored and kept within acceptable levels.
+The network is upgraded constantly and in some case very large peers are moved onto
+private peering sessions.
+When requesting peering with Hurricane Electric at multiple locations, we also request that
+backbone operators provide enough backhaul bandwidth to handle their peering bandwidth needs.
+Check back regularly for additional peering exchanges
+ExchangeLocationSpeedIPv4IPv6
+Peering and Transit Locations in North America
+MGMixMontgomery, AL,
+USA2x10GigE206.53.200.302001:504:59::30
+48 IXPhoenix, AZ,
+USA10GigE149.112.3.122001:504:14::6939:1
+CyrusOnePhoenix, AZ,
+USA2x10GigE198.32.98.372001:478:98::37
+DRTPhoenix, AZ,
+USA10GigE198.32.186.202001:478:186::20
+Phoenix IXPhoenix, AZ,
+USA4x10GigE206.41.105.142001:504:3b::14
+FCIXFremont, CA,
+USA10GigE206.80.238.92001:504:91::9
+EquinixLos Angeles, CA,
+USA2x100GigE206.223.123.372001:504:0:3::6939:1
+MegaIXLos Angeles, CA,
+USA10GigE206.53.172.152606:a980:0:5::f
+NYIIXLos Angeles, CA,
+USA10GigE198.32.146.502001:504:a::a500:6939:1
+NASA-AIXMountain View, CA,
+USAGigE198.32.136.442001:478:6663:200::44
+EquinixPalo Alto, CA,
+USA100GigE198.32.176.202001:504:d::10
+SFMIXSan Francisco, CA,
+USA100GigE206.197.187.122001:504:30::ba00:6939:1
+AMS-IX BASan Jose, CA,
+USA2x10GigE206.41.106.272001:504:3d:1:0:a500:6939:1
+EquinixSan Jose, CA,
+USA2x100GigE206.223.116.372001:504:0:1::6939:1
+Any2West, CA,
+USA3x100GigE206.72.210.1222001:504:13::210:122
+Any2Denver, CO,
+USA100GigE206.51.46.692605:6c00:303:303::69
+IX-DenverDenver, CO,
+USA100GigE206.53.175.192001:504:58::19
+JXIXJacksonville, FL,
+USA10GigE206.123.7.252001:504:95::25
+EquinixMiami, FL,
+USA100GigE198.32.242.1762001:504:0:6::6939:1
+FL-IXMiami, FL,
+USA100GigE206.41.108.232001:504:40:108::1:23
+TPAIXTampa, FL,
+USA2x10GigE206.108.114.222001:504:3c::22
+CIX-ATLAtlanta, GA,
+USA100GigE206.71.12.202001:504:40:12::1:20
+DRTAtlanta, GA,
+USA2x100GigE198.32.132.752001:478:132::75
+EquinixAtlanta, GA,
+USA100GigE198.32.182.652001:504:10::6939:1
+SNAPAtlanta, GA,
+USA10GigE206.123.24.1092001:504:28::9
+DRF-IXHonolulu, HI,
+USA10GigE206.197.210.492606:7c80:3375:50::49
+QCIXDavenport, IA,
+USA10GigE206.83.43.302001:504:9b::30
+AMS-IXChicago, IL,
+USA100GigE206.108.115.132001:504:38:1:0:a500:6939:1
+Any2Chicago, IL,
+USA10GigE206.51.43.132001:504:13:4::13
+ChIXChicago, IL,
+USA4x10GigE206.41.110.282001:504:41:110::28
+DE-CIXChicago, IL,
+USA100GigE149.112.11.22001:504:102::1b1b:0:1
+DRTChicago, IL,
+USA10GigE206.83.11.152001:504:17:11::15
+EquinixChicago, IL,
+USA4x100GigE208.115.136.372001:504:0:4::6939:1
+MidWest-IX IndyIndianapolis, IN,
+USA10GigE206.53.139.332001:504:45:f3e8::1f
+Boston IXBoston, MA,
+USA3x10GigE206.108.236.302001:504:24:1::1b1b:1
+Mass IXBoston, MA,
+USA10GigE206.53.143.42001:504:47::1b1b:0:1
+NNENIXPortland, ME,
+USA2x10GigE206.71.140.1012001:504:76:1020::65
+DET-IXDetroit, MI,
+USA2x10GigE209.124.52.272607:f790:100::27
+MICEMinneapolis, MN,
+USA2x100GigE206.108.255.522001:504:27::1b1b:0:1
+KCIXKansas City, MO,
+USA100GigE206.51.7.52001:504:1b:1::5
+STLIXSaint Louis, MO,
+USA10GigE206.83.12.52001:504:98::5
+MidWest-IX STLSt. Louis, MO,
+USA10GigE206.71.10.52001:504:45:10::5
+OmahaIXOmaha, NE,
+USA10GigE206.126.235.202001:504:33::14
+ABQIXAlbuquerque, NM,
+USA10GigE206.83.42.62001:504:9a::6
+Vegas-IXLas Vegas, NV,
+USA10GigE206.71.8.102001:504:68::10
+TahoeIXNorthern Nevada, NV,
+USA10GigE206.41.109.222001:504:3f::1b1b
+DE-CIXNew York, NY,
+USA4x10GigE206.82.104.82001:504:36::1b1b:0:1
+DRTNew York, NY,
+USA100GigE206.126.115.172001:504:17:115::17
+EquinixNew York, NY,
+USA100GigE198.32.118.572001:504:f::39
+NYIIXNew York, NY,
+USA2x100GigE198.32.160.612001:504:1::a500:6939:1
+MidWest-IX ClevelandColumbus, OH,
+USA2x10GigE206.82.109.72001:504:97::7
+OhioIXColumbus, OH,
+USA2x10GigE206.53.204.192001:504:64:100::19
+iX-OKCOklahoma City, OK,
+USA2x10GigE206.81.109.72001:504:92::7
+NWAXPortland, OR,
+USA3x10GigE198.32.195.422620:124:2000::42
+NYIIXPhiladelphia, PA,
+USA10GigE206.51.30.612001:504:1:9:0:a500:6939:1
+PhillyIXPhiladelphia, PA,
+USA10GigE206.80.234.62001:504:90::6
+PIT-IXPittsburgh, PA,
+USA10GigE206.71.141.232001:504:77::23
+NashIXNashville, TN,
+USA10GigE209.141.110.42607:f778:1:fe00::4
+CyrusOneDallas, TX,
+USA10GigE198.32.130.352001:478:130::6939:1
+DE-CIXDallas, TX,
+USA100GigE206.53.202.32001:504:61::1b1b:0:1
+DRTDallas, TX,
+USA10GigE206.126.114.232001:504:17:114::23
+EquinixDallas, TX,
+USA3x100GigE206.223.118.372001:504:0:5::6939:1
+MegaIXDallas, TX,
+USA10GigE206.53.174.142606:a980:0:7::e
+CyrusOneHouston, TX,
+USA2x10GigE198.32.96.262001:478:96::26
+HOUIXHouston, TX,
+USA10GigE206.83.136.52001:504:9e::5
+SAT-IXSan Antonio, TX,
+USA100GigE206.83.14.62001:504:99::6
+SLIXSalt Lake City, UT,
+USA4x10GigE149.112.13.312001:504:105::31
+DRTAshburn, VA,
+USA10GigE206.83.10.112001:504:17:10::11
+EquinixAshburn, VA,
+USA3x100GigE206.126.236.372001:504:0:2::6939:1
+MegaIXAshburn, VA,
+USA10GigE206.53.170.152606:a980:0:3::f
+RVA-IXAshland, VA,
+USA10GigE206.53.137.342001:504:44::6939:1
+Any2East, VA,
+USA10GigE206.51.40.402001:504:13:1::40
+DACS-IXEast, VA,
+USA10GigE206.83.44.182602:ffa9::e:12:18
+LINX NoVAReston, VA,
+USA2x10GigE206.55.196.342001:504:31::1b1b:1
+EquinixSeattle, WA,
+USA3x10GigE198.32.134.522001:504:12::6939:1
+MegaIXSeattle, WA,
+USA10GigE206.53.171.112606:a980:0:4::b
+SIXSeattle, WA,
+USA2x100GigE206.81.80.402001:504:16::1b1b
+SIX 9000Seattle, WA,
+USA100GigE206.81.82.402001:504:16:1::1b1b
+SpokaneIXSpokane, WA,
+USA2x10GigE206.83.139.92001:504:9f::9
+MADIXMadison, WI,
+USA10GigE144.92.233.2442607:f388:0:2200::b
+YYCIXCalgary, AB,
+Canada2x10GigE206.126.225.202001:504:2f::6939:1
+YEGIXEdmonton, AB,
+Canada10GigE206.53.140.1072001:504:46::6939:1
+MBIXWinnipeg, MB,
+Canada10GigE206.72.208.132001:504:26::6939:1
+WPGIXWinnipeg, MB,
+Canada10GigE206.126.109.202001:504:2c::20
+MonctonIXMoncton, NB,
+Canada10GigE206.71.137.72001:504:37:30::70
+HFXIXHalifax, NS,
+Canada10GigE206.130.15.242001:504:37:10::240
+EquinixToronto, ON,
+Canada10GigE198.32.181.522001:504:d:80::6939:1
+MegaIXToronto, ON,
+Canada10GigE206.53.203.62606:a980:0:8::6
+OGIXToronto, ON,
+Canada10GigE206.82.110.132001:504:96::110:13
+TORIXToronto, ON,
+Canada2x100GigE206.108.34.1122001:504:1a::34:112
+QIXMontreal, QC,
+Canada100GigE198.179.18.52001:504:2d::18:5
+YXEIXSaskatoon, SK,
+Canada10GigE206.71.11.152001:504:69:8000::400
+UNMETERED.ExchangeVancouver, VC,
+Canada10GigE192.34.27.62602:ffb1:200:0:192:34:27:6
+VANIXVancouver, VC,
+Canada2x10GigE206.41.104.272001:504:39::27
+Peering and Transit Locations in South America
+IX.br/PTTRio,
+Brazil100GigE45.6.54.382001:12f8:0:2::54:38
+EquinixRio de Janeiro,
+Brazil2x10GigE142.215.8.92001:504:0:a::6939:1
+PTTSao Paulo,
+Brazil100GigE187.16.221.1972001:12f8::221:197
+EquinixSÃ£o Paulo,
+Brazil2x10GigE64.191.232.762001:504:0:7::4c
+EquinixBogota,
+Colombia10GigE208.115.128.102001:504:0:10::6939:1
+Peering and Transit Locations in Europe
+IXLeeds,
+England10GigE91.217.231.462001:7f8:67::1b1b:1
+EquinixLondon,
+England2x10GigE185.1.104.402001:7f8:be::6939:1
+LINX London,
+England2x100GigE195.66.224.212001:7f8:4:0::1b1b:1
+LINX ScotlandLondon,
+England10GigE195.66.246.332001:7f8:4:3::1b1b:1
+LoNAPLondon,
+England4x10GigE5.57.80.1282001:7f8:17::1b1b:1
+EquinixManchester,
+England2x10GigE185.1.101.282001:7f8:bc::6939:1
+IXManchesterManchester,
+England10GigE195.66.244.62001:7f8:4:2::1b1b:1
+VIXVienna,
+Austria5x10GigE193.203.0.1852001:7f8:30:0:2:1:0:6939
+BNIXBrussels,
+Belgium2x10GigE194.53.172.332001:7f8:26::a500:6939:1
+BelgiumIXBrussels,
+Belgium2x10GigE185.1.127.232001:7f8:d2::23
+B-IXBalkans,
+Bulgaria10GigE217.174.157.312001:7f8:8e::31
+T-CIXBulgaria,
+Bulgaria10GigE185.1.40.262001:7f8:98::26
+BIX.BGSofia,
+Bulgaria2x10GigE193.169.198.702001:7f8:58::1b1b:0:1
+MegaIXSofia,
+Bulgaria10GigE91.212.235.552001:7f8:9f::a:6939:1
+NetIXSofia,
+Bulgaria10GigE193.218.0.892001:67c:29f0::6939:1
+CIXZagreb,
+Croatia10GigE185.1.87.702001:7f8:28::38:0
+NIX.CZPrague,
+Czech Republic4x10GigE91.210.16.2012001:7f8:14::6e:1
+Peering.czPrague,
+Czech Republic2x100GigE91.213.211.1182001:7f8:7f::118
+DIXCopenhagen,
+Denmark10GigE192.38.7.382001:7f8:1f::6939:38:0
+NetnodCopenhagen,
+Denmark10GigE10GigE212.237.193.187212.237.192.1872001:7f8:d:203::1872001:7f8:d:202::187
+STHIXCopenhagen,
+Denmark2x10GigE185.1.88.462001:7f8:b0::6939:1
+PITER-IXTallinn,
+Estonia10GigE37.9.49.14-
+RTIXTallinn,
+Estonia10GigE213.184.52.352001:7f8:50:1:0:1b1b:0:35
+TLLIXTallinn,
+EstoniaGigE195.137.179.622001:7f8:39:1:0:1b1b::62
+EquinixHelsinki,
+Finland2x10GigE185.1.86.122001:7f8:af::6939:1
+FICIXHelsinki,
+Finland10GigE193.110.224.332001:7f8:7:b::6939:1
+DE-CIXMarseille,
+France2x10GigE185.1.47.22001:7f8:36::1b1b:0:1
+France-IXMarseille,
+France2x10GigE37.49.232.132001:7f8:54:5::13
+EquinixParis,
+France3x10GigE195.42.144.1042001:7f8:43::6939:1
+France-IXParis,
+France6x10GigE37.49.236.102001:7f8:54::10
+BCIXBerlin,
+Germany2x10GigE193.178.185.342001:7f8:19:1::1b1b:1
+ECIXBerlin,
+Germany2x10GigE194.9.117.512001:7f8:8:5:0:1b1b:0:1
+ECIXDusseldorf,
+Germany10GigE194.146.118.802001:7f8:8::1b1b:0:1
+DE-CIXDÃ¼sseldorf,
+Germany10GigE185.1.170.172001:7f8:9e::1b1b:0:1
+DE-CIXFrankfurt,
+Germany3x100GigE80.81.192.1722001:7f8::1b1b:0:1
+ECIXFrankfurt,
+Germany3x10GigE62.69.146.182001:7f8:8:20:0:1b1b:0:1
+EquinixFrankfurt,
+Germany2x10GigE185.1.102.412001:7f8:bd::6939:1
+KleyReXFrankfurt,
+Germany10GigE193.189.82.1342001:7f8:33::a100:6939:1
+LocIXFrankfurt,
+Germany10GigE185.1.167.692001:7f8:f2:e1::6939:1
+STACIXFrankfurt,
+Germany10GigE185.1.180.132001:7f8:fd::13
+BREM-IXHamburg,
+Germany10GigE185.1.35.132001:7f8:92::6939:0:1
+DE-CIXHamburg,
+Germany2x10GigE80.81.203.552001:7f8:3d::1b1b:0:1
+ECIXHamburg,
+Germany10GigE193.42.155.322001:7f8:8:10:0:1b1b:0:1
+DE-CIXMunich,
+Germany100GigE80.81.202.302001:7f8:44::1b1b:0:1
+ECIXMunich,
+Germany2x10GigE194.59.190.692001:7f8:2c:1000:0:1b1b:0:1
+GR-IXAthens,
+Greece2x10GigE176.126.38.472001:7f8:6e::47
+SEECIXAthens,
+Greece2x10GigE185.1.172.42001:7f8:f5::1b1b:0:1
+BIXBudapest,
+Hungary2x10GigE193.188.137.1752001:7f8:35::6939:1
+EquinixDublin,
+Ireland2x10GigE185.1.109.252001:7f8:c3::6939:3
+INEX-LAN1Dublin,
+Ireland10GigE185.6.36.692001:7f8:18::69
+INEX-LAN2Dublin,
+Ireland10GigE194.88.240.852001:7f8:18:12::85
+EquinixMilan,
+Italy2x10GigE185.1.106.242001:7f8:c0::6939:1
+MINAPMilan,
+Italy2x10GigE185.1.114.202001:7f8:c5::a500:6939:1
+MIXMilan,
+Italy4x10GigE217.29.66.1252001:7f8:b:100:1d1:a5d0:6939:125
+NaMeXMilan,
+Italy10GigE193.201.28.592001:7f8:10::6939
+VSIXPadova,
+Italy10GigE185.1.115.532001:7f8:5f:ffff::53
+TOP-IXTurin,
+Italy10GigE194.116.96.872001:7f8:23:ffff::87
+PITER-IXRiga,
+Latvia2x10GigE193.27.39.47-
+SMILE-LVRiga,
+Latvia10GigE195.246.227.492001:7f8:16::6939:1
+BALT-IXVilnius,
+Lithuania10GigE77.241.206.252001:1ab8:8486::25
+LITIXVilnius,
+Lithuania10GigE185.1.113.362001:7f8:c4::6939:1
+LIXPVilnius,
+Lithuania10GigE185.1.92.202001:7f8:b4:4b:5295:1b1b:0:1
+LU-CIXLuxembourg,
+Luxembourg10GigE188.93.170.432001:7f8:4c::1b1b:1
+FIXOOslo,
+Norway10GigE91.198.176.692001:7f8:41:0:1:69:39:1
+NIXOslo,
+Norway10GigE185.1.55.902001:7f8:12:1::6939
+POZIXPoznan,
+Poland10GigE185.1.4.642001:7f8:4b::40
+EquinixWarsaw,
+Poland5x10GigE195.182.218.1972001:7f8:42::a500:6939:1
+THINXWarsaw,
+Poland10GigE212.91.0.502001:7f8:60::13:6
+TPIXWarsaw,
+Poland10GigE195.149.232.1332001:7f8:27::6939:1
+IX.LODZ.PLÅÃ³dÅº,
+Poland10GigE193.151.115.200-
+DE-CIXLisbon,
+Portugal2x10GigE185.1.131.12001:7f8:d5::1b1b:0:1
+EquinixLisbon,
+Portugal2x10GigE185.1.116.232001:7f8:c7::6939:1
+GigaPixLisbon,
+Portugal2x10GigE193.136.250.252001:7f8:a:1::25
+Balcan-IXBucharest,
+Romania10GigE80.97.248.632a02:d10:80::16
+InterLANBucharest,
+Romania2x10GigE86.104.125.692001:7f8:64:225::6939:1
+RoNIXBucharest,
+Romania10GigE185.1.103.902001:7f8:49::90
+MSK-IXMoscow,
+Russian Federation2x100GigE195.208.210.402001:7f8:20:101::210:40
+PITER-IXMoscow,
+Russian Federation2x10GigE185.1.160.1172001:7f8:eb::1b1b:1
+DataIXSt. Petersburg,
+Russian Federation2x100GigE178.18.224.2292a03:5f80:4::224:229
+DataIX-2St. Petersburg,
+Russian Federation2x100GigE178.18.230.732a03:5f80:7::230:73
+PITER-IXSt. Petersburg,
+Russian Federation2x10GigE185.1.152.592001:7f8:e6::1b1b:1
+Global-IXSt.Petersburg,
+Russian Federation2x100GigE109.239.136.1552001:b28:3ff::1b1b:0:1
+SOXBelgrade/Serbia,
+Serbia10GigE185.1.27.632001:7f8:1e::63
+NIX.SKBratislava,
+Slovakia10GigE194.30.187.2012001:7f8:91::31:1
+SIX.SKBratislava,
+Slovakia10GigE192.108.148.1152001:7f8:2f::115
+SIXLjubljana,
+Slovenia100GigE91.220.194.1392001:7f8:46::6939
+CATNIXBarcelona,
+Spain10GigE193.242.98.1512001:7f8:2a:0:2:1:0:6939
+EquinixBarcelona,
+Spain2x10GigE185.1.143.222001:7f8:de::6939:1
+IXPlayGranada,
+Spain10GigE185.1.90.14-
+DE-CIXMadrid,
+Spain3x10GigE185.1.68.472001:7f8:a0::1b1b:0:1
+ESPANIX LowerMadrid,
+Spain10GigE193.149.1.1132001:7f8:f::61
+ESPANIX UpperMadrid,
+Spain10GigE185.79.175.2442001:7f8:f:1::61
+EquinixMadrid,
+Spain2x10GigE185.1.22.262001:7f8:c6::6939:1
+EquinixStockholm,
+Sweden2x10GigE185.1.107.332001:7f8:c1::6939:1
+Netnod BlueStockholm,
+Sweden4x10GigE194.68.128.1872001:7f8:d:fe::187
+Netnod Blue 4470Stockholm,
+Sweden4x10GigE195.69.119.1872001:7f8:d:fb::187
+Netnod GreenStockholm,
+Sweden4x10GigE194.68.123.1872001:7f8:d:ff::187
+Netnod Green 4470Stockholm,
+Sweden4x10GigE195.245.240.1872001:7f8:d:fc::187
+SOLIXStockholm,
+Sweden10GigE193.110.13.1012001:7f8:21:9::101
+SOLIX 4470Stockholm,
+Sweden10GigE193.110.12.1012001:7f8:21:10::101
+STHIXStockholm,
+Sweden2x10GigE192.121.80.1622001:7f8:3e::a500:0:6939:1
+CHIX-CHFrauenfeld,
+Switzerland10GigE185.1.59.1372001:7f8:cc:333::137
+CIXPGeneva,
+Switzerland10GigE192.65.185.1432001:7f8:1c:24a::1b1b:1
+EquinixZurich,
+Switzerland10GigE194.42.48.802001:7f8:c:8235:194:42:48:80
+SwissIXZurich,
+Switzerland2x10GigE91.206.52.1702001:7f8:24::aa
+AMS-IXAmsterdam,
+The Netherlands3x100GigE80.249.209.1502001:7f8:1::a500:6939:1
+AsteroidAmsterdam,
+The Netherlands100GigE185.1.94.162001:7f8:b6::1b1b:1
+EquinixAmsterdam,
+The Netherlands2x10GigE185.1.112.332001:7f8:83::6939:1
+NL-IXAmsterdam,
+The Netherlands100GigE193.239.116.142001:7f8:13::a500:6939:1
+SPEED-IXDronten,
+The Netherlands9x10GigE185.1.95.62001:7f8:b7::a500:6939:1
+LSIXThe Hague,
+The Netherlands2x10GigE185.1.32.172001:7f8:8f::a500:6939:1
+DE-CIXIstanbul,
+Turkey3x10GigE185.1.48.162001:7f8:3f::1b1b:0:1
+CLOUD-IXKiev,
+Ukraine2x10GigE31.28.16.692a00:13c0:3:3::1f1c:1045
+DTEL-IXKiev,
+Ukraine4x10GigE193.25.180.962001:7f8:63::60
+GigaNETKiev,
+Ukraine3x10GigE185.1.62.2302001:7f8:6c::230
+UA-IXKiev,
+Ukraine10GigE185.1.50.2072001:7f8:5d::207
+PITER-IXÐÐ¸ÐµÐ²,
+Ukraine10GigE146.185.252.372001:7f8:109::1b1b:1
+Peering and Transit Locations in Africa
+DjIXDjibouti,
+Djibouti10GigE196.223.38.2062001:43f8:9c1:1::206
+AsteroidMombasa,
+Kenya10GigE196.60.66.142001:7f8:b6:2::1b1b:1
+KIXPMombasa,
+Kenya10GigE196.60.68.282001:43f8:c0:1::28
+KIXPNairobi,
+Kenya10GigE196.223.21.742001:43f8:60:1::74
+CINXCape Town,
+South Africa10GigE196.223.22.1082001:43f8:1f1::108
+NAPAfricaCape Town,
+South Africa2x10GigE196.60.70.1652001:43f8:6d1::165
+DINXDurban,
+South Africa10GigE196.223.30.1082001:43f8:1f2::108
+NAPAfricaDurban,
+South Africa2x10GigE196.10.141.422001:43f8:6d2::42
+JINXJohannesburg,
+South Africa10GigE196.223.14.1082001:43f8:1f0::108
+NAPAfricaJohannesburg,
+South Africa3x10GigE196.60.8.422001:43f8:6d0::42
+Peering and Transit Locations in Asia
+CNXPhnom Penh,
+Cambodia10GigE103.7.144.202001:de8:1d::20
+AMS-IXHong Kong,
+HK, China10GigE103.247.139.62001:df0:296::a500:6939:1
+BBIXHong Kong,
+HK, China3x10GigE103.203.158.512403:c780:b800:bb00::6939:2
+EquinixHong Kong,
+HK, China100GigE36.255.56.82001:de8:7::6939:1
+HKIXHong Kong,
+HK, China100GigE123.255.91.1582001:7fa:0:1::ca28:a19e
+IAIXHong Kong,
+HK, ChinaGigE210.184.127.402403:2400:1100::40
+BBIXOsaka,
+Japan10GigE218.100.9.262001:de8:c:2::6939:1
+EquinixOsaka,
+Japan10GigE203.190.227.142001:de8:5:1::6939:1
+JPIXOsaka,
+Japan10GigE103.246.232.402001:de8:8:6::6939:1
+JPNAPOsaka,
+Japan10GigE210.173.184.702001:7fa:7:2::6939:1
+BBIXTokyo,
+Japan100GigE218.100.6.742001:de8:c::6939:1
+EquinixTokyo,
+Japan100GigE203.190.230.402001:de8:5::6939:1
+JPIXTokyo,
+Japan4x10GigE210.171.224.402001:de8:8::6939:1
+JPNAPTokyo,
+Japan3x10GigE210.173.176.1062001:7fa:7:1::6939:1
+KINXSeoul,
+Korea (South)10GigE192.145.251.322001:7fa:8::34
+JBIXKuala Lumpur,
+Malaysia2x10GigE103.162.254.632001:df6:480::1b1b:0:1
+MyIXKuala Lumpur,
+Malaysia100GigE218.100.44.1202001:de8:10::ac
+PhOpenIX-ManilaManila,
+Philippines10GigE198.32.172.1412001:478:172::141
+BBIXSingapore,
+Singapore2x10GigE103.231.152.472001:df5:b800:bb00::6939:1
+EquinixSingapore,
+Singapore4x100GigE27.111.228.812001:de8:4::6939:1
+MegaixSingapore,
+Singapore2x10GigE103.41.12.92001:ded::9
+SGIXSingapore,
+Singapore100GigE103.16.102.812001:de8:12:100::81
+SOXSingapore,
+Singapore10GigE198.32.141.1632001:de8:d::6939:1
+TPIX-TWTaipei/Taiwan,
+Taiwan10GigE203.163.222.432406:d400:1:133:203:163:222:43
+BKNIXBangkok,
+Thailand10GigE203.159.68.1352001:deb:0:68::135
+Peering and Transit Locations in Middle East
+UAE-IXDubai,
+United Arab Emirates2x10GigE185.1.8.632001:7f8:73::1b1b:0:1
+Peering and Transit Locations in Oceania
+CON-IXBrisbane,
+Australia10GigE103.151.74.52001:df3:b280:1::5
+EdgeIXMelbourne,
+Australia10GigE202.77.90.132001:df0:680:6::d
+EquinixMelbourne,
+Australia10GigE183.177.61.282001:de8:6:1::6939:1
+MegaIXMelbourne,
+Australia10GigE103.26.71.1222001:dea:0:30::7a
+VIC-IXMelbourne,
+Australia10GigE218.100.78.1082001:7fa:11:1:0:1b1b:0:1
+EdgeIXPerth,
+Australia10GigE103.136.102.282001:df0:680:3::1c
+MegaIXPerth,
+Australia10GigE202.12.243.662001:dea:0:50::42
+WA-IXPerth,
+Australia10GigE198.32.212.102001:7fa:11::1b1b:0:1
+CON-IXSydney,
+Australia10GigE103.151.74.692001:df3:b280:2::5
+EdgeIXSydney,
+Australia10GigE202.77.88.112001:df0:680:5::b
+EquinixSydney,
+Australia10GigE45.127.173.242001:de8:6::6939:1
+MegaIXSydney,
+Australia10GigE103.26.68.2362001:dea:0:10::ec
+NSW-IXSydney,
+Australia10GigE218.100.52.2492001:7fa:11:4:0:1b1b:0:1
+MARIIXMangilao,
+Guam10GigE103.115.193.152001:de9:4000:ff00::d
+AKL-IXAuckland,
+New Zealand10GigE43.243.21.172001:7fa:11:6:0:1b1b:0:1
+APEAuckland,
+New Zealand10GigE192.203.154.1972001:7fa:4:c0cb::9ac5
+MegaIXAuckland,
+New Zealand10GigE43.243.22.822001:dea:0:40::52
+Hurricane Electric Network Map
+All physical peering locations are serviced by multiple 10GbE links and peering routers are
+capable of handling thousands of BGP sessions.
+Each location also provides facilities for private
+peering at GigE or 10GigE levels.
+More information about Hurricane Electric's network can be found here
+Quick Links
+Network Map
+Looking Glass
+Route Server
+Free IPv6 Tunnel Broker
+Global IPv6 Deployment
+Hurricane Electric760 Mission CourtFremont, CA 94539
+Voice +1 510-580-4100Fax +1 510-580-4151Comments? info@he.net
+Copyright © Hurricane Electric.All Rights Reserved

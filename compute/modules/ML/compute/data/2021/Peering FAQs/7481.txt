@@ -1,0 +1,109 @@
+TWIX - Network Architecture
+繁體
+English
+TWIX
+TWIX
+Network Architecture
+Principle of IX
+Quality of Service
+About Us
+Member
+Contact Us
+Service
+Service
+Policies and Guidelines
+Pricing
+Application
+Application
+Application Procedure
+Modification Procedure
+Download
+Network Management Center
+Network Management Center
+TWIX Looking Glass Toolkit
+Traffic Statistics
+Home
+TWIX
+Network Architecture
+Network Architecture
+Peering
+The network architecture of TWIX is composed of Ethernet Switches (E/S) and Route Reflectors (RR). The types of equipment are listed as follows.
+(1) E/S：Providing peering connection of FE/GE/10GE interfaces.
+(2) RR：Providing public peering sessions.
+Policy
+Baseline Protection
+Description
+Bogons and Martians prefixes protection
+defined in RFC1918, RFC5735, RFC6598, and RFC8190
+AS-PATH protection
+defined by RFC5398, RFC6793, RFC6996, RFC7300, RFC7607
+Advanced Protection
+Description
+RPKI validation
+By default, reject invaild. For some special cases, permit it by updating prefix-list.
+Prefixes protection
+1.Filter too-specific Prefixes
+2.Filter default-route
+3.Anti-spoofing of GSN prefixes for unauthorized members
+4.To obtain furthers, please apply for the permission.
+AS-PATH protection
+1.Filter Long Paths
+2.Filter Known Transit Networks in AS Paths
+3.Permit routes origin from members only by default
+4.To obtain furthers, please apply for the permission.
+Satellite Sites
+TWIX in Taipei City is the main site for providing internet exchange service.
+In order to provide a better quality of service, and in a more convinient way, TWIX has also set thtree extensions in other cities in Taiwan, including New Taipei City (Banqiao), Taichung and Kaohsiung. Our clients can choose one of the them to conntect to.
+Note: the extra expense for connecting between extensions will be on clients' end
+Name
+Address
+Taipei(TPDB)
+6F, No.21, section, Hsin-Yi Road, Taipei City, 100, Taiwan, R.O.C
+Banqiao(PCPD)
+No. 8, Guoqing Road, Banqiao District, New Taipei City, 220, Taiwan, R.O.C.
+Taichung(TCWH)
+No. 351, Section 1, Wenxin Road, Nantun District, Taichung City, 408, Taiwan, R.O.C.
+Kaohsiung(SKC1)
+No. 18-2, Zhongshan 1st Road, Xinxing District, Kaohsiung City, 800, Taiwan, R.O.C.
+APNIC
+PeeringDB
+Address: TWIX Workforce Group, Rm. 207, 2F, No.21-3, Sec. 1, Xinyi Rd., Zhongzheng Dist., Taipei City 100, Taiwan
+7x24 Contact: 0800-080-365
+Copyright © 2018 Taiwan Internet Exchange Center All Rights Reserved
+TWIX
+Network Architecture
+Principle of IX
+About Us
+Quality of Service
+Member
+Contact Us
+Service
+Policies and Guidelines
+Pricing
+Service Term
+Application
+Application Procedure
+Modification Procedure
+Download
+Network Management Center
+TWIX Looking Glass Toolkit
+Traffic Statistics
+TWIX
+Network Architecture
+About Us
+Quality of Service
+Member
+Contact Us
+Principle of IX
+Service
+Policies and Guidelines
+Pricing
+Service Term
+Application
+Application Procedure
+Modification Procedure
+Download
+Network Management Center
+TWIX Looking Glass Toolkit
+Traffic Statistics
+繁體中文

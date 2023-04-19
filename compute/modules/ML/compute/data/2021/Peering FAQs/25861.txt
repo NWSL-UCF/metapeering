@@ -1,0 +1,16 @@
+nDeviX // Peering Policy
+This website works best with JavaScript enabled! Here are the
+instructions how to enable JavaScript in your web browser
+Services
+Network
+Account
+Contact
+⌈ Peering Policy
+AS25861 Peering Policy
+nDeviX operates a global network with private availability in multiple regions around the world. nDeviX (AS25861) has an open peering policy at any IX we currently have active connectivity to. Private connectivity is available in multiple locations for traffic regularly exceeding 1Gb/s.
+Requirements:
+You may only send us traffic to prefixes we announce to you.
+We will use Peering DB as an authoritative source for our peers. You must have a valid PeeringDB profile to configure peering with us.
+Please referance our PeeringDB for more information. To initiate peering, please contact us at peering@ndevix.com.
+© 2006-2021 nDeviX Corporation. All Rights Reserved.
+Powered by BACON™.

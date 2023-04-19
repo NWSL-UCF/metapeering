@@ -1,0 +1,1 @@
+Code42 is not yet providing services over IPv6. However, IPv6 peerings are available in most locations to prepare for a future IPv6 deployment.

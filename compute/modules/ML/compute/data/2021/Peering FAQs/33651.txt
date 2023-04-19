@@ -1,0 +1,72 @@
+SETTLEMENT-FREE INTERCONNECTION (SFI) POLICY FOR COMCAST AS7922
+ShopMy AccountMy XfinitySupportComcast BusinessEmailTVHomeInternetVoiceXfinity Mobile
+Search
+Submit search form
+Close search form
+Internet
+Overview
+Internet Deals
+Equipment
+Prepaid Internet
+TV & Streaming
+Overview
+X1 TV
+Flex Streaming
+Channel Lineup
+Add-On Channels
+Latino
+Mobile
+Home Security
+Overview
+Professional Monitoring
+Self Protection
+Home Phone
+Overview
+Features
+Equipment
+All Deals
+All Deals
+TV and Internet
+Find My Deal
+En|Es
+Main content
+Comcast Settlement-Free Interconnection (SFI) Policy
+Applicants not matching this policy may apply for Paid Peering
+Comcast Cable Communications Management, LLC, through its operating subsidiaries ("Comcast"), seeks to interconnect its IP network with other Internet backbone providers on a settlement-free basis when such interconnection provides tangible benefits to Comcast and its customers.
+For purposes of this SFI policy, an Internet Network must be a single Autonomous System (âASNâ).
+The criteria involving traffic measurement below applies to IPv4 and IPv6 and must be met by the Applicant for three consecutive months. To apply for IPv4 or IPv6 settlement-free interconnection with Comcast an email must be sent to peering@comcast.com containing evidence of meeting all criteria listed in the policy. Applicants will be responded to within a reasonable timeframe to discuss their request.
+Networks that do not meet the requirements of the settlement-free interconnection policy, but remain interested in Comcast dedicated internet access services may also address their requests to peering@comcast.com. In this case the subject line of the e-mail should indicate a need for sales assistance. The body of the message should include as many details as possible, such as location and telephone number, to expedite the redirect for assistance.
+IPv4 and IPv6 Settlement-Free Interconnection Requirements for Comcast AS7922
+Applicant must operate a US-wide IP backbone whose links are primarily 10 Gbps or greater.
+Applicant must meet Comcast at a minimum of four mutually agreeable geographically diverse points in the US. Interconnection points must include at least one city on the US east coast, one in the central region, and one on the US west coast, and must currently be chosen from Comcast peering points in the following list of metropolitan areas: New York City/Newark NJ, Ashburn, Atlanta, Miami, Chicago, Denver, Dallas, Los Angeles, Palo Alto/San Jose, and Seattle.
+Applicantâs traffic to/from the Comcast network must be on-net only and must amount to at least 20 Gbps average in the dominant direction. Interconnection bandwidth must be at least 10 Gbps at each interconnection point.
+A network (ASN) that is a customer of a Comcast network for any dedicated IP services may not simultaneously be a settlement-free network peer.
+Applicant must have a professionally managed 24x7 NOC and agree to repair or otherwise remedy any problems within a reasonable timeframe. Applicant must also agree to actively cooperate to resolve security incidents, denial of service attacks, and other operational problems.
+Applicant must maintain responsive abuse contacts for reporting and dealing with UCE (Unsolicited Commercial Email), technical contact information for capacity planning and provisioning and administrative contacts for all legal notices.
+Applicant must agree to participate in joint capacity reviews at pre-set intervals and work towards timely augments as identified.
+Applicant must maintain a traffic scale between its network and Comcast that enables a general balance of inbound versus outbound traffic. The network cost burden for carrying traffic between networks shall be similar to justify SFI.
+Applicant must abide by the following routing policy:
+Applicant must use the same peering AS at each US interconnection point and must announce a consistent set of routes at each point, unless otherwise mutually agreed.
+No transit or third party routes are to be announced; all routes exchanged must be Applicant's and Applicant's customers' routes.
+Applicant must filter route announcements from their customers by prefix.
+Neither party shall abuse the SFI network peering relationship by engaging in activities such as, but not limited to: pointing a default route at the other or otherwise forwarding traffic for destinations not explicitly advertised, resetting next-hop, selling or giving next-hop to others.
+Applicant should be willing to enter into an NDA before formal discussions begin.
+Applicant should be advised that the SFI processes will start with a 90 day trial.
+On successful completion of that trial, a formal interconnect agreement will be processed.
+This agreement will renew annually, subject to the then current SFI Policy.
+During the year if there is a violation of the policy, the agreement and interconnections may be terminated upon written notice to the contacts specified in the agreement.
+Applicant shall not be permitted to offer or sell any IP transit services providing only AS7922.
+Applicant must be financially stable.
+Comcast requires that Applicants seeking SFI in the United States agree to provide reciprocal SFI arrangement with Comcast in the Applicantâs home market.
+Ongoing SFI Reviews with Comcast AS7922
+Meeting the SFI network peering guidelines set forth herein is not a guarantee that an SFI network peering relationship with Comcast will be established.
+Comcast shall evaluate a number of business factors and reserves the right not to enter into a SFI network peering agreement with an otherwise qualified applicant.
+Applicants may apply for settlement-free interconnection once every six (6) months.
+Existing SFI network peers of Comcast will have their status reviewed periodically to ensure that joint capacity planning intervals are sufficient for growth, contacts are refreshed for operations purposes, and all criteria continue to be met.
+Comcast reserves the right to terminate SFI network peering, upon a notice period as determined by the parties' agreement, with peers who do not meet the criteria described above.
+Periodic review of the policies contained here will be conducted to ensure that the criteria and eligibility requirements are consistent with Comcast's business needs.
+Comcast may modify this SFI policy at any time.
+Effective date: October 2013
+Download (PDF)
+The Adobe Acrobat Reader is needed to view the privacy notice. To install this free software, you can download it now.
+I Want ToView & Pay BillCheck Email & VoicemailManage My AccountCheck TV ListingsWatch TV OnlineContact Customer SupportRefer-a-FriendGet AppsCheck Local News & WeatherManage Parental ControlsDownload Norton SecurityManage Users & AlertsReset My PasswordFind My Account NumberMonitor Home SecurityUpgrade My ServiceFind My Xfinity UsernameGet Help & SupportProgram My RemoteSubmit FeedbackFind an Xfinity StoreMove My ServicesShopBundles & PromotionsTVInternetVoiceHomeXfinity MobileCustomer GuaranteeCompare the CompetitionService in my AreaStudent OffersComcast BusinessAbout ComcastAdvertise with UsCareersPress RoomCorporate SiteCustomer Agreements & PoliciesXfinity Internet Broadband DisclosuresXfinity Voice: Use of Personal InfoSocial ResponsibilityPrivacy StatementVisitor AgreementDiscover XfinitySitemapPrivacy StatementVisitor AgreementTwitter - Follow us for exclusive dealsYouTube â Find tutorials and demosFacebook â Reach out on Facebook

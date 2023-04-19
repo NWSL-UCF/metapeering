@@ -1,0 +1,7 @@
+Voxbone does not provide public peering to its customers.
+
+We rather offer private peering in the listed facilities.
+
+However at this time, we're peering with the route server of MegaPort IX in Sydney only and if you want to exchange traffic over there you may also peer with the MegaPort IX route server in Sydney. Please note that we do not offer any guarantee of any kind when peering with IX.
+
+In case of reachability issue please get in touch with our NOC.

@@ -1,0 +1,18 @@
+Limelight Networks uses different ASNs in these markets.
+However, all public peering information is presented in Primary ASN 22822.
+
+Limelight Networks Global - AS 22822;
+
+Limelight Networks South Americas - AS 23059;
+
+Limelight Networks Israel - AS 25804;
+
+Limelight Networks New Delhi - AS 38621;
+
+Limelight Networks Australia - AS 38622;
+
+Limelight Networks Korea - AS 45396;
+
+Limelight Networks India - AS 55429;
+
+Limelight Networks UAE - AS 60261;

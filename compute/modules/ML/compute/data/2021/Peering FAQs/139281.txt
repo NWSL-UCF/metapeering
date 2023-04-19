@@ -1,0 +1,1 @@
+This is for Equinix Connect network. For Equinix Exchange route-server information please see http://as24115.peeringdb.com/

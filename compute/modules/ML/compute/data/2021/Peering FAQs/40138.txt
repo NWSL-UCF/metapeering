@@ -1,0 +1,66 @@
+Mach Dilemma
+Mach Dilemma
+Good stuff for the internet.
+About
+Projects
+Peering
+Contact
+AS40138 Peering
+This network does not peer in the traditional sense.
+If you would like local service, anycast
+nodes can be deployed within your network. Contact us for
+additional details.
+New locations
+Dubai, UAE is now live, as our 40th location.
+South America coverage
+Sao Paulo had been disabled for abouth 2 months while upstream
+providers worked out routing issues. This location is back in
+limited testing. Please email if you are seeing issues.
+A machine readable list of prefixes announced by this network is available
+here.
+Anycast Locations
+Cloud A
+Los Angeles, CA
+Denver, CO
+Phoenix, AZ
+Dallas, TX
+Toronto, Canada
+New York, NY
+Reston, VA
+Miami, FL
+Sao Paulo, Brazil
+London, United Kingdom
+Bucharest, Romania
+Chennai, India
+Hong Kong, Hong Kong
+Singapore, Singapore
+Sydney, Australia
+Dubai, United Arab Emirates
+Cloud B
+Seattle, WA
+San Jose, CA
+Los Angeles, CA (2)
+Dallas, TX (2)
+Chicago, IL
+Newark, NJ
+Atlanta, GA
+Miami, FL (2)
+London, United Kingdom (2)
+Paris, France
+Amsterdam, Netherlands
+Frankfurt, Germany
+Madrid, Spain
+Budapest, Hungary
+Milan, Italy
+Brussels, Belgium
+Vienna, Austria
+Zurich, Switzerland
+Prague, Czech Republic
+Copenhagen, Denmark
+Tokyo, Japan
+Singapore, Singapore (2)
+Sydney, Australia (2)
+- Online
+- Offline
+- Undergoing Maintenance
+Location currently serving you.

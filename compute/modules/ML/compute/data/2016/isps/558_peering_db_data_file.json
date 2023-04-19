@@ -1,0 +1,80 @@
+{
+  "aka": "Net2ez",
+  "asn": 558,
+  "created": "2016-05-26 12:02:37.643656",
+  "id": "525",
+  "info_ipv6": 1,
+  "info_multicast": 0,
+  "info_prefixes4": 120,
+  "info_prefixes6": 6,
+  "info_ratio": "Mostly Outbound",
+  "info_scope": "Regional",
+  "info_traffic": "20-50 Gbps",
+  "info_type": "transit",
+  "info_unicast": 1,
+  "irr_as_set": "AS558:AS-CUSTOMERS",
+  "looking_glass": "",
+  "name": "Net Data Centers, Inc.",
+  "notes": "Always open to expand our peering relationships. IPv4 and IPv6.",
+  "notes_private": "",
+  "org_id": 8855,
+  "policy_contracts": "Not Required",
+  "policy_general": "Open",
+  "policy_locations": "Not Required",
+  "policy_ratio": 0,
+  "policy_url": "",
+  "route_server": "",
+  "status": "ok",
+  "updated": "2016-05-26 12:02:37.643677",
+  "version": 0,
+  "website": "http://www.netdatacenters.com",
+  "pop_list": [
+    {
+      "city": "Los Angeles",
+      "country": "US",
+      "state": "CA",
+      "org_name": "CoreSite",
+      "isp_id_in_peering_db": 19,
+      "location": [
+        34.05,
+        -118.26
+      ],
+      "port_capacity": 11000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Ashburn",
+      "country": "US",
+      "state": "VA",
+      "org_name": "Dupont Fabros Technology",
+      "isp_id_in_peering_db": 408,
+      "location": [
+        39.02,
+        -77.46
+      ],
+      "port_capacity": 2000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.852
+    },
+    {
+      "city": "Piscataway",
+      "country": "US",
+      "state": "NJ",
+      "org_name": "Dupont Fabros Technology",
+      "isp_id_in_peering_db": 1177,
+      "location": [
+        40.56,
+        -74.48
+      ],
+      "port_capacity": 1000,
+      "isp_type_in_peering_db": "fac",
+      "internet_penetration_percentage": 0.8240000000000001
+    }
+  ],
+  "prefixes": 0,
+  "total_prefixes_in_globe": 8388478,
+  "address_space": 0,
+  "total_addresses_in_globe": 22264797636,
+  "neighbor": 0
+}

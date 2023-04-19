@@ -1,0 +1,165 @@
+PeeringDB
+Advanced Search
+Register or Login
+Exchanges ()
+Networks ()
+Facilities ()
+Organizations ()
+Blade US
+Organization
+Blade SAS
+Also Known As
+Blade Shadow is the first high-performance computer based in the cloud.
+Long Name
+Company Website
+https://shadow.tech
+ASN
+396919
+IRR as-set/route-set
+AS-BLADE
+Route Server URL
+Looking Glass URL
+Network Type
+Content
+IPv4 Prefixes
+20
+IPv6 Prefixes
+10
+Traffic Levels
+Not Disclosed
+Traffic Ratios
+Heavy Outbound
+Geographic Scope
+North America
+Protocols Supported
+Unicast IPv4
+Multicast
+IPv6
+Never via route servers
+Last Updated
+2020-08-19T21:44:26Z
+Public Peering Info Updated
+2020-12-21T10:25:22Z
+Peering Facility Info Updated
+2020-12-21T10:25:57Z
+Contact Info Updated
+2019-08-02T16:27:27Z
+Notes
+Peering Policy Information
+Peering Policy
+http://as396919.net/
+General Policy
+Open
+Multiple Locations
+Not Required
+Ratio Requirement
+No
+Contract Requirement
+Not Required
+Contact Information
+Role
+Name
+Visiblity
+Phone
+E-Mail
+18719
+NOC
+NOC
+NOC Team
+noc@blade-group.com
+Public Peering Exchange Points
+Exchange
+ASN
+IPv4
+IPv6
+Speed
+RS Peer
+No filter matches.
+You may filter by Exchange, ASN or Speed.
+18719
+7
+Equinix Palo Alto
+396919
+Operational
+198.32.176.107
+2001:504:d::39:6919:1
+10G
+18719
+5
+Equinix San Jose
+396919
+Operational
+206.223.117.54
+2001:504:0:1:0:39:6919:1
+10G
+18719
+155
+SFMIX
+396919
+Operational
+206.197.187.98
+2001:504:30::ba39:6919:1
+10G
+Private Peering Facilities
+Facility
+ASN
+Country
+City
+No filter matches.
+You may filter by Facility, ASN, Country or City.
+23
+18719
+Digital Realty SFO (365 Main)
+396919
+United States of America
+San Francisco
+36
+18719
+Equinix NY2/NY4/NY5/NY6 - New York, Secaucus
+396919
+United States of America
+Secaucus
+437
+18719
+Equinix SV2 - Silicon Valley, Santa Clara
+396919
+United States of America
+Santa Clara
+7109
+18719
+INAP Dallas
+396919
+United States of America
+Plano
+3362
+18719
+QTS Chicago (CHI1)
+396919
+United States of America
+Chicago
+Cancel
+Save
+Operational
+© 2004-2021 PeeringDB
+All Rights Reserved. By using this service, you agree to adhere to our
+AUP.
+2.27.1 - Privacy Policy
+About
+Register
+Search
+Sponsors
+Resources
+API
+Documentation
+FAQ
+Governance
+Status
+Contact Us
+support@peeringdb.com
+Global System Statistics
+891 Exchanges
+22480 Networks
+4165 Facilities
+39930 Connections to Exchanges
+35857 Connections to Facilities
+4253 Automated Networks

@@ -1,0 +1,221 @@
+Peering Policy - RETN
+English
+Ð ÑÑÑÐºÐ¸Ð¹
+ä¸­å½
+market@retn.net
++44 20 75176400
+About RETN
+Company
+News
+Events
+Careers
+Network
+Network Map
+Network Latency Metrics
+Points of Presence
+Services
+Ð¡apacity
+Internet
+Ethernet & VPN
+Remote IX
+Colocation
+Cloud Connect
+DDoS Protection
+Support
+NOC
+Peering Policy
+Looking Glass
+BGP Communities
+FAQ
+Contacts
+United Kingdom
+Germany
+Netherlands
+Estonia
+Latvia
+Sweden
+Italy
+Hong Kong
+Taiwan
+Russia
+Poland
+Ukraine
+Belarus
+Kazakhstan
+Georgia
+Armenia
+Customer Portal
+About RETN
+Company
+News
+Events
+Careers
+Network
+Network Map
+Network Latency Metrics
+Points of Presence
+Services
+Ð¡apacity
+Internet
+Ethernet & VPN
+Remote IX
+Colocation
+Cloud Connect
+DDoS Protection
+Support
+NOC
+Peering Policy
+Looking Glass
+BGP Communities
+FAQ
+Contacts
+United Kingdom
+Germany
+Netherlands
+Estonia
+Latvia
+Sweden
+Italy
+Hong Kong
+Taiwan
+Russia
+Poland
+Ukraine
+Belarus
+Kazakhstan
+Georgia
+Armenia
+Customer Portal
+Peering Policy
+Home > Peering Policy
+AS9002 peering policy
+Overview
+RETN owns and operates an IP network identified as Autonomous System 9002 with AS-RETN as-set (IPv4) and AS-RETN6 (IPv6).
+Our IP network is directly interconnected with multiple ISPs, NSPs and CSPs. New peering connections are established, only when they are beneficial for RETN and its customers.
+RETN has a restrictive peering policy globally and considers each peering request based upon individual merits. Below are the main principles which determine RETNâs decision regarding the benefits and appropriateness of establishing peering with potential partners.
+We reserve the right to reject a peering request or terminate existing peering relationships if their advantages are not evident to us.
+Basic requirements
+Those who request private peering with RETN, whether over a PNI or IXP, should:
+â¢ Have minimum traffic volumes of 8Gbps with RETN;
+â¢ Have balanced traffic with AS9002, with a minimum ratio of 50%;
+â¢ Have implemented MANRS actions and be a participant of MANRS (manrs.org);
+â¢ Secure a minimum of 10Gbps bandwidth at each interconnection point;
+â¢ Maintain a network consisting of fully redundant N x 100G links with each peering point;
+â¢ Establish interconnection with RETN in 3 separate mutually beneficial locations which are geographically separated by at least 2000km from each other;
+â¢ Be able to react quickly to establish additional capacity to meet traffic growth, and agree to upgrade connections at 70% utilisation;
+â¢ Maintain âfull BGP viewâ at the edge router by means of BGPv4;
+â¢ Announce only its own routes and the routes of its customers to AS9002, but not the routes received from other peers or upstreams;
+â¢ Not announce âmartianâ routes or the default route (0.0.0.0/0) to AS9002;
+â¢ Manage a fully staffed 24Ã7 Network Operational Centre;
+â¢ Provide its escalation matrix upon request in order to be able to quickly resolve possible network issues;
+â¢ Agree RETN peering conditions in a formal interconnection agreement;
+â¢ Be beneficial for RETN and our Customers.
+Main IPv4 / IPv6 exchange points
+Internet Exchange Point
+IPv4
+IPv6
+EUROPE
+AMS-IX, Amsterdam
+195.69.145.216
+2001:7f8:1::a500:9002:1
+B-CIX, Berlin
+193.178.185.64
+2001:7f8:19:1::232a:1
+BIX, Budapest
+193.188.137.153
+2001:7f8:35::9002:1
+BNIX, Brussels
+194.53.172.71
+2001:7f8:26::a500:9002:1
+DE-CIX, Frankfurt
+80.81.192.73
+2001:7f8::232a:0:1
+Espanix, Madrid
+193.149.1.17/25Â Â Â Â Â Â Â Â  193.149.1.176/25
+2001:7f8:f::68/64
+2001:7f8:f:1::68/64
+France-IX, Paris
+193.105.232.17
+2001:7f8:54::17
+INEX, Dublin LAN1
+185.6.36.117
+2001:7f8:18::117
+INEX, Dublin LAN2
+194.88.240.81
+2001:7f8:18:12::81
+LINX, London
+195.66.224.193
+2001:7f8:4::232a:1
+MIX-IT, Milano
+217.29.66.116
+2001:7f8:b:100:1d1:a5d0:9002:116
+Netnod, Stockholm
+194.68.123.157
+194.68.128.157
+2001:7f8:d:ff::157
+2001:7f8:d:fe::157
+SwissIX, Zurich
+91.206.52.143
+2001:7f8:24::8f
+VIX, Vienna
+193.203.0.150
+2001:7f8:30:0:2:1:0:9002
+NORTH AMERICA
+Equinix, Ashburn
+206.126.237.204
+2001:504:0:2::9002:1
+NYIIX, New York
+198.32.160.182
+2001:504:1::a500:9002:1
+ASIA
+BBIX, Tokyo
+218.100.6.32
+2001:de8:c::9002:1
+BBIX, HongKong
+103.203.158.126
+2403:c780:b800:bb00::9002:1
+Equinix, Singapore
+Â 27.111.229.103
+Â 2001:de8:4::9002:1
+HKIX, Hong Kong
+123.255.91.35
+2001:7fa:0:1::ca28:a123
+JPIX, Tokyo
+210.171.225.90
+2001:de8:8::9002:1
+JPNAP, Tokyo
+210.173.176.139
+2001:7fa:7:1::9002:1
+SGIX, Singapore
+103.16.102.152
+2001:de8:12:100::152
+Procedure
+If you wish to peer with AS9002, send us your request to peering@retn.netÂ or via online Peering Contact Form (see below).
+Please, provide your network description and technical details including:
+– ASN
+– as-set (as macro), if available
+– type of traffic carried through your network
+Depending on the traffic levels expected, peering interconnections can be set up as Private Network Interconnections (PNIs) or over public Internet Exchange Points (IXPs).
+In case you do not meet the requirements of RETNâs peering policy, but take a strong interest in RETNâs IP transit service, please contact market@retn.net.
+Peering Contact Form
+FULL NAME
+EMAIL
+COUNTRY
+---AfghanistanÃ
+land IslandsAlbaniaAlgeriaAmerican SamoaAndorraAngolaAnguillaAntarcticaAntigua and BarbudaArgentinaArmeniaArubaAustraliaAustriaAzerbaijanBahamasBahrainBangladeshBarbadosBelarusBelgiumBelizeBeninBermudaBhutanBolivia, Plurinational State ofBonaire, Sint Eustatius and SabaBosnia and HerzegovinaBotswanaBouvet IslandBrazilBritish Indian Ocean TerritoryBrunei DarussalamBulgariaBurkina FasoBurundiCambodiaCameroonCanadaCape VerdeCayman IslandsCentral African RepublicChadChileChinaChristmas IslandCocos (Keeling) IslandsColombiaComorosCongoCongo, the Democratic Republic of theCook IslandsCosta RicaCÃ´te d'IvoireCroatiaCubaCuraÃ§aoCyprusCzech RepublicDenmarkDjiboutiDominicaDominican RepublicEcuadorEgyptEl SalvadorEquatorial GuineaEritreaEstoniaEthiopiaFalkland Islands (Malvinas)Faroe IslandsFijiFinlandFranceFrench GuianaFrench PolynesiaFrench Southern TerritoriesGabonGambiaGeorgiaGermanyGhanaGibraltarGreeceGreenlandGrenadaGuadeloupeGuamGuatemalaGuernseyGuineaGuinea-BissauGuyanaHaitiHeard Island and McDonald IslandsHoly See (Vatican City State)HondurasHong KongHungaryIcelandIndiaIndonesiaIran, Islamic Republic ofIraqIrelandIsle of ManIsraelItalyJamaicaJapanJerseyJordanKazakhstanKenyaKiribatiKorea, Democratic People's Republic ofKorea, Republic ofKuwaitKyrgyzstanLao People's Democratic RepublicLatviaLebanonLesothoLiberiaLibyaLiechtensteinLithuaniaLuxembourgMacaoMacedonia, the former Yugoslav Republic ofMadagascarMalawiMalaysiaMaldivesMaliMaltaMarshall IslandsMartiniqueMauritaniaMauritiusMayotteMexicoMicronesia, Federated States ofMoldova, Republic ofMonacoMongoliaMontenegroMontserratMoroccoMozambiqueMyanmarNamibiaNauruNepalNetherlandsNew CaledoniaNew ZealandNicaraguaNigerNigeriaNiueNorfolk IslandNorthern Mariana IslandsNorwayOmanPakistanPalauPalestine, State ofPanamaPapua New GuineaParaguayPeruPhilippinesPitcairnPolandPortugalPuerto RicoQatarRÃ©unionRomaniaRussian FederationRwandaSaint BarthÃ©lemySaint Helena, Ascension and Tristan da CunhaSaint Kitts and NevisSaint LuciaSaint Martin (French part)Saint Pierre and MiquelonSaint Vincent and the GrenadinesSamoaSan MarinoSao Tome and PrincipeSaudi ArabiaSenegalSerbiaSeychellesSierra LeoneSingaporeSint Maarten (Dutch part)SlovakiaSloveniaSolomon IslandsSomaliaSouth AfricaSouth Georgia and the South Sandwich IslandsSouth SudanSpainSri LankaSudanSurinameSvalbard and Jan MayenSwazilandSwedenSwitzerlandSyrian Arab RepublicTaiwan, Province of ChinaTajikistanTanzania, United Republic ofThailandTimor-LesteTogoTokelauTongaTrinidad and TobagoTunisiaTurkeyTurkmenistanTurks and Caicos IslandsTuvaluUgandaUkraineUnited Arab EmiratesUnited KingdomUnited StatesUnited States Minor Outlying IslandsUruguayUzbekistanVanuatuVenezuela, Bolivarian Republic ofViet NamVirgin Islands, BritishVirgin Islands, U.S.Wallis and FutunaWestern SaharaYemenZambiaZimbabwe
+ASN
+AS SET (AS MACRO)
+SUBJECT
+YOUR ENQUIRY
+By clicking on âSubmitâ you agree that you have read
+our
+Privacy policy
+and
+Cookie Policy
+and that you agree to be bound by them.
+* Mandatory fields
+Â© 2003-2021 RETN Group of companies. RETN Capital ltd.
+Cookie Policy
+Privacy policy
+Legal notice
+Back to top

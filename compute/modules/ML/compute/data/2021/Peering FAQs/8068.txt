@@ -1,0 +1,91 @@
+Microsoft Peering
+This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use. Learn more
+PeeringMenuSearch
+Peering
+Peering is the direct interconnection between Microsoftâs network (AS8075) and
+another network for the purpose of exchanging traffic between these networks.
+Microsoft peers at the Internet Exchanges and peering facilities listed in PeeringDB.
+Process to setup a peering
+We have a new process to setup peering with Microsoft. To get started, please visit the documentation.
+To request a Public Peering (i.e., Exchange Peering), follow the instructions in Create or modify an Exchange Peering using Portal
+To request a PNI Peering (i.e., Direct Peering), follow the instructions in Create or modify a Direct Peering using Portal
+Your experience is important to us. Please share your feedback or questions to improve our services and better meet your needs.
+Peering Policy
+Microsoft has a selective, but generally open peering policy - peers are selected
+based upon performance, capability, and where there is mutual benefit, and are
+subject to certain technical, commercial and legal requirements. Microsoft's general
+technical requirements for peering are:
+A fully redundant network with sufficient capacity to exchange traffic without
+congestion.
+A knowledgeable and fully staffed 24x7x365 Network Operations Center (NOC),
+capable of assisting in the resolution of:
+All technical and performance issues.
+All security violations, denial of service attacks, or any other abuse
+originating within the peer or their customers.
+Microsoft will overwrite received Multi-Exit Discriminators (MEDs) by default.
+Acceptance of MEDs will be evaluated on a case-by-case basis.
+A publicly routable ASN.
+At least one publicly routable /24.
+Current and complete peeringdb.com entry including a 24x7 NOC email role account
+and phone number.
+Neither party shall establish a static route, a route of last resort, or
+otherwise send traffic to the other party for a route not announced via BGP.
+Both IPv4 and IPv6 are supported and Microsoft prefers to establish sessions of
+both types in each peering location.
+Unless specifically agreed upon beforehand, peers are expected to announce
+consistent routes in all locations where they peer with Microsoft.
+Microsoft prefers to receive BGP community-tags from peers to indicate route
+origination. Both parties are expected to register their routes in a public
+Internet Routing Registry (IRR) database, for the purpose of filtering. Both
+parties shall make good faith efforts to keep this information up to date.
+MD5 is not required, nor recommended.
+All parties peering with Microsoft agree not to accept routes from AS12076
+(Express Route) under any circumstances, and should filter out AS12076 on all
+peers.
+Additional Requirements for Private Interconnections
+Interconnection must be over single-mode fiber using the appropriate 10Gbps or
+100Gbps optics.
+Peers are expected to upgrade their ports when peak utilization exceeds 50% and
+maintain diverse capacity in each metro, either within a single location or
+across several locations in a metro.
+Microsoft will only establish private interconnection points with ISP or Network
+Service providers.
+North America and Europe
+At least 2Gbps of traffic.
+Interconnect in at least three geographically diverse locations if feasible and
+maintain diverse capacity to allow traffic to failover within each metro.
+LATAM
+Interconnect in as many diverse locations as possible within country/continent.
+Must maintain sufficient diverse capacity to ensure traffic remains in region.
+Peers may see a regional subset of Microsoft routes.
+APAC
+At least 500Mbps of traffic.
+Interconnect in as many diverse locations as possible within country/region.
+Must maintain sufficient diverse capacity to ensure traffic remains in region.
+Peers may see a regional subset of Microsoft routes.
+Africa & Middle East
+Interconnect in as many diverse locations as possible.
+Must maintain sufficient diverse capacity to ensure traffic remains in region.
+Peers may see a regional subset of Microsoft routes.
+Routing Policy
+In general, peering sessions with AS8075 will advertise all AS-MICROSOFT routes.
+AS8075 interconnects in Africa, LATAM, Middle East and Asia may be limited to routes
+relevant to the respective region.
+Traffic Management
+Where possible, Microsoft prefers to carry traffic on its network to interconnection
+points as close to users as possible. Microsoft recommends that peers advertise all
+of their prefixes over all peering sessions, unless other route advertisement
+policies have been agreed upon.
+Maximum Prefix
+We suggest peers set a max-prefix of 5000 (IPv4) and 500 (IPv6) routes on peering
+sessions with Microsoft.
+Related ASNs
+Microsoft also manages the following ASNs: AS8068, AS8069, AS12076. For a complete
+list of ASNs with AS8075 peering reference AS-SET MICROSOFT.
+Contact us
+Privacy & cookies
+Terms of use
+Trademarks
+About our ads
+Â© 2021 Microsoft
+Created by Edge SRE (edgere@microsoft.com)

@@ -1,0 +1,1 @@
+This is one of the 13 Root DNS Servers. Its service is available from 6 different geographic areas, 10 different topologies by using Anycast technology.

@@ -1,0 +1,1 @@
+Prefixes previously in this ASn have been migrated to AS33915 which is served through Liberty Global - Please see http://as6830.peeringdb.com/ for peering.

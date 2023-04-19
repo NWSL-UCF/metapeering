@@ -1,0 +1,304 @@
+PeeringDB
+Advanced Search
+Register or Login
+Exchanges ()
+Networks ()
+Facilities ()
+Organizations ()
+ANX
+Silver sponsor
+Organization
+ANEXIA Internetdienstleistungs GmbH
+Also Known As
+Anexia
+Long Name
+Company Website
+https://www.anexia.com/
+ASN
+47147
+IRR as-set/route-set
+AS-ANX
+Route Server URL
+https://radar.qrator.net/as47147
+Looking Glass URL
+https://bgp.anexia-it.net/
+Network Type
+NSP
+IPv4 Prefixes
+15000
+IPv6 Prefixes
+5000
+Traffic Levels
+Not Disclosed
+Traffic Ratios
+Balanced
+Geographic Scope
+Global
+Protocols Supported
+Unicast IPv4
+Multicast
+IPv6
+Never via route servers
+Last Updated
+2021-05-05T08:33:00Z
+Public Peering Info Updated
+2021-05-05T08:32:22
+Peering Facility Info Updated
+2020-11-23T11:50:28Z
+Contact Info Updated
+2020-01-28T10:46:00Z
+Notes
+**AS47147 is our global backbone ASN and the primary upstream for the following corporate / group ASNs:**
+AS42473 (Anexia), AS197540 (Netcup), AS42388 (CloudDNS), AS42360 (SSP), AS51453 (Emerion), AS40980 (Telematica)
+Bilateral peering accepted for peers with more than 100 Mbps traffic constantly. PeeringDB record required for new peers. Sessions will be provisioned with filters which will be removed at the end of the turn-up process.
+- Strict filtering applies for all BGP sessions.
+- IRR record required, we filter "or longer".
+- Filters will be updated every 24h automatically.
+- RPKI invalid == reject applies, since 2017 ;-).
+- We do not support MD5 on BGP sessions.
+- IPv6 is mandatory, we will not peer on IPv4 only sessions (IPv6 only is ok)
+Note: We're peering with route servers at IXPs but only accept IRR and RPKI valid prefixes for security reasons.
+10/100GE PNIs (MTU 1500) at the listed datacenters are accepted for sessions with 95/5 > 2.5 / 25 Gbps (in/out).
+Peering requests are only accepted via our peering portal: [https://peering.anexia.com](https://peering.anexia.com). E-Mails to our peering e-mail inbox will be rejected, for technical questions and for existing sessions please contact our NOC.
+Since 01/2020, we're honoring the new "never via route servers" feature and are rejecting all prefixes from those networks on route server sessions.
+Peering Policy Information
+Peering Policy
+https://peering.anexia.com/
+General Policy
+Selective
+Multiple Locations
+Preferred
+Ratio Requirement
+No
+Contract Requirement
+Not Required
+Contact Information
+Some of this network's contacts are hidden because they are only visible to authenticated users and you are currently not logged in.
+Public Peering Exchange Points
+Exchange
+ASN
+IPv4
+IPv6
+Speed
+RS Peer
+No filter matches.
+You may filter by Exchange, ASN or Speed.
+13902
+377
+AAIX
+47147
+Operational
+193.37.144.4
+2001:7f8:4a::4
+20G
+13902
+377
+AAIX
+47147
+Operational
+193.37.144.5
+2001:7f8:4a::5
+20G
+13902
+26
+AMS-IX
+47147
+Operational
+80.249.213.102
+2001:7f8:1::a504:7147:1
+100G
+13902
+1329
+Community-IX
+47147
+Operational
+185.1.74.35
+2001:7f8:a5::4:7147:1
+10G
+13902
+31
+DE-CIX Frankfurt
+47147
+Operational
+80.81.195.166
+2001:7f8::a5e9:0:3
+100G
+13902
+135
+N-IX
+47147
+Operational
+195.85.217.62
+2001:7f8:29:1::62
+20G
+13902
+212
+Stuttgart-IX
+47147
+Operational
+193.138.31.12
+2001:7f8:56::12:1
+10G
+13902
+60
+SwissIX
+47147
+Operational
+91.206.52.5
+2001:7f8:24::5
+10G
+13902
+50
+VIX
+47147
+Operational
+193.203.0.19
+2001:7f8:30:0:1:1:4:7147
+100G
+Private Peering Facilities
+Facility
+ASN
+Country
+City
+No filter matches.
+You may filter by Facility, ASN, Country or City.
+1373
+13902
+Colocation Munich
+47147
+Germany
+Munich
+185
+13902
+Colocation Nuremberg
+47147
+Germany
+Nuremberg
+1298
+13902
+DATASIX Vienna (VIE1)
+47147
+Austria
+Vienna
+60
+13902
+Equinix FR5 - Frankfurt, KleyerStrasse
+47147
+Germany
+Frankfurt
+2401
+13902
+Globalways Stuttgart Gropiusplatz
+47147
+Germany
+Stuttgart
+3250
+13902
+Hetzner Online NBG1 (Nuremberg)
+47147
+Germany
+Nuremberg
+64
+13902
+Interxion Amsterdam Schiphol Rijk (AMS3, AMS5, AMS7, AMS8, AMS10)
+47147
+Netherlands
+Amsterdam
+106
+13902
+Interxion Dusseldorf (DUS1, DUS2)
+47147
+Germany
+DÃ¼sseldorf
+58
+13902
+Interxion Frankfurt (FRA1-15)
+47147
+Germany
+Frankfurt
+67
+13902
+Interxion Vienna (VIE1, VIE2)
+47147
+Austria
+Vienna
+81
+13902
+Interxion Zurich / Glattbrugg
+47147
+Switzerland
+Zurich
+5536
+13902
+Kapsch BusinessCom earthDATAsafe
+47147
+Austria
+PÃ¶tschach
+777
+13902
+Kelag Klagenfurt
+47147
+Austria
+Klagenfurt
+778
+13902
+Klagenfurt Stadtwerke
+47147
+Austria
+Klagenfurt
+3109
+13902
+NDC2 - Nessus Datacenter Vienna 2
+47147
+Austria
+Vienna
+277
+13902
+NTT Frankfurt 1 Data Center (FRA1)
+47147
+Germany
+Frankfurt
+2363
+13902
+NTT Vienna1 Data Center (VIE1)
+47147
+Austria
+Vienna
+66
+13902
+Vienna University Computer Center (Wien)
+47147
+Austria
+Vienna
+890
+13902
+Vienna-Hainburgerstrasse (HS33)
+47147
+Austria
+Wien
+Cancel
+Save
+Operational
+© 2004-2021 PeeringDB
+All Rights Reserved. By using this service, you agree to adhere to our
+AUP.
+2.27.1 - Privacy Policy
+About
+Register
+Search
+Sponsors
+Resources
+API
+Documentation
+FAQ
+Governance
+Status
+Contact Us
+support@peeringdb.com
+Global System Statistics
+891 Exchanges
+22480 Networks
+4165 Facilities
+39930 Connections to Exchanges
+35857 Connections to Facilities
+4253 Automated Networks

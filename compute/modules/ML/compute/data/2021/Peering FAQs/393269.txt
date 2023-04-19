@@ -1,0 +1,247 @@
+PeeringDB
+Advanced Search
+Register or Login
+Exchanges ()
+Networks ()
+Facilities ()
+Organizations ()
+Dailymotion
+Organization
+Dailymotion
+Also Known As
+Dailymotion is a content/video delivery solution for all digital media platforms.
+Long Name
+Company Website
+https://www.dailymotion.com
+ASN
+41690
+IRR as-set/route-set
+AS-DAILYMOTION
+Route Server URL
+Looking Glass URL
+Network Type
+Content
+IPv4 Prefixes
+20
+IPv6 Prefixes
+5
+Traffic Levels
+Not Disclosed
+Traffic Ratios
+Heavy Outbound
+Geographic Scope
+Global
+Protocols Supported
+Unicast IPv4
+Multicast
+IPv6
+Never via route servers
+Last Updated
+2020-03-25T09:48:06Z
+Public Peering Info Updated
+2021-06-20T00:11:42
+Peering Facility Info Updated
+2020-02-17T10:37:56Z
+Contact Info Updated
+2019-03-22T15:58:58Z
+Notes
+Please note :
+- We may route the traffic to other transit interfaces or delivery POPs/CDN when reaching 80% of bandwitdh utilization to prevent saturation.
+- We usually
+do not set up direct peering sessions when the amount of traffic is not above 1gbps on average for a week period. We have an open policy on route servers.
+- We appreciate from the requester of direct peering, a minimum of traffic engineering information like amount of traffic exchanged on average and peak time.
+- ipv6 is currently supported in Equinix Singapore SG1, Tokyo TY4, New-York NY9 and Coresite SV4.
+Peering Policy Information
+Peering Policy
+General Policy
+Selective
+Multiple Locations
+Preferred
+Ratio Requirement
+No
+Contract Requirement
+Not Required
+Contact Information
+Some of this network's contacts are hidden because they are only visible to authenticated users and you are currently not logged in.
+Public Peering Exchange Points
+Exchange
+ASN
+IPv4
+IPv6
+Speed
+RS Peer
+No filter matches.
+You may filter by Exchange, ASN or Speed.
+1086
+26
+AMS-IX
+41690
+Operational
+80.249.208.164
+2001:7f8:1::a504:1690:1
+100G
+1086
+142
+Any2West
+41690
+Operational
+206.72.211.181
+2001:504:13::211:181
+20G
+1086
+909
+BBIX Singapore
+41690
+Operational
+103.231.152.59
+2001:df5:b800:bb00:0:4:1690:1
+20G
+1086
+31
+DE-CIX Frankfurt
+41690
+Operational
+80.81.192.43
+2001:7f8::a2da:0:1
+100G
+1086
+804
+DE-CIX New York
+41690
+Operational
+206.82.104.141
+2001:504:36::a2da:0:1
+10G
+1086
+12
+Equinix New York
+41690
+Operational
+198.32.118.75
+2001:504:f::4b
+40G
+1086
+158
+Equinix Singapore
+41690
+Operational
+27.111.228.175
+2001:de8:4::4:1690:1
+50G
+1086
+359
+France-IX Paris
+41690
+Operational
+37.49.236.96
+2001:7f8:54::96
+100G
+1086
+18
+LINX LON1
+41690
+Operational
+195.66.224.17
+2001:7f8:4::a2da:1
+100G
+1086
+64
+NL-ix
+41690
+Operational
+193.239.117.154
+2001:7f8:13::a504:1690:1
+30G
+Private Peering Facilities
+Facility
+ASN
+Country
+City
+No filter matches.
+You may filter by Facility, ASN, Country or City.
+1619
+1086
+CoreSite - Santa Clara (SV4)
+41690
+United States of America
+Santa Clara
+38
+1086
+Equinix NY9 - New York, 111 8th Avenue
+41690
+United States of America
+New York
+306
+1086
+Equinix PA2 - Paris, Saint-Denis
+41690
+France
+Paris
+282
+1086
+Equinix SG1 - Singapore
+41690
+Singapore
+Singapore
+452
+1086
+Equinix TY2 - Tokyo
+41690
+Japan
+Tokyo
+1893
+1086
+Equinix TY4 - Tokyo
+41690
+Japan
+Tokyo
+1536
+1086
+Interxion Paris 7 (La Courneuve)
+41690
+France
+Paris
+655
+1086
+Scaleway Datacenter - DC2
+41690
+France
+Vitry sur Seine
+1402
+1086
+Scaleway Datacenter - DC3
+41690
+France
+Vitry-sur-Seine
+53
+1086
+Telehouse - Paris 2 (Voltaire - LÃ©on Frot)
+41690
+France
+Paris
+Cancel
+Save
+Operational
+© 2004-2021 PeeringDB
+All Rights Reserved. By using this service, you agree to adhere to our
+AUP.
+2.27.1 - Privacy Policy
+About
+Register
+Search
+Sponsors
+Resources
+API
+Documentation
+FAQ
+Governance
+Status
+Contact Us
+support@peeringdb.com
+Global System Statistics
+891 Exchanges
+22480 Networks
+4165 Facilities
+39930 Connections to Exchanges
+35857 Connections to Facilities
+4253 Automated Networks

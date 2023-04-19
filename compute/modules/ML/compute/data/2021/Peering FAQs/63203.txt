@@ -1,0 +1,53 @@
+Springfield Internet Exchange
+Home
+About
+Locations
+Stats
+How to Peer
+Peering Request Form
+Springfield Internet Exchange
+Connecting Networks from Underground8 Particpating ASNs, and ZERO Port Fees
+What is SpringIX?
+SpringIX is a switching fabric located in the Bluebird Underground deep within the limestone deposits of Southwest Missouri. A network may connect and peer putting themselves closer to content caching while also improving local network connectivity.
+Bi-Lateral Peering
+Establish direct peering with other SpringIX members over the exchange at no charge.
+Multi-Lateral Peering
+Peer with our route server to exchange routes with many neighbor at once
+Private VLAN
+Private VLANs are available for those requiring a private network with another SpringIX member.
+Remote Peering
+SpringIX is directly connected to other IXPs. This enables us to offer remote peering services to them.
+SpringIX Participants
+Bluebird Underground
+Participating NetworkASNSpringIX IPv4SpringIX IPv6PortPeeringDBAS-SET FilterPeeringPolicyBluebird Network62943149.112.4.32001:504:100::310Gbps/net/10692AS-BLUEBIRDOpenSpringIX Route Server #263203149.112.4.2532001:504:100::25310Gbps/net/19713OpenSpringIX Route Server #163203149.112.4.2542001:504:100::25410Gbps/net/19713Open
+KCIX Extension
+Participating NetworkASNSpringIX IPv4SpringIX IPv6PortPeeringDBAS-SET FilterPeeringPolicyWholesale Internet32097149.112.4.12001:504:100::110Gbps/net/3266AS-WHOLESALE-INTERNETOpenKCFiber/liNKCity11708149.112.4.22001:504:100::210Gbps/net/9261AS-KCFIBERSelectiveJoe's Datacenter LLC19969149.112.4.42001:504:100::410GbpsN/AAS-JDCOpenNetnod Internet Exchange8674149.112.4.52001:504:100::51Gbps/net/2971 RS-NETNOD-ANYCASTOpenINCX Global, LLC13737149.112.4.62001:504:100::610Gbps/net/7732AS13737OpenVOIPster32030149.112.4.72001:504:100::710GbpsN/AAS32030Open
+SpringIX Supporters.
+Special thanks our supporters who through their continued generosity have made SpringIX possible.
+Navigation
+Locations
+Statistics
+How to Peer
+Peering Request
+SpringIX Terms
+Services
+Public Peering
+Private VLAN
+Remote Peering
+External Links
+PeeringDB
+NLNOG IRR Explorer
+ARIN IRR
+RIPEstat
+Affiliated IXPs
+Kansas City Internet ExchangeRemote Peer
+St. Louis Internet ExchangeRemote Peer
+Houston Internet ExchangeRemote Peer
+Contact Info
+Springfield Internet Exchange
+201 East 16th Avenue
+North Kansas City, MO 64116
+info@springix.net
++1 (816) 550-9030
+* SpringIX does not provide internet, colocation, or local loop services. If you are interested in these services then please check out our supporters.
+Â© 2020 SpringIX, All Rights Reserved.

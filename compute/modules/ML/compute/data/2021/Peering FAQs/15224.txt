@@ -1,0 +1,7 @@
+AS15224 and AS33386 are used in multiple discrete locations around the globe. As a result, when peering with either AS, only regional routes will be advertised.
+
+Adobe also manages the following ASNs: AS10763, AS1313, AS19041, AS11627
+
+Direct all peering requests to peering@adobe.com
+
+Direct all operational issues to noc-alerts@adobe.com

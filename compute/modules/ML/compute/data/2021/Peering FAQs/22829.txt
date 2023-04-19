@@ -1,0 +1,1 @@
+RNK is a VoIP wholesale ASP (and minor NSP). Other than the sites shown at "Private Peering Locations," can also peer privately at XO 1 Summer St Boston MA.

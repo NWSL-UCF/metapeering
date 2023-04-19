@@ -1,0 +1,1 @@
+All peering for AS38809 is upstream via AS4826 (Vocus).

@@ -1,0 +1,65 @@
+ICANN Managed Root Server | ICANN DNS Engineering
+Main
+About Us
+Contact Us
+Jon Postel
+Number Resources
+ICANN Managed Root Server
+IMRS Locations
+IMRS DNS-STATS
+IMRS Peering information
+Hosting IMRS in your network
+FAQ hosting IMRS
+Root Servers Principles
+Services
+Zone transfer
+Authoritative DNS
+AS112
+IN-ADDR.ARPA Traffic Stats
+IP6.ARPA Traffic stats
+DNSSEC for internal ICANN domains
+RIPE Atlas
+NLNOG RING
+Scheduled Maintenance
+RSSAC
+RSSAC001 Response
+RSSAC002 Data
+RSSAC024 Response
+IMRS Locations
+IMRS DNS-STATS
+IMRS Peering information
+Hosting IMRS in your network
+FAQ hosting IMRS
+Root Servers Principles
+ICANN DNS Engineering > ICANN Managed Root Server
+ICANN Managed Root Server
+ICANN Managed Root Server (IMRS) DNS system operates at
+Name label L.ROOT-SERVERS.NET.
+IPv4 address 199.7.83.42 from the ranges 199.7.83.0/24 and 199.7.82.0/23
+IPv6 address 2001:500:9f::42 from the ranges 2001:500:9f::/48 and 2001:500:9e::/47
+All these prefix ranges are announced from AS20144.
+The service usesÂ the Name Server Daemon (NSD) from NLNetLabs, and Knot DNS from CZ.NIC Labs.
+Some useful information:
+IMRS follows the core Root Server Principles, identified in RSSAC037 document.
+Hosting an IMRS in your network:
+How to host an ICANN Managed Root Server (IMRS) inside your network
+F.A.Q. about hosting an IMRS-Single in your network
+Want to know our locations and where are we currently serving IMRS? Check out the world coverage presence.
+IMRSÂ DNS Metrics, Stats telemetry and usage, powered by DNS-STATS
+IMRS Peering information and our number resources
+IMRS RSSAC responses (measurements and other information)
+Our regular scheduled maintenance windows
+OLD NOTICES:
+2016 IPv6 Address Renumbering for ICANN Operated Root Server (L.ROOT-SERVERS.NET.)
+2011 IN-ADDR.ARPA. Name Servers change
+2007 IP Address change (renumbering) for L.ROOT-SERVERS.NET.
+Main
+About Us
+ICANN Managed Root Server
+Services
+Scheduled Maintenance
+RSSAC
+Terms of Service |
+Cookies Policy |
+Privacy Policy |
+2019 ICANN DNS Engineering

@@ -1,0 +1,200 @@
+Digital Realty Internet Exchange
+About
+Become a Participant
+Participants
+FAQ
+Terms
+Sign Up?Login
+Digital Realty Internet Exchange
+Empowering peering relationships to maximizeefficiency in data transfer
+Learn More
+About the Exchange
+Choice. Digital Realty customers have lots of it. By deploying in a Digital Realty facility, customers are one connection away from hundreds of major telecom and data networks.
+For years Digital Realty has brought the internet "inside" its core facilities by giving customers the option to cross connect to many active IP networks operated by other providers in our centers. We will continue to support access to these networks as they are instrumental to our customers' growth. But now Digital Realty provides even more choice to its customers looking for more high quality IP network peering points with our Digital Realty Internet Exchange service in Atlanta, Dallas, New York and Phoenix.
+The Digital Realty Internet Exchange is a neutral, privately owned and managed packet and Internet exchange, providing a high performance Internet peering fabric for participants. It allows customers to reduce operating costs by aggregating ISPs, content providers, enterprises and others on a single highly available service platform so that Internet traffic may have direct access to destination networks. The Exchange is designed to eliminate the middleman or transit provider which in turn leads to higher profits to you. Participants can route IP traffic efficiently providing faster, more reliable and lower-latency internet or VoIP access to their customers. We are able to help your Internet-connected business reduce operational costs, improve network performance, and add another layer of network resilience. In addition, Digital Realty offers members not only a world class exchange platform, but also a forum to discuss new ideas and planning for a better Internet.
+Digital Realty Internet Exchange includes access to a centralized Ethernet switching fabric and the necessary supporting infrastructure to enable companies to connect and peer at speeds ranging from 1 Gbps (Gigabit Ethernet) to multiples of 10 Gbps and even 100 Gbps in our Atlanta and New York locations. For convenience, standard reporting tools allow members to monitor performance and traffic metrics.
+Benefits
+Extremely cost-effective compared with IP Transit.
+Better performance reliability and reduced latency.
+Admittance to Digital Realty's repository of peering contacts and policies by company.
+Assistance from the Digital Realty peering community on establishing peering.
+Disaster recovery for your connections at other exchange locations.
+Requirements
+A router with access into a Digital Realty Internet Exchange enabled data center.
+All participants must have an Autonomous System Number ("ASN").
+All participants must follow Digital Realty's Acceptable Use Policy (AUP) and our DRIX Terms of Use.
+Have questions? Read over the AUP.
+View the AUP
+Support
+The switch fabric is managed with 24/7 on-site expertise accessible by phone at 1.888.TELXTECH (1.888.835.9832) or by accessing the Digital Realty MarketplacePORTAL to open a trouble ticket.For access click here or, if you do not yet have an account on the Marketplace, contact your company's administrator.
+Need immediate help?
++1.888.TELXTECH
+Become a Participant
+Connections to the Digital Realty Internet Exchange may be 1Gbps, 10 Gbpsor 100 Gbps Ethernet via single-mode fiber.
+To join please complete connection request.
+Router Viewer Once you are connected to the Exchange you must peer with our Route Viewer ("RV"). The RV will never advertise any routes to you so you might want to filter all incoming advertisements from the RV. We ask that you send your "standard" peering routes to the RV. The data collected by the RV is used for monitoring and support purposes. The RV uses the ASN 65535 and are always the ".1" IP on the exchange (e.g. Atlanta is 198.32.132.1). To become listed as an active participant, you will be required to peer with the Route Viewer.
+Router Servers You can peer with the Digital Realty Internet Exchange Route Servers to automatically peer with many participants. Peering with the route server enables you to set up peering sessions more efficiently by facilitating the implementation of peering arrangements lowering the barrier of entry for new members.
+This helps get you peering quickly by establishing one peering session with the route server and thereby peering automatically with anyone else peering on the server.
+PeeringDB We strongly recommend that participants join, the PeeringDB. The PeeringBD is a database of networks that are interested in peering. It helps answer the question, "Who can I peer with and where?". The PeeringDB provides a web interface where users can search and find information on different exchanges and who peers on the exchanges and what the peering policies are for the participant. By joining the PeerinDB, your peering information is available to the global peering community; helping ensure that others will be more likely to peer with you.
+Once you are connected you will probably want to contact the current participants about peering.
+If you have any questions let us know at ix@digitalrealty.com.
+Participants
+All
+Ashburn
+Atlanta
+Chicago
+Dallas
+New York
+Phoenix
+Euro-IX JSON
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+2K Games, Inc. (IAD.IX)Adams CATV, Inc. (NYC)AISG / Equinox Communications (ATL)Akamai Technologies (ATL,NYC)Allens Communications (ATL.IX)Alpha Technologies (IAD.IX)Amazon.com (NYC,ATL)Anexia (ATL.IX)API Digital (ATL)AppiaCommunications (ATL)Apple Inc. (ATL,NYC)AppLovin AS394959 (NYC)Aptum Technologies (ATL)ASSET BLACK (ATL.IX)ATC Broadband (ATL)ATGBB (NYC)ATG Communications, LLC (ATL)Automattic (ATL)BBOI (365 Data Centers) (ATL,NYC,PHX.IX)Beanfield Technologies (NYC)Bestel (ATL)Bigleaf Networks, Inc. (ATL)BizVox Communications (ATL)Bluegrass Network (ATL.IX)BrightRidge (ATL.IX)Broadcom (NoAM) (PHX.IX)Broadridge Financial Solutions (NYC)BroadRiver Communication Corporation (ATL)Burlington Telecom (NYC)BVU Authority (ATL)CacheFly (NYC,ATL)Charter Communications (ATL)Cincinnati Bell Telephone (ATL)Cinergy
+Metronet (ATL)Cisco Umbrella (ATL.IX)Claro S.A. (NYC,ATL)Cloudflare (ATL,NYC)Clouvider (ATL,NYC)CNS Internet (ATL)Cologix (NYC)Columbus Networks (NYC,ATL)Core Scientific, Inc. (ATL)Cox Communications (ATL)Criteo USA (NYC)C Spire Fiber (ATL)CWIE (PHX.IX)Dacentec (ATL)DALnet IRC Network (ATL)Dedicated IT, LLC (ATL.IX)Delimiter Ltd (ATL.IX)DETEL WIRELESS (ATL.IX)Dialpad (DAL.IX)DigitalOcean (NYC)Digital Realty IX Route Servers (NYC,IAD.IX,CHI.IX,ATL)Digital Realty United States (ATL,NYC,IAD.IX,DAL.IX,PHX.IX,CHI.IX)Digital Workspaces (ATL)DREN (ATL.IX)Dropbox (ATL,DAL.IX)DukeNet Communications (ATL)EarthCam (NYC)EATEL (ATL)Ecritel (NYC)Education Networks of America, Inc. (ATL)Elauwit Networks, LLC (ATL)Electric Lightwave (PHX.IX)Ellijay Telephone Company (ATL)Emory University (ATL)empower, Delivered by Craighead Electric (ATL)Ensono (ATL)EPB Fiber Optics (ATL)ERC Broadband (ATL)Facebook Inc (ATL,NYC,CHI.IX)Faction Inc. (ATL,NYC)Fastly, Inc. (IAD.IX,ATL,ATL.IX,DAL.IX)Fibernet Direct (ATL)FirstLight Fiber (NYC)Florida LambdaRail (ATL)Frankfort Plant Board (ATL.IX)G-Core Labs (ATL.IX,CHI.IX)Genesis Adaptive (ATL)Georgia Public Web - GPW (ATL)GigaMonster (ATL)Globecomm Systems Inc. (NYC)Globecomm Systems Inc. (NYC)Google Fiber, Inc. (IAD.IX,ATL,CHI.IX)Google LLC (NYC,IAD.IX,ATL.IX,ATL,CHI.IX,DAL.IX)GPIEX INC (NYC)GreatAccess.com (ATL)GRUCom (ATL)GWINNETT (ATL)Harbor Communications (ATL.IX)Hargray Communications (ATL)Highwinds Network Group, Inc (PHX.IX)Hivelocity INC (ATL.IX,CHI.IX)Hotwire Communications (ATL)Hurricane Electric (ATL,DAL.IX,IAD.IX,NYC,PHX.IX,CHI.IX)i3D.net (ATL)Immedion, LLC (ATL)Init7 (ATL.IX)INOC, LLC (NYC)Internap (ATL,NYC,PHX.IX)Internet2 I2PX (NYC)Invesco Group Services, Inc. (ATL)IPiFony Systems, Inc. (ATL)IPTP Networks (ATL,NYC)iRis Networks (ATL,CHI.IX)ISC F-ROOT ATL1 (ATL)ISPIX (ATL)IX Reach (NYC)izzi telecom (AS11888) (ATL)James Cable (ATL)JBurgess One (ATL.IX)Jive Communications, Inc. (ATL,NYC)Limelight Networks Global (ATL,NYC)Link11 GmbH (NYC)marbis (NYC)MetTel (ATL)Microsoft (DAL.IX,NYC,ATL,IAD.IX)Mid-Atlantic Terascale Partnership - MATP (ATL)Mikrotec Internet Services (ATL.IX)Millry Telephone (ATL)Morristown Utility Systems (ATL.IX)MOUNTAINET (ATL.IX)MRTC-WLBTKY (ATL.IX,DAL.IX)NBS Voice (NYC)NEGIA, Inc. (ATL)Net2Atlanta (ATL)Netflix (ATL,NYC)Nitel (ATL,NYC)North Georgia Network (ATL)NuCDN (NYC)One Ring Networks (ATL)OPAQ Networks (NYC)OVHcloud (ATL)Packet Clearing House (ATL,NYC,DAL.IX,PHX.IX)Packet Clearing House AS42 (ATL,NYC,DAL.IX,PHX.IX)PacketHub (IAD.IX)Pavlov Media INC. (NYC,ATL)PBX-Change (ATL.IX)PCCW Global (ATL)PEACHNET (ATL)PenTeleData (NYC)Performive (ATL)PhoenixNAP (ATL)Pilot Fiber, Inc. (NYC)Ping An (NYC)Planters Rural Telephone Cooperative (ATL)Point Broadband Fiber Holding (ATL)PREPA NETWORKS (NYC)PubMatic (NYC)QCSTelecom (NYC)QX.Net (ATL.IX)Riot Games (ATL,NYC)Ritter Communications (ATL)RouteViews (ATL)Salesforce.com (PHX.IX)Seaborn (ATL.IX)Shelby Broadband (ATL)Shentel Service Company (ATL)SIMPLEHELIX (ATL.IX)Sipartech (NYC)Smart City Telecom AS14288 (ATL.IX)Smoothstone/West IP Communications (ATL.IX)SNAP (ATL)SoftLayer Technologies, Inc. (an IBM Company) (ATL,NYC,DAL.IX,IAD.IX,CHI.IX)Sony Interactive Entertainment (PlayStation) (ATL)Southern Crossroads (SoX) (ATL)Spirit Communications (ATL)Spotify (ATL)Spring City Cable (ATL)Sprint (ATL,NYC)StackPath (Highwinds) (NYC,ATL.IX)Stealth Communications (NYC)Subspace (ATL.IX)Syringa Networks (ATL)TDS Telecom (ATL)TEC of Jackson, Inc. (ATL,ATL.IX)TekLinks (ATL)Telekenex Inc (ATL)Telekomunikasi Indonesia Int (TELIN) (ATL)Tencent Global (ATL.IX,NYC)Ting Fiber (Backbone) (ATL.IX)TNC COMMUNICATIONS (ATL.IX)Transtelco (DAL.IX)Troy Cablevision, Inc. (ATL)Twitch (ATL)Twitter, Inc. (ATL)U.S. Cellular (ATL)UGO (NYC)Unitas Global (ATL)Uniti Fiber (ATL)UPIX NETWORKS (NYC)Valve Corporation (ATL)VelocityOnline.net (ATL)VeriSign Global Registry Services (ATL)Verizon Digital Media Services (EdgeCast Networks) (ATL,NYC)Vermont Telephone (NYC)VERUSCONNECT (ATL.IX)Virgin Islands Telephone Corp. d/b/a Innovative Telephone (NYC)WarnerMedia (ATL)Webair (NYC)West Carolina Communications (ATL.IX)Whitesky Communications (ATL)Windstream Communications (ATL)WOW! (ATL,NYC)WTBTS-USA (NYC)Xplornet Communications Inc. (NYC)Yahoo! (ATL,NYC)Yellow Fiber Networks (NYC)Zayo (Abovenet Communications Inc.) (ATL,PHX.IX)zColo Atlanta (ATL)Zito Media (ATL)Zoom Video Communications, Inc. (NYC)Zscaler AS22616 (ATL)
+View More
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+2K Games, Inc. (AS395856)Alpha Technologies (AS26650)Digital Realty IX Route Servers (AS32299)Digital Realty United States (AS36086)Fastly, Inc. (AS54113)Google Fiber, Inc. (AS16591)Google LLC (AS15169)Hurricane Electric (AS6939)Microsoft (AS8075)PacketHub (AS141039)SoftLayer Technologies, Inc. (an IBM Company) (AS36351)
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+AISG / Equinox Communications (AS15008)Akamai Technologies (AS20940)Allens Communications (AS36515)Amazon.com (AS16509)Anexia (AS42473)API Digital (AS14793)AppiaCommunications (AS20340)Apple Inc. (AS714)Aptum Technologies (AS13768)ASSET BLACK (AS398202)ATC Broadband (AS11240)ATG Communications, LLC (AS29897)Automattic (AS2635)BBOI (365 Data Centers) (AS19151)Bestel (AS18734)Bigleaf Networks, Inc. (AS62642)BizVox Communications (AS36124)Bluegrass Network (AS11979)BrightRidge (AS22987)BroadRiver Communication Corporation (AS13703)BVU Authority (AS17310)CacheFly (AS30081)Charter Communications (AS20115)Cincinnati Bell Telephone (AS6181)Cinergy
+Metronet (AS30600)Cisco Umbrella (AS36692)Claro S.A. (AS4230)Cloudflare (AS13335)Clouvider (AS62240)CNS Internet (AS16700)Columbus Networks (AS23520)Core Scientific, Inc. (AS397640)Cox Communications (AS22773)C Spire Fiber (AS11272)Dacentec (AS31863)DALnet IRC Network (AS31800)Dedicated IT, LLC (AS398570)Delimiter Ltd (AS7363)DETEL WIRELESS (AS32505)Digital Realty IX Route Servers (AS32299)Digital Realty United States (AS36086)Digital Workspaces (AS397165)DREN (AS668)Dropbox (AS19679)DukeNet Communications (AS54473)EATEL (AS5009)Education Networks of America, Inc. (AS11686)Elauwit Networks, LLC (AS54119)Ellijay Telephone Company (AS25853)Emory University (AS3512)empower, Delivered by Craighead Electric (AS22413)Ensono (AS19229)EPB Fiber Optics (AS26827)ERC Broadband (AS27446)Facebook Inc (AS32934)Faction Inc. (AS14701)Fastly, Inc. (AS54113)Fibernet Direct (AS33132)Florida LambdaRail (AS11096)Frankfort Plant Board (AS26133)G-Core Labs (AS199524)Genesis Adaptive (AS23367)Georgia Public Web - GPW (AS31877)GigaMonster (AS31939)Google Fiber, Inc. (AS16591)Google LLC (AS15169)GreatAccess.com (AS25975)GRUCom (AS10674)GWINNETT (AS46830)Harbor Communications (AS26949)Hargray Communications (AS22646)Hivelocity INC (AS29802)Hotwire Communications (AS23089)Hurricane Electric (AS6939)i3D.net (AS49544)Immedion, LLC (AS15085)Init7 (AS13030)Internap (AS29791)Invesco Group Services, Inc. (AS14630)IPiFony Systems, Inc. (AS6082)IPTP Networks (AS41095)iRis Networks (AS11758)ISC F-ROOT ATL1 (AS33080)ISPIX (AS7000)izzi telecom (AS11888) (AS11888)James Cable (AS13368)JBurgess One (AS393662)Jive Communications, Inc. (AS6643)Limelight Networks Global (AS22822)MetTel (AS16524)Microsoft (AS8075)Mid-Atlantic Terascale Partnership - MATP (AS40220)Mikrotec Internet Services (AS3801)Millry Telephone (AS53507)Morristown Utility Systems (AS40128)MOUNTAINET (AS22792)MRTC-WLBTKY (AS53848)NEGIA, Inc. (AS10302)Net2Atlanta (AS20081)Netflix (AS2906)Nitel (AS53828)North Georgia Network (AS54665)One Ring Networks (AS35985)OVHcloud (AS16276)Packet Clearing House (AS3856)Packet Clearing House AS42 (AS42)Pavlov Media INC. (AS23473)PBX-Change (AS22549)PCCW Global (AS3491)PEACHNET (AS3479)Performive (AS46562)PhoenixNAP (AS12189)Planters Rural Telephone Cooperative (AS26744)Point Broadband Fiber Holding (AS26479)QX.Net (AS13776)Riot Games (AS6507)Ritter Communications (AS23404)RouteViews (AS6447)Seaborn (AS13786)Shelby Broadband (AS18786)Shentel Service Company (AS4922)SIMPLEHELIX (AS46506)Smart City Telecom AS14288 (AS14288)Smoothstone/West IP Communications (AS32880)SNAP (AS394659)SoftLayer Technologies, Inc. (an IBM Company) (AS36351)Sony Interactive Entertainment (PlayStation) (AS33353)Southern Crossroads (SoX) (AS10490)Spirit Communications (AS2711)Spotify (AS8403)Spring City Cable (AS54816)Sprint (AS1239)StackPath (Highwinds) (AS33438)Subspace (AS32261)Syringa Networks (AS15305)TDS Telecom (AS4181)TEC of Jackson, Inc. (AS17253)TekLinks (AS33606)Telekenex Inc (AS32035)Telekomunikasi Indonesia Int (TELIN) (AS7713)Tencent Global (AS132203)Ting Fiber (Backbone) (AS32133)TNC COMMUNICATIONS (AS396855)Troy Cablevision, Inc. (AS13825)Twitch (AS46489)Twitter, Inc. (AS13414)U.S. Cellular (AS6614)Unitas Global (AS1828)Uniti Fiber (AS13760)Valve Corporation (AS32590)VelocityOnline.net (AS13730)VeriSign Global Registry Services (AS26415)Verizon Digital Media Services (EdgeCast Networks) (AS15133)VERUSCONNECT (AS2728)WarnerMedia (AS5662)West Carolina Communications (AS10279)Whitesky Communications (AS62887)Windstream Communications (AS7029)WOW! (AS12083)Yahoo! (AS10310)Zayo (Abovenet Communications Inc.) (AS6461)zColo Atlanta (AS7226)Zito Media (AS26801)Zscaler AS22616 (AS22616)
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+Digital Realty IX Route Servers (AS32299)Digital Realty United States (AS36086)Facebook Inc (AS32934)G-Core Labs (AS199524)Google Fiber, Inc. (AS16591)Google LLC (AS15169)Hivelocity INC (AS29802)Hurricane Electric (AS6939)iRis Networks (AS11758)SoftLayer Technologies, Inc. (an IBM Company) (AS36351)
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+Dialpad (AS63399)Digital Realty United States (AS36086)Dropbox (AS19679)Fastly, Inc. (AS54113)Google LLC (AS15169)Hurricane Electric (AS6939)Microsoft (AS8075)MRTC-WLBTKY (AS53848)Packet Clearing House (AS3856)Packet Clearing House AS42 (AS42)SoftLayer Technologies, Inc. (an IBM Company) (AS36351)Transtelco (AS32098)
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+Adams CATV, Inc. (AS14928)Akamai Technologies (AS20940)Amazon.com (AS16509)Apple Inc. (AS714)AppLovin AS394959 (AS394959)ATGBB (AS4258)BBOI (365 Data Centers) (AS19151)Beanfield Technologies (AS21949)Broadridge Financial Solutions (AS33166)Burlington Telecom (AS33604)CacheFly (AS30081)Claro S.A. (AS4230)Cloudflare (AS13335)Clouvider (AS62240)Cologix (AS8001)Columbus Networks (AS23520)Criteo USA (AS19750)DigitalOcean (AS14061)Digital Realty IX Route Servers (AS32299)Digital Realty United States (AS36086)EarthCam (AS13460)Ecritel (AS8304)Facebook Inc (AS32934)Faction Inc. (AS14701)FirstLight Fiber (AS13536)Globecomm Systems Inc. (AS11127)Globecomm Systems Inc. (AS11300)Google LLC (AS15169)GPIEX INC (AS32217)Hurricane Electric (AS6939)INOC, LLC (AS22302)Internap (AS29791)Internet2 I2PX (AS11164)IPTP Networks (AS41095)IX Reach (AS43531)Jive Communications, Inc. (AS6643)Limelight Networks Global (AS22822)Link11 GmbH (AS34309)marbis (AS199610)Microsoft (AS8075)NBS Voice (AS11696)Netflix (AS2906)Nitel (AS53828)NuCDN (AS23393)OPAQ Networks (AS25885)Packet Clearing House (AS3856)Packet Clearing House AS42 (AS42)Pavlov Media INC. (AS23473)PenTeleData (AS3737)Pilot Fiber, Inc. (AS46450)Ping An (AS394010)PREPA NETWORKS (AS23550)PubMatic (AS62713)QCSTelecom (AS63290)Riot Games (AS6507)Sipartech (AS8309)SoftLayer Technologies, Inc. (an IBM Company) (AS36351)Sprint (AS1239)StackPath (Highwinds) (AS33438)Stealth Communications (AS8002)Tencent Global (AS132203)UGO (AS199805)UPIX NETWORKS (AS266925)Verizon Digital Media Services (EdgeCast Networks) (AS15133)Vermont Telephone (AS17356)Virgin Islands Telephone Corp. d/b/a Innovative Telephone (AS14434)Webair (AS27257)WOW! (AS12083)WTBTS-USA (AS40335)Xplornet Communications Inc. (AS22995)Yahoo! (AS10310)Yellow Fiber Networks (AS40015)Zoom Video Communications, Inc. (AS30103)
+Digital Realty maintains a public list of participants on each of our Exchanges. This data is updated in real-time.
+BBOI (365 Data Centers) (AS19151)Broadcom (NoAM) (AS26282)CWIE (AS19181)Digital Realty United States (AS36086)Electric Lightwave (AS7385)Highwinds Network Group, Inc (AS12989)Hurricane Electric (AS6939)Internap (AS29791)Packet Clearing House (AS3856)Packet Clearing House AS42 (AS42)Salesforce.com (AS14340)Zayo (Abovenet Communications Inc.) (AS6461)
+What can we help you with?
+General Topics10 Articles
+Getting Started3 Articles
+Participant Portal Features7 Articles
+Select a topic above
+General Topics
+Q: What is an Internet Exchange Point?
+A: An Internet Exchange Point or "IXP" is a physical platform that allows different Internet connected networks to exchange Internet traffic between their
+autonomous systems by means of bi-lateral peering arrangements. IXP's reduce the reliance on traditional paid transit providers providing a settlement free
+method to exchange IP traffic directly over a managed platform. Furthermore, the increased number of paths learned through the IXP improves routing
+efficiency and fault-tolerance.
+Q: What is The Digital Realty Internet Exchange?
+A: The Digital Realty IX is an Internet Exchange point or "public peering point" that allows networks to exchange traffic through a common switch fabric. Peering is done
+on a settlement-free basis. By connecting to the Digital Realty IX facilities members can peer with any other members connected to same the fabric.
+Q: Where are the Digital Realty Internet Exchanges located?
+A: The Digital Realty Internet Exchange points are located in four regional areas New York/New Jersey Metro, Atlanta, Dallas Metro and Phoenix.
+Q: What connection types and speeds are available?
+A: Connections are via fiber cross connects. Available speeds are 1Gbps, Nx1Gbps (via single mode fiber), 10Gbps and Nx10Gbps (via single more fiber).
+100Gbps port speeds are offered in our Atlanta and New York locations.
+Q: What are the membership requirements with the Digital Realty Internet Exchange?
+A: Each network must provide for the following:
+Physical presence in a Digital Realty facility
+A border router to connect to the port on a Digital Realty IX switch
+An engineer or administrator who can configure the border router
+An exchange point IP address for the border router (Digital Realty provided)
+An Autonomous System Number (ASN) to identify the network
+Q: What is the Route Viewer
+A: Digital Realty maintains a route viewer at every IX location. Once you are connected you must peer with our route viewer. The route viewer monitors your BGP
+session state. The route viewer does not advertise routes. Digital Realty suggests filtering all incoming advertisements from the route viewer. We ask that you send
+your "standard" peering routes to the route viewer. Data collected by the RV is used for monitoring and support purposes. The RVs use the ASN 65535 and are
+always the ".1" IP on the IX (both for IPv4 and IPv6).
+Q: Does the Digital Realty IX have Route Servers?
+A: Yes - Digital Realty offers its participants the opportunity to peer via the Route Servers. We operate two route
+servers on every Exchange. The route servers are based on the BIRD routing daemon. Both offer the peers the ability to filter based on their IRRdb entries.
+Every participant has the ability to filter out any number of peers.
+Q: Do you have any customer usage graphs?
+A: Customer usage graphs are available via the IX Participant Portal
+Q: Is there an AUP (Acceptable Use Policy)?
+A: Please see the posted AUP and our DRIX Terms of Use.
+Q: How do I contact Digital Realty IX
+Network Operations?
+A: Email tie@digitalrealty.com or the Digital Realty Command Center at 1.888.835.9832.
+Getting Started
+Q: Who can I peer with?
+A: Potentially, you can peer with any network that participates on the same IX platform. You must contact each prospective network to verify that you meet its peering policies. You may peer with the Digital Realty Route Servers to automatically peer with many participants. The Digital Realty IX Portal may be used to identify and contact potential peers.
+Q: Where do I get an IP addresses?
+A: Digital Realty manages our own IPv4 and IPv6 address allocations. Addresses are assigned from the following blocks.
+Digital Realty Internet Exchange IP Addresses
+City
+IPv4 Address
+IPv6 Address
+Ashburn
+206.83.10.0/24
+2001:504:17:10::/64
+Atlanta
+198.32.132.0/24
+2001:478:132::/64
+Chicago
+206.83.11.0/24
+2001:504:17:11::/64
+Dallas
+206.126.114.0/24
+2001:504:17:114::/64
+New York
+206.126.115.0/24
+2001:504:17:115::/64
+Phoenix
+198.32.186.0/24
+2001:478:186::/64
+Q: Do you support Gigabit Ethernet Port Link Aggregation?
+A: Yes we do! Please check out Link Aggregation Guide.
+Participant Portal Features
+Q: Can I see Alert History?
+A: Yes - alerts regarding outages and planned maintenance taking place on the platform are available to members. You can view the last seven days of alerts
+by logging into the Digital Realty IX portal and navigating to the Alert section within the member only section of the participant portal.
+Q: What can I do with Interface Management?
+A: Interface Management - Allows you to view usage details, control your static MAC address, shutdown, bring up or bounce any of your interfaces.
+Q: Is there a way for me to keep track of my peering relationships?
+A: Yes Â with Peering Manager you can track peering sessions and send e-mails to other peering coordinators to help speed-up communications with other
+participants.
+Q: Can I manage email addresses via the Portal?
+A: You can use the Manage Contact Preferences feature which allows you to manage which e-mail address you want other Participants to use to contact you.
+Q: Do you provide a Looking Glass?
+A: The portal Looking Glass tool allows you to view BGP announcements to our Route Viewers, and run traceroute and ping commands from the Route Viewers.
+Q: Can I email other participant from the portal?
+A: The Bulk Mail Manager, built right into the portal, allows you to send bulk emails to participants to announce a new presence, maintenance work or other
+important communications. You can also setup your account to receive e-mail notifications when any of your ports or BGP sessions change state (up/down).
+Q: Do you provide sFlow/NetFlow data analytics?
+A: Yes, we enable participants to see current traffic levels per ASN destination. Flow data is sampled and intended to provide general breakdown of
+destination traffic. Data is retained for seven days.
+Terms of Use Policy
+Digital Realty's goal is to make the Digital Realty Internet Exchange the best IP exchange for all participants. As part of this, we put together the following policy to help the exchange run well for all users.
+General
+Participants must adhere to the Digital Realty connectivity AUP.
+Participants must ensure that their usage of the Digital Realty Internet Exchange is not detrimental to the usage of other Digital Realty Internet Exchange participants.
+Participants must ensure that their usage is in compliance with applicable Internet standards and Internet exchange standards as published by the IETF.
+Participants should not use the Digital Realty Internet Exchange for carrying traffic between their own routers.
+Traffic may only be forwarded from one Digital Realty Internet Exchange participant to another if permission is given by the recipient. There is no Multilateral Peering (MLPA).
+Connectivity
+The Digital Realty Internet Exchange provides connectivity to its infrastructure using switched, shared Ethernet LANs. All physical interfaces connected to the Digital Realty Internet Exchange infrastructure must be explicitly configured with duplex and speed settings, and must not be configured to use Ethernet auto-negotiation.
+Physical interfaces of the same speed on the same physical Digital Realty Internet Exchange switch may be aggregated together using IEEE 802.3ad link aggregation control protocol, by prior agreement with the Digital Realty Internet Exchange. However, for multiple connections, the Digital Realty Internet Exchange and Digital Realty reserve the right to charge fees as needed to ensure fair access to all participants.
+The Digital Realty Internet Exchange reserves the right to disconnect any port which violates any of the requirements listed without notice.
+Routing Policy
+Each Participant must have their own Autonomous System number.
+Unicast peering between participants' routers across the Digital Realty Internet Exchange will be via BGP (version 4 or subsequent) and peers must set NEXT_HOP_SELF if advertising routes from other participants.
+Participants shall not generate unnecessary route flap, or advertise unnecessarily specific routes in peering sessions with participants across the Digital Realty Internet Exchange.
+Participants may not point default or otherwise use another participant's resources without permission.
+Broadcast traffic may be not delivered to the exchange, except as needed for normal operation and troubleshooting.
+Participants will peer with the Route Viewer or other collection devise (the viewer will not advertise any routes, and the routes received will only be used for data collection, reporting and monitoring).
+Participants may only utilize a single layer-2 MAC address to place a single layer-3 router per port allocated from the switch fabric unless by prior agreement.
+Physical
+Participants have a duty of confidentiality to the Digital Realty Internet Exchange and other Digital Realty Internet Exchange participants. In particular, Participants must not install packet sniffers to monitor traffic passing through the Digital Realty Internet Exchange.
+Participants may not connect equipment to or otherwise provide connectivity to the Digital Realty Internet Exchange switch infrastructure on behalf of non-participants.
+Legal
+Participants must not carry out any illegal activities thru the exchange. While Digital Realty agrees to aggressively protect the privacy and operational integrity of our users, we are obligated under US law to comply with warrants and subpoenas as presented by qualified law enforcement agencies.
+In the event a participant makes any claim against the Digital Realty as a result of the Exchange, for any reason whatsoever, the claim or claims shall be limited in aggregate to the amount of fees paid by the participant to Digital Realty for the IP Exchange service.
+Please forward any questions or comments to ix@digitalrealty.com.
+Digital Realty may amend this document at any time. If any participating network has a grievance or concern with the conduct of any other participating network, send an email to ix@digitalrealty.com for review.
+Participants agree to comply with this AUP and have 30 days to comply with any changes.
+Ashburn, VA: Loudoun Plaza Campus
+• Atlanta, GA: 56 Marietta St. and 250 Williams St
+• Chicago, IL: 350 E Cermark, 600 S Federal and
+Grand Ave, Franklin Park
+• Dallas, TX: 2323 Bryan St, 8435 N. Stemmons Fwy and 850 E. Collins Blvd
+• New York, NY: 60 Hudson Streeet, 111 Eighth Ave and 32 Ave of the Americas
+• New Jersey, NJ: 100 Delawanna, Clifton Campus
+and 300 JFK Bvld E, Weehawken
+• Phoenix, AZ: 120 East Van Buren St.
+Uptimes Blog
+Follow us on Twitter
+Follow us on Linkedin
+Contact and Support
+Careers - We're Hiring
+See our AUP and privacy conditions

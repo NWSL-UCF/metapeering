@@ -1,0 +1,37 @@
+Peering with AS49544 | i3D.net - A Ubisoft company
+CareerNOCLive ChatSupportContactLogin
+MenuCareerNOCLive ChatSupportContactLogin FeaturesFeatures
+MenuFeaturesNetworkLocationsExperts
+MenuNetworkLocationsExperts
+Ever-expanding NetworkExplore the world on i3D.net’s network. With our private 15+ Tbps global backbone, you can secure your connection in more than 40 locations worldwide.
+Get Started
+ProductsHosting Products
+MenuHosting ProductsGame Hosting PlatformFairFight Anti-Cheat softwareBare Metal ServersBare Metal CloudVirtual MachinesStorage & BackupColocationConsumer Game Servers
+MenuGame Hosting PlatformFairFight Anti-Cheat softwareBare Metal ServersBare Metal CloudVirtual MachinesStorage & BackupColocationConsumer Game ServersNetwork Products
+MenuNetwork ProductsNetwork EquipmentCDNAnti-DDoS SolutionMPLS VPNDWDMIP Transit
+MenuNetwork EquipmentCDNAnti-DDoS SolutionMPLS VPNDWDMIP TransitGet ahead of the Game Ensure the ultimate game experience with our ultra-low-latency network, multi-cloud scaling game deployment platform and a team of experts at your fingertips.
+Get Started
+SolutionsGaming IndustryEnterprise IT InfrastructureVoIP HostingResourcesDocumentationAPIDownloadsToolsCustomer StoriesTechnology PartnersBlogAboutOur StoryNews & EventsCareerContact Us
+MenuHomeFeaturesProductsSolutionsResourcesBlogNews and EventsAboutCareerSupportContactLogin
+NOC Â  âº Â  PeeringPeering with AS49544i3D.net has an open peering policy. We have peering preferences based on geographical location, network operations, routing registries, free settlements and willingness to sign contracts (not required).Peering preferences i3D.net (AS-INTERACTIVE3D) has an open peering policy. We have the following peering preferences:
+To setup peering on multiple geographical locations.
+To peer with a network operating a 24x7 NOC.
+To peer with networks with an up to date routing registry (such as RIPE).
+To peer settlement free.
+Willing to sign a peering contract, but not required.Contact peering@i3d.net to request information and initiate peering.We accept private peering requests on case by case basis.Visit our PeeringDB page for detailed technical information.
+Back to NOC
+Need help from our Customer Support Team?
+Get Support
+Sales800 482 6910+31 (0)10 890 00 70Subscribe to our Newsletter and stay up to date with the latest from i3D.net
+Subscribe
+FeaturesNetworkLocationsExperts
+MenuNetworkLocationsExpertsSolutionsGaming IndustryEnterprise IT InfrastructureVoIP Hosting
+MenuGaming IndustryEnterprise IT InfrastructureVoIP HostingProductsGame Hosting PlatformFairFight Anti-Cheat softwareBare Metal ServersBare Metal CloudVirtual MachinesColocationNetwork EquipmentCDNAnti-DDoS Solution
+MenuGame Hosting PlatformFairFight Anti-Cheat softwareBare Metal ServersBare Metal CloudVirtual MachinesColocationNetwork EquipmentCDNAnti-DDoS SolutionCompanyContactSupportAboutNews & EventsBlogCareerResourcesNOCLegalPrivacy StatementSitemap
+MenuContactSupportAboutNews & EventsBlogCareerResourcesNOCLegalPrivacy StatementSitemap
+Â© i3D.net - A Ubisoft company | All rights reserved.
+Twitter
+Linkedin
+Facebook-f
+Youtube
+Instagram

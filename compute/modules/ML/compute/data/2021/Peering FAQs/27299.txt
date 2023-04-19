@@ -1,0 +1,3 @@
+This network hosts the .CA Registry as well as .CA DNS servers.
+
+Of note are the anycast service "any.ca-servers.ca" (AS55195, behind AS27299 in some instances) and the unicast server "z.ca-servers.ca".

@@ -1,0 +1,439 @@
+Peering
+COVID-19 Coronavirus
+Regional Websites
+Austria
+Belgium
+France
+Germany
+Italy
+Netherlands
+Nordics
+Spain
+Switzerland - French
+Switzerland - German
+United Kingdom
+Client Logins
+EtherVision
+MyPortal
+Investor Relations
+Investor Events
+Key Financial Results
+SEC Filings
+Corporate Governance
+Investor FAQs
+Search:
+GTT Communications Home
+Services
+Transport & Infrastructure
+Wavelengths
+Low Latency
+Ethernet Direct
+Colocation
+Dark Fiber
+Wide Area Networking
+SD-WAN
+MPLS
+VPLS
+uCPE
+Ethernet
+Managed Network Services
+Cloud Connect
+Internet
+IP Transit
+Dedicated Internet
+Broadband
+Advanced Solutions
+Advanced Security
+Hybrid Cloud
+Advanced Services
+Enterprise Voice
+SIP Trunking
+Industry Solutions
+Financial Markets
+Manufacturing
+Retail & eCommerce
+Media & Broadcast
+Event Services
+Our Network
+Company
+Management Team
+Board of Directors
+Careers
+Security & Compliance
+Channel Partners
+Contact Us
+Support
+Media Center
+Resources
+Blog
+Press Releases
+News Coverage
+Events & Webinars
+Awards and Analysts
+Sales Inquiries
++1 866 359 0084
+Sales Inquiries
++1 866 359 0084
+Search
+Services
+Transport & Infrastructure
+Wavelengths
+Low Latency
+Ethernet Direct
+Colocation
+Dark Fiber
+Wide Area Networking
+SD-WAN
+MPLS
+VPLS
+uCPE
+Ethernet
+Managed Network Services
+Cloud Connect
+Internet
+IP Transit
+Dedicated Internet
+Broadband
+Advanced Solutions
+Advanced Security
+Hybrid Cloud
+Advanced Services
+Enterprise Voice
+SIP Trunking
+Industry Solutions
+Financial Markets
+Manufacturing
+Retail & eCommerce
+Media & Broadcast
+Event Services
+Our Network
+Company
+Management Team
+Board of Directors
+Careers
+Security & Compliance
+Channel Partners
+Contact Us
+Support
+Media Center
+Resources
+Blog
+Press Releases
+News Coverage
+Events & Webinars
+Awards and Analysts
+COVID-19 Coronavirus
+Regional Websites
+Austria
+Belgium
+France
+Germany
+Italy
+Netherlands
+Nordics
+Spain
+Switzerland - French
+Switzerland - German
+United Kingdom
+Client Logins
+EtherVision
+MyPortal
+Investor Relations
+Investor Events
+Key Financial Results
+SEC Filings
+Corporate Governance
+Investor FAQs
+Home
+Contact
+Search:
+Click to open module...
+×
+Speak to a GTT Sales Consultant
+Interested in learning more about GTT products & services? Please complete this short form to schedule a call with one of our sales consultants.
+First name* *
+Last name* *
+Business email address *
+Company name *
+Country* *
+Select a country*
+Austria
+Belgium
+Brazil
+Bulgaria
+Canada
+Czech Republic
+Denmark
+Finland
+France
+Georgia
+Germany
+Greece
+Hungary
+Iceland
+Ireland
+Italy
+Luxembourg
+Netherlands
+Norway
+Poland
+Portugal
+Spain
+Sweden
+Switzerland
+Turkey
+United Kingdom
+United States
+Other
+State *
+State*
+AK
+AL
+AR
+AZ
+CA
+CO
+CT
+DE
+FL
+GA
+HI
+IA
+ID
+IL
+IN
+KS
+KY
+LA
+MA
+MD
+ME
+MI
+MN
+MO
+MS
+MT
+NC
+ND
+NE
+NH
+NJ
+NM
+NV
+NY
+OH
+OK
+OR
+PA
+RI
+SC
+SD
+TN
+TX
+UT
+VA
+VT
+WA
+WI
+WV
+WY
+Number of locations *
+Number of locations*
+1-10
+11-100
+101-1,000
+1,001+
+Not Sure
+Please refer to our
+Privacy Policy
+for more information. You may unsubscribe from GTT communications at any time; all emails you receive will include an unsubscribe link in their footer.
+I would like to receive emails about your latest news, products & services. By checking this box I consent to receive communications from GTT in accordance with its Privacy Policy. I understand I may unsubscribe at any time.
+Submit
+Thank you!
+A GTT sales representative will be in contact with you shortly.
+Home
+Peering
+Peering
+Background and Introduction
+GTT Communications, Inc. is a Global Provider of Internet Services. The details of our various service offerings are available on our website (http://www.gtt.net/). This page provides an overview of the GTT Communications settlement-free peering policy. It is broken into three sections: Interconnection Requirements, Technical and Operational Requirements, and General Notification Requirements. As a whole, they comprise the “Policy”. GTT Communications (“GTT”) will continue to review and maintain this policy and reserves the right to update its policy at any time.
+Part 1 of the Policy, Interconnection Requirements, details the requirements that an Internet Network requesting interconnection on a settlement-free basis (the “Requester”) must meet in order to be considered for settlement-free interconnection. For purposes of this Policy, an Internet Network must be a single Autonomous System (“AS”). Part 2 of the Policy specifies the technical and operational requirements for interconnecting networks, which both the Requester and GTT must satisfy. Finally, Part 3 contains some general notifications regarding the Policy.
+This Policy describes guidelines used to evaluate all requests for settlement-free interconnection with GTT, either via dedicated connections (“direct peering”) or via traffic exchange at an Internet Exchange Point (“public peering”). Meeting some or all of these requirements does not guarantee that GTT will enter into a settlement-free interconnection arrangement with the Requestor. GTT reserves the right to establish, maintain, and discontinue interconnection on a settlement-free basis on its sole discretion.
+1. Interconnection Requirements
+1.1 Geographic Scope.
+The Requester shall operate facilities capable of terminating IP services in a geographic area that roughly overlaps with GTT’s IP backbone. This equates to presence in eight of the ten US regions, six of the eight European regions, or three of the four Asia-Pacific regions, as follows:
+North American Regions
+European Regions
+Asia-Pacific Regions
+Maritimes – Boston, Montreal, Toronto
+UK, Ireland
+Japan, Korea
+North East – New York, New Jersey
+France
+Hong Kong, Taiwan, China
+Mid-Atlantic – Washington, DC, Ashburn
+Spain, Portugal
+Singapore, India, Malaysia
+South East – Atlanta, Miami
+Norway, Sweden, Denmark
+Australia, New Zealand
+North Central – Chicago, Minneapolis
+Netherlands, Belgium, Luxembourg
+Central Mountain – Denver, Salt Lake City
+Germany, Austria, Switzerland
+South Central – Dallas, Houston
+Italy, Greece
+North West – Seattle, Vancouver, Portland
+Czech Republic, Poland, Romania, Bulgaria, Slovakia
+Mid-Pacific – San Francisco, San Jose
+Southwest – Los Angeles, Phoenix, Las Vegas, San Diego
+A minimum of two of the three Regions must meet the Geographic Scope requirement. Requester must also agree to Peer in each of the regions in which they maintain an IP backbone if GTT requests it, regardless of whether each region fully complies with the Geographic Scope requirement.
+1.2 Backbone Capacity.
+The Requester shall maintain a fully redundant backbone network, in which the majority of its inter-hub links shall have a capacity of at least 10Gb for the US regions, 10Gb for the European regions, or 1Gb for the Asia-Pacific Regions.
+1.3 Traffic Volume.
+The aggregate volume of traffic exchanged in each direction over all interconnection links between the Requester and the regional network with which it desires to interconnect shall equal or exceed 20 Gbps of Traffic for the US regions, 20 Gbps of Traffic for the European regions, or 1 Gbps of traffic for the Asia-Pacific regions, as measured on a 95th Percentile (95P) basis over a 7-day period.
+1.4 Traffic Exchange Ratio.
+The ratio of the aggregate amount of traffic exchanged between the Requester and the GTT Internet Network with which it seeks to interconnect shall be roughly balanced and shall not exceed 2.0:1.
+1.5 Transit Autonomous Systems.
+The Requestor shall provide transit services to a minimum number of downstream Internet Networks (Autonomous Systems) as follows: 1500 unique transit networks for interconnection with GTT’s US region, 1500 unique transit networks for GTT’s European region, or 100 for GTT’s Asia-Pacific Region.
+2. Technical and Operational Requirements
+2.1. Each Internet Network shall operate a fully staffed Network Operations Center that is available 24 hours a day, 7 days a week, regardless of holidays or other special events.
+2.2. Each Internet Network shall provide Network Abuse point(s) of contact responsible for tracking SPAM, hacking, Denial of Service and other network security and abuse issues, providing a knowledgeable technician within a two-hour period after notice.
+2.3. Each Internet Network is expected to have network security measures in place to thwart Denial of Service attacks.
+2.4. Each Internet Network must operate a fully redundant network, capable of handling a simultaneous single-node outage in each network without significantly affecting the performance of the traffic being exchanged.
+2.5. Each Internet Network must establish and maintain traffic exchange links of a sufficient robustness, aggregate capacity, and geographic dispersion to facility mutually acceptable performance across the interconnection links.
+2.6. Each Internet Network agrees to routing practices and locations such that each party bears a roughly equal share of network cost.
+2.7. Each Internet Network must announce consistent routes across all interconnection points, unless mutually agreed in writing by both parties.
+2.8. Each Internet Network shall agree to announce only their internal routes and the routes of their IP transit customers. No other routes are permitted and may be filtered if detected.
+2.9. Each Internet Network agrees to exchange all traffic destined towards the Party’s network solely across the interconnection links established between parties. Any attempts to shift traffic between the two networks through third party networks shall be seen as a means of attempting to hide a violation of the Peering policy, rendering the network subject to immediate review of their ongoing adherence to the policy.
+2.10. Neither party shall establish a static route, a route of last resort, or otherwise send traffic to the other party for a route not announced via BGP. Neither party shall alter, sell, or otherwise provide next-hops to a third party. Such offenses shall be seen as a major violation of the policy, subject to immediate termination of the agreement.
+3. General and Policy Notifications
+3.1. Both parties agree to enter into a Mutual Non-Disclosure Agreement prior to Peering evaluation and trial and an Interconnection Agreement if the Peering request is approved.
+3.2. The requirements in Part 1 must be met at the time of the request for settlement-free interconnection with GTT is made, and will be monitored to ensure ongoing compliance with the current policy.
+3.3. All requests for settlement-free interconnection should be submitted to GTT via e-mail at [email protected] An Internet Network may submit a request for interconnection once per calendar quarter.
+3.4. This policy should be considered as a guideline only. Meeting all of the requirements stated here does not guarantee that GTT will enter into a settlement-free relationship with the Requester. GTT reserves the right to deny peering to the Requester based on business reasons. Any contractual rights shall arise out of a bilateral Interconnection Agreement, not this Policy.
+3.5. Any change in ownership of the Requestor’s network may result in an evaluation within 30 days of acquisition or divestiture. GTT reserves the right to terminate the Interconnection Agreement if the relationship is found to be in violation of the policy, or if the relationship is determined to be no longer valuable for business reasons.
+3.6. GTT will continue to monitor the development of the Internet industry. GTT reserves the right to update this policy at any time. The current version of the policy will be maintained on the corporate website.
+Learn more about how GTT can help support your business collaboration, mobility and growth.
+Contact Us
+Call
+Email
+Contact Us
+Newsletter
+Sales Inquiries:
++1 512 592 4858
+General Inquiries:
++1 703 442 5500
+GTT NOC:
+Toll Free: +1 855 829 9900
+Non Toll Free: +1 512 592 4803
+General Inquiries:
+[email protected]
+GTT NOC:
+[email protected]
+WE ARE RATED ON
+4.2
+11 reviews (last 12 Months)
+82%
+As of 18 Feb 2021
+Our Company
+Management Team
+Board of Directors
+Careers
+Security & Compliance
+Contact Us
+Our Network
+Support
+Subscribe to
+Subscribe to
+Investor Relations
+News & Events
+By ticking our ‘News & Events’ box you are consenting to receive communications from GTT in accordance with our Privacy Policy. You may unsubscribe at any time.
+Email Address
+Subscribe
+Thank you
+Our Services
+Transport & Infrastructure
+Wide Area Networking
+Internet
+Advanced Solutions
+Enterprise Voice
+Media Center
+Resources
+Blog
+Press Releases
+News Coverage
+Events & Webinar
+Awards and Analysts
+GTT Techtorials
+What is SD-WAN?
+What are the Benefits of Working with a Tier 1 ISP?
+SD-WAN vs. MPLS: Which Service is Right for Your Business?
+Traditional WAN vs SD-WAN architecture: What’s the difference?
+SD-WAN security: Protecting your traffic without losing efficiency
+Our Locations
+Americas
+Europe
+Asia
+Atlanta
+Austin
+Austin
+Boston
+Chicago
+Dallas
+Denver
+Halifax
+Los Angeles
+Minneapolis
+New York
+Philadelphia
+Raleigh
+Rochester
+San Francisco
+San Jose
+São Paulo
+Seattle
+Toronto
+Washington HQ
+Amsterdam
+Barcelona
+Berlin
+Bracknell
+Brussels
+Cagliari
+Copenhagen
+Dublin
+Düsseldorf
+Frankfurt
+Frankfurt Darmstädter Landstraße
+Frankfurt Eschborn
+Frankfurt Neu-Isenburg
+Geneva
+Hamburg
+Helsinki
+Hoddesdon
+London
+Madrid
+Milan
+Nottingham
+Paris
+Prague
+Rome
+Sofia
+Southport
+Stockholm
+Vienna
+Zürich
+Pune
+YouTube
+Twitter
+Facebook
+Linkedin
+Contact Us
+© GTT Communications, Inc. 2021. All rights reserved
+Privacy Policy |
+Cookie Policy |
+Acceptable Usage Policy |
+Corporate Information |
+Sitemap
+This website uses cookies. By continuing to browse it, you are agreeing to our use of cookies. Find out more
+I Accept

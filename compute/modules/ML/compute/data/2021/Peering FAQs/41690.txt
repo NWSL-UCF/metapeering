@@ -1,0 +1,8 @@
+Please note :
+- We may route the traffic to other transit interfaces or delivery POPs/CDN when reaching 80% of bandwitdh utilization to prevent saturation.
+
+- We usually  do not set up direct peering sessions when the amount of traffic is not above 1gbps on average for a week period. We have an open policy on route servers.
+
+- We appreciate from the requester of direct peering, a minimum of traffic engineering information like amount of traffic exchanged on average and peak time.
+
+- ipv6 is currently supported in Equinix Singapore SG1, Tokyo TY4, New-York NY9 and Coresite SV4.

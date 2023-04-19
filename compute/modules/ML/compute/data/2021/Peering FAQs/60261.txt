@@ -1,0 +1,158 @@
+Limelight Networks: Peering Page
+×
+Careers
+Developers
+Developer Resources
+Developer Central
+API Explorer
+EdgeFunctions
+Connect
+Call
+Email
+Investors
+Press Releases
+Support
+Careers
+Events
+Investors
+Investors
+Financials
+News
+Corporate Governance
+Resources
+Library
+Our Customers
+Case Studies
+Data Sheets
+White Papers
+Videos
+Webinars
+Blog
+Login
+Limelight Control (CDN)
+Limelight Video Platform
+Developer Central
+English
+Français
+Deutsch
+Italiano
+日本語
+한국어
+Why Limelight
+Why Limelight
+Network Map
+Awards
+Products
+Content Delivery
+Video Delivery
+Edge Compute
+Cloud Security
+Origin Storage
+Support Services
+Solutions
+Realtime Streaming
+IoT and Edge Compute
+File Distribution
+Web Content Delivery
+Live Video
+Video on Demand
+Industries
+Media and Broadcasters
+Software and Device Manufacturers
+Retail and Ecommerce
+Gaming
+Service Providers
+Request A Free Trial
+Peering
+Limelight Networks interconnection policy seeks to enhance its global connectivity to other networks. Interconnection with any partner network should be mutually beneficial and meet certain technical criteria. Limelight Networks practices a ‘selective’ peering policy.
+Limelight Networks Public/Private Peering Common Guidelines:
+MUST peer in all common locations, including "home markets".
+MUST peer in multiple locations; geographic relevance is considered.
+MUST announce routes consistently.
+MUST actively pursue trouble ticket resolution.
+MUST NOT point default, reset next hop, or advertise third party routes.
+MUST exchange a minimum of 1 Gbps in dominant direction.
+MUST peer with both IPv4 and IPv6 (dualstack).
+MUST maintain up-to-date contact info at peeringdb.com.
+Additional requirements for Private Peering:
+MUST be able to interconnect at 10G or 100G Ethernet port capacities. Limelight supports use of LR and ER optics at both speeds. 1G connects are not supported.
+MUST be able to discuss capacity and expansion plans at least once a year during known industry events (NOGs, Peering Forums etc.) or through directly scheduled calls.
+Share the cost of cross connects.
+Limelight Networks, Inc. operates AS 22822 as its global backbone network, but also has other ASNs in specific regions and markets. Limelight's Interconnect markets and respective ASNs are listed below.
+Region
+Metro Market
+ASN
+North America
+Ashburn, USA Atlanta, USA Chicago, USA Dallas, USA Los Angeles, USA Mexico City, Mexico Miami, USA Minneapolis, USA Montreal, Canada New York, USA Phoenix, USA San Jose, USA Seattle, USA Toronto, Canada Vancouver, Canada
+22822
+Europe
+Amsterdam, Netherlands Dusseldorf, Germany Frankfurt, Germany London, UK Madrid, Spain Marseilles, France Milan, Italy Palermo, Italy Paris, France Stockholm, Sweden Vienna, Austria
+22822
+Africa
+Johannesburg, South Africa
+22822
+Asia
+Hong Kong Osaka, Japan Singapore Tokyo, Japan
+22822
+Asia
+Seoul, South Korea
+45396
+South Pacific
+Sydney, Australia
+38622
+India
+Chennai Mumbai New Delhi
+55429 38621
+South America
+Bogota, Colombia Medellin, Colombia Sao Paolo, Brazil
+23059
+Middle East
+Dubai, UAE
+60261
+Middle East
+Tel Aviv, Israel
+25804
+Details of IXP IP addresses and private interconnection addresses are kept updated at http://as22822.peeringdb.com.
+Limelight Networks is also available at peering exchanges in Dublin, Berlin, Prague, Bratislava, Warsaw, Bucharest, Sofia and Zurich.
+Please register your request in the Limelight Peering Portal or send peering requests to peering@llnw.com, and include the following information: Contact Addresses: Peering ASN: Peering DB entry: Peering Markets (select from the table above): Additional ASNs for traffic analysis:
+Let's Connect
+Reach an expert to discuss how Limelight can move your business forward.
+Phone
+Email
+Offices
+Solutions
+Why Limelight
+Realtime Streaming
+File Distribution
+Web Content Delivery
+Live Video
+Video on Demand
+Industries
+Media and Broadcasters
+Software and Device Manufacturers
+Retail and Ecommerce
+Gaming
+Products
+Content Delivery
+Video Delivery
+Edge Compute
+Cloud Security
+Origin Storage
+Support Services
+Contact
+Offices
+Careers
+Support
+Email Us
++1 602 850 5000
+Investors
+Investors
+Press Releases
+Management
+Governance
+Filings
+FAQs
+Contact
+© 2021 Limelight Networks.
+Site Map
+Privacy and Legal

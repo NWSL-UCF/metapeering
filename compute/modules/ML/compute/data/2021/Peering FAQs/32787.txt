@@ -1,0 +1,5 @@
+AS32787 does not use route servers.
+
+Our peering policy is _mostly_ open, but there will occasionally be situations where it makes sense not to establish certain peerings.
+
+Prefixes advertised can vary significantly.  Please set any max prefix limits to 6,000 v4 / 500 v6.

@@ -1,0 +1,94 @@
+{
+  "aka": "",
+  "asn": 293,
+  "created": "2016-05-26 12:02:43.917656",
+  "id": "940",
+  "info_ipv6": 1,
+  "info_multicast": 1,
+  "info_prefixes4": 159,
+  "info_prefixes6": 20,
+  "info_ratio": "Balanced",
+  "info_scope": "North America",
+  "info_traffic": "",
+  "info_type": "transit",
+  "info_unicast": 1,
+  "irr_as_set": "AS-ESNET  (Both IPv4 and IPv6)",
+  "looking_glass": "",
+  "name": "Energy Sciences Network (ESnet)",
+  "notes": "ESnet's old EQX-ASH peering address 206.223.115.137 is going away 02/2013\nSet Max prefix-limit 500(IPv4) and 100(IPv6)",
+  "notes_private": "",
+  "org_id": 1181,
+  "policy_contracts": "Not Required",
+  "policy_general": "Open",
+  "policy_locations": "Not Required",
+  "policy_ratio": 0,
+  "policy_url": "",
+  "route_server": "",
+  "status": "ok",
+  "updated": "2016-05-26 12:02:43.917676",
+  "version": 0,
+  "website": "http://www.es.net",
+  "pop_list": [
+    {
+      "city": "Ashburn",
+      "country": "US",
+      "state": "VA",
+      "org_name": "Equinix",
+      "isp_id_in_peering_db": 1,
+      "location": [
+        39.02,
+        -77.46
+      ],
+      "port_capacity": 10000,
+      "isp_type_in_peering_db": "ix",
+      "internet_penetration_percentage": 0.852
+    },
+    {
+      "city": "Chicago",
+      "country": "US",
+      "state": "IL",
+      "org_name": "Equinix",
+      "isp_id_in_peering_db": 2,
+      "location": [
+        41.85,
+        -87.62
+      ],
+      "port_capacity": 10000,
+      "isp_type_in_peering_db": "ix",
+      "internet_penetration_percentage": 0.865
+    },
+    {
+      "city": "San Jose",
+      "country": "US",
+      "state": "CA",
+      "org_name": "Equinix",
+      "isp_id_in_peering_db": 5,
+      "location": [
+        37.24,
+        -121.78
+      ],
+      "port_capacity": 10000,
+      "isp_type_in_peering_db": "ix",
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Palo Alto",
+      "country": "US",
+      "state": "CA",
+      "org_name": "Equinix",
+      "isp_id_in_peering_db": 7,
+      "location": [
+        37.45,
+        -122.16
+      ],
+      "port_capacity": 1000,
+      "isp_type_in_peering_db": "ix",
+      "internet_penetration_percentage": 0.838
+    }
+  ],
+  "prefixes": 265,
+  "total_prefixes_in_globe": 8388478,
+  "address_space": 3359264,
+  "total_addresses_in_globe": 22264797636,
+  "neighbor": 270
+}

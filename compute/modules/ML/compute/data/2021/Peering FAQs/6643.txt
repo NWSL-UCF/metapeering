@@ -1,0 +1,7 @@
+Jive announces prefixes for the services with infrastructure in the local region area, along with a single /24 anycast prefix at the following locations:
+
+ - Los Angeles
+ - Chicago
+ - Atlanta
+ - New York
+ - Dallas

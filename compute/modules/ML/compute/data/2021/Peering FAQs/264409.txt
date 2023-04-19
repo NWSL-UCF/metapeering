@@ -1,0 +1,3 @@
+Huge Networks is Content provider and Cloud-Based DDoS Mitigation Provider, we rely on stable connections with short roundtrip times, we have an open peering policy and invite eyeball providers to peer with us for free.
+
+IPv4 prefixes are different on some locations, in Miami it should be set to 1.000 and 500 to IPv6.
