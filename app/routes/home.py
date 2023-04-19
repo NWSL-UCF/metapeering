@@ -52,7 +52,8 @@ def peering_query_form_handler(request):
     data = {}
     data["asn1"] = request["asn1"]
     data["asn2"] = request["asn2"]
-    data["threshold"] = request["threshold"]
+    data["threshold"] = 0.0
+    # data["threshold"] = request["threshold"]
 
     return request_handler(data)
 
@@ -79,7 +80,7 @@ def request_handler(data):
 				Otherwise, Not Recommended.
 				"""
                 if not threshold_too_high:
-                    call("mkdir app/static/" + asn1_asn2, shell=True)
+                    call("md app\\static\\" + asn1_asn2, shell=True)
                     s3_resource = boto3.resource("s3")
                     my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
 

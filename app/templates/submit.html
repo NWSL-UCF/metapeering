@@ -45,19 +45,7 @@
 				            {% endif %}
 	    				</div>
 	   			    </div>
-					<!--{{ wtf.form_field(form.threshold, class='form-control', 
-						placeholder='Peering threshold (0.1 to 1.0)') }}-->
-					<label>Threshold</label> 
-					<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Value to eliminate non-suitable candidate ISPs.">?</span>
-					{{ form.threshold(class='form-control', 
-						placeholder='Peering threshold (0.0 to 1.0)') }}
-		    		</br>
-			    	{% if form.threshold.errors %}
-			            {% for error in form.threshold.errors %}
-				            <div class="alert alert-danger">{{ error }}</div>
-			            {% endfor %}
-				    {% endif %}
-	    			<button type="submit" class="btn btn-primary">Submit</button>
+	    			<button type="submit" class="btn btn-primary" style="display: block; margin: 0 auto; width: 15vw;">Submit</button>
 	  			</form>		
 	  		</div>
 		</div>

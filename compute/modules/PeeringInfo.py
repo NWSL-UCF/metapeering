@@ -73,7 +73,7 @@ if is_microsoft_transit:
 else:
     isp_dict['content'].update({'microsoft':[8075]})
 
-# This are special ISPs.
+# These are special ISPs.
 small_access_isps = ['hotwire', 'google', 'wow', 'sonic', 'penteledata']
 # annotation_needed_isps = ['spotify', 'yelp']
 annotation_needed_isps = ['yelp']
