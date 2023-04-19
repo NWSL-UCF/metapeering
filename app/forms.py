@@ -91,14 +91,9 @@ class PeeringQueryForm(FlaskForm):
         choices=[("-1", "Select potential peer ISP")] + options_grouped_asn,
         coerce=int,
     )
-    # threshold = DecimalField(
-    #     "Threshold",
-    #     [
-    #         validators.NumberRange(
-    #             min=0.0, max=1.0, message="Value must be between 0.0 and 1.0"
-    #         ),
-    #     ]
-    # )
+    threshold = DecimalField(
+        "Threshold",
+    )
     submit = SubmitField("Submit")
 
     def validate(self):
