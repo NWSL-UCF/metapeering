@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-#!/usr/bin/env bash
-sudo /usr/local/bin/certbot --nginx -n -d metapeering.net -d metapeering.org --agree-tos --email quinn.barber@knights.ucf.edu
-=======
 #!/usr/bin/env bash
 #
 # Author: Paola C.
@@ -24,4 +20,3 @@ do
     echo "Creating certificate for the domain ${i}"
     sudo /usr/local/bin/certbot --nginx -n -d $i --agree-tos --email quinn.barber@knights.ucf.edu
 done
->>>>>>> c276eb4fd041ed88bf5740208b1548762cdd8c9f
