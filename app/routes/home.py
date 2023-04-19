@@ -81,7 +81,7 @@ def request_handler(data):
 				Otherwise, Not Recommended.
 				"""
                 if not threshold_too_high:
-                    call("md app\\static\\" + asn1_asn2, shell=True)
+                    call("mkdir app/static/" + asn1_asn2, shell=True)
                     s3_resource = boto3.resource("s3")
                     my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
 
