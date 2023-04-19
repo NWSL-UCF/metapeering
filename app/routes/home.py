@@ -4,6 +4,7 @@ from app.forms import PeeringQueryForm
 import boto3, json
 from subprocess import call
 from zipfile import ZipFile
+from decimal import Decimal
 from app.config import (
     AWS_STORAGE_BUCKET_NAME,
     AWS_ACCESS_KEY_ID,
@@ -52,7 +53,7 @@ def peering_query_form_handler(request):
     data = {}
     data["asn1"] = request["asn1"]
     data["asn2"] = request["asn2"]
-    data["threshold"] = 0.0
+    data["threshold"] = Decimal(0)
     # data["threshold"] = request["threshold"]
 
     return request_handler(data)

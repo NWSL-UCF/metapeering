@@ -12,7 +12,6 @@ from wtforms import (
     ValidationError,
 )
 from .customoptgroupselect import ExtendedSelectField
-from decimal import Decimal
 
 
 class PeeringQueryForm(FlaskForm):
