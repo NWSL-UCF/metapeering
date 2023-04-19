@@ -44,6 +44,11 @@
 					            {% endfor %}
 				            {% endif %}
 	    				</div>
+						{% if form.threshold.errors %}
+			            	{% for error in form.threshold.errors %}
+				            	<div class="alert alert-danger">{{ error }}</div>
+			            	{% endfor %}
+						{% endif %}
 	   			    </div>
 	    			<button type="submit" class="btn btn-primary" style="display: block; margin: 0 auto; width: 15vw;">Submit</button>
 	  			</form>		
