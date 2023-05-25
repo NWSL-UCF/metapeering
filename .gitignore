@@ -24,3 +24,5 @@ app/__pycache__
 compute/modules/old
 app/db.sqlite3
 peeringdb.sqlite3
+.idea/metapeering.iml
+.idea/misc.xml

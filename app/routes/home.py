@@ -65,6 +65,7 @@ def request_handler(data):
     threshold_too_high = False
     peering_recommended = False
     asn1_asn2 = data["asn1"] + "_" + data["asn2"]
+    felicity_scores = []
 
     #isp_a_pop_list, isp_b_pop_list = get_isp_lat_long(requesterISP[0],requesterISP[1], candidateISP[0], candidateISP[1])
 
@@ -132,5 +133,7 @@ def request_handler(data):
     session['ppc']=ppc_data
     session['requester']=requesterISP
     session['candidate']=candidateISP
+    session['felicity_scores']=felicity_scores
+    session['asn1_asn2']=asn1_asn2
 
     return render_template("result.html")
