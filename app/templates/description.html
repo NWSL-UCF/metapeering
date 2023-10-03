@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="pt-4">
+        <div class="card mb-3">
+  			<div class="card-body">
+    			<h5 class="card-title">Meta Peering: How it works?</h5>
+    			<p class="card-text text-justify">
+    				Initially, we collect all the traffic exchange locations (IXP or facilities) where 2 ISPs currently have their presence.
+    				Using these information, we generate all possible peering deals considering only the common locations where both the ISPs are present and identify the best deals from the requester ISP's point of view.
+    				We give <span class="text-monospace">willingness score</span> to each of these deals and sort them according to different preferences:
+					<span class="text-monospace">difference</span>,
+					<span class="text-monospace">own</span>, and
+					<span class="text-monospace">ratio</span>.
+					More on these, later.
+    			</p>
+    			<p class="card-text text-justify">
+    				Finally, we recommend the top 3 best deals. For each deal, we also suggest the locations where traffic exchange should take place.
+				</p>
+    			<!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+  			</div>
+			<img src="/static/meta-peering-black-box.png" class="card-img-top" style="padding:1em" alt="Meta-peering basic diagram">
+		</div>
+    </div>
+{% endblock content %}
