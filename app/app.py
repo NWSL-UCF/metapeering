@@ -26,6 +26,7 @@ from app.commands import create_tables
 from app.extension import db, login_manager
 from app.models import Feedback, User
 
+from app.routes.description import Description
 from app.routes.glossary import Glossary
 from app.routes.home import Home
 from app.routes.success import Success
@@ -61,6 +62,7 @@ login_manager.init_app(app)
 
 app.register_blueprint(Home, url_prefix="")
 app.register_blueprint(Glossary, url_prefix="/glossary")
+app.register_blueprint(Description, url_prefix="/description")
 app.register_blueprint(FeedbackPage, url_prefix="/feedback")
 app.register_blueprint(Custom, url_prefix="/custom")
 app.register_blueprint(Success, url_prefix="/success")

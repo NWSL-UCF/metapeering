@@ -14,7 +14,7 @@ import pandas as pd
 from scipy import stats
 
 def peering_algorithm_implementation(isp_a, isp_b):
-    '''
+    '''peering_algorithm_implementation
     Creates the algorithm_report file in CVS format.
     The columns are:
     'Index in PPC list': This are the Possible Peering Contracts. However, note that, not all the PPC will be included here.
@@ -119,6 +119,7 @@ def peering_algorithm_implementation(isp_a, isp_b):
                 # print(e)
                 # print("A: {}, B: {}, sort by: {}, w_score_before_norm: {}, w_score_min: {}, w_score: {}, affinity: {}".format(isp_a.name, isp_b.name, Sort_Strategy_Names[sorting_strategy], w_score_without_normalization, willingness_min, w_score, affinity_score_combined))
                 # f_score = 0.0
+
             willingness_score.update({Sort_Strategy_Names[sorting_strategy]:w_score})
             affinity_score.update({Sort_Strategy_Names[sorting_strategy]:affinity_score_combined})
             felicity_score.update({Sort_Strategy_Names[sorting_strategy]:f_score})
