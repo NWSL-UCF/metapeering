@@ -4,22 +4,116 @@
     <div class="pt-4">
         <div class="card mb-3">
   			<div class="card-body">
-    			<h5 class="card-title">Meta Peering: How it works?</h5>
+    			<h5 class="card-title">Meta-Peering: Towards Automated ISP Peer Selection</h5>
     			<p class="card-text text-justify">
-    				Initially, we collect all the traffic exchange locations (IXP or facilities) where 2 ISPs currently have their presence.
-    				Using these information, we generate all possible peering deals considering only the common locations where both the ISPs are present and identify the best deals from the requester ISP's point of view.
-    				We give <span class="text-monospace">willingness score</span> to each of these deals and sort them according to different preferences:
-					<span class="text-monospace">difference</span>,
-					<span class="text-monospace">own</span>, and
-					<span class="text-monospace">ratio</span>.
-					More on these, later.
+					Peering between Internet service providers (ISPs) is a fundamental component of the Internet that facilitates efficient,
+					reliable and cost-effective connectivity by encouraging ISPs to collaborate. This peering improves network performance and
+					user experience through direct traffic exchange among ISPs and optimizing resource utilization. Traditional methods of ISP
+					peering involve manual configuration and negotiation between ISPs, which can be prone to suboptimal decision-making, as well as
+					time-consuming. To eradicate these issues, we introduce Meta-peering, a concept that aims to automate all aspects of the ISP
+					peering process. This includes identifying potential ISPs to peer based on their likelihood of peering, generating respective BGP configurations,
+					and monitoring these peering sessions for potential violation of peering agreements and outages. By exploiting existing tools and
+					machine learning techniques, the main goal of Meta-peering is to provide a platform for ISPs to efficiently find their peering partners
+					and oversee the peering process to ensure optimum performance of their respective networks.
     			</p>
-    			<p class="card-text text-justify">
-    				Finally, we recommend the top 3 best deals. For each deal, we also suggest the locations where traffic exchange should take place.
+				<h5 class="card-title">Background</h5>
+				<p class="card-text text-justify">
+					The Internet currently consists of over 89,000 Autonomous Systems (ASes) and it is a fundamentally
+					challenging concept for individual ISPs to obtain global reachability, with only
+					a few major corporations having the resources to maintain such a large network backbone.
+					As such, ISPs set up peering or transiting interconnections with each other to overcome this
+					reachability issue, with peering offering benefits in terms of better control on routing, lower
+					latency and costs. There are two basic methods of peering that are employed by ISPs according to their
+					service requirements, 1) bi-lateral private peering using dedicated physical links and 2) multilateral
+					public peering carried out through Internet eXchange Providers (IXPs). Both cases
+					typically require network administrators to manually negotiate peering deals which is time-consuming.
+					In some cases, ISPs can even choose to start off with a “trial peering” period
+					to avoid future tussles, which is again, inefficient. Moreover, selecting optimal locations and
+					ISPs to peer is a challenging problem, with current methodologies proving to be inadequate.
+					Thus finding a way to automate this peering process will go a long way and this is where
+					Meta-peering comes in.
+    			</p>
+				<h5 class="card-title">Basics of Meta-peering</h5>
+				<p class="card-text text-justify">
+					The term Meta-peering refers to a set of all tools and algorithms required to fully automate
+					the peering process, starting from obtaining a list of optimal peers and locations based on
+					their own specific criteria, to deploying BGP rules according to the peering agreements and
+					monitoring the peering sessions to evaluate network performance. The entire peering process
+					in Meta-peering is divided into four phases:<br>
+					1. Pre-Peering Phase: In this phase, ISPs will define their criteria for potential peering
+					partners. This may include, more control over traffic routes, type of traffic-ratios, PoP
+					(Point of Presence) frequency, customer cone size, etc.<br>
+					2. Peer Selection Phase: ISPs will make a decision on which ISPs to peer based on
+					the advertised criteria from the previous phase and their willingness to peer. ISPs
+					usually look for peering partners with similar size, having enough capacity to handle
+					their projected traffic load.<br>
+					3. Establishing BGP Session Phase: This phase requires ISPs to deploy optimum
+					BGP configurations based on the peering agreement. The process basically consists of
+					identifying common IXPs, calculating the shortest prefixes (i.e., covering the largest
+					IP ranges in their customer cones) and then setting up the BGP sessions.<br>
+					4. Post-Peering Phase: The final phase is all about ISPs monitoring the BGP sessions
+					to ensure the reduction of BGP outages and that traffic exchange ratios do not violate
+					the peering agreement.<br>
+					At the moment, there are multiple tools that help ISPs with the automation of the last
+					two phases, such as the “peering-over github”, Coloclue for establishing BGP sessions and
+					RING, Noction Routing Platform for monitoring those sessions. But automating the finding
+					of optimal peers and PoPs (phase 2) is much more complex. Hence, we develop a new
+					framework for the Meta-peering universe (Figure 1) that determines possible peering partners
+					and PoPs according to ISP specific criteria.
+    			</p>
+				<img src="/static/description-chart.png" class="card-img-top" style="padding:1em" alt="Meta-peering basic chart">
+				<h5 class="card-title">Optimum Peer Selection</h5>
+				<p class="card-text text-justify">
+					The centre of our automated optimum peer selection approach is a novel peer selection
+					algorithm which uses publicly available data to derive a list of best possible peering partners
+					based on individual ISP’s internal policies. The algorithm uses a heuristic function that
+					runs for both ISPs independently and creates individual lists of possible peering options
+					for each ISP, which are then compared to generate the final peering locations list. As the
+					algorithm is designed to run from one ISP’s perspective, and simulating the counterpart
+					values from publicly available data, the heuristic function requires limited shared data and
+					can run independently without breaching any security or privacy issue. All the data involved
+					in the algorithm can be divided into three types:<br>
+					• Known Data: Population at PoP locations, requester’s Traffic Matrix (TM), port capacity at PoPs.
+					These data are made publicly available by the ISPs and we collect them
+					from PeeringDB, US Census Bureau and NASA Socioeconomic Data and Applications
+					Center (SEDAC).<br>
+					• Estimated Data: Traffic Matrix (TM) of participating ISPs. Using the data obtained
+					from PeeringDB, we generate the traffic matrix for an individual ISP’s standpoint.
+					These matrices are generated using the gravity model, where the assumption is that the
+					amount of traffic between two PoP locations is directly proportional to the population
+					in those areas and the router distribution of each ISP.
 				</p>
-    			<!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+				<img src="/static/description-table.png" class="card-img-top" style="padding:1em" alt="Meta-peering basic table">
+				<p class="card-text text-justify">
+					• Generated Data: This include, a) Possible Peering Points (PPPs), which is a set of all
+					possible combinations of common PoP locations between two participating ISPs where
+					peering can be achived, generated using PoP lists from PeeringDB, b) Possible Peering
+					Contracts (PPCs), which holds information regarding the offloaded traffic amount for
+					both the ISPs individually, the total exchanged traffic between them, the difference of
+					traffic from each individual ISP’s standpoint, and the ratio of exchanged traffic at every
+					PPP, and is generated using the TMs, and c) Acceptable Peering Contracts (APCs),
+					which represents the portion of accepted PPCs, filtered according to an ISP’s internal
+					policies and sorting criteria such as:<br>
+					– Own (maximizing outbound traffic towards the potential peering partners)<br>
+					– Diff (minimizing the absolute difference between inbound and outbound traffic)<br>
+					– Ratio (prefer peers with lower inbound/outbound traffic ratio)<br>
+					The peering contracts are then ranked using the three different scores (Table 1) related
+					to different properties of the networks. These scores basically define how willing ISP are to
+					peer with each other, as well as the overall expected performance/ benefits from peering.
+					This framework has been tested using real-world ISP data in the context of the USA,
+					through 23 large ISPs. The results were validated against CAIDA data, with the model
+					successfully identifying 85% of the peering pairs.
+				</p>
+				<h5 class="card-title">Discussion</h5>
+				<p class="card-text text-justify">
+					To conclude, the concept of Meta-peering corresponds to the automation of the ISP peering process,
+					with a view to making informed decisions regarding setting-up potential ISP
+					interconnections. Experimental results suggest our method is robust enough to correctly
+					predict possible peering contracts and locations with a very high accuracy, which can in turn
+					significantly enhance network performance and resource utilization, providing a promising
+					direction for future improvements in ISP peering processes.
+				</p>
   			</div>
-			<img src="/static/meta-peering-black-box.png" class="card-img-top" style="padding:1em" alt="Meta-peering basic diagram">
 		</div>
     </div>
 {% endblock content %}
