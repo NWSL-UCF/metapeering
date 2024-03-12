@@ -3,7 +3,7 @@ from app.forms import CustomPeeringQuerryForm
 from compute.peeringAlgorithm import getCommmonPops, getIndvPops, customPeeringAlgo
 import json, os, copy
 import pandas as pd
-from subprocess import call
+import shutil
 from zipfile import ZipFile
 
 import statistics
@@ -88,8 +88,9 @@ def custom_request_handler(data):
         isp2[0] = jsonData["data"]["name"]
 
     asn1_asn2 = str(isp1[1]) + "_" + str(isp2[1])
-    if not os.path.exists("./app/static/" + asn1_asn2):
-        call("mkdir ./app/static/" + asn1_asn2, shell=True)
+    app_static_as1_asn2_path = os.path.join("app", "static", asn1_asn2)
+    if not os.path.exists(app_static_as1_asn2_path):
+        os.makedirs(app_static_as1_asn2_path, exist_ok=True)
 
     if customPeeringAlgo(tuple(isp1),tuple(isp2), [int(num) for num in data]):
 
@@ -117,18 +118,20 @@ def custom_request_handler(data):
                 zipObj.write(resultFolder + "willingness_sorted/ratio_"+asn1_asn2+".png")
                 zipObj.write(resultFolder + asn1_asn2+"_overlap.png")
 
-            call("mv "+ asn1_asn2 + "_results.zip "+ resultFolder , shell=True)
-
+            source_path = os.path.join(asn1_asn2 + "_results.zip")
+            destination_path = os.path.join(resultFolder, asn1_asn2 + "_results.zip")
+            shutil.move(source_path, destination_path)
 
         with open('./compute/output/'+asn1_asn2+'/ppc_data.json','r') as f:
             ppc_data = json.load(f)[asn1_asn2]
-
-    call('cp ./compute/output/'+asn1_asn2+'/graph/'+asn1_asn2+'_results.zip ./app/static/'+asn1_asn2+'/', shell=True)
-    call('cp ./compute/output/'+asn1_asn2+'/graph/'+asn1_asn2+'_overlap.png ./app/static/'+asn1_asn2+'/', shell=True)
-    call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/diff_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
-    call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/own_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
-    call('cp ./compute/output/'+asn1_asn2+'/graph/willingness_sorted/ratio_'+asn1_asn2+'.png ./app/static/'+asn1_asn2+'/', shell=True)
-    call('rm -r ./compute/output/'+asn1_asn2+'/', shell=True)
+    compute_output_asn1_asn2_path = os.path.join("compute", "output", asn1_asn2)
+    app_static_as1_asn2_path = os.path.join("app", "static", asn1_asn2)
+    shutil.copy2(os.path.join(compute_output_asn1_asn2_path, "graph", asn1_asn2 + "_results.zip"), os.path.join(app_static_as1_asn2_path))
+    shutil.copy2(os.path.join(compute_output_asn1_asn2_path, "graph", asn1_asn2+"_overlap.png"), os.path.join(app_static_as1_asn2_path))
+    shutil.copy2(os.path.join(compute_output_asn1_asn2_path, "graph", "willingness_sorted", "diff_" + asn1_asn2 + ".png"), os.path.join(app_static_as1_asn2_path))
+    shutil.copy2(os.path.join(compute_output_asn1_asn2_path, "graph", "willingness_sorted", "own_" + asn1_asn2 + ".png"), os.path.join(app_static_as1_asn2_path))
+    shutil.copy2(os.path.join(compute_output_asn1_asn2_path, "graph", "willingness_sorted", "ratio_" + asn1_asn2 + ".png"), os.path.join(app_static_as1_asn2_path))
+    shutil.rmtree(os.path.join(compute_output_asn1_asn2_path))
 
     session['title'] = "Peering possibility"
     session['peering_recommended']=peering_recommended

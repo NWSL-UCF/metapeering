@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, session
 from app.forms import PeeringQueryForm
 #from compute.modules.get_isp_list import get_isp_lat_long
 import boto3, json
-from subprocess import call
+import os
 from zipfile import ZipFile
 from decimal import Decimal
 from app.config import (
@@ -82,7 +82,7 @@ def request_handler(data):
 				Otherwise, Not Recommended.
 				"""
                 if not threshold_too_high:
-                    call("mkdir app/static/" + asn1_asn2, shell=True)
+                    os.makedirs(os.path.join("app", "static", asn1_asn2), exist_ok=True)
                     s3_resource = boto3.resource("s3")
                     my_bucket = s3_resource.Bucket(AWS_STORAGE_BUCKET_NAME)
 
