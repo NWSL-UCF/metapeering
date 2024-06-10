@@ -11,6 +11,15 @@
 	{% set title = session.pop('title') %}
 	{% set felicity_scores = session.pop('felicity_scores') %}
 	{% set asn1_asn2 = session.pop('asn1_asn2') %}
+	<script src="/static/isp_overlap_map/openlayers-v9.1.0-package/dist/ol.js"></script>
+	<link rel="stylesheet" href="/static/isp_overlap_map/openlayers-v9.1.0-package/ol.css">
+
+	<script>
+		var asn1 = '{{requester[1]}}';
+		var asn1_name = '{{requester[0]}}';
+		var asn2 = '{{candidate[1]}}';
+		var asn2_name = '{{candidate[0]}}';
+	</script>
 
 
 	<div class="col-12-xs">
@@ -66,6 +75,15 @@
 					</figure>
 					{% endif %}
 				</div>
+				<h5>ISP coverage area overlap:</h5>
+				<div id="map_container">
+						<div id="overlay_map">
+							<div id="legend"></div>
+						</div>
+						<figcaption class="figure-caption text-center">Overlap between ISPs</figcaption>
+
+				</div>
+
 
 				</br>
 				<h5>Recommended Peering Deals based on {{ requester[0] }}'s preference:</h5>
@@ -153,5 +171,6 @@
 			</div>
 		{% endif %}
 	</div>
-
+	<script src="/static/isp_overlap_map/map.js"></script>
+	<link rel="stylesheet" href="/static/isp_overlap_map/map.css">
 {% endblock content %}
