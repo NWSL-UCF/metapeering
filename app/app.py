@@ -36,6 +36,7 @@ from app.routes.user import LoginUser
 from app.routes.feedback import FeedbackPage
 from app.routes.error import Error
 from app.routes.ml import ML
+from app.routes.isp_overlap_json import ISP_OVERLAP_JSON
 
 
 s3 = boto3.client(
@@ -70,7 +71,7 @@ app.register_blueprint(Logout, url_prefix="/logout")
 app.register_blueprint(LoginUser, url_prefix="/user")
 app.register_blueprint(Error)
 app.register_blueprint(ML, url_prefix="/ml")
-
+app.register_blueprint(ISP_OVERLAP_JSON, url_prefix="/isp_overlap.json")
 @app.route('/json')
 def json():
     return render_template('json.html')

@@ -1,7 +1,6 @@
 app/credentials.csv
 app/appdata/ppc_data1.json
 aws/chalice/metapeering_api/chalicelib/rds_config.py
-app/static/*/
 *.DS_Store
 app/__pycache__/
 __pycache__/
