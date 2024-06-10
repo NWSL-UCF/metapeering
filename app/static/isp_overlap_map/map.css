@@ -1,0 +1,39 @@
+.popup-content {
+    padding: 10px; /* Adjust padding as needed */
+    background-color: white;
+    border-radius: 8px; /* Adjust for desired roundness */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+}
+
+#overlay_map {
+    width: 100%;
+    height: 100%;
+}
+#map_container {
+    width: auto;
+    height: 65vh;
+    margin: 10px;
+    position: relative; /* Ensure positioning context for absolute positioned children */
+}
+
+
+#legend {
+    position: absolute; /* Ensures positioning relative to the map container */
+    bottom: 20px;  /* Adjust spacing from the bottom edge */
+    right: 10px;   /* Adjust spacing from the right edge */
+    width: 150px;  /* Set the desired width of the legend */
+    max-height: 200px; /* Optional: Set a maximum height if needed */
+    background-color: white; /* White background with some transparency */
+    border-radius: 5px; /* Add some rounded corners */
+    padding: 10px; /* Add some padding inside the legend */
+    z-index: 10;  /* Adjust the number as needed */
+
+    /* ... other styles for font, etc. */
+}
+.color_block {
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+    margin-right: 5px;
+    opacity: 0.7;
+}
