@@ -1,7 +1,15 @@
+    function handleErrors (response) {
+        if (!response.ok) {
+            throw Error(response.statusText, response.status)
+        }
+        return response
+    }
     const container = document.getElementById('overlay_map');
     fetch('/isp_overlap.json/?asn1=' + asn1 + '&asn2=' + asn2, { method: 'GET' })
+        .then(handleErrors)
         .then(response => response.json())
         .then(data => {
+
             // Process the JSON data here
             console.log(data);
             ol.proj.useGeographic();
@@ -185,5 +193,8 @@
             // Display error message
             const errorContainer = document.createElement('div');
             errorContainer.innerHTML = "Error: Unable to load map data. Please try again later."
+            const ispOverlap = document.getElementById('isp_overlap');
+            ispOverlap.style.display = 'none';
             container.appendChild(errorContainer);
+            throw error;
         });
