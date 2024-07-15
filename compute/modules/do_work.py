@@ -30,44 +30,62 @@ def do_work(isp_pair, customPoPList=None):
     in such case, the value will be set to 0.
     And, in such cases, rather comparing the object with None, check PPC count, if that's 0.
     '''
+    
+    print("---- ENTERING THE do_work FUNCTION ----")
+
     isp_a_name, isp_a_asn = isp_pair[0]
     isp_b_name, isp_b_asn = isp_pair[1]
+    print(f"isp_a_name, isp_a_asn: {isp_a_name}, {isp_a_asn}")
+    print(f"isp_b_name, isp_b_asn: {isp_b_name}, {isp_b_asn}")
 
     temp_a_city_state_list, temp_b_city_state_list = [], []
     isp_a_traffic_ratio_type = isp_b_traffic_ratio_type = None
     isp_a_ip_address_count = isp_a_prefix_count = isp_b_ip_address_count = isp_b_prefix_count = 0
     global_ip_address_count = global_prefix_count = 0
     # Look for cached file.
-    isp_a_json_file_name = os.path.abspath(os.path.dirname(
-        './compute/')) + "/data/cache/" + str(isp_a_asn) + "_peering_db_data_file.json"
-    isp_b_json_file_name = os.path.abspath(os.path.dirname(
-        './compute/')) + "/data/cache/" + str(isp_b_asn) + "_peering_db_data_file.json"
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    isp_a_json_file_name = os.path.join(current_dir, "ML", "compute", "data", "2021", "isps", f"{isp_a_asn}_peering_db_data_file.json")
+    # isp_a_json_file_name = os.path.abspath(os.path.dirname(
+    #     './compute/')) + "/modules/ML/compute/data/2021/isps/" + str(isp_a_asn) + "_peering_db_data_file.json"
+    # isp_b_json_file_name = os.path.abspath(os.path.dirname(
+    #     './compute/')) + "/modules/ML/compute/data/2021/isps/" + str(isp_b_asn) + "_peering_db_data_file.json"
+    isp_b_json_file_name = os.path.join(current_dir, "ML", "compute", "data", "2021", "isps", f"{isp_b_asn}_peering_db_data_file.json")
+
+    
+    print(isp_a_json_file_name)
+    print(isp_b_json_file_name)
 
     if os.path.exists(isp_a_json_file_name) and os.path.exists(isp_b_json_file_name):
         fin = open(isp_a_json_file_name)
-        data = json.load(fin)['data']
+        data = json.load(fin)
         # data = isp_data[str(isp_a_asn)]['data']
         temp_a_city_state_list = customizePoPs(data['pop_list'], customPoPList)
+        print(f"\ntemp_a_city_state_list {temp_a_city_state_list}")
         if isp_a_asn == 174:
             isp_a_traffic_ratio_type = 'BALANCED'
         else:
-            isp_a_traffic_ratio_type = data['traffic_ratio']
+            # TODO: traffic_ratio field does NOT exist in JSON 
+            # isp_a_traffic_ratio_type = data['traffic_ratio']
+            isp_a_traffic_ratio_type = data['info_ratio'].upper()
 
         isp_a_ip_address_count = data['address_space']
         isp_a_prefix_count = data['prefixes']
         global_ip_address_count = data['total_addresses_in_globe']
         global_prefix_count = data['total_prefixes_in_globe']
+        print(f"\n{isp_a_traffic_ratio_type} {isp_a_ip_address_count} {isp_a_prefix_count} {global_ip_address_count} {global_prefix_count}")
         # fin.close()
 
         fin = open(isp_b_json_file_name)
-        data = json.load(fin)['data']
+        data = json.load(fin)
         # data = isp_data[str(isp_b_asn)]['data']
 
         temp_b_city_state_list = customizePoPs(data['pop_list'], customPoPList)
+        print(f"\ntemp_b_city_state_list {temp_b_city_state_list}")
         if isp_b_asn == 174:
             isp_b_traffic_ratio_type = 'BALANCED'
         else:
-            isp_b_traffic_ratio_type = data['traffic_ratio']
+            #isp_b_traffic_ratio_type = data['traffic_ratio']
+            isp_b_traffic_ratio_type = data['info_ratio'].upper()
         isp_b_ip_address_count = data['address_space']
         isp_b_prefix_count = data['prefixes']
         # fin.close()
@@ -77,15 +95,24 @@ def do_work(isp_pair, customPoPList=None):
         return None
     # print('Jaaying: ', temp_a_city_state_list)
     # print('Jaaying: ', temp_b_city_state_list)
+
+    print("\nisp_a_pop_location_id_list")
     isp_a_pop_location_id_list = convert_city_state_to_pop_location(
         temp_a_city_state_list)
     isp_b_pop_location_id_list = convert_city_state_to_pop_location(
         temp_b_city_state_list)
+    print(isp_a_pop_location_id_list)
+
+    print("\nisp_b_pop_location_id_list")
+    print(isp_b_pop_location_id_list)
     # print('AAying: ', isp_a_pop_location_id_list)
     # print('AAying: ', isp_b_pop_location_id_list)
 
     common_pop_location_id_list = [
         a for a in isp_a_pop_location_id_list if a in isp_b_pop_location_id_list]
+    
+    print("\ncommon_pop_location_id_list")
+    print(common_pop_location_id_list)
 
     isp_a_port_capacity_at_common_pop_dict = {}
     isp_b_port_capacity_at_common_pop_dict = {}
@@ -96,7 +123,7 @@ def do_work(isp_pair, customPoPList=None):
         (i['isp_type_in_peering_db'], i['isp_id_in_peering_db']): i['port_capacity'] for i in temp_a_city_state_list}
     temp_dict_for_isp_b_port_capacity = {
         (i['isp_type_in_peering_db'], i['isp_id_in_peering_db']): i['port_capacity'] for i in temp_b_city_state_list}
-
+    
     for k, v in common_pop_location_isp_id_isp_type_in_peeringdb_tuple_list.items():
         isp_a_port_capacity_at_common_pop_dict[k] = temp_dict_for_isp_a_port_capacity[v]
         isp_b_port_capacity_at_common_pop_dict[k] = temp_dict_for_isp_b_port_capacity[v]
@@ -111,7 +138,7 @@ def do_work(isp_pair, customPoPList=None):
     # try: converting to python 3, above line gives error!
     isp_a_port_capacity_at_common_pop_dict = sorted(
         isp_a_port_capacity_at_common_pop_dict.items(), key=lambda k_v: (k_v[1], k_v[0]), reverse=True)
-
+    
     if len(common_pop_location_id_list) > Max_Common_Pop_Count:
         isp_a_port_capacity_at_common_pop_dict = isp_a_port_capacity_at_common_pop_dict[
             :Max_Common_Pop_Count]
@@ -120,16 +147,37 @@ def do_work(isp_pair, customPoPList=None):
     common_pop_location_id_list = list(
         isp_a_port_capacity_at_common_pop_dict.keys())
 
+    print((isp_a_ip_address_count))
+    print((global_ip_address_count))
+    print((isp_a_prefix_count))
+    print((global_prefix_count))
+    print(isp_a_ip_address_count * 100.0)
+    print(isp_a_prefix_count * 100.0)
+    print((isp_a_ip_address_count * 100.0) / global_ip_address_count)
+    print((isp_a_prefix_count * 100.0) / global_prefix_count)
+    print((isp_b_ip_address_count))
+    print((isp_b_prefix_count))
+    print(isp_b_ip_address_count * 100.0)
+    print(isp_b_prefix_count * 100.0)
+    print((isp_b_ip_address_count * 100.0) / global_ip_address_count)
+    print((isp_b_prefix_count * 100.0) / global_prefix_count)
+    print(isp_a_traffic_ratio_type)
+    print("here!!!")
     isp_a = ISP(isp_a_asn, isp_a_name, (isp_a_ip_address_count * 100.0) / global_ip_address_count, (isp_a_prefix_count * 100.0) / global_prefix_count,
                 isp_a_pop_location_id_list, isp_b_pop_location_id_list, common_pop_location_id_list, isp_a_port_capacity_at_common_pop_dict, isp_a_traffic_ratio_type)
+    # isp_a = ISP("hfld", "JFKDL", 0.17448056180482413, 0.004983025526203919,
+    #             [1, 2, 3], [1, 2, 3], [1, 2, 3], {"1": 2}, "MOSTLY OUTBOUND")
+    print("isp_a")
     isp_b = ISP(isp_b_asn, isp_b_name, (isp_b_ip_address_count * 100.0) / global_ip_address_count, (isp_b_prefix_count * 100.0) / global_prefix_count,
                 isp_b_pop_location_id_list, isp_a_pop_location_id_list, common_pop_location_id_list, isp_b_port_capacity_at_common_pop_dict, isp_b_traffic_ratio_type)
+    print("isp_b")
 
     isp_a.all_acceptable_peering_contracts, isp_a.all_acceptable_peering_contracts_count, isp_b.all_acceptable_peering_contracts, isp_b.all_acceptable_peering_contracts_count = compute_all_acceptable_peering_contracts(
         isp_a.sorting_strategy, isp_a.my_pop_locations_list, isp_a.offloaded_traffic_list_to_opponent_at_common_pops, isp_b.sorting_strategy, isp_b.my_pop_locations_list, isp_b.offloaded_traffic_list_to_opponent_at_common_pops, common_pop_location_id_list, isp_a.isp_traffic_ratio_type, isp_b.isp_traffic_ratio_type)
-    willingness_score, affinity_score, felicity_score = peering_algorithm_implementation(
-        isp_a, isp_b)
+    willingness_score, affinity_score, felicity_score = peering_algorithm_implementation(isp_a, isp_b)
 
+    # TODO!!!!!!!!!! NOTE!!!!!!!!!!!!!! TODO!!!!!!!!!!!!!!!!
+    # NOTE: One of the 3 output files is generated here
     fout_for_apc_count = open(os.path.abspath(
         Output_Directory + "/" + "apc_count_" + str(Max_Common_Pop_Count) + ".txt"), "a+")
     fout_for_apc_count.write("ISP {:<12} has {:>3} PoP location, ISP {:<12} has {:>3} PoP location, Common location count: {:<3}\n".format(
@@ -151,10 +199,12 @@ def do_work(isp_pair, customPoPList=None):
         if isp_a_similarity_condition_value > isp_b_similarity_condition_value:
             similarity_score = float(
                 isp_b_similarity_condition_value) / isp_a_similarity_condition_value
+            print("similarity_score")
         else:
             if isp_b_similarity_condition_value != 0:
                 similarity_score = float(
                     isp_a_similarity_condition_value) / isp_b_similarity_condition_value
+                print("isp b similarity score")
         if i == 0:
             similarity_score_based_on_pop_count = similarity_score
         elif i == 1:

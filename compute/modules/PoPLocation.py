@@ -11,7 +11,7 @@ class PoPLocation(object):
         PoPLocation.ID += 1
         self.ID = PoPLocation.ID
         self.org_name = org_name
-        self.name = name
+        self.name = name # TODO: What is this supposed to be?
         self.isp_type_in_peering_db = isp_type_in_peering_db
         self.isp_id_in_peering_db = isp_id_in_peering_db
         self.city = city
@@ -20,7 +20,7 @@ class PoPLocation(object):
         self.internet_penetration_percentage = 1.0
         self.latitude = latitude
         self.longitude = longitude
-        self.list_of_asn_who_has_their_pop_here = [] 
+        self.list_of_asn_who_has_their_pop_here = []
         
     def __str__(self):
         return "PoPLocation ID: {}, (PeeringDB) ISP Type: {}, (PeeringDB) ISP ID: {}, City: {}, State: {}, Population: {}".format(self.ID, self.isp_type_in_peering_db, self.isp_id_in_peering_db, self.city, self.state, self.population)

@@ -14,8 +14,10 @@ def draw_graph(isp_a_asn, isp_b_asn, apc_data, sort_strategy, output_directory_f
     @note: This plots the graphs.
     Plots APC graph of ISP A, B individually and another graph which plots these two as well as the combined APC
     '''
+    print("------------ INSIDE DRAW_GRAPH ---------------")
     output_graph_ppc_id_sorted_filepath = os.path.abspath(output_directory_for_isp + "/" + "graph" + "/" + "ppc_id_sorted")
     output_graph_willingness_sorted_filepath = os.path.abspath(output_directory_for_isp + "/" + "graph" + "/" + "willingness_sorted")
+    print(f"output_graph_willingness_sorted_filepath {output_graph_willingness_sorted_filepath}")
 
     if not os.path.exists(output_graph_ppc_id_sorted_filepath):
         os.makedirs(output_graph_ppc_id_sorted_filepath)

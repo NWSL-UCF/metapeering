@@ -95,27 +95,17 @@
 	    				<div class="form-group col-md-6">
 	     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
 	     					<label>Candidate AS</label>
-							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Autonomous System you want to peer with.">?</span>
+								<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Autonomous System you want to peer with.">?</span>
 	     					{{ form.asn2(class='form-control')|safe }}
 	     					</br>
 					    	{% if form.asn2.errors %}
-					            {% for error in form.asn2.errors %}
-						            <div class="alert alert-danger">{{ error }}</div>
-					            {% endfor %}
-				            {% endif %}
+									{% for error in form.asn2.errors %}
+										<div class="alert alert-danger">{{ error }}</div>
+									{% endfor %}
+								{% endif %}
 	    				</div>
 					   </div>
-					   <label>Threshold</label> 
-						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="How selective are you in peering? 0=Open, 1=Closed.">?</span>
-						{{ form.threshold(class='form-control', 
-							placeholder='Peering threshold (0.0 to 1.0)') }}
-						</br>
-						{% if form.threshold.errors %}
-							{% for error in form.threshold.errors %}
-								<div class="alert alert-danger">{{ error }}</div>
-							{% endfor %}
-						{% endif %}
-	    			<input type="submit" class="btn btn-primary" form="asn-form" id="searchButton" value="Search">
+						 <input type="submit" class="btn btn-primary" form="asn-form" id="searchButton" style="display: block; margin: 0 auto; width: 15vw;" value="Submit">
 	  			</form>		
 			</div>  
 		</div>

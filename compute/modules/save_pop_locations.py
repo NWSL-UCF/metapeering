@@ -17,8 +17,23 @@ def save_pop_locations(asn1, asn2):
         _item['org_name'] = l.org_name
         _item['name'] = l.name
         pop_list.append(_item)
-    with open(os.path.join(Output_Directory, asn1+'_'+asn2+'/pop_list.json'), 'w') as fout:
-        data = {}
-        data['data'] = pop_list
-        json.dump(data, fout)
-        fout.close()
+
+    file_path = os.path.join(Output_Directory, asn1 + '_' + asn2, 'pop_list.json')
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    try:
+        with open(file_path, 'w') as fout:
+            data = {}
+            data['data'] = pop_list
+            json.dump(data, fout)
+            fout.close()
+        print("File created or opened successfully:", file_path)
+    except Exception as e:
+        print("Error:", e)
+    # with open(os.path.join(Output_Directory, asn1+'_'+asn2+'/pop_list.json'), 'w') as fout:
+    #     data = {}
+    #     data['data'] = pop_list
+    #     json.dump(data, fout)
+    #     fout.close()
+

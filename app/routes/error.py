@@ -10,7 +10,9 @@ def asn_not_found(e):
 
 @Error.app_errorhandler(Exception)
 def page_not_found(e):
+    print(e)
     e = str(e).split(":")
+    print(e)
     error_code = e[0][:3]
     error_name = e[0][3:]
     error_message = e[1]

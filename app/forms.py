@@ -13,6 +13,7 @@ from wtforms import (
 )
 from .customoptgroupselect import ExtendedSelectField
 
+# Setting up dictionaries to reference for the forms page
 
 class PeeringQueryForm(FlaskForm):
     options = [
@@ -80,6 +81,7 @@ class PeeringQueryForm(FlaskForm):
         ),
     ]
 
+    # UI elements
     asn1 = ExtendedSelectField(
         "ASN 1",
         choices=[("-1", "Select your own ISP")] + options_grouped_asn,
@@ -175,15 +177,6 @@ class CustomPeeringQuerryForm(FlaskForm):
             validators.Length(min=1, max=20, message="Invalid ASN"),
         ],
         render_kw={"autofocus": True, "placeholder": "ASXXXX"},
-    )
-    threshold = DecimalField(
-        "Threshold",
-        [
-            validators.InputRequired(),
-            validators.NumberRange(
-                min=0.0, max=1.0, message="Value must be between 0.0 and 1.0"
-            )
-        ],
     )
     submit = SubmitField("Search")
 
