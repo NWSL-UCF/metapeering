@@ -63,7 +63,7 @@ def getPopulation(isp_a_poly, isp_b_poly):
     Given two polygons, this function uses the GPW gridded population of the world data to calculate\n
     the population in polygon A, polygon B and the intersection of those polygons.
     '''
-    pop_data = np.loadtxt("compute/data/gpw_v4_population_count_2020.asc", skiprows=6)
+    pop_data = np.loadtxt("/var/www/gpw_v4_population_count_2020.asc", skiprows=6)
     pop_data = np.where(pop_data==-9999, 0.0, pop_data)
 
     isp_a_pop=0.0
