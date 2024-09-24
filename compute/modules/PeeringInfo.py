@@ -147,20 +147,39 @@ class PeeringInfo(object):
         # return ix
 
     def get_isp_by_asn(self, asn):
-        # print("Entering get_isp_by_asn.")
+        print("Entering get_isp_by_asn.")
+        print("asn = ", asn)
         '''
         Sample example:
         ix = self.pdb.all('net', asn=16509)
         @note: From https://github.com/grizz/pdb-examples/blob/master/get_peerinfo.py
         '''
         try:
-            data = self.pdb.fetch_all(resource.get_resource(self.API_TYPE_NET), 999, asn=asn)[0]
-        except:
-            raise ASNNotFoundError(asn, "AS"+str(asn)+" is not a valid ASN. It was not found in the Peering Database")
+            print(resource.get_resource(self.API_TYPE_NET))
+            print("pdb", self.pdb)
+            #data = self.pdb.all('net', asn=63311)[0]
+
+            #networks = self.pdb.all('net')
+
+            # query by parameter
+            print(self.pdb.all(resource.Network).filter(asn=2906)[0])
+            # or
+            print(self.pdb.tags.net.all().filter(asn=2906))
+            
+            # Filter networks to find the one associated with ASN 63311
+            #net = next((net for net in networks if net['asn'] == 63311), None)
+            
+            print("NETWORKS\n")
+            #print(networks)
+            #print(data)
+            #data = self.pdb.fetch_all(resource.get_resource(self.API_TYPE_NET), 999, asn=asn)[0]
+        except Exception as e:
+            print("An error occurred:", e)
+            return
         # print('Got DATA from get_isp_by_asn: ', data)
         # print("Leaving get_isp_by_asn.")
 
-        return data
+        #return data
             # raise Exception('The provided ASN was not found in the Peering Data Base!')
 
         # net = self.pdb.all(self.API_TYPE_NET, asn=asn)[0] #pylint: disable=unexpected-keyword-arg
@@ -558,6 +577,26 @@ class PeeringInfo(object):
         # print("Leaving get_isp_name_from_net_id")
 
         return {"name":name, "aka":also_known_as}
+    
+    def get_pop_name_from_id(self, api_type, isp_id):
+        print(api_type)
+        print(isp_id)
+    
+        # Construct the complete URL
+        url = f"{self.peeringdb_link}{api_type}/{isp_id}"
+
+        html = urllib.request.urlopen(url).read()
+        soup = BeautifulSoup(html, "html.parser")
+        soup.prettify()
+        print("the peeringDB website")
+
+        div_element = soup.find('div', {'class': 'view_value', 'data-edit-name': 'name_long'})
+
+        # Print the text content of the div element
+        if div_element:
+            return div_element.text
+
+        return None
 
 
 def convert_list_to_frequency_dict(list_of_items):

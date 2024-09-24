@@ -12,6 +12,7 @@ from flask_bootstrap import Bootstrap
 from flask_s3 import FlaskS3
 import boto3
 
+# Getting env variables
 from app.config import (
     AWS_STORAGE_BUCKET_NAME,
     AWS_ACCESS_KEY_ID,
@@ -22,10 +23,12 @@ from app.config import (
     USER3_PW,
 )
 
+# Importing the routes (pages)
 from app.commands import create_tables
 from app.extension import db, login_manager
 from app.models import Feedback, User
 
+# Importing from the routes folder 
 from app.routes.description import Description
 from app.routes.glossary import Glossary
 from app.routes.home import Home
@@ -38,29 +41,34 @@ from app.routes.error import Error
 from app.routes.ml import ML
 from app.routes.isp_overlap_json import ISP_OVERLAP_JSON
 
-
+# Creating the S3 bucket (used to run different commands)
 s3 = boto3.client(
     "s3",
     aws_access_key_id=AWS_ACCESS_KEY_ID,
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
 )
 
+# Setting up Flask
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "metapeering"
+app.config["SECRET_KEY"] = "metapeering"   
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 Bootstrap(app)
 
+# Setting the configs to the env variables
+# The app configs need to know what the env variables are
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
 
-db.init_app(app)
+# db.init_app(app)
 app.cli.add_command(create_tables)
 
+# Dummy data for user accounts
 app.config["USER1_PW"] = USER1_PW
 app.config["USER2_PW"] = USER2_PW
 app.config["USER3_PW"] = USER3_PW
 login_manager.init_app(app)
 
+# Registering the routes (setting which page each URL prefix will go to)
 app.register_blueprint(Home, url_prefix="")
 app.register_blueprint(Glossary, url_prefix="/glossary")
 app.register_blueprint(Description, url_prefix="/description")

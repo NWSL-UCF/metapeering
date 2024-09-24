@@ -1,6 +1,8 @@
 from .gVars import List_Of_POP_Locations
 from .PopulationFromCensusGov import PopulationInfo
+from .PeeringInfo import PeeringInfo
 from .PoPLocation import PoPLocation
+from .get_isp_name_and_prefix_count_and_address_count_and_neighbor_count_from_caida import get_isp_name_and_prefix_count_and_address_count_and_neighbor_count_from_caida
 
 def convert_city_state_to_pop_location(city_state_list):
     '''
@@ -12,15 +14,19 @@ def convert_city_state_to_pop_location(city_state_list):
     While creating new PoPLocation object,we check based on ISP_ID AND ISP_TYPE to prevent creating same IXP/ FACILITY again.
     '''
     populationInfo = PopulationInfo()
+    peeringInfo = PeeringInfo()
     isp_pop_location_id_list = []
  
     temp_pop_location_key_dict = {str(p.isp_type_in_peering_db + "_" + str(p.isp_id_in_peering_db)):p.ID for p in List_Of_POP_Locations}
     for c_s_temp in city_state_list:
         if str(c_s_temp['isp_type_in_peering_db'] + "_" + str(c_s_temp['isp_id_in_peering_db'])) not in temp_pop_location_key_dict.keys():
-            # Check here. We've updated the code to use 'location' tuple instead of separate lat and long.
-            pop = PoPLocation(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db'], c_s_temp['city'], c_s_temp['state'], c_s_temp['location'][0], c_s_temp['location'][1], c_s_temp['org_name'], c_s_temp['name'])
+            # TODO: The name field does not exist in c_s_temp. What is the difference between org_name and name?
+            org_name = c_s_temp.get('org_name', peeringInfo.get_pop_name_from_id(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db']))
+            #name = get_isp_name_and_prefix_count_and_address_count_and_neighbor_count_from_caida()
+            pop = PoPLocation(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db'], c_s_temp['city'], c_s_temp['state'], c_s_temp['location'][0], c_s_temp['location'][1], org_name, org_name)
             pop.population = populationInfo.get_city_population(pop.city, pop.state)
             pop.internet_penetration_percentage = c_s_temp['internet_penetration_percentage']
+            # List_Of_POP_Locations is a variable in gVars.py
             List_Of_POP_Locations.append(pop)
             isp_pop_location_id_list.append(pop.ID)
             temp_pop_location_key_dict.update({str(c_s_temp['isp_type_in_peering_db'] + "_" + str(c_s_temp['isp_id_in_peering_db'])):pop.ID})

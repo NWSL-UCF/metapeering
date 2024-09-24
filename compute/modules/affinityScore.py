@@ -10,6 +10,9 @@ import math, operator, statistics, json, os
 import matplotlib.patches as mpatches
 import geopandas as gpd
 import matplotlib.pyplot as plt
+import io
+
+import boto3
 
 def sort_by_angle(isp, isp_center):
     '''
@@ -63,26 +66,155 @@ def getPopulation(isp_a_poly, isp_b_poly):
     Given two polygons, this function uses the GPW gridded population of the world data to calculate\n
     the population in polygon A, polygon B and the intersection of those polygons.
     '''
+
     pop_data = np.loadtxt("/var/www/gpw_v4_population_count_2020.asc", skiprows=6)
     pop_data = np.where(pop_data==-9999, 0.0, pop_data)
+
+#     print("----------- AFFINITY SCORE CODE ------------")
+
+#     s3 = boto3.client("s3")
+    
+#     print(s3)
+
+#     # Specify the bucket and object key of the file in S3
+#     bucket_name = 'gpw-v4-population-count-2020'
+#     object_key = 'gpw_v4_population_count_2020.asc'
+
+#     try:
+#         s3.head_bucket(Bucket=bucket_name)
+#         print(f"The bucket '{bucket_name}' exists.")
+#     except s3.exceptions.ClientError as e:
+#         if e.response['Error']['Code'] == '404':
+#             print("here")
+#             print(f"The bucket '{bucket_name}' does not exist.")
+#         else:
+#             # Handle other errors
+#             print("here3")
+#             print(f"An error occurred: {e}")
+
+#     # Check if the object exists
+#     try:
+#         s3.head_object(Bucket=bucket_name, Key=object_key)
+#         print(f"The object '{object_key}' exists in the bucket '{bucket_name}'.")
+#     except s3.exceptions.ClientError as e:
+#         if e.response['Error']['Code'] == '404':
+#             print("here2")
+#             print(f"The object '{object_key}' does not exist in the bucket '{bucket_name}'.")
+#         else:
+#             # Handle other errors
+#             print("here4")
+#             print(f"An error occurred: {e}")
+
+#     # s3.download_file(
+#     #     'gpw-v4-population-count-2020', 'gpw_v4_population_count_2020.asc', 'app/static/' + "gpw_v4_population_count_2020.asc"
+#     # )
+
+#     # Create a file-like object to read the contents of the S3 object
+
+#     # Define the directory where you want to save the file
+#     directory = os.path.abspath(os.path.dirname('./app/static/'))
+#     # Define the file name
+#     file_name = "gpw_v4_population_count_2020.asc"
+#     # Combine directory and file name to get the full file path
+#     local_file_path = os.path.join(directory, file_name)
+
+#     if not os.path.exists(local_file_path):
+#         with open(local_file_path, 'wb') as f:
+#             s3_object = s3.get_object(Bucket=bucket_name, Key=object_key)
+#             print(s3_object)
+#             for chunk in s3_object['Body'].iter_chunks():
+#                 f.write(chunk)
+
+#     # TODO: THIS IS THE LINE TAKING FOREVER?
+#     # Read the data from the StreamingBody object
+#     # data_str = streaming_body.read().decode('utf-8')
+
+#     # print("\nData String of Streaming Body")
+#     # print(data_str)
+
+#     # Count the number of rows and columns
+#     #num_rows = len(data_str.split('\n'))
+#     #num_cols = len(data_str.split('\n')[0].split(','))  # Assuming comma-separated values
+
+#     #print("\nNumber of rows:", num_rows)
+#     #print("\nNumber of columns:", num_cols)
+
+#     # Remove or replace embedded newlines in the data
+#     # For example, you can replace embedded newlines with spaces
+#     #data_str_cleaned = data_str.replace('\n', ' ')
+        
+#     # Convert the cleaned data string back to a file-like object
+#     #streaming_body_cleaned = io.StringIO(data_str_cleaned)
+
+#     # Loading the data into a NumPy array
+#     #pop_data = np.loadtxt(streaming_body_cleaned, skiprows=6, usecols=range(171))
+#     pop_data = np.loadtxt(local_file_path, skiprows=6)
+
+#     # Handling special values
+#     pop_data = np.where(pop_data == -9999, 0.0, pop_data)
+
+#     # s3_resource = boto3.resource("s3")
+#     # my_bucket = s3_resource.Bucket('gpw-v4-population-count-2020')
+
+    
+
+
+#     # pop_data = np.loadtxt("compute/data/gpw_v4_population_count_2020.asc")
+#     # print(pop_data)
+#     # script_dir = os.path.dirname(os.path.abspath(__file__))
+#     # file_path = os.path.join(script_dir, "..", "data", "gpw_v4_population_count_2020.asc")
+#     # pop_data = np.loadtxt(file_path)
+#     # print(pop_data)
+#     # pop_data = np.loadtxt("compute/data/gpw_v4_population_count_2020.asc", skiprows=6)
+#     # print("\npop_data")
+#     # print(pop_data)
+#     # pop_data = np.where(pop_data==-9999, 0.0, pop_data)
+#     # print("\npop_data")
+#     # print(pop_data)
+# >>>>>>> custom-routes-overhaul
 
     isp_a_pop=0.0
     isp_b_pop=0.0
     int_pop=0.0
+
+    print("\nisp_a_poly.is_valid")
+    #buffered_a_poly = isp_a_poly.buffer(0)
+    #print(buffered_a_poly.is_valid)
+    print(isp_a_poly.is_valid)
+    print("\nisp_b_poly.is_valid")
+    print(isp_b_poly.is_valid)
+    print("\nisp_a_poly")
+    print(isp_a_poly)
+    print("\nisp_b_poly")
+    print(isp_b_poly)
+    
+    # Check validity of polygons
+    if not isp_a_poly.is_valid:
+        isp_a_poly = isp_a_poly.buffer(0)
+    if not isp_b_poly.is_valid:
+        isp_b_poly = isp_b_poly.buffer(0)
 
     min_x, min_y, max_x, max_y = isp_a_poly.union(isp_b_poly).bounds
 
     min_x = int((min_x+180.0)/0.041666666666667)
     min_y = int((min_y+90.0)/0.041666666666667)
 
+    print('\n min_x, min_y')
+    print(min_x, min_y)
+
     max_x = int(math.ceil((max_x+180.0)/0.041666666666667))+2
     max_y = int(math.ceil((max_y+90.0)/0.041666666666667))+2
+
+    print('\n max_x, max_y')
+    print(max_x, max_y)
 
     for i in range(min_x,max_x):
         for j in range(min_y,max_y):
 
             point_to_check = Point((0.041666666666667*i)-180.0, (0.041666666666667*j)-90.0)
-            pop_at_point = pop_data[i][j]
+            if 0 <= i < pop_data.shape[0] and 0 <= j < pop_data.shape[1]:
+                pop_at_point = pop_data[i][j]
+            #pop_at_point = pop_data[i][j]
 
             if point_to_check.within(isp_a_poly):
 

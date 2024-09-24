@@ -30,15 +30,13 @@ def save_felicity_score_to_file(isp_a_asn, isp_b_asn, felicityScore):
         json.dump(felicityScore, f)
 
 def getIndvPops(isp_a_asn, isp_b_asn):
-    ensure_isp_json_files(('',isp_a_asn), ('',isp_b_asn))
-
     isp_a_pops = []
-    with open('./compute/data/cache/'+str(isp_a_asn)+'_peering_db_data_file.json', 'r') as f:
-        isp_a_pops = json.load(f)['data']['pop_list']
     isp_b_pops = []
-    with open('./compute/data/cache/'+str(isp_b_asn)+'_peering_db_data_file.json', 'r') as f:
-        isp_b_pops = json.load(f)['data']['pop_list']
-
+   
+    with open('./compute/modules/ML/compute/data/2021/isps/'+str(isp_a_asn)+'_peering_db_data_file.json', 'r') as f:
+        isp_a_pops = json.load(f)['pop_list']
+    with open('./compute/modules/ML/compute/data/2021/isps/'+str(isp_b_asn)+'_peering_db_data_file.json', 'r') as f:
+        isp_b_pops = json.load(f)['pop_list']
     return isp_a_pops, isp_b_pops
 
 def getCommmonPops(isp_a_asn, isp_b_asn):
@@ -59,13 +57,12 @@ def getCommmonPops(isp_a_asn, isp_b_asn):
 
 
 def customPeeringAlgo(isp_a, isp_b, pop_list):
-
-    ensure_isp_json_files(isp_a, isp_b)
-    # common_pop_list = getCommmonPops(isp_a[1], isp_b[1])
+    if not ensure_isp_json_files(isp_a, isp_b):
+        error_message = f"JSON files for ISP {isp_a[1]} or ISP {isp_b[1]} are missing."
+        raise FileNotFoundError(error_message)
 
     scatter_plot_data = {"data": {}}
     scatter_plot_data["data"]['access'] = [do_work((isp_a, isp_b), customPoPList=pop_list)]
-
 
     draw_scatter_plot(scatter_plot_data)
     # draw_brittleness(scatter_plot_data)

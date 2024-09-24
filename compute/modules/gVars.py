@@ -34,7 +34,7 @@ SORT_STRATEGY_DIFF = 0
 SORT_STRATEGY_OWN = 1
 SORT_STRATEGY_RATIO = 2
 Sort_Strategy_Names = ['diff', 'own', 'ratio']
-traffic_ratio_dict = {0: "NOT DISCLOSED", 1: "HEAVY INBOUND", 2: "MOSTLY INBOUND", 3: "BALANCED", 4: "MOSTLY OUTBOUND", 5: "HEAVY OUTBOUND"}
+traffic_ratio_dict = {0: "NOT DISCLOSED", 1: "HEAVY INBOUND", 2: "MOSTLY INBOUND", 3: "BALANCED", 4: "MOSTLY OUTBOUND", 5: "HEAVY OUTBOUND"} # TODO!!!!!!!!!
 traffic_ratio_min_max = {"HEAVY INBOUND": ['1_9'], "MOSTLY INBOUND": ['1_6'], "BALANCED": ['1_3', '3_1'], "MOSTLY OUTBOUND": ['6_1'], "HEAVY OUTBOUND": ['9_1']}
 # traffic_ratio_min_max = {"HEAVY INBOUND": ['1_7'], "MOSTLY INBOUND": ['1_4', '1_6'], "BALANCED": ['1_3', '3_1'], "MOSTLY OUTBOUND": ['4_1', '6_1'], "HEAVY OUTBOUND": ['7_1']}
 
@@ -69,7 +69,7 @@ else:
     weight_a = 23
 
 Output_Directory = os.path.abspath(os.path.dirname('./compute/')) + "/" + "output"
-Data_Directory = os.path.abspath(os.path.dirname('./compute/')) + "/" + "data"
+Data_Directory = os.path.abspath(os.path.dirname('./compute/')) + "/" + "modules/ML/compute/data"
 
 if not os.path.exists(Output_Directory):
     os.mkdir(Output_Directory)

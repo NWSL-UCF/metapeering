@@ -1,1 +1,509 @@
-{"status": "ok", "looking_glass": "", "route_server": "", "netixlan_updated": "2021-02-22T06:03:23.955397Z", "info_ratio": "Mostly Outbound", "id": "694", "policy_ratio": false, "info_unicast": true, "policy_general": "Selective", "website": "", "allow_ixp_update": false, "updated": "2020-11-17T01:02:54Z", "netfac_updated": "2021-03-05T16:29:53.739904Z", "info_traffic": "", "info_multicast": false, "asn": 8075, "policy_locations": "Preferred", "name": "Microsoft", "info_scope": "Global", "notes": "", "created": "2006-01-16T16:54:22Z", "org_id": 8896, "policy_url": "https://www.microsoft.com/peering", "info_never_via_route_servers": true, "poc_updated": "2020-01-22T04:24:11Z", "info_type": "content", "policy_contracts": "Not Required", "info_prefixes6": 500, "aka": "8068 8069", "info_prefixes4": 2000, "info_ipv6": true, "irr_as_set": "AS-MICROSOFT", "pop_list": [{"city": "Palo Alto", "country": "US", "state": "CA", "org_name": "Equinix, Inc.", "isp_id_in_peering_db": 5, "location": [37.45, -122.16], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.838}, {"city": "San Jose", "country": "US", "state": "CA", "org_name": "Equinix, Inc.", "isp_id_in_peering_db": 5, "location": [37.24, -121.78], "port_capacity": 201000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.838}, {"city": "New York", "country": "US", "state": "NY", "org_name": "Equinix, Inc.", "isp_id_in_peering_db": 38, "location": [40.74, -74.0], "port_capacity": 101000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.802}, {"city": "Ashburn", "country": "US", "state": "VA", "org_name": "Digital Realty", "isp_id_in_peering_db": 2572, "location": [39.0, -77.48], "port_capacity": 100000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.852}, {"city": "Atlanta", "country": "US", "state": "GA", "org_name": "Digital Realty", "isp_id_in_peering_db": 22, "location": [33.76, -84.39], "port_capacity": 201000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.847}, {"city": "Dallas", "country": "US", "state": "TX", "org_name": "Megaport", "isp_id_in_peering_db": 1180, "location": [32.79, -96.79], "port_capacity": 30000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.8170000000000001}, {"city": "Ashburn", "country": "US", "state": "VA", "org_name": "Megaport", "isp_id_in_peering_db": 1178, "location": [39.02, -77.46], "port_capacity": 421000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.852}, {"city": "Santa Clara", "country": "US", "state": "CA", "org_name": "CoreSite LLC", "isp_id_in_peering_db": 3344, "location": [37.38, -121.97], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.838}, {"city": "Miami", "country": "US", "state": "FL", "org_name": "Community IX Holdings", "isp_id_in_peering_db": 954, "location": [25.78, -80.19], "port_capacity": 301000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.8420000000000001}, {"city": "Chicago", "country": "US", "state": "IL", "org_name": "Amsterdam Internet Exchange BV", "isp_id_in_peering_db": 944, "location": [41.88, -87.63], "port_capacity": 20000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.865}, {"city": "San Jose", "country": "US", "state": "CA", "org_name": "Amsterdam Internet Exchange BV", "isp_id_in_peering_db": 935, "location": [37.33, -121.89], "port_capacity": 20000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.838}, {"city": "Jacksonville", "country": "US", "state": "FL", "org_name": "EdgeConneX", "isp_id_in_peering_db": 2076, "location": [30.25, -81.6], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8420000000000001}, {"city": "Dallas", "country": "US", "state": "TX", "org_name": "Equinix, Inc.", "isp_id_in_peering_db": 69, "location": [32.8, -96.82], "port_capacity": 202000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8170000000000001}, {"city": "San Diego", "country": "US", "state": "CA", "org_name": "EdgeConneX", "isp_id_in_peering_db": 1928, "location": [32.84, -117.17], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.838}, {"city": "Seattle", "country": "US", "state": "WA", "org_name": "The Westin Building", "isp_id_in_peering_db": 71, "location": [47.61, -122.34], "port_capacity": 211000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.885}, {"city": "Southfield", "country": "US", "state": "MI", "org_name": "EdgeConneX", "isp_id_in_peering_db": 1927, "location": [42.45, -83.26], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.812}, {"city": "Nashville", "country": "US", "state": "TN", "org_name": "EdgeConneX", "isp_id_in_peering_db": 1924, "location": [36.14, -86.7], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.782}, {"city": "Houston", "country": "US", "state": "TX", "org_name": "CyrusOne", "isp_id_in_peering_db": 673, "location": [29.73, -95.45], "port_capacity": 40000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.8170000000000001}, {"city": "Hillsboro", "country": "US", "state": "OR", "org_name": "EdgeConneX", "isp_id_in_peering_db": 1922, "location": [45.55, -122.91], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8740000000000001}, {"city": "Las Vegas", "country": "US", "state": "NV", "org_name": "EdgeConneX", "isp_id_in_peering_db": 1918, "location": [36.07, -115.13], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.875}, {"city": "Tempe", "country": "US", "state": "AZ", "org_name": "EdgeConneX", "isp_id_in_peering_db": 1917, "location": [33.4, -111.97], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8390000000000001}, {"city": "Phoenix", "country": "US", "state": "AZ", "org_name": "CyrusOne", "isp_id_in_peering_db": 1488, "location": [33.27, -111.88], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8390000000000001}, {"city": "San Antonio", "country": "US", "state": "TX", "org_name": "CyrusOne", "isp_id_in_peering_db": 1484, "location": [29.47, -98.69], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8170000000000001}, {"city": "Houston", "country": "US", "state": "TX", "org_name": "CyrusOne", "isp_id_in_peering_db": 1476, "location": [29.84, -95.56], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8170000000000001}, {"city": "New York", "country": "US", "state": "NY", "org_name": "Digital Realty", "isp_id_in_peering_db": 325, "location": [40.72, -74.01], "port_capacity": 320000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.802}, {"city": "Minneapolis", "country": "US", "state": "MN", "org_name": "Cologix, Inc.", "isp_id_in_peering_db": 803, "location": [44.97, -93.25], "port_capacity": 201000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.856}, {"city": "Chicago", "country": "US", "state": "IL", "org_name": "United IX", "isp_id_in_peering_db": 239, "location": [41.85, -87.62], "port_capacity": 421000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.865}, {"city": "Las Vegas", "country": "US", "state": "NV", "org_name": "Switch, Ltd.", "isp_id_in_peering_db": 770, "location": [36.06, -115.21], "port_capacity": 11000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.875}, {"city": "Reston", "country": "US", "state": "VA", "org_name": "CoreSite LLC", "isp_id_in_peering_db": 668, "location": [38.95, -77.36], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.852}, {"city": "Somerville", "country": "US", "state": "MA", "org_name": "CoreSite LLC", "isp_id_in_peering_db": 584, "location": [42.38, -71.08], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.784}, {"city": "Portland", "country": "US", "state": "OR", "org_name": "Northwest Access Exchange, Inc.", "isp_id_in_peering_db": 165, "location": [45.52, -122.68], "port_capacity": 200000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.8740000000000001}, {"city": "Los Angeles", "country": "US", "state": "CA", "org_name": "CoreSite LLC", "isp_id_in_peering_db": 142, "location": [34.05, -118.26], "port_capacity": 252000, "isp_type_in_peering_db": "ix", "internet_penetration_percentage": 0.838}, {"city": "Denver", "country": "US", "state": "CO", "org_name": "CoreSite LLC", "isp_id_in_peering_db": 389, "location": [39.75, -105.0], "port_capacity": 41000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.795}, {"city": "Newark", "country": "US", "state": "NJ", "org_name": "Tishman Real Estate Services", "isp_id_in_peering_db": 350, "location": [40.74, -74.17], "port_capacity": 1000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.8240000000000001}, {"city": "Boston", "country": "US", "state": "MA", "org_name": "Markley Group, LLC", "isp_id_in_peering_db": 219, "location": [42.35, -71.06], "port_capacity": 201000, "isp_type_in_peering_db": "fac", "internet_penetration_percentage": 0.784}], "prefixes": 418, "total_prefixes_in_globe": 8388478, "address_space": 38847744, "total_addresses_in_globe": 22264797636, "neighbor": 311}
+{
+  "status": "ok",
+  "looking_glass": "",
+  "route_server": "",
+  "netixlan_updated": "2021-02-22T06:03:23.955397Z",
+  "info_ratio": "Mostly Outbound",
+  "id": "694",
+  "policy_ratio": false,
+  "info_unicast": true,
+  "policy_general": "Selective",
+  "website": "",
+  "allow_ixp_update": false,
+  "updated": "2020-11-17T01:02:54Z",
+  "netfac_updated": "2021-03-05T16:29:53.739904Z",
+  "info_traffic": "",
+  "info_multicast": false,
+  "asn": 8075,
+  "policy_locations": "Preferred",
+  "name": "Microsoft",
+  "info_scope": "Global",
+  "notes": "",
+  "created": "2006-01-16T16:54:22Z",
+  "org_id": 8896,
+  "policy_url": "https://www.microsoft.com/peering",
+  "info_never_via_route_servers": true,
+  "poc_updated": "2020-01-22T04:24:11Z",
+  "info_type": "content",
+  "policy_contracts": "Not Required",
+  "info_prefixes6": 500,
+  "aka": "8068 8069",
+  "info_prefixes4": 2000,
+  "info_ipv6": true,
+  "irr_as_set": "AS-MICROSOFT",
+  "pop_list": [
+    {
+      "city": "Dallas",
+      "port_capacity": 200000,
+      "isp_id_in_peering_db": 3,
+      "isp_type_in_peering_db": "ix",
+      "state": "TX",
+      "location": [32.800955, -96.81955],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Boston",
+      "port_capacity": 20000,
+      "isp_id_in_peering_db": 1086,
+      "isp_type_in_peering_db": "ix",
+      "state": "MA",
+      "location": [42.354692, -71.060266],
+      "internet_penetration_percentage": 0.784
+    },
+    {
+      "city": "Atlanta",
+      "port_capacity": 40000,
+      "isp_id_in_peering_db": 9,
+      "isp_type_in_peering_db": "ix",
+      "state": "GA",
+      "location": [33.755456, -84.39153],
+      "internet_penetration_percentage": 0.847
+    },
+    {
+      "city": "Seattle",
+      "port_capacity": 20000,
+      "isp_id_in_peering_db": 13,
+      "isp_type_in_peering_db": "ix",
+      "state": "WA",
+      "location": [47.614347, -122.338883],
+      "internet_penetration_percentage": 0.885
+    },
+    {
+      "city": "San Jose",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 6,
+      "isp_type_in_peering_db": "fac",
+      "state": "CA",
+      "location": [37.241767, -121.782967],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Dallas",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 1180,
+      "isp_type_in_peering_db": "ix",
+      "state": "TX",
+      "location": [32.787212, -96.794219],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Santa Clara",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 3344,
+      "isp_type_in_peering_db": "fac",
+      "state": "CA",
+      "location": [37.3761, -121.973055],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Phoenix",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 662,
+      "isp_type_in_peering_db": "ix",
+      "state": "AZ",
+      "location": [33.452003, -112.072042],
+      "internet_penetration_percentage": 0.8390000000000001
+    },
+    {
+      "city": "Ashburn",
+      "port_capacity": 200000,
+      "isp_id_in_peering_db": 1,
+      "isp_type_in_peering_db": "ix",
+      "state": "VA",
+      "location": [39.016363, -77.459023],
+      "internet_penetration_percentage": 0.852
+    },
+    {
+      "city": "Palo Alto",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 5,
+      "isp_type_in_peering_db": "fac",
+      "state": "CA",
+      "location": [37.445896, -122.160775],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "San Antonio",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 1484,
+      "isp_type_in_peering_db": "fac",
+      "state": "TX",
+      "location": [29.46661, -98.688078],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Los Angeles",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 8,
+      "isp_type_in_peering_db": "fac",
+      "state": "CA",
+      "location": [34.047322, -118.25745],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Ashburn",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 1178,
+      "isp_type_in_peering_db": "ix",
+      "state": "VA",
+      "location": [39.022561, -77.455012],
+      "internet_penetration_percentage": 0.852
+    },
+    {
+      "city": "Los Angeles",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 1175,
+      "isp_type_in_peering_db": "ix",
+      "state": "CA",
+      "location": [34.047942, -118.255564],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Chicago",
+      "port_capacity": 20000,
+      "isp_id_in_peering_db": 944,
+      "isp_type_in_peering_db": "ix",
+      "state": "IL",
+      "location": [41.876212, -87.631453],
+      "internet_penetration_percentage": 0.865
+    },
+    {
+      "city": "Atlanta",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 22,
+      "isp_type_in_peering_db": "ix",
+      "state": "GA",
+      "location": [33.755456, -84.39153],
+      "internet_penetration_percentage": 0.847
+    },
+    {
+      "city": "Dallas",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 1249,
+      "isp_type_in_peering_db": "ix",
+      "state": "TX",
+      "location": [32.787212, -96.794219],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Chicago",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 7,
+      "isp_type_in_peering_db": "fac",
+      "state": "IL",
+      "location": [41.85365, -87.618342],
+      "internet_penetration_percentage": 0.865
+    },
+    {
+      "city": "Boston",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 565,
+      "isp_type_in_peering_db": "ix",
+      "state": "MA",
+      "location": [42.354692, -71.060266],
+      "internet_penetration_percentage": 0.784
+    },
+    {
+      "city": "Seattle",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 11,
+      "isp_type_in_peering_db": "ix",
+      "state": "WA",
+      "location": [47.614358, -122.338864],
+      "internet_penetration_percentage": 0.885
+    },
+    {
+      "city": "Houston",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 1476,
+      "isp_type_in_peering_db": "fac",
+      "state": "TX",
+      "location": [29.844182, -95.556656],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Phoenix",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 1488,
+      "isp_type_in_peering_db": "fac",
+      "state": "AZ",
+      "location": [33.270744, -111.882056],
+      "internet_penetration_percentage": 0.8390000000000001
+    },
+    {
+      "city": "Ashburn",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 1,
+      "isp_type_in_peering_db": "fac",
+      "state": "VA",
+      "location": [39.016363, -77.459023],
+      "internet_penetration_percentage": 0.852
+    },
+    {
+      "city": "New York",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 325,
+      "isp_type_in_peering_db": "ix",
+      "state": "NY",
+      "location": [40.717723, -74.008299],
+      "internet_penetration_percentage": 0.802
+    },
+    {
+      "city": "Las Vegas",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 770,
+      "isp_type_in_peering_db": "fac",
+      "state": "NV",
+      "location": [36.059914, -115.210194],
+      "internet_penetration_percentage": 0.875
+    },
+    {
+      "city": "Honolulu",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 267,
+      "isp_type_in_peering_db": "ix",
+      "state": "HI",
+      "location": [21.335678, -157.917855],
+      "internet_penetration_percentage": 0.836
+    },
+    {
+      "city": "Miami",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 15,
+      "isp_type_in_peering_db": "fac",
+      "state": "FL",
+      "location": [25.782648, -80.193157],
+      "internet_penetration_percentage": 0.8420000000000001
+    },
+    {
+      "city": "Denver",
+      "port_capacity": 40000,
+      "isp_id_in_peering_db": 254,
+      "isp_type_in_peering_db": "ix",
+      "state": "CO",
+      "location": [39.745636, -104.995636],
+      "internet_penetration_percentage": 0.795
+    },
+    {
+      "city": "Las Vegas",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 1628,
+      "isp_type_in_peering_db": "ix",
+      "state": "NV",
+      "location": [36.059914, -115.210194],
+      "internet_penetration_percentage": 0.875
+    },
+    {
+      "city": "New York",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 38,
+      "isp_type_in_peering_db": "fac",
+      "state": "NY",
+      "location": [40.753599, -73.99198],
+      "internet_penetration_percentage": 0.802
+    },
+    {
+      "city": "New York",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 804,
+      "isp_type_in_peering_db": "ix",
+      "state": "NY",
+      "location": [40.717723, -74.008299],
+      "internet_penetration_percentage": 0.802
+    },
+    {
+      "city": "Seattle",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 1174,
+      "isp_type_in_peering_db": "ix",
+      "state": "WA",
+      "location": [47.614347, -122.338883],
+      "internet_penetration_percentage": 0.885
+    },
+    {
+      "city": "Miami",
+      "port_capacity": 200000,
+      "isp_id_in_peering_db": 17,
+      "isp_type_in_peering_db": "ix",
+      "state": "FL",
+      "location": [25.782648, -80.193157],
+      "internet_penetration_percentage": 0.8420000000000001
+    },
+    {
+      "city": "Los Angeles",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 19,
+      "isp_type_in_peering_db": "fac",
+      "state": "CA",
+      "location": [34.047942, -118.255564],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "San Jose",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 5,
+      "isp_type_in_peering_db": "ix",
+      "state": "CA",
+      "location": [37.241767, -121.782967],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Somerville",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 584,
+      "isp_type_in_peering_db": "fac",
+      "state": "MA",
+      "location": [42.376703, -71.079763],
+      "internet_penetration_percentage": 0.784
+    },
+    {
+      "city": "Reston",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 668,
+      "isp_type_in_peering_db": "fac",
+      "state": "VA",
+      "location": [38.950631, -77.364541],
+      "internet_penetration_percentage": 0.852
+    },
+    {
+      "city": "Miami",
+      "port_capacity": 100000,
+      "isp_id_in_peering_db": 954,
+      "isp_type_in_peering_db": "ix",
+      "state": "FL",
+      "location": [25.782648, -80.193157],
+      "internet_penetration_percentage": 0.8420000000000001
+    },
+    {
+      "city": "Houston",
+      "port_capacity": 20000,
+      "isp_id_in_peering_db": 673,
+      "isp_type_in_peering_db": "ix",
+      "state": "TX",
+      "location": [29.728119, -95.445075],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Palo Alto",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 7,
+      "isp_type_in_peering_db": "ix",
+      "state": "CA",
+      "location": [37.445896, -122.160775],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "New York",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 12,
+      "isp_type_in_peering_db": "ix",
+      "state": "NY",
+      "location": [40.753599, -73.99198],
+      "internet_penetration_percentage": 0.802
+    },
+    {
+      "city": "Los Angeles",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 4,
+      "isp_type_in_peering_db": "ix",
+      "state": "CA",
+      "location": [34.047322, -118.25745],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Seattle",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 71,
+      "isp_type_in_peering_db": "fac",
+      "state": "WA",
+      "location": [47.614347, -122.338883],
+      "internet_penetration_percentage": 0.885
+    },
+    {
+      "city": "Dallas",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 69,
+      "isp_type_in_peering_db": "fac",
+      "state": "TX",
+      "location": [32.800955, -96.81955],
+      "internet_penetration_percentage": 0.8170000000000001
+    },
+    {
+      "city": "Newark",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 9,
+      "isp_type_in_peering_db": "fac",
+      "state": "NJ",
+      "location": [40.736844, -74.173402],
+      "internet_penetration_percentage": 0.8240000000000001
+    },
+    {
+      "city": "Denver",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 389,
+      "isp_type_in_peering_db": "fac",
+      "state": "CO",
+      "location": [39.745636, -104.995636],
+      "internet_penetration_percentage": 0.795
+    },
+    {
+      "city": "Los Angeles",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 142,
+      "isp_type_in_peering_db": "ix",
+      "state": "CA",
+      "location": [34.047942, -118.255564],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "San Francisco",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 935,
+      "isp_type_in_peering_db": "ix",
+      "state": "CA",
+      "location": [37.723407, -122.397923],
+      "internet_penetration_percentage": 0.838
+    },
+    {
+      "city": "Chicago",
+      "port_capacity": 200000,
+      "isp_id_in_peering_db": 2,
+      "isp_type_in_peering_db": "ix",
+      "state": "IL",
+      "location": [41.85365, -87.618342],
+      "internet_penetration_percentage": 0.865
+    },
+    {
+      "city": "Honolulu",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 2526,
+      "isp_type_in_peering_db": "fac",
+      "state": "HI",
+      "location": [21.335678, -157.917855],
+      "internet_penetration_percentage": 0.836
+    },
+    {
+      "city": "Atlanta",
+      "port_capacity": 1000,
+      "isp_id_in_peering_db": 11,
+      "isp_type_in_peering_db": "fac",
+      "state": "GA",
+      "location": [33.755456, -84.39153],
+      "internet_penetration_percentage": 0.847
+    },
+    {
+      "city": "New York",
+      "port_capacity": 10000,
+      "isp_id_in_peering_db": 14,
+      "isp_type_in_peering_db": "ix",
+      "state": "NY",
+      "location": [40.717723, -74.008299],
+      "internet_penetration_percentage": 0.802
+    }
+  ],
+  "prefixes": 289,
+  "total_prefixes_in_globe": 7690647,
+  "address_space": 24675176,
+  "total_addresses_in_globe": 18335125310,
+  "neighbor": 280
+}

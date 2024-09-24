@@ -57,8 +57,10 @@ class ISP(object):
             for j in range(len(oppo_p_l_list)):
                 if i != j:
                     # try:
-                    traffic_amount = List_Of_POP_Locations[oppo_p_l_list[j]].population / (get_distance_between_two_pop_location(List_Of_POP_Locations[my_p_l_list[i]], List_Of_POP_Locations[oppo_p_l_list[j]]) ** 2)
-                    traffic_amount *= List_Of_POP_Locations[oppo_p_l_list[j]].internet_penetration_percentage / List_Of_POP_Locations[my_p_l_list[i]].internet_penetration_percentage * internet_usage_per_person
+                    traffic_amount = 0.0
+                    if List_Of_POP_Locations[oppo_p_l_list[j]].population is not None:
+                        traffic_amount = List_Of_POP_Locations[oppo_p_l_list[j]].population / (get_distance_between_two_pop_location(List_Of_POP_Locations[my_p_l_list[i]], List_Of_POP_Locations[oppo_p_l_list[j]]) ** 2)
+                        traffic_amount *= List_Of_POP_Locations[oppo_p_l_list[j]].internet_penetration_percentage / List_Of_POP_Locations[my_p_l_list[i]].internet_penetration_percentage * internet_usage_per_person
                     # except Exception as e:
                         # print(e)
                         # print(traffic_amount, List_Of_POP_Locations[my_p_l_list[i]].__dict__, List_Of_POP_Locations[oppo_p_l_list[j]].__dict__)
@@ -68,7 +70,10 @@ class ISP(object):
                         traffic_matrix[i][j] = traffic_amount
                 else:
                     # We just split the population.
-                    traffic_matrix[i][j] = List_Of_POP_Locations[my_p_l_list[i]].population / 2
+                    if List_Of_POP_Locations[my_p_l_list[i]].population is not None:
+                        traffic_matrix[i][j] = List_Of_POP_Locations[my_p_l_list[i]].population / 2
+                    else:
+                        traffic_matrix[i][j] =0.0
         
         return traffic_matrix
             
@@ -110,6 +115,8 @@ class ISP(object):
         @return: traffic_matrix: from each PoP, distributed portion traffic send via each common PoP,
         @return: a list of total traffic amount off-loaded via common PoPs. 
         '''
+        print("\n -------------- get_offloaded_traffic_matrix --------------\n")
+        print(float(self.port_capacity_at_common_pop_dict[i]) / np.sum(list(self.port_capacity_at_common_pop_dict.values())) for i in self.common_pop_locations)
         pop_capacity_ratio = [float(self.port_capacity_at_common_pop_dict[i]) / np.sum(list(self.port_capacity_at_common_pop_dict.values())) for i in self.common_pop_locations]
         temp_list = []
         for item in self.list_for_offloaded_traffic_from_my_each_pop_to_opponent:

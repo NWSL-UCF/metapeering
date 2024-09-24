@@ -30,7 +30,8 @@
 				});
 				return false;
 			});
-			$('#common-pops-form').submit(function() { // catch the form's submit event
+			$('#common-pops-form').submit(function(e) { // catch the form's submit event
+				e.preventDefault();
 				console.log($(this).serialize())
 				$.ajax({ // create an AJAX call...
 					data: $(this).serialize(), // get the form data
@@ -42,12 +43,14 @@
 						// $("#custom-querry").load(location.href + " #custom-querry"); // update the DIV 
 					},
 					beforeSend: function(){
+						$('#loadingMessage').css('display', 'block'); // Show loading indicator
 						submitButton.val("Proccesing...");
 						submitButton.attr("disabled","disabled");
 					},
 					complete: function(){
 						submitButton.val("Submit"); // put your normal text
 						submitButton.removeAttr("disabled");
+						$('#loadingMessage').css('display', 'none');
 					}
 				});
 				return false;
@@ -56,7 +59,15 @@
 	</script>
 	
 
-	
+	<div id="loadingMessage" style="display:none; position:absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 50; padding: 50px; border-radius: 20px; background-color: white; text-align:center;"
+	 class="">
+		{% include 'loading_indicator.html' %}
+		<div style="padding-top:20px" class="pt-6">
+			<h3 class="text-lg font-semibold">Loading</h3>
+			<p class="text-sm mt-2">The peering algorithm is running...</p>
+		</div>
+	</div>
+
 	<div id="custom-querry" class="col-12-xs">
 	  	<div class="py-3 text-center">
 			<h2 class="mb-4">Custom Peering Query form</h2>
@@ -95,27 +106,17 @@
 	    				<div class="form-group col-md-6">
 	     					<!--{{ wtf.form_field(form.asn2, class='form-control')|safe }}-->
 	     					<label>Candidate AS</label>
-							<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Autonomous System you want to peer with.">?</span>
+								<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="ASN for the Autonomous System you want to peer with.">?</span>
 	     					{{ form.asn2(class='form-control')|safe }}
 	     					</br>
 					    	{% if form.asn2.errors %}
-					            {% for error in form.asn2.errors %}
-						            <div class="alert alert-danger">{{ error }}</div>
-					            {% endfor %}
-				            {% endif %}
+									{% for error in form.asn2.errors %}
+										<div class="alert alert-danger">{{ error }}</div>
+									{% endfor %}
+								{% endif %}
 	    				</div>
 					   </div>
-					   <label>Threshold</label> 
-						<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="How selective are you in peering? 0=Open, 1=Closed.">?</span>
-						{{ form.threshold(class='form-control', 
-							placeholder='Peering threshold (0.0 to 1.0)') }}
-						</br>
-						{% if form.threshold.errors %}
-							{% for error in form.threshold.errors %}
-								<div class="alert alert-danger">{{ error }}</div>
-							{% endfor %}
-						{% endif %}
-	    			<input type="submit" class="btn btn-primary" form="asn-form" id="searchButton" value="Search">
+						 <input type="submit" class="btn btn-primary" form="asn-form" id="searchButton" style="display: block; margin: 0 auto; width: 15vw;" value="Submit">
 	  			</form>		
 			</div>  
 		</div>
@@ -195,5 +196,5 @@
 		</div>
 	</div>	
 	{% endif %}
-	</div>
+</div>
 {% endblock content %}
