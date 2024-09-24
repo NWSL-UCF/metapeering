@@ -31,89 +31,57 @@ def do_work(isp_pair, customPoPList=None):
     And, in such cases, rather comparing the object with None, check PPC count, if that's 0.
     '''
     
-    print("---- ENTERING THE do_work FUNCTION ----")
-
     isp_a_name, isp_a_asn = isp_pair[0]
     isp_b_name, isp_b_asn = isp_pair[1]
-    print(f"isp_a_name, isp_a_asn: {isp_a_name}, {isp_a_asn}")
-    print(f"isp_b_name, isp_b_asn: {isp_b_name}, {isp_b_asn}")
 
     temp_a_city_state_list, temp_b_city_state_list = [], []
     isp_a_traffic_ratio_type = isp_b_traffic_ratio_type = None
     isp_a_ip_address_count = isp_a_prefix_count = isp_b_ip_address_count = isp_b_prefix_count = 0
     global_ip_address_count = global_prefix_count = 0
-    # Look for cached file.
+    
     current_dir = os.path.abspath(os.path.dirname(__file__))
     isp_a_json_file_name = os.path.join(current_dir, "ML", "compute", "data", "2021", "isps", f"{isp_a_asn}_peering_db_data_file.json")
-    # isp_a_json_file_name = os.path.abspath(os.path.dirname(
-    #     './compute/')) + "/modules/ML/compute/data/2021/isps/" + str(isp_a_asn) + "_peering_db_data_file.json"
-    # isp_b_json_file_name = os.path.abspath(os.path.dirname(
-    #     './compute/')) + "/modules/ML/compute/data/2021/isps/" + str(isp_b_asn) + "_peering_db_data_file.json"
     isp_b_json_file_name = os.path.join(current_dir, "ML", "compute", "data", "2021", "isps", f"{isp_b_asn}_peering_db_data_file.json")
-
-    
-    print(isp_a_json_file_name)
-    print(isp_b_json_file_name)
 
     if os.path.exists(isp_a_json_file_name) and os.path.exists(isp_b_json_file_name):
         fin = open(isp_a_json_file_name)
         data = json.load(fin)
-        # data = isp_data[str(isp_a_asn)]['data']
+        
         temp_a_city_state_list = customizePoPs(data['pop_list'], customPoPList)
-        print(f"\ntemp_a_city_state_list {temp_a_city_state_list}")
+
         if isp_a_asn == 174:
             isp_a_traffic_ratio_type = 'BALANCED'
         else:
-            # TODO: traffic_ratio field does NOT exist in JSON 
-            # isp_a_traffic_ratio_type = data['traffic_ratio']
             isp_a_traffic_ratio_type = data['info_ratio'].upper()
 
         isp_a_ip_address_count = data['address_space']
         isp_a_prefix_count = data['prefixes']
         global_ip_address_count = data['total_addresses_in_globe']
         global_prefix_count = data['total_prefixes_in_globe']
-        print(f"\n{isp_a_traffic_ratio_type} {isp_a_ip_address_count} {isp_a_prefix_count} {global_ip_address_count} {global_prefix_count}")
-        # fin.close()
 
         fin = open(isp_b_json_file_name)
         data = json.load(fin)
-        # data = isp_data[str(isp_b_asn)]['data']
 
         temp_b_city_state_list = customizePoPs(data['pop_list'], customPoPList)
-        print(f"\ntemp_b_city_state_list {temp_b_city_state_list}")
         if isp_b_asn == 174:
             isp_b_traffic_ratio_type = 'BALANCED'
         else:
-            #isp_b_traffic_ratio_type = data['traffic_ratio']
             isp_b_traffic_ratio_type = data['info_ratio'].upper()
         isp_b_ip_address_count = data['address_space']
         isp_b_prefix_count = data['prefixes']
-        # fin.close()
     else:
         print("Input file missing for either {} or {}".format(
             isp_a_name, isp_b_name))
         return None
-    # print('Jaaying: ', temp_a_city_state_list)
-    # print('Jaaying: ', temp_b_city_state_list)
 
-    print("\nisp_a_pop_location_id_list")
     isp_a_pop_location_id_list = convert_city_state_to_pop_location(
         temp_a_city_state_list)
     isp_b_pop_location_id_list = convert_city_state_to_pop_location(
         temp_b_city_state_list)
-    print(isp_a_pop_location_id_list)
-
-    print("\nisp_b_pop_location_id_list")
-    print(isp_b_pop_location_id_list)
-    # print('AAying: ', isp_a_pop_location_id_list)
-    # print('AAying: ', isp_b_pop_location_id_list)
 
     common_pop_location_id_list = [
         a for a in isp_a_pop_location_id_list if a in isp_b_pop_location_id_list]
     
-    print("\ncommon_pop_location_id_list")
-    print(common_pop_location_id_list)
-
     isp_a_port_capacity_at_common_pop_dict = {}
     isp_b_port_capacity_at_common_pop_dict = {}
 

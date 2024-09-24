@@ -94,7 +94,6 @@ def clean(state):
     return excludedStates.get(state,state)
 
 def ensure_isp_json_files(isp_a, isp_b, force=False):
-    # print("Entering ensure_isp_json_files")
     '''
     @param isp_pair_list: Takes isp_pair list \n
     @note: checks if json file for each ISP exists. If not, calls PeeringInfo to access PeeringDB,
@@ -107,70 +106,14 @@ def ensure_isp_json_files(isp_a, isp_b, force=False):
     isp_a_json_file_name = Data_Directory + "/2021/isps/" + str(isp_a_asn) + "_peering_db_data_file.json"
     isp_b_json_file_name = Data_Directory + "/2021/isps/" + str(isp_b_asn) + "_peering_db_data_file.json"
 
-    print("---- ENTERING ensure_isp_json_files----")
-    print(isp_a_json_file_name)
-    print(isp_b_json_file_name)
-
     if (os.path.exists(isp_a_json_file_name)):
         print("The filepath exists for: " + isp_a_json_file_name)
+    else:
+        return False
 
     if (os.path.exists(isp_b_json_file_name)):
         print("The filepath exists for: " + isp_b_json_file_name)
-
-    # if (not os.path.exists(isp_a_json_file_name)) or (not os.path.exists(isp_b_json_file_name)) or force:
-    #     peeringInfo = PeeringInfo()
-
-    #     total_prefixes_in_globe, total_addresses_in_globe = get_total_prefixes_addresses_count_from_caida()
-
-    #     isp_a_pdb_net_id, info_type_a = peeringInfo.get_net_id_from_asn(isp_a_asn, get='info_type')
-    #     isp_b_pdb_net_id, info_type_b = peeringInfo.get_net_id_from_asn(isp_b_asn, get='info_type')
-
-    #     info_type_a = info_types[info_type_a]
-    #     info_type_b = info_types[info_type_b]
-
-        # if (not os.path.exists(isp_a_json_file_name)) or force:
-        #     remPop = []
-        #     temp_a_city_state_list = peeringInfo.get_all_possible_peering_city(isp_a_pdb_net_id)
-        #     # print('temp_a_city_state_list: ',temp_a_city_state_list)
-        #     for i, p in enumerate(temp_a_city_state_list):
-        #         p["state"] = clean(p["state"])
-        #         if (p['state'] == 'exclude'):
-        #             remPop.append(i)
-        #         else:
-        #             p.update({'internet_penetration_percentage': (PopulationInfo.internet_users_percentage[p['state']] / 100.0)})
-        #     temp_a_city_state_list = [i for j, i in enumerate(temp_a_city_state_list) if j not in remPop]
-
-        #     with open(isp_a_json_file_name, "w") as fout:
-        #         name, prefixes, address_space, neighbor = get_isp_name_and_prefix_count_and_address_count_and_neighbor_count_from_caida(isp_a_asn)
-        #         traffic_ratio = peeringInfo.get_isp_traffic_ratio(isp_a_pdb_net_id)
-        #         data = {"data": {"name":name, "traffic_ratio": traffic_ratio, "pop_list": temp_a_city_state_list,
-        #                             "prefixes": prefixes, "total_prefixes_in_globe": total_prefixes_in_globe,
-        #                             "address_space": address_space, "total_addresses_in_globe": total_addresses_in_globe,
-        #                             "neighbor": neighbor, "info_type":info_type_a}}
-        #         # print('Data to be written in file: ',data)
-        #         json.dump(data, fout)
-
-        # if (not os.path.exists(isp_b_json_file_name)) or force:
-        #     remPop = []
-        #     temp_b_city_state_list = peeringInfo.get_all_possible_peering_city(isp_b_pdb_net_id)
-        #     # print('temp_b_city_state_list: ',temp_b_city_state_list)
-        #     # print("HERE 2: -----> temp_b_city_state_list: ",temp_b_city_state_list)
-        #     for i, p in enumerate(temp_b_city_state_list):
-        #         p["state"] = clean(p["state"])
-        #         if (p['state'] == 'exclude'):
-        #             remPop.append(i)
-        #         else:
-        #             p.update({'internet_penetration_percentage': (PopulationInfo.internet_users_percentage[p['state']] / 100.0)})
-
-        #     temp_b_city_state_list = [i for j, i in enumerate(temp_b_city_state_list) if j not in remPop]
-
-        #     with open(isp_b_json_file_name, "w") as fout:
-        #         name, prefixes, address_space, neighbor = get_isp_name_and_prefix_count_and_address_count_and_neighbor_count_from_caida(isp_b_asn)
-        #         traffic_ratio = peeringInfo.get_isp_traffic_ratio(isp_b_pdb_net_id)
-        #         data = {"data": {"name":name, "traffic_ratio": traffic_ratio, "pop_list": temp_b_city_state_list,
-        #                             "prefixes": prefixes, "total_prefixes_in_globe": total_prefixes_in_globe,
-        #                             "address_space": address_space, "total_addresses_in_globe": total_addresses_in_globe,
-        #                             "neighbor": neighbor,"info_type":info_type_b}}
-        #         # print('Data to be written in file (2): ',data)
-        #         json.dump(data, fout)
-    # print("Leaving ensure_isp_json_files")
+    else:
+        return False
+    
+    return True

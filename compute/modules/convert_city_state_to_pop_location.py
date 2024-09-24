@@ -20,14 +20,7 @@ def convert_city_state_to_pop_location(city_state_list):
     temp_pop_location_key_dict = {str(p.isp_type_in_peering_db + "_" + str(p.isp_id_in_peering_db)):p.ID for p in List_Of_POP_Locations}
     for c_s_temp in city_state_list:
         if str(c_s_temp['isp_type_in_peering_db'] + "_" + str(c_s_temp['isp_id_in_peering_db'])) not in temp_pop_location_key_dict.keys():
-            # Check here. We've updated the code to use 'location' tuple instead of separate lat and long.
             # TODO: The name field does not exist in c_s_temp. What is the difference between org_name and name?
-            # pop = PoPLocation(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db'], c_s_temp['city'], c_s_temp['state'], c_s_temp['location'][0], c_s_temp['location'][1], c_s_temp['org_name'], c_s_temp['name'])
-            # print("WHAT WE'VE ALL BEEN WAITING FORRRR------\n")
-            # print("#1\n")
-            # print(peeringInfo.get_pop_name_from_id(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db']))
-            # print("\n#2\n")
-            # print(peeringInfo.json_call_from_peeringdb_api(c_s_temp['isp_id_in_peering_db']))
             org_name = c_s_temp.get('org_name', peeringInfo.get_pop_name_from_id(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db']))
             #name = get_isp_name_and_prefix_count_and_address_count_and_neighbor_count_from_caida()
             pop = PoPLocation(c_s_temp['isp_type_in_peering_db'], c_s_temp['isp_id_in_peering_db'], c_s_temp['city'], c_s_temp['state'], c_s_temp['location'][0], c_s_temp['location'][1], org_name, org_name)

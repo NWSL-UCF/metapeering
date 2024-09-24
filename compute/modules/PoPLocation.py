@@ -11,7 +11,7 @@ class PoPLocation(object):
         PoPLocation.ID += 1
         self.ID = PoPLocation.ID
         self.org_name = org_name
-        self.name = name # TODO: What is this supposed to be?
+        self.name = name 
         self.isp_type_in_peering_db = isp_type_in_peering_db
         self.isp_id_in_peering_db = isp_id_in_peering_db
         self.city = city
