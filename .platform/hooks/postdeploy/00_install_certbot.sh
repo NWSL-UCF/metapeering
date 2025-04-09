@@ -18,5 +18,5 @@ IFS=, a=( $DOMAIN_NAMES )
 for i in ${a[@]}
 do
     echo "Creating certificate for the domain ${i}"
-    sudo /usr/local/bin/certbot --nginx -n -d $i --agree-tos --email quinn.barber@knights.ucf.edu
+    sudo /usr/bin/certbot --nginx -n -d $i --agree-tos --email quinn.barber@knights.ucf.edu
 done
