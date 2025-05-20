@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Source in this shell
+source /etc/environment
+
 set -e
 
 NGINX_CONF_DIR="/etc/nginx/conf.d"
@@ -11,11 +14,11 @@ LOG_FILE="/var/log/eb-hooks.log"
 echo "[FORCE_SSL Hook] Running at $(date)" >> "$LOG_FILE"
 
 FORCE_SSL=$(printenv FORCE_SSL)
-DOMAINS=$(printenv DOMAINS)
+DOMAIN_NAMES=$(printenv DOMAIN_NAMES)
 
-# Check if DOMAINS contains at least one non-empty domain
+# Check if DOMAIN_NAMES contains at least one non-empty domain
 has_domains=false
-IFS=',' read -ra DOMAIN_LIST <<< "$DOMAINS"
+IFS=',' read -ra DOMAIN_LIST <<< "$DOMAIN_NAMES"
 for domain in "${DOMAIN_LIST[@]}"; do
     if [[ -n "$domain" && "$domain" =~ [^[:space:]] ]]; then
         has_domains=true
@@ -24,7 +27,7 @@ for domain in "${DOMAIN_LIST[@]}"; do
 done
 
 if [ "$FORCE_SSL" = "true" ] && [ "$has_domains" = "true" ]; then
-    echo "[FORCE_SSL Hook] FORCE_SSL=true and valid DOMAINS found, enabling redirect..." >> "$LOG_FILE"
+    echo "[FORCE_SSL Hook] FORCE_SSL=true and valid DOMAIN_NAMES found, enabling redirect..." >> "$LOG_FILE"
     if [ -f "$TEMPLATE_SOURCE" ]; then
         cp "$TEMPLATE_SOURCE" "$TARGET_CONF_PATH"
         echo "[FORCE_SSL Hook] Config deployed to $TARGET_CONF_PATH" >> "$LOG_FILE"
@@ -33,7 +36,7 @@ if [ "$FORCE_SSL" = "true" ] && [ "$has_domains" = "true" ]; then
         exit 1
     fi
 else
-    echo "[FORCE_SSL Hook] Redirect not enabled (FORCE_SSL=$FORCE_SSL, DOMAINS=$DOMAINS)" >> "$LOG_FILE"
+    echo "[FORCE_SSL Hook] Redirect not enabled (FORCE_SSL=$FORCE_SSL, DOMAIN_NAMES=$DOMAIN_NAMES)" >> "$LOG_FILE"
     if [ -f "$TARGET_CONF_PATH" ]; then
         rm -f "$TARGET_CONF_PATH"
         echo "[FORCE_SSL Hook] Removed $TARGET_CONF_PATH" >> "$LOG_FILE"
