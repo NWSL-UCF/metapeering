@@ -48,7 +48,7 @@ terminate the local server, and use `flask run` again to see the updated website
 | AWS_S3_URL              | no          |
 | AWS_STORAGE_BUCKET_NAME | no          |
 | DATABASE_URI            | no          |
-| DOMAINS                 | yes         |
+| DOMAIN_NAMES            | yes         |
 | FORCE_SSL               | yes         |
 
 Items that can be empty/null should be defined but without an entered value.
@@ -63,7 +63,7 @@ Create a CI/CD pipeline in AWS CodePipeline. The source should be the GitHub rep
 
 ### Test SSL Certificate Generation
 
-Before connecting a domain with Amazon Route 53, you can use the default Elastic Beanstalk CNAME that is created with an Elastic Beanstalk environment to test SSL certificate generation. Ex: `metapeering-test-env.eba-<env_id>.<region>.elasticbeanstalk.com`. Place the CNAME for your environment in `DOMAINS` and set `FORCE_SSL` to `true`. This should trigger an automated update of the environment that includes the generation of an SSL certificate for the given domain.
+Before connecting a domain with Amazon Route 53, you can use the default Elastic Beanstalk CNAME that is created with an Elastic Beanstalk environment to test SSL certificate generation. Ex: `metapeering-test-env.eba-<env_id>.<region>.elasticbeanstalk.com`. Place the CNAME for your environment in `DOMAIN_NAMES` and set `FORCE_SSL` to `true`. This should trigger an automated update of the environment that includes the generation of an SSL certificate for the given domain.
 
 ### Configure Route 53
 
@@ -71,4 +71,4 @@ Configure Route 53 with a hosted zone for your domain. Create a CNAME record for
 
 ### Update Elastic Beanstalk Configuration
 
-Update `DOMAINS` to include your domain from Route 53. Domains should be separated by a single comma (no space) in the value for `DOMAINS`.
+Update `DOMAIN_NAMES` to include your domain from Route 53. Domains should be separated by a single comma (no space) in the value for `DOMAIN_NAMES`.
