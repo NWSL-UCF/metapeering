@@ -66,14 +66,12 @@ if [[ "$CURRENT_DOMAIN_NAMES" != "$OLD_DOMAIN_NAMES" ]]; then
   sed -i '/^DOMAIN_NAMES=/d' "$ENV_FILE"
   echo "DOMAIN_NAMES=$CURRENT_DOMAIN_NAMES" >> "$ENV_FILE"
 else
-  echo "DOMAIN_NAMES unchanged. Checking certs..."
+  echo "DOMAIN_NAMES unchanged. Ensuring certs and nginx config..."
   for domain in "${CURRENT_DOMAINS[@]}"; do
     if check_cert_exists "$domain"; then
-      echo "Attempting renewal for $domain"
-      if certbot renew --cert-name "$domain" --quiet --deploy-hook "true"; then
-        echo "Renewed cert for $domain"
-        RELOAD_NGINX=true
-      fi
+      echo "Re-applying nginx SSL config for $domain"
+      certbot --nginx -d "$domain" --non-interactive --agree-tos -m "admin@$domain" --keep-existing
+      RELOAD_NGINX=true
     else
       echo "Generating missing cert for $domain"
       generate_cert "$domain"
