@@ -9,7 +9,7 @@ RELOAD_NGINX=false
 CURRENT_DOMAIN_NAMES="${DOMAIN_NAMES}"
 
 # Read stored values from /etc/environment
-OLD_DOMAIN_NAMES=$(grep '^DOMAIN_NAMES=' "$ENV_FILE" | cut -d '=' -f2- | tr -d '"')
+OLD_DOMAIN_NAMES=$(grep '^DOMAIN_NAMES=' "$ENV_FILE" 2>/dev/null | cut -d '=' -f2- | tr -d '"' || true)
 
 # Utility functions
 generate_cert() {
@@ -70,7 +70,7 @@ else
   for domain in "${CURRENT_DOMAINS[@]}"; do
     if check_cert_exists "$domain"; then
       echo "Re-applying nginx SSL config for $domain"
-      if timeout 120 certbot --nginx -d "$domain" --non-interactive --agree-tos -m "admin@$domain" --keep-existing; then
+      if timeout 120 certbot --nginx -d "$domain" --non-interactive --agree-tos -m "admin@$domain" --reinstall; then
         RELOAD_NGINX=true
       else
         echo "WARNING: certbot failed or timed out for $domain"
