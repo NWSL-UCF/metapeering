@@ -70,8 +70,11 @@ else
   for domain in "${CURRENT_DOMAINS[@]}"; do
     if check_cert_exists "$domain"; then
       echo "Re-applying nginx SSL config for $domain"
-      certbot --nginx -d "$domain" --non-interactive --agree-tos -m "admin@$domain" --keep-existing
-      RELOAD_NGINX=true
+      if timeout 120 certbot --nginx -d "$domain" --non-interactive --agree-tos -m "admin@$domain" --keep-existing; then
+        RELOAD_NGINX=true
+      else
+        echo "WARNING: certbot failed or timed out for $domain"
+      fi
     else
       echo "Generating missing cert for $domain"
       generate_cert "$domain"
