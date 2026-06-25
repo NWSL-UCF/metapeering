@@ -32,3 +32,43 @@ the `mkdir` commands which work in MAC but not in Windows, they need to have bac
 
 Also, by default Flask does not have live updates, after making a change you will have to use **Ctrl+C** in Windows or **Command+C** in MAC to 
 terminate the local server, and use `flask run` again to see the updated website.
+
+## AWS Elastic Beanstalk Deployment Steps
+
+1. Create an Elastic Beanstalk Environment
+2. Create CI/CD Pipeline
+3. Test SSL Certificate Generation
+4. Configure Route 53
+5. Update Elastic Beanstalk Environment Configuration
+
+### Create an Elastic Beanstalk Environment
+
+| Variable name           | Leave empty |
+| ----------------------- | ----------- |
+| AWS_S3_URL              | no          |
+| AWS_STORAGE_BUCKET_NAME | no          |
+| DATABASE_URI            | no          |
+| DOMAIN_NAMES            | yes         |
+| FORCE_SSL               | yes         |
+
+Items that can be empty/null should be defined but without an entered value.
+
+Consult internal documentation for values of environment variables that should not be left empty.
+
+By default, `PYTHONPATH` may be among the environment variables. Do not modify this value.
+
+### Create CI/CD Pipeline
+
+Create a CI/CD pipeline in AWS CodePipeline. The source should be the GitHub repository and a chosen branch. The Deploy stage should set the Elastic Beanstalk environment as the target.
+
+### Test SSL Certificate Generation
+
+Before connecting a domain with Amazon Route 53, you can use the default Elastic Beanstalk CNAME that is created with an Elastic Beanstalk environment to test SSL certificate generation. Ex: `metapeering-test-env.eba-<env_id>.<region>.elasticbeanstalk.com`. Place the CNAME for your environment in `DOMAIN_NAMES` and set `FORCE_SSL` to `true`. This should trigger an automated update of the environment that includes the generation of an SSL certificate for the given domain.
+
+### Configure Route 53
+
+Configure Route 53 with a hosted zone for your domain. Create a CNAME record for your domain that targets the CNAME provided by Elastic Beanstalk for your environment. 
+
+### Update Elastic Beanstalk Configuration
+
+Update `DOMAIN_NAMES` to include your domain from Route 53. Domains should be separated by a single comma (no space) in the value for `DOMAIN_NAMES`.
