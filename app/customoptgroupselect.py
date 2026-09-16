@@ -1,6 +1,6 @@
 from wtforms.fields import SelectField
-from wtforms.validators import ValidationError
-from wtforms.widgets import HTMLString, html_params
+from wtforms.widgets import html_params
+from markupsafe import Markup
 
 # from cgi import escape
 from wtforms.widgets import Select
@@ -45,7 +45,7 @@ class ExtendedSelectWidget(Select):
                 label = item2
                 html.append(self.render_option(val, label, val == field.data))
         html.append("</select>")
-        return HTMLString("".join(html))
+        return Markup("".join(html))
 
 
 class ExtendedSelectField(SelectField):
