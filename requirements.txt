@@ -36,7 +36,7 @@ gunicorn==26.2.0
 h11==0.16.0
 httpcore==1.0.9
 httpx==0.28.1
-idna==3.19
+idna==3.20
 importlib_metadata==9.0.1
 itsdangerous==2.2.0
 Jinja2==3.1.6
