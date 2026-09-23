@@ -48,7 +48,7 @@ munch==4.0.0
 munge==1.4.0
 numpy==2.4.6
 packaging==26.3
-pandas==3.0.5
+pandas==3.0.6
 peeringdb==2.5.0
 pillow==12.3.0
 pyogrio==0.13.0
