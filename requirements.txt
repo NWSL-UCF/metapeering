@@ -55,7 +55,7 @@ pyogrio==0.13.0
 pyparsing==3.3.2
 pyproj==3.7.2
 python-dateutil==2.9.0.post0
-pytz==2026.3.post1
+pytz==2026.4
 PyYAML==6.0.3
 requests==2.34.2
 s3transfer==0.19.2
