@@ -29,7 +29,7 @@ Flask-S3==0.3.3
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.3.0
 Flask==3.1.3
-fonttools==4.65.0
+fonttools==4.66.0
 geopandas==1.1.4
 greenlet==3.5.6
 gunicorn==26.2.0
