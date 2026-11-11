@@ -20,7 +20,7 @@ django-inet==1.1.1
 django-peeringdb==3.7.0
 Django==5.2.19
 dnspython==2.9.2
-dominate==2.9.1
+dominate==3.1.0
 email-validator==2.3.0
 fiona==1.10.1
 Flask-Bootstrap==3.3.7.1
