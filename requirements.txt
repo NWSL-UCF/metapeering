@@ -54,7 +54,7 @@ pillow==13.0.0
 pyogrio==0.13.0
 pyparsing==3.3.3
 pyproj==3.7.2
-python-dateutil==2.9.0.post0
+python-dateutil==4.0.0
 pytz==2026.6
 PyYAML==6.0.3
 requests==2.34.2
